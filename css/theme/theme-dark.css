@@ -1,0 +1,17 @@
+/* dark-theme */
+.dark-theme {
+	--border-color: #323232;
+	--bg1: #1f1f1f;
+	--bg2: #181818;
+	--active-text-color: #fff;
+	--inactive-text-color: #4b4b4b;
+	--top-menu-main-menu-item-background: #2d2e2e;
+	--top-menu-sub-menu-item-background: #04395d;
+	--input-background: #1e1e1e;
+	--input-background-focus: #141414;
+	--button-ok-bg-color: #005488;
+	--content-bg-logo: url("/img/tse-logo.png");
+	--menu-logo: url("/img/tse-logo.png");
+	background-color: #181818;
+	--color: #dbdbdb;
+}

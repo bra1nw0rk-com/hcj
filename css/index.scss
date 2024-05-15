@@ -1,0 +1,10 @@
+@import "/css/modal.scss";
+@import "/css/table.scss";
+
+.clickable {
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(3);
+    }
+}

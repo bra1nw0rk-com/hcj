@@ -1,0 +1,40 @@
+body {
+    background-color: rgba(24,24,24);
+}
+#nojavascript {
+    visibility: visible;
+    color: #cccccc;
+    display: block;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#nojavascript .sorry_msg1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    animation: glowText 3s ease-in-out alternate;
+    padding-bottom: 12px;
+}
+
+#nojavascript .sorry_msg2 {
+    text-align: center;
+    font-size: 1.4rem;
+    animation: glowText 4s ease-in-out alternate;
+
+}
+#nojavascript .sorry_msg2 a{
+    text-decoration: none; color: #2667cb
+}
+
+#nojavascript .sorry_img_block {
+    text-align: center
+}
+#nojavascript .sorry_img_block img{
+    padding-top: 1em;
+    width: 5em;
+    animation: glow 1s ease-in-out infinite alternate;
+}

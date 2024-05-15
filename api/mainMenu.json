@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "parent": 0,
+    "text": "App"
+  },
+  {
+    "id": 2,
+    "parent": 1,
+    "text": "OEManager",
+    "onclick": "Module.call('oemanager')"
+  },
+  {
+    "id": 3,
+    "parent": 1,
+    "text": "BarTender"
+  },
+  {
+    "id": 4,
+    "parent": 1,
+    "text": "xTrace"
+  },
+  {
+    "id": 5,
+    "parent": 1,
+    "text": "Docs"
+  },
+  {
+    "id": 6,
+    "parent": 1,
+    "type": "separator"
+  },
+  {
+    "id": 7,
+    "parent": 1,
+    "text": "Settings",
+    "icon": "fa fa-solid fa-gear"
+  },
+  {
+    "id": 8,
+    "parent": 7,
+    "text": "Theme",
+    "onclick": "WS.ui.toggleTheme()"
+  },
+  {
+    "id": 9,
+    "parent": 1,
+    "type": "separator"
+  },
+  {
+    "id": 10,
+    "parent": 1,
+    "text": "Logout",
+    "onclick": "WS.user.logout()",
+    "icon": "fa fa-sign-out"
+  },
+  {
+    "id": 11,
+    "parent": 7,
+    "text": "Sub"
+  },
+  {
+    "id": 12,
+    "parent": 11,
+    "text": "Sub1"
+  }
+]

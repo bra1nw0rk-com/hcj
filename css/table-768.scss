@@ -1,0 +1,32 @@
+@media only screen and (max-width:768px) {
+    .table-block [data-name="table-top"] {
+        position: fixed;
+        top: 84px;
+    }
+
+    .table-block .centered {
+        left: 42vw;
+    }
+
+    .table-block table thead tr td {
+        white-space: nowrap;
+    }
+
+    .table-block table tbody tr:hover {
+        background-color: var(--border-color);
+    }
+
+    .table-block table tbody tr td {
+        white-space: nowrap;
+    }
+
+    .table-block [data-name="paging"] {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        width: 100vw;
+        z-index: 21;
+        bottom: 42px;
+    }
+}

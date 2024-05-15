@@ -1,0 +1,19 @@
+/* light-theme */
+.light-theme {
+	--border-color: #9f9f9f;
+	--active-text-color: #000;
+	--inactive-text-color: #b7b7b7;
+	--bg1: #e3e3e3;
+	--bg2: #c1c1c1;
+
+	--top-menu-main-menu-item-background: #cdcdcd;
+	--top-menu-sub-menu-item-background: #a5d0ed;
+	--input-background: #d5d5d5;
+	--input-background-focus: #f0f0f0;
+	--button-ok-bg-color: #539ac5;
+	--button-ok-bg-color-hover: #539ac5;
+	--content-bg-logo: url("/img/tse-logo-dark.png");
+	--color: #080808;
+	--menu-logo: url("/img/tse-logo-dark.png");
+	background-color: #c1c1c1;
+}
