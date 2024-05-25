@@ -1,6 +1,5 @@
 import CustomEvents from "../core/CustomEvents.js";
 import LocalStorage from "../core/LocalStorage.js";
-import SCSS from "../core/SCSS.js";
 import System from "../core/System.js";
 
 export default class HTMLObject extends CustomEvents {
@@ -21,8 +20,7 @@ export default class HTMLObject extends CustomEvents {
 		this.object.addClass(classes);
 	}
 	set css(name) {
-		this.#css = name;
-		//		SCSS.load(name);
+		this.#css = name;		
 		if ($(`head link[href="${this.#css}"]`).length == 0) {
 			$(`head`).append($(`<link rel="stylesheet" href="${this.#css}">`));
 		}
