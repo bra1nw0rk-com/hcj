@@ -4,6 +4,7 @@ export default class MainMenu extends HTMLObject {
 	constructor() {
 		super("menu");
 		let _this = this;
+        this.css = /modules/main/menu/main-menu.css;
 		this.id = "main-menu";
 		this.classes = "menu";
 		this.template = $(html`
@@ -17,12 +18,11 @@ export default class MainMenu extends HTMLObject {
 
 		if ($("body #content").length === 0) {
 			$("body").append($(`<div id="content"></div>`));
-		}
-		//SCSS.load(`/modules/main/css/main-menu.scss`);
-
-		if ($(`head link[href="/modules/main/menu/main-menu.css"]`).length == 0) {
-			$(`head`).append($(`<link rel="stylesheet" href="/modules/main/menu/main-menu.css">`));
-		}
+		}		
+        
+		// if ($(`head link[href="/modules/main/menu/main-menu.css"]`).length == 0) {
+		// 	$(`head`).append($(`<link rel="stylesheet" href="/modules/main/menu/main-menu.css">`));
+		// }
 		$("body #content").html("").append(this.get());
 		this.init();
 	}
