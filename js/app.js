@@ -1,5 +1,4 @@
 import $ from "./lib/jquery/index.js";
-import SCSS from "./lib/core/SCSS.js";
 import UI from "./lib/core/UI.js";
 import Module from "./lib/core/Module.js";
 import LocalStorage from "./lib/core/LocalStorage.js";
@@ -8,7 +7,6 @@ globalThis.Module = Module;
 globalThis.storage = new LocalStorage("ws");
 globalThis.html = String.raw;
 globalThis.WS = {
-	scss: SCSS,
 	//containers: new Containers(),
 	ui: new UI(),
 	/*user: new USER(),*/
@@ -16,7 +14,6 @@ globalThis.WS = {
 
 $(function () {
 	$("#nojavascript").remove();
-	WS.scss.load("/css/index.scss");
 	WS.ui.init();
 	//WS.user.init();
 	Module.call(`main`);

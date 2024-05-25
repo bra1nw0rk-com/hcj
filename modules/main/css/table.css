@@ -1,0 +1,91 @@
+@import "/css/table-768.css";
+ .table-block {
+	 height: fit-content;
+}
+ .table-block .marginLeft {
+	 margin-left: 5px;
+}
+ .table-block .active {
+	 filter: brightness(3);
+	 text-decoration: underline;
+}
+ .table-block [data-name="table-top"] [data-name="count"] {
+	 margin-left: 5px;
+}
+ .table-block [data-name="table-top"] [data-name="rowsPerPage"] {
+	 margin-left: 5px;
+}
+ .table-block [data-name="table-top"] [data-name="rowsPerPage"] select {
+	 min-width: 35px;
+	 text-align: center;
+}
+ .table-block [data-name="table-top"] [data-name="refresh-icon"] {
+	 cursor: pointer;
+	 margin-left: 5px;
+}
+ .table-block [data-name="table-top"] [data-name="refresh-icon"]:hover {
+	 filter: brightness(3);
+}
+ .table-block .centered {
+	 position: fixed;
+	 top: 47vh;
+	 left: 50vw;
+}
+ .table-block .big {
+	 font-size: 5em;
+}
+ .table-block table {
+	 display: block;
+	 height: calc(100% - 51px);
+	 overflow-y: scroll;
+}
+ .table-block table td {
+	 border: 1px solid var(--border-color);
+	 padding: 5px;
+}
+ .table-block table thead tr {
+	 background-color: var(--bg2);
+}
+ .table-block table thead tr td {
+	 white-space: nowrap;
+}
+ .table-block table thead tr td [data-name] {
+	 margin-left: 5px;
+}
+ .table-block table thead tr td [data-name="sort"] {
+	 cursor: pointer;
+}
+ .table-block table thead tr td [data-name="filter"] {
+	 cursor: pointer;
+}
+ .table-block table tbody tr:hover {
+	 background-color: var(--border-color);
+}
+ .table-block table tbody tr td {
+	 white-space: nowrap;
+}
+ .table-block [data-name="paging"] {
+	 margin: 5px auto;
+	 display: flex;
+	 justify-content: center;
+	 position: fixed;
+	 z-index: 1;
+}
+ .table-block [data-name="paging"] [data-name="pager"] {
+	 margin-left: 5px;
+}
+ .table-block [data-name="paging"] [data-name="pager"] [data-name="pager-input"] {
+	 text-align: center;
+	 width: 100px;
+	 margin: 0 5px;
+}
+ @media (min-width: 769px) {
+	 .table-block [data-name="table-top"] {
+		 position: fixed;
+		 top: 64px;
+	}
+	 .table-block [data-name="paging"] {
+		 width: 88vw;
+	}
+}
+ 
