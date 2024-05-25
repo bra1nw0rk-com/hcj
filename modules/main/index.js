@@ -1,4 +1,3 @@
-import SCSS from "../../js/lib/core/SCSS.js";
 import HTMLObject from "../../js/lib/html/HTMLObject.js";
 
 export default class Main extends HTMLObject {
