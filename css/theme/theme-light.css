@@ -12,8 +12,8 @@
 	--input-background-focus: #f0f0f0;
 	--button-ok-bg-color: #539ac5;
 	--button-ok-bg-color-hover: #539ac5;
-	--content-bg-logo: url("/img/tse-logo-dark.png");
+	--content-bg-logo: url("/img/logo.png");
 	--color: #080808;
-	--menu-logo: url("/img/tse-logo-dark.png");
+	--menu-logo: url("/img/logo.png");
 	background-color: #c1c1c1;
 }
