@@ -1,3 +1,4 @@
+import Module from "../../../js/lib/core/Module.js";
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class MainMenu extends HTMLObject {
@@ -27,6 +28,9 @@ export default class MainMenu extends HTMLObject {
 		this.load();
 		$("body").off("click.mainMenu");
 		$("body")
+            .on("click.mainMenu",".menu-logo",function(e){
+                Module.call("about");
+            })
 			.on("click.mainMenu", "#main-menu", function (e) {
 				$("#main-menu .dropdown-content").removeClass("show");
 				e.stopPropagation();
