@@ -26,6 +26,12 @@
 	vertical-align: middle;
 	background-image: var(--menu-logo);
 	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+#main-menu .menu-content .menu-logo:hover {
+	opacity: 1;
 }
 
 #main-menu .menu-content > .menu-item {
