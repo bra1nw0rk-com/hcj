@@ -20,9 +20,6 @@ export default class MainMenu extends HTMLObject {
 			$("body").append($(`<div id="content"></div>`));
 		}		
         
-		// if ($(`head link[href="/modules/main/menu/main-menu.css"]`).length == 0) {
-		// 	$(`head`).append($(`<link rel="stylesheet" href="/modules/main/menu/main-menu.css">`));
-		// }
 		$("body #content").html("").append(this.get());
 		this.init();
 	}

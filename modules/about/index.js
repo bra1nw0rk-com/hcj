@@ -4,6 +4,7 @@ export default class MainMenu extends HTMLObject {
 	constructor() {
 		super("about");
 		let _this = this;
+        this.css = "/modules/about/index.css";
 		this.id = "about";
 		this.classes = "modal fadeIn";
 
@@ -18,10 +19,7 @@ export default class MainMenu extends HTMLObject {
             <div class="footer">
             </div>
 		`);
-
-		if ($(`head link[href="/modules/about/index.css"]`).length == 0) {
-			$(`head`).append($(`<link rel="stylesheet" href="/modules/about/index.css">`));
-		}
+		
 		this.init();
 	}
 	init() {
