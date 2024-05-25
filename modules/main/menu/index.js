@@ -4,7 +4,7 @@ export default class MainMenu extends HTMLObject {
 	constructor() {
 		super("menu");
 		let _this = this;
-        this.css = /modules/main/menu/main-menu.css;
+        this.css = "/modules/main/menu/main-menu.css";
 		this.id = "main-menu";
 		this.classes = "menu";
 		this.template = $(html`
