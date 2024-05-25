@@ -107,7 +107,8 @@
 		display: none;
 	}
 	#main-menu .menu-content .menu-logo {
-		background-size: 36px auto;
+		background-size: auto 100%;
+		background-position: center;
 		height: 14px;
 		width: 36px;
 	}
