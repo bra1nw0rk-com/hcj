@@ -26,8 +26,8 @@ export default class MainMenu extends HTMLObject {
 	}
 	init() {
 		this.load();
-		$("body").off("click.mainMenu");
 		$("body")
+			.off("click.mainMenu")
             .on("click.mainMenu",".menu-logo",function(e){
                 console.log("aaaa")
 				Module.call("about");
@@ -47,9 +47,11 @@ export default class MainMenu extends HTMLObject {
 			.on("click.mainMenu", "#main-menu .menu-item[data-onclick]", function (e) {
 				eval($(this).attr("data-onclick"));
 				$("#main-menu .dropdown-content").removeClass("show").addClass("hide");
+				/*
 				if (System.getCSSVar("menu-width") == "768") {
 					$("html").trigger("click");
 				}
+				 */
 			})
 			.on("click.mainMenu", "#main-menu .menu-item.dropdown, #main-menu .menu-item.submenu", function (e) {
 				$(this).find(".dropdown .dropdown-content,.submenu .dropdown-content").removeClass("show");
@@ -65,45 +67,59 @@ export default class MainMenu extends HTMLObject {
 		});
 	}
 	load() {
-		$.post(`/api/mainMenu.json`, function (data) {
-			$("#main-menu").find("[data-parent='0']").remove();
-			let tmpDiv = $("<div></div>");
-			data.forEach(function (item) {
-				let icon = item.icon ? "<i class='" + item.icon + "'></i>" : "<i class='fa fa-ravelry'></i>";
-				let app = item.app ? "data-app='" + item.app + "'" : "";
-				let newMenuItem = $("<div></div>");
-				for (let key in item) {
-					newMenuItem.attr("data-" + key, item[key]);
-				}
-				if (item.type === "separator") {
-					newMenuItem.addClass("menu-separator");
-				} else {
-					newMenuItem.addClass("menu-item");
-					newMenuItem.html(icon + item.text);
-				}
-				if (item.parent === 0) {
-					newMenuItem.attr("data-level", "0");
-					tmpDiv.append(newMenuItem);
-				} else {
-					let parent = tmpDiv.find('[data-id="' + item.parent + '"]');
-					if (parent.attr("data-level") === "0") {
-						if (!parent.hasClass("dropdown")) {
-							parent.addClass("dropdown");
-							let dropdownContent = $('<div class="dropdown-content"></div>');
-							parent.append(dropdownContent);
+		$.ajax({
+			url: '/',
+			method: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify({
+				cmd:"getMainMenu"
+			}),
+			headers: {
+				'Accept': 'application/json'
+			},
+			success: function(data) {
+				$("#main-menu").find("[data-parent='0']").remove();
+				let tmpDiv = $("<div></div>");
+				data.forEach(function (item) {
+						let icon = item.icon ? "<i class='" + item.icon + "'></i>" : "<i class='fa fa-ravelry'></i>";
+						let app = item.app ? "data-app='" + item.app + "'" : "";
+						let newMenuItem = $("<div></div>");
+						for (let key in item) {
+							newMenuItem.attr("data-" + key, item[key]);
 						}
-					} else {
-						if (!parent.hasClass("submenu")) {
-							parent.addClass("submenu");
-							let dropdownContent = $('<div class="dropdown-content"></div>');
-							parent.append(dropdownContent);
+						if (item.type === "separator") {
+							newMenuItem.addClass("menu-separator");
+						} else {
+							newMenuItem.addClass("menu-item");
+							newMenuItem.html(icon + item.text);
 						}
-					}
-					parent.find(">.dropdown-content").append(newMenuItem);
-				}
-			});
-			$("#main-menu .menu-content:has(:not(.menu-icon, .menu-logo ))").remove();
-			$("#main-menu .menu-content").append(tmpDiv.html());
+						if (item.parent_id === 0) {
+							newMenuItem.attr("data-level", "0");
+							tmpDiv.append(newMenuItem);
+						} else {
+							let parent = tmpDiv.find('[data-id="' + item.parent_id + '"]');
+							if (parent.attr("data-level") === "0") {
+								if (!parent.hasClass("dropdown")) {
+									parent.addClass("dropdown");
+									let dropdownContent = $('<div class="dropdown-content"></div>');
+									parent.append(dropdownContent);
+								}
+							} else {
+								if (!parent.hasClass("submenu")) {
+									parent.addClass("submenu");
+									let dropdownContent = $('<div class="dropdown-content"></div>');
+									parent.append(dropdownContent);
+								}
+							}
+							parent.find(">.dropdown-content").append(newMenuItem);
+						}
+				});
+				$("#main-menu .menu-content:has(:not(.menu-icon, .menu-logo ))").remove();
+				$("#main-menu .menu-content").append(tmpDiv.html());
+			},
+			error: function(xhr, status, error) {
+				console.error('Error: ' + error);
+			}
 		});
 	}
 }
