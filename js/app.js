@@ -2,7 +2,8 @@ import "./lib/jquery/index.js";
 import UI from "./lib/core/UI.js";
 import Module from "./lib/core/Module.js";
 import LocalStorage from "./lib/core/LocalStorage.js";
-await import("/js/lib/main.js?v=" + Math.random() * 1000000000000000000);
+import "/js/lib/main.js";
+
 globalThis.Module = Module;
 globalThis.storage = new LocalStorage("ws");
 globalThis.html = String.raw;
