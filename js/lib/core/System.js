@@ -34,4 +34,4 @@ export default class System {
 globalThis.System = System;
 
 System.clearCache();
-System.loadJS("/js/app.js");
+//System.loadJS("/js/app.js");
