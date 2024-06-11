@@ -1,4 +1,4 @@
-import $ from "./lib/jquery/index.js";
+//import $ from "./lib/jquery/index.js";
 import UI from "./lib/core/UI.js";
 import Module from "./lib/core/Module.js";
 import LocalStorage from "./lib/core/LocalStorage.js";

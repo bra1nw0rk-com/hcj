@@ -1,6 +1,4 @@
 import CustomEvents from "../core/CustomEvents.js";
-import LocalStorage from "../core/LocalStorage.js";
-import System from "../core/System.js";
 
 export default class HTMLObject extends CustomEvents {
 	#eventNamespace = "";
@@ -21,7 +19,7 @@ export default class HTMLObject extends CustomEvents {
 	}
 	set css(name) {
 		this.#css = name;		
-		if ($(`head link[href="${this.#css}"]`).length == 0) {
+		if ($(`head link[href="${this.#css}"]`).length === 0) {
 			$(`head`).append($(`<link rel="stylesheet" href="${this.#css}">`));
 		}
 	}
