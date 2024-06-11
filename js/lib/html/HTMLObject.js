@@ -8,8 +8,8 @@ export default class HTMLObject extends CustomEvents {
 
 	constructor(type) {
 		super();
-		this.#eventNamespace = type + "" + System.getOID();
-		this.object.attr("name", this.#eventNamespace);
+		//this.#eventNamespace = type + "" + System.getOID();
+		this.object.attr("type", /*this.#eventNamespace*/ type);
 	}
 	set id(id) {
 		this.object.attr("id", id);
