@@ -16,7 +16,7 @@ export default class Main extends HTMLObject {
 					<i class="fa fa-table"></i>
 					<i class="fa fa-table"></i>
 				</div>
-				<div class="copyright">&copy; 2024 Workspace</div>
+				<div class="copyright">&copy; 2024 BWOS</div>
 				<div></div>
 			</footer>
 		`);
