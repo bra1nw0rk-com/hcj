@@ -29,7 +29,7 @@
 	 background-size: 220px;
 	 height: 70px;
 	 width: 220px;
-	 opacity: 0.05;
+	 opacity: 0.1;
 	 content: "";
 	 background-image: var(--content-bg-logo);
 }
