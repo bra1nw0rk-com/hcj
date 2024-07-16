@@ -1,11 +1,11 @@
 /* dark-theme */
 .dark-theme {
 	--border-color: #323232;
-	--bg1: #1f1f1f;
+	--bg1: #ffffff0d;
 	--bg2: #181818;
 	--active-text-color: #fff;
 	--inactive-text-color: #4b4b4b;
-	--top-menu-main-menu-item-background: #2d2e2e;
+	--top-menu-main-menu-item-background: #ffffff1a;
 	--top-menu-sub-menu-item-background: #04395d;
 	--input-background: #1e1e1e;
 	--input-background-focus: #141414;
