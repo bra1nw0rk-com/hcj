@@ -21,7 +21,7 @@ export default class MainMenu extends HTMLObject {
 			$("body").append($(`<div id="content"></div>`));
 		}		
         
-		$("body #content").html("").append(this.get());
+		$("body #content").append(this.get());
 		this.init();
 	}
 	init() {
