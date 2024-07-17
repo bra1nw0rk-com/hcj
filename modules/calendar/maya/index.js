@@ -9,7 +9,7 @@ export default class CalendarMaya extends HTMLObject {
         this.id = "calendar-maya";
         this.classes = "calendar-maya";
         this.template = $(html`
-            <div class="calendar-mayan">
+            <div class="calendar-mayan widget">
                 <div class="header">Mayan calendar</div>
                 <div class="row">Haabʼ: <div id="mayan-haab-date"></div></div>
                 <div class="row">Tzolkʼin: <div id="mayan-tzolkin-date"></div></div>
