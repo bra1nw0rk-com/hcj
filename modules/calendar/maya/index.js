@@ -13,7 +13,8 @@ export default class CalendarMaya extends HTMLObject {
                 <div class="header">Mayan calendar</div>
                 <div class="row">Haabʼ: <span id="mayan-haab-date"></span></div>
                 <div class="row">Tzolkʼin: <span id="mayan-tzolkin-date"></span></div>
-                <div class="row">Year: <span id="mayan-year"></span></div>
+                <div class="row"><span id="mayan-year"></span> year by sun</div>
+                <div class="row"><span id="mayan-year-haab"></span> year by Haabʼ</div>
             </div>
                 
 		`);
@@ -58,6 +59,9 @@ export default class CalendarMaya extends HTMLObject {
 
             const mayanYear = Math.floor(diffDays / 365);
             $(`#mayan-year`).html(mayanYear);
+
+            const mayanYearHaab = Math.floor(diffDays / 360);
+            $(`#mayan-year-haab`).html(mayanYearHaab);
         }
 
         // Update the date every second
