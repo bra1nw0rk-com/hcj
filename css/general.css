@@ -140,9 +140,10 @@ table {
 
 .widget {
 	width: fit-content;
-	border: 1px solid var(--border-color);
+	border: 1px solid var(--bg1);
 	margin: 5px 0 0 5px;
-	background-color: var(--element-background);
+	background-color: var(--element-active-background);
+	backdrop-filter: blur(10px);
 }
 .widget .header {
 	background-color: var(--bg1);
