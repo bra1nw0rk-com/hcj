@@ -150,6 +150,8 @@ table {
 	background-color: var(--bg1);
 	padding: 2px 5px;
 	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
 
 }
 .widget .row{
