@@ -45,7 +45,7 @@
 }
 
 #main-menu .menu-content > .menu-item .menu-item:hover {
-	background-color: var(--top-menu-sub-menu-item-background);
+	background-color: var(--element-background);
 }
 
 #main-menu .menu-content > .dropdown > .dropdown-content {
