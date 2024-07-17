@@ -141,9 +141,11 @@ table {
 .widget {
 	width: fit-content;
 	border: 1px solid var(--border-color);
-	padding: 0 5px;
 }
 .widget .header {
 	background-color: var(--bg1);
 	padding: 2px 5px;
+}
+.widget .row{
+	padding: 1px 5px;
 }
