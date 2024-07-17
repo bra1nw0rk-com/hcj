@@ -56,8 +56,8 @@ export default class CalendarMaya extends HTMLObject {
         }
 
         // Update the date every second
-        setInterval(calculateMayanDate, 1000);
-        calculateMayanDate();
+        setInterval(calculateMayanDates, 1000);
+        calculateMayanDates();
     }
 
 
