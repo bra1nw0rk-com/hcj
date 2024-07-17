@@ -40,7 +40,7 @@ export default class CalendarMaya extends HTMLObject {
             const mayanDate = `${baktun}.${katun}.${tun}.${uinal}.${kin}`;
 
             // Display the date
-            document.getElementById('mayan-date').innerText = mayanDate;
+            $(`#mayan-date`).html(mayanDate);
         }
 
         // Update the date every second
