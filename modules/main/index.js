@@ -10,7 +10,8 @@ export default class Main extends HTMLObject {
 		this.classes = "fadeIn";
 		this.template = $(html`
 			<div data-module="main/menu"></div>
-			<div id="content">				
+			<div id="content">
+				<div data-module="calendar/maya"></div>
 			</div>
 			<footer>
 				<div id="running">
@@ -19,7 +20,7 @@ export default class Main extends HTMLObject {
 				</div>
 				<div class="copyright">&copy; 2024 BWOS</div>
 				<div>
-					<div data-module="calendar/maya"></div>
+					
 				</div>
 			</footer>
 		`);
