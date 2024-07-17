@@ -148,10 +148,11 @@ table {
 }
 .widget .header {
 	background-color: var(--bg1);
-	padding: 2px 5px;
+	padding: 5px 10px;
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: bold;
+	border-radius: 10px 10px 0 0;
 
 }
 .widget .row{
