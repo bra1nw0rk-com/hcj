@@ -9,12 +9,20 @@ export default class CalendarMaya extends HTMLObject {
         this.id = "calendar-maya";
         this.classes = "calendar-maya";
         this.template = $(html`
-            <div id="mayan-date"></div>
+            <div>
+                <div>Haabʼ: <div id="mayan-haab-date"></div></div>
+                <div>Tzolkʼin: <div id="mayan-tzolkin-date"></div></div>
+            </div>
+                
 		`);
         this.init();
     }
     init() {
-        function calculateMayanDate() {
+        const tzolkinNames = [
+            'Imix', 'Ik', 'Akbal', 'Kan', 'Chicchan', 'Cimi', 'Manik', 'Lamat', 'Muluc', 'Oc',
+            'Chuen', 'Eb', 'Ben', 'Ix', 'Men', 'Cib', 'Caban', 'Etznab', 'Cauac', 'Ahau'
+        ];
+        function calculateMayanDates() {
             // Date of the start of the Mayan Long Count (11 August 3114 BC)
             const mayanEpoch = new Date(Date.UTC(-3113, 7, 11));
 
@@ -36,11 +44,15 @@ export default class CalendarMaya extends HTMLObject {
             const uinal = Math.floor(remainingDays / 20);
             const kin = remainingDays % 20;
 
-            // Format the Long Count date
-            const mayanDate = `${baktun}.${katun}.${tun}.${uinal}.${kin}`;
+            const mayanLongCount = `${baktun}.${katun}.${tun}.${uinal}.${kin}`;
+            $(`#mayan-haab-date`).html(mayanLongCount);
 
-            // Display the date
-            $(`#mayan-date`).html(mayanDate);
+            // Calculate Tzolk'in Date
+            const tzolkinNumber = (diffDays % 13) + 1;
+            const tzolkinName = tzolkinNames[diffDays % 20];
+
+            const tzolkinDate = `${tzolkinNumber} ${tzolkinName}`;
+            $(`#mayan-tzolkin-date`).html(tzolkinDate);
         }
 
         // Update the date every second
