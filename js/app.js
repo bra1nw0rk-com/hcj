@@ -36,7 +36,7 @@ $(function () {
 			$this.data('clicked', true);
 			setTimeout(function() {
 				$this.removeData('clicked');
-			}, 1000);
+			}, 500);
 		}
 	}).on('contextmenu','*', function(event){
 		event.stopPropagation();
