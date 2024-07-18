@@ -48,18 +48,31 @@ export default class UI {
 	}
 	fullScreen(){
 		let element = $('body').get(0);
-		if (element.requestFullscreen) {
-			element.requestFullscreen();
-		} else if (element.webkitRequestFullscreen) { // Safari
-			element.webkitRequestFullscreen();
-		} else if (element.msRequestFullscreen) { // IE/Edge
-			element.msRequestFullscreen();
-		} else if (element.mozRequestFullScreen) { // Firefox
-			element.mozRequestFullScreen();
-		} else if (element.webkitEnterFullscreen) { // iOS Safari
-			element.webkitEnterFullscreen();
-		}else{
-			alert('none')
+		if (!document.fullscreenElement && !document.webkitFullscreenElement &&
+			!document.msFullscreenElement && !document.mozFullScreenElement) {
+			// Enter fullscreen mode
+			if (element.requestFullscreen) {
+				element.requestFullscreen();
+			} else if (element.webkitRequestFullscreen) { // Safari
+				element.webkitRequestFullscreen();
+			} else if (element.msRequestFullscreen) { // IE/Edge
+				element.msRequestFullscreen();
+			} else if (element.mozRequestFullScreen) { // Firefox
+				element.mozRequestFullScreen();
+			} else if (element.webkitEnterFullscreen) { // iOS Safari
+				element.webkitEnterFullscreen();
+			}
+		} else {
+			// Exit fullscreen mode
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if (document.webkitExitFullscreen) { // Safari
+				document.webkitExitFullscreen();
+			} else if (document.msExitFullscreen) { // IE/Edge
+				document.msExitFullscreen();
+			} else if (document.mozCancelFullScreen) { // Firefox
+				document.mozCancelFullScreen();
+			}
 		}
 
 	}
