@@ -47,7 +47,7 @@ export default class UI {
 		);
 	}
 	fullScreen(){
-		let element = $('body');
+		let element = $('body').get(0);
 		if (element.requestFullscreen) {
 			element.requestFullscreen();
 		} else if (element.webkitRequestFullscreen) { // Safari
