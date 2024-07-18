@@ -31,6 +31,7 @@ $(function () {
 		return false;
 	}).on('click touchstart','*', function(event) {
 		let $this = $(this);
+		console.log($this.data('clicked'))
 		if ($this.data('clicked')) {
 			event.preventDefault();
 			event.stopPropagation();
