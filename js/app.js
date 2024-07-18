@@ -29,7 +29,19 @@ $(function () {
 		event.stopPropagation();
 		event.preventDefault();
 		return false;
-	})
+	}).on('click touchstart','*', function(event) {
+		var $this = $(this);
+		if ($this.data('clicked')) {
+			event.preventDefault();
+			event.stopPropagation();
+			return false;
+		} else {
+			$this.data('clicked', true);
+			setTimeout(function() {
+				$this.removeData('clicked');
+			}, 1000); // Re-enable after 3 seconds
+		}
+	});
 	WS.ui.init();
 	//WS.user.init();
 	Module.call(`main`);
