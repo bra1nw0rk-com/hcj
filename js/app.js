@@ -31,6 +31,7 @@ $(function () {
 			let currentTime = new Date().getTime();
 			event.preventDefault();
 			event.stopPropagation();
+			event.stopImmediatePropagation();
 			$(`#content`).append($(`<div>double</div>`))
 			return false;
 		} else {
