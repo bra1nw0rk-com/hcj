@@ -29,10 +29,6 @@ $(function () {
 		console.log($this.data('clicked'))
 		if ($this.data('clicked')) {
 			let currentTime = new Date().getTime();
-			while (currentTime + 500 >= new Date().getTime()) {
-				event.preventDefault();
-				event.stopPropagation();
-			}
 			event.preventDefault();
 			event.stopPropagation();
 			return false;
