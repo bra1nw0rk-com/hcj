@@ -10,6 +10,7 @@
         height: 95.38vh;
         overflow: auto;
         width: 100vw;
+        top: 45px;
    }
     #main footer {
         font-size: 1.75em;

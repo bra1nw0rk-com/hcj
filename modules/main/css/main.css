@@ -13,58 +13,66 @@
 	 height: 100%;
 	 width: 100%;
 }
- #main #content {
-	 position: relative;
-	 height: calc(100vh - 3em);
-	 overflow: hidden;
-	 width: 100vw;
-}
- #main #content::after {
-	 display: block;
-	 position: absolute;
-	 top: 50vh;
-	 left: 50vw;
-	 transform: translateY(-80%) translateX(-50%);
-	 background-repeat: no-repeat;
-	 background-size: 220px;
-	 height: 70px;
-	 width: 220px;
-	 opacity: 0.1;
-	 content: "";
-	 background-image: var(--content-bg-logo);
-}
- #main footer {
-	 display: flex;
-	 background-color: var(--bg1);
-	 font-size: 0.75em;
-	 text-align: center;
-	 position: fixed;
-	 bottom: 0;
-	 width: 100vw;
-	 height: 2rem;
-	 border-top: 1px solid var(--border-color);
-	 flex-direction: row;
-	 flex-wrap: nowrap;
-	 justify-content: flex-start;
-	 align-items: center;
-}
- #main footer #running {
-	 display: flex;
-	 width: 33%;
-	 flex-direction: row;
-	 flex-wrap: nowrap;
-	 align-content: center;
-	 justify-content: flex-start;
-	 font-size: 2em;
-}
- #main footer #running i {
-	 padding: 5px;
-	 cursor: pointer;
-}
- #main footer #running i:hover {
-	 background-color: var(--top-menu-main-menu-item-background);
-}
- #main footer .copyright {
-	 width: 33%;
+@media (min-width: 769px) {
+	#main #content {
+		position: relative;
+		height: calc(100vh - 3em);
+		overflow: hidden;
+		width: 100vw;
+	}
+
+	#main #content::after {
+		display: block;
+		position: absolute;
+		top: 50vh;
+		left: 50vw;
+		transform: translateY(-80%) translateX(-50%);
+		background-repeat: no-repeat;
+		background-size: 220px;
+		height: 70px;
+		width: 220px;
+		opacity: 0.1;
+		content: "";
+		background-image: var(--content-bg-logo);
+	}
+
+	#main footer {
+		display: flex;
+		background-color: var(--bg1);
+		font-size: 0.75em;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		width: 100vw;
+		height: 2rem;
+		border-top: 1px solid var(--border-color);
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	#main footer #running {
+		display: flex;
+		width: 33%;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-content: center;
+		justify-content: flex-start;
+		font-size: 2em;
+	}
+
+	#main footer #running i {
+		padding: 5px;
+		cursor: pointer;
+	}
+
+	#main footer #running i:hover {
+		background-color: var(--top-menu-main-menu-item-background);
+	}
+
+	#main footer .copyright {
+		width: 33%;
+	}
 }
  
