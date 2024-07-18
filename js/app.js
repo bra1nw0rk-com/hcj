@@ -17,7 +17,7 @@ $(function () {
 	$("#nojavascript").remove();
 	let timer=0;
 	const threshold = 500;
-	$('body').on('mouseup touchend touchcancel','*', function(event){
+	$('body').on('touchend touchcancel','*', function(event){
 		if(event.which === 1) {
 			console.log(timer,new Date().getTime(),new Date().getTime() - timer)
 			if((new Date().getTime() - timer) > threshold) {
@@ -26,7 +26,7 @@ $(function () {
 				console.log(timer,new Date().getTime() - timer, 'aaaa')
 			}
 		}
-	}).on('mousedown touchstart','*', function(event){
+	}).on('touchstart','*', function(event){
 		if(event.which === 1) { // Left mouse button
 			timer = new Date().getTime();
 			console.log(timer)
