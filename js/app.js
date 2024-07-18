@@ -17,7 +17,7 @@ $(function () {
 	$("#nojavascript").remove();
 	let timer=0;
 	const threshold = 500;
-	$('body').on('touchend touchcancel touchmove contextmenu','*', function(event){
+	$('body').on('touchend touchcancel touchmove','*', function(event){
 		if((new Date().getTime() - timer) > threshold) {
 			event.stopPropagation();
 			event.preventDefault();
@@ -25,6 +25,10 @@ $(function () {
 		}
 	}).on('touchstart','*', function(event){
 		timer = new Date().getTime();
+	}).on('contextmenu','*', function(event){
+		event.stopPropagation();
+		event.preventDefault();
+		return false;
 	})
 	WS.ui.init();
 	//WS.user.init();
