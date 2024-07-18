@@ -21,11 +21,11 @@ $(function () {
 		if(event.which === 1) { // Left mouse button
 			timer = setTimeout(function(){
 				alert("Long click detected and prevented!");
-				event.preventDefault(); // Prevent default action
 			}, threshold);
 		}
 	}).on('mouseup mouseleave','*', function(event){
 		if(event.which === 1) { // Left mouse button
+			event.preventDefault();
 			clearTimeout(timer); // Clear the timer if mouse button is released or mouse leaves the element
 		}
 	});
