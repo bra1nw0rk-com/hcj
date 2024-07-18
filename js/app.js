@@ -24,7 +24,7 @@ $(function () {
 		}
 	}).on('mouseup','*', function(event){
 		if(event.which === 1) {
-			console.log(timer,new Date().getTime() - timer)
+			console.log(timer,new Date().getTime(),new Date().getTime() - timer)
 			if((new Date().getTime() - timer) > threshold) {
 				event.stopPropagation();
 				event.preventDefault();
