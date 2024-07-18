@@ -34,6 +34,7 @@ $(function () {
 		if ($this.data('clicked')) {
 			event.preventDefault();
 			event.stopPropagation();
+			alert('aaaa')
 			return false;
 		} else {
 			$this.data('clicked', true);
