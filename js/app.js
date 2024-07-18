@@ -15,18 +15,18 @@ globalThis.WS = {
 
 $(function () {
 	$("#nojavascript").remove();
-	let timer;
+	let timer=0;
 	const threshold = 500;
 	$('body').on('mousedown','*', function(event){
 		if(event.which === 1) { // Left mouse button
-			timer = setTimeout(function(){
-				alert("Long click detected and prevented!");
-			}, threshold);
+			timer = new Date().getTime();
 		}
 	}).on('mouseup mouseleave','*', function(event){
-		if(event.which === 1) { // Left mouse button
-			event.preventDefault();
-			clearTimeout(timer); // Clear the timer if mouse button is released or mouse leaves the element
+		if(event.which === 1) {
+			if((new Date().getTime() - timer) > threshold) {
+				event.preventDefault();
+				alert('aaaaa')
+			}
 		}
 	});
 	WS.ui.init();
