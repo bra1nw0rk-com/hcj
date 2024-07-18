@@ -25,11 +25,6 @@ $(function () {
 		}
 	}).on('touchstart','*', function(event){
 		timer = new Date().getTime();
-	}).on('contextmenu','*', function(event){
-		event.stopPropagation();
-		event.preventDefault();
-		return false;
-	}).on('click touchstart','*', function(event) {
 		let $this = $(this);
 		console.log($this.data('clicked'))
 		if ($this.data('clicked')) {
@@ -43,7 +38,11 @@ $(function () {
 				$this.removeData('clicked');
 			}, 1000);
 		}
-	});
+	}).on('contextmenu','*', function(event){
+		event.stopPropagation();
+		event.preventDefault();
+		return false;
+	})
 	WS.ui.init();
 	//WS.user.init();
 	Module.call(`main`);
