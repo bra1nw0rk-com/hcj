@@ -18,8 +18,7 @@ $(function () {
 	let timer=0;
 	const threshold = 500;
 	$('body').on('touchend touchcancel','*', function(event){
-		console.log(event.which)
-		if(event.which === 1) {
+		if(event.which === 0) {
 			console.log(timer,new Date().getTime(),new Date().getTime() - timer)
 			if((new Date().getTime() - timer) > threshold) {
 				event.stopPropagation();
@@ -28,8 +27,7 @@ $(function () {
 			}
 		}
 	}).on('touchstart','*', function(event){
-		console.log(event.which)
-		if(event.which === 1) { // Left mouse button
+		if(event.which === 0) { // Left mouse button
 			timer = new Date().getTime();
 			console.log(timer)
 		}
