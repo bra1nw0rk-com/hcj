@@ -50,12 +50,14 @@ export default class UI {
 		let element = $('body');
 		if (element.requestFullscreen) {
 			element.requestFullscreen();
-		} else if (element.mozRequestFullScreen) { // Firefox
-			element.mozRequestFullScreen();
-		} else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
+		} else if (element.webkitRequestFullscreen) { // Safari
 			element.webkitRequestFullscreen();
 		} else if (element.msRequestFullscreen) { // IE/Edge
 			element.msRequestFullscreen();
+		} else if (element.mozRequestFullScreen) { // Firefox
+			element.mozRequestFullScreen();
+		} else if (element.webkitEnterFullscreen) { // iOS Safari
+			element.webkitEnterFullscreen();
 		}
 
 	}
