@@ -20,12 +20,13 @@ $(function () {
 	$('body').on('mousedown','*', function(event){
 		if(event.which === 1) { // Left mouse button
 			timer = new Date().getTime();
+			console.log(timer)
 		}
 	}).on('mouseup mouseleave','*', function(event){
 		if(event.which === 1) {
 			if((new Date().getTime() - timer) > threshold) {
 				event.preventDefault();
-				alert('aaaaa')
+				console.log(timer,new Date().getTime() - timer, 'aaaa')
 			}
 		}
 	});
