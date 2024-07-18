@@ -133,6 +133,12 @@ textarea:focus {
 	-moz-user-select: none; /* For Firefox */
 	-o-user-select: none; /* For older browsers */
 	touch-action: manipulation;
+	-webkit-touch-callout: none;
+	-webkit-user-callout: none;
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-modify: none;
+	-webkit-highlight: none;
 }
 .fa-spinner {
 	-webkit-animation: spin 2s linear infinite;
