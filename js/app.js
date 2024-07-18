@@ -15,9 +15,24 @@ globalThis.WS = {
 
 $(function () {
 	$("#nojavascript").remove();
+	let timer;
+	const threshold = 500;
+	$('body').on('mousedown','*', function(event){
+		if(event.which === 1) { // Left mouse button
+			timer = setTimeout(function(){
+				alert("Long click detected and prevented!");
+				event.preventDefault(); // Prevent default action
+			}, threshold);
+		}
+	}).on('mouseup mouseleave','*', function(event){
+		if(event.which === 1) { // Left mouse button
+			clearTimeout(timer); // Clear the timer if mouse button is released or mouse leaves the element
+		}
+	});
 	WS.ui.init();
 	//WS.user.init();
 	Module.call(`main`);
+
 });
 
 $(window).on("orientationchange", function (e) {
