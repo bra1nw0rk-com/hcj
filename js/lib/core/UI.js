@@ -58,6 +58,8 @@ export default class UI {
 			element.mozRequestFullScreen();
 		} else if (element.webkitEnterFullscreen) { // iOS Safari
 			element.webkitEnterFullscreen();
+		}else{
+			alert('none')
 		}
 
 	}
