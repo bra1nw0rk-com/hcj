@@ -18,19 +18,13 @@ $(function () {
 	let timer=0;
 	const threshold = 500;
 	$('body').on('touchend touchcancel','*', function(event){
-
-			console.log(timer,new Date().getTime(),new Date().getTime() - timer)
-			if((new Date().getTime() - timer) > threshold) {
-				event.stopPropagation();
-				event.preventDefault();
-				console.log(timer,new Date().getTime() - timer, 'aaaa')
-			}
-
+		console.log(timer,new Date().getTime(),new Date().getTime() - timer)
+		if((new Date().getTime() - timer) > threshold) {
+			event.stopPropagation();
+			event.preventDefault();
+		}
 	}).on('touchstart','*', function(event){
-
-			timer = new Date().getTime();
-			console.log(timer)
-
+		timer = new Date().getTime();
 	})
 	WS.ui.init();
 	//WS.user.init();
