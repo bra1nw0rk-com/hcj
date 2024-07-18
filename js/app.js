@@ -22,9 +22,11 @@ $(function () {
 			timer = new Date().getTime();
 			console.log(timer)
 		}
-	}).on('mouseup mouseleave','*', function(event){
+	}).on('mouseup','*', function(event){
 		if(event.which === 1) {
+			console.log(timer,new Date().getTime() - timer)
 			if((new Date().getTime() - timer) > threshold) {
+				event.stopPropagation();
 				event.preventDefault();
 				console.log(timer,new Date().getTime() - timer, 'aaaa')
 			}
