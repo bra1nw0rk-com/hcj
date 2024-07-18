@@ -30,7 +30,7 @@ $(function () {
 		event.preventDefault();
 		return false;
 	}).on('click touchstart','*', function(event) {
-		var $this = $(this);
+		let $this = $(this);
 		if ($this.data('clicked')) {
 			event.preventDefault();
 			event.stopPropagation();
@@ -40,7 +40,7 @@ $(function () {
 			$this.data('clicked', true);
 			setTimeout(function() {
 				$this.removeData('clicked');
-			}, 1000); // Re-enable after 3 seconds
+			}, 1000);
 		}
 	});
 	WS.ui.init();
