@@ -143,6 +143,7 @@
 		padding: 5px;
 		margin: 5px;
 		display: block;
+		position: relative;
 	}
 	#main-menu .menu-content .menu-item {
 		border-radius: 5px;
