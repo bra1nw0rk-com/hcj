@@ -85,8 +85,8 @@
 
 }
 #main-menu .menu-content .menu-item.dropdown .dropdown-content::before{
-	-webkit-backdrop-filter: blur(2x);
-	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(4x);
+	backdrop-filter: blur(4px);
 	content:"";
 	position: absolute;
 	height: 100%;
