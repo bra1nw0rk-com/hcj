@@ -21,7 +21,6 @@ $(function () {
 		if((new Date().getTime() - timer) > threshold) {
 			event.stopPropagation();
 			event.preventDefault();
-			return false;
 		}
 	}).on('touchstart','*', function(event){
 		timer = new Date().getTime();
@@ -33,7 +32,6 @@ $(function () {
 			event.stopPropagation();
 			event.stopImmediatePropagation();
 			$(`#content`).append($(`<div>double</div>`))
-			return false;
 		} else {
 			$this.data('clicked', true);
 			setTimeout(function() {
