@@ -42,6 +42,7 @@
 #main-menu .menu-content > .menu-item:hover {
 	background-color: var(--top-menu-main-menu-item-background);
 	backdrop-filter: blur(10px);
+	content:"";
 }
 
 #main-menu .menu-content > .menu-item .menu-item:hover {
