@@ -41,9 +41,11 @@ $(function () {
 			}, 500);
 		}
 	}).on('contextmenu','*', function(event){
-		event.stopPropagation();
+		/*event.stopPropagation();
 		event.preventDefault();
 		return false;
+
+		 */
 	})
 	WS.ui.init();
 	//WS.user.init();
