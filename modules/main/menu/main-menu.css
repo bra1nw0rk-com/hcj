@@ -41,8 +41,7 @@
 
 #main-menu .menu-content > .menu-item:hover {
 	background-color: var(--top-menu-main-menu-item-background);
-	backdrop-filter: blur(10px);
-	content:"";
+
 }
 
 #main-menu .menu-content > .menu-item .menu-item:hover {
@@ -83,6 +82,12 @@
 	min-width: 160px;
 	z-index: 1;
 
+
+}
+#main-menu .menu-content .menu-item.dropdown .dropdown-content:after{
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(10px);
+	content:"";
 }
 
 #main-menu .menu-content .menu-item.hide {
