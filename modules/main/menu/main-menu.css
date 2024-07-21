@@ -139,6 +139,7 @@
 		width: 100%;
 		top: 0;
 		left: 0;
+		border-radius: 10px;
 	}
 	#main-menu .menu-content > .menu-item .menu-item {
 		padding: 5px;
