@@ -32,6 +32,16 @@
 		overflow-x: hidden;
 		border-right: 1px solid var(--border-color);
 	}
+	#main-menu .menu-content::before {
+		-webkit-backdrop-filter: blur(4x);
+		backdrop-filter: blur(4px);
+		content:"";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
 
 	#main-menu .menu-content.show,
 	.show {
