@@ -51,11 +51,12 @@
 
 	#main-menu .menu-content .menu-logo {
 		position: relative;
-		background-size: 64px auto;
+		background-size: 23px auto;
 		height: 22px;
 		width: 64px;
 		margin: 0.5em 50%;
 		transform: translateX(-50%);
+		background-image: var(--content-bg-logo);
 	}
 
 	#main-menu .menu-content .menu-item {

@@ -24,7 +24,7 @@
 #main-menu .menu-content .menu-logo {
 	display: inline-block;
 	vertical-align: middle;
-	background-image: var(--menu-logo);
+
 	background-repeat: no-repeat;
 	cursor: pointer;
 	opacity: 0.5;
@@ -130,6 +130,7 @@
 		background-position: center;
 		height: 14px;
 		width: 18px;
+		background-image: var(--menu-logo);
 	}
 	#main-menu .menu-content .menu-item.dropdown:hover > .dropdown-content {
 		display: block;
