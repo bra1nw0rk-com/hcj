@@ -51,9 +51,9 @@
 
 	#main-menu .menu-content .menu-logo {
 		position: relative;
-		background-size: 23px auto;
+		background-size: 150px auto;
 		height: 22px;
-		width: 64px;
+		width: 150px;
 		margin: 0.5em 50%;
 		transform: translateX(-50%);
 		background-image: var(--content-bg-logo);
