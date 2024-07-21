@@ -33,7 +33,7 @@
 		border-right: 1px solid var(--border-color);
 	}
 	#main-menu .menu-content::before {
-		-webkit-backdrop-filter: blur(4x);
+		-webkit-backdrop-filter: blur(4px);
 		backdrop-filter: blur(4px);
 		content:"";
 		position: absolute;

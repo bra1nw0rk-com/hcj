@@ -85,7 +85,7 @@
 
 }
 #main-menu .menu-content .menu-item.dropdown .dropdown-content::before{
-	-webkit-backdrop-filter: blur(4x);
+	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 	content:"";
 	position: absolute;
