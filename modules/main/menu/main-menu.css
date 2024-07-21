@@ -82,16 +82,7 @@
 	min-width: 160px;
 	z-index: 1;
 }
-#main-menu .menu-content .menu-item.dropdown .dropdown-content::before{
-	-webkit-backdrop-filter: blur(4px);
-	backdrop-filter: blur(4px);
-	content:"";
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-}
+
 
 #main-menu .menu-content .menu-item.hide {
 	display: none;
@@ -138,6 +129,16 @@
 		border: 1px solid var(--border-color);
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 		background-color: var(--bg1);
+	}
+	#main-menu .menu-content .menu-item.dropdown .dropdown-content::before{
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+		content:"";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
 	}
 	#main-menu .menu-content > .menu-item .menu-item {
 		padding: 5px;
