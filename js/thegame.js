@@ -90,6 +90,14 @@ if (WebGL.isWebGLAvailable()) {
         // Камера всегда смотрит на персонажа
         camera.lookAt(character.position);
 
+        // Обновление направления персонажа
+        const characterDirection = new THREE.Vector3();
+        camera.getWorldDirection(characterDirection);
+        characterDirection.y = 0; // Игнорируем вертикальную компоненты
+        characterDirection.normalize();
+        const angle = Math.atan2(characterDirection.z, characterDirection.x);
+        character.rotation.y = angle;
+
         controls.update(); // Обновление управления камерой
         renderer.render(scene, camera);
     }
