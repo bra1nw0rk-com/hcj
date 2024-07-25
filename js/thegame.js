@@ -106,16 +106,16 @@ function animate() {
     // Обновление камеры
     const direction = new THREE.Vector3();
     camera.getWorldDirection(direction);
+    direction.y = 0; // Убираем вертикальную составляющую
+    direction.normalize();
+
+    // Обновление позиции камеры
     camera.position.set(character.position.x - direction.x * initialCameraDistance, character.position.y + 5, character.position.z - direction.z * initialCameraDistance);
 
     // Поворот персонажа к направлению камеры
-    const cameraDirection = new THREE.Vector3();
-    camera.getWorldDirection(cameraDirection);
-    cameraDirection.y = 0; // Убираем вертикальную составляющую
-    cameraDirection.normalize();
-    character.lookAt(character.position.clone().add(cameraDirection));
+    character.lookAt(character.position.clone().add(direction));
 
-    // Обновление позиции текста счета
+    // Обновление позиции и ориентации текста счета
     if (scoreText) {
         scoreText.position.set(character.position.x, character.position.y + 2, character.position.z);
         scoreText.lookAt(camera.position); // Обеспечиваем, чтобы текст всегда был направлен к камере
