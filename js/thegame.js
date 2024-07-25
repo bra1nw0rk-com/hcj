@@ -92,6 +92,10 @@ function animate() {
     updateCubes(character, scene, cubes, () => {
         score++;
         updateScoreText(score);
+        // Создание нового кубика при сборе
+        const randomX = Math.random() * 90 - 45;
+        const randomZ = Math.random() * 90 - 45;
+        createCube(scene, new THREE.Vector3(randomX, 0.5, randomZ));
     });
 
     // Обновление OrbitControls
@@ -104,7 +108,11 @@ function animate() {
     camera.position.set(character.position.x - direction.x * initialCameraDistance, character.position.y + 5, character.position.z - direction.z * initialCameraDistance);
 
     // Поворот персонажа к направлению камеры
-    character.lookAt(character.position.clone().add(direction));
+    const cameraDirection = new THREE.Vector3();
+    camera.getWorldDirection(cameraDirection);
+    cameraDirection.y = 0; // Убираем вертикальную составляющую
+    cameraDirection.normalize();
+    character.lookAt(character.position.clone().add(cameraDirection));
 
     renderer.render(scene, camera);
 }
@@ -117,22 +125,31 @@ initScoreText(scene);
 // Обработка ввода для движения персонажа
 window.addEventListener('keydown', (event) => {
     const speed = 0.5;
+    const direction = new THREE.Vector3();
+    camera.getWorldDirection(direction);
+    direction.y = 0; // Убираем вертикальную составляющую
+    direction.normalize();
+
     switch (event.key) {
         case 'w':
         case 'ArrowUp':
-            character.position.z -= speed;
+            character.position.add(direction.clone().multiplyScalar(speed));
             break;
         case 's':
         case 'ArrowDown':
-            character.position.z += speed;
+            character.position.add(direction.clone().multiplyScalar(-speed));
             break;
         case 'a':
         case 'ArrowLeft':
-            character.position.x -= speed;
+            const leftDirection = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), direction);
+            leftDirection.normalize();
+            character.position.add(leftDirection.multiplyScalar(-speed));
             break;
         case 'd':
         case 'ArrowRight':
-            character.position.x += speed;
+            const rightDirection = new THREE.Vector3().crossVectors(direction, new THREE.Vector3(0, 1, 0));
+            rightDirection.normalize();
+            character.position.add(rightDirection.multiplyScalar(speed));
             break;
         case ' ':
             if (!isJumping) {
@@ -143,8 +160,6 @@ window.addEventListener('keydown', (event) => {
     }
 
     // Обновление камеры
-    const direction = new THREE.Vector3();
-    camera.getWorldDirection(direction);
     camera.position.set(character.position.x - direction.x * initialCameraDistance, character.position.y + 5, character.position.z - direction.z * initialCameraDistance);
     controls.update();
 });
@@ -162,23 +177,26 @@ window.addEventListener('touchmove', (event) => {
         const deltaY = touchEndPosition.y - touchStartPosition.y;
 
         const speed = 0.1;
+        const direction = new THREE.Vector3();
+        camera.getWorldDirection(direction);
+        direction.y = 0; // Убираем вертикальную составляющую
+        direction.normalize();
+
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             if (deltaX > 0) {
-                character.position.x += speed;
+                character.position.add(direction.clone().multiplyScalar(speed));
             } else {
-                character.position.x -= speed;
+                character.position.add(direction.clone().multiplyScalar(-speed));
             }
         } else {
             if (deltaY > 0) {
-                character.position.z += speed;
+                character.position.add(direction.clone().multiplyScalar(speed));
             } else {
-                character.position.z -= speed;
+                character.position.add(direction.clone().multiplyScalar(-speed));
             }
         }
 
         // Обновление камеры
-        const direction = new THREE.Vector3();
-        camera.getWorldDirection(direction);
         camera.position.set(character.position.x - direction.x * initialCameraDistance, character.position.y + 5, character.position.z - direction.z * initialCameraDistance);
         controls.update();
     }
