@@ -3,7 +3,7 @@ import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/exampl
 import { createCharacter } from '/js/lib/game/character.js';
 import { createCube, updateCubes, cubes } from '/js/lib/game/cube.js';
 import { createTree } from '/js/lib/game/tree.js';
-import { updateScoreText, initScoreText } from '/js/lib/game/ui.js';
+import { updateScoreText, initScoreText } from '/js/lib/game/ui.js'; // Убедитесь, что импортируется корректно
 
 // Создание сцены
 const scene = new THREE.Scene();
@@ -73,6 +73,9 @@ let isTouching = false;
 let touchStartPosition = new THREE.Vector2();
 let score = 0;
 
+// Инициализация текста счета
+initScoreText(scene);
+
 function animate() {
     requestAnimationFrame(animate);
 
@@ -116,8 +119,7 @@ function animate() {
     character.lookAt(character.position.clone().add(direction));
 
     // Обновление позиции и ориентации текста счета
-    const scoreText = scene.children.find(child => child.type === 'Mesh' && child.geometry instanceof TextGeometry);
-    if (scoreText) {
+    if (scoreText) { // Используем `scoreText` из `ui.js`
         scoreText.position.set(character.position.x, character.position.y + 3, character.position.z);
         scoreText.lookAt(camera.position); // Обеспечиваем, чтобы текст всегда был направлен к камере
     }
@@ -126,9 +128,6 @@ function animate() {
 }
 
 animate();
-
-// Инициализация текста счета
-initScoreText(scene);
 
 // Обработка ввода для движения персонажа
 window.addEventListener('keydown', (event) => {

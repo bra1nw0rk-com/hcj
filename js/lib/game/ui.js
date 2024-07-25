@@ -47,3 +47,6 @@ export function initScoreText(scene) {
         });
     }
 }
+
+// Экспортируем scoreText для использования в других модулях
+export { scoreText };
