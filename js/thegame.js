@@ -54,7 +54,7 @@ const tree = createTree();
 tree.position.set(10, 0, 10);
 scene.add(tree);
 
-// Создание кубиков
+// Создание начальных кубиков
 createCube(scene, new THREE.Vector3(5, 0.5, 5));
 createCube(scene, new THREE.Vector3(-5, 0.5, -5));
 createCube(scene, new THREE.Vector3(7, 0.5, -7));

@@ -12,6 +12,13 @@ export function createCube(scene, position) {
     cubes.push(cube);
 }
 
+// Функция для генерации случайной позиции
+function getRandomPosition() {
+    const x = Math.floor(Math.random() * 100) - 50; // диапазон от -50 до 50
+    const z = Math.floor(Math.random() * 100) - 50; // диапазон от -50 до 50
+    return new THREE.Vector3(x, 0.5, z);
+}
+
 // Функция для обновления кубиков и проверки на столкновение
 export function updateCubes(character, scene, cubes, onCollect) {
     const characterBox = new THREE.Box3().setFromObject(character);
@@ -19,8 +26,15 @@ export function updateCubes(character, scene, cubes, onCollect) {
     cubes.forEach((cube, index) => {
         const cubeBox = new THREE.Box3().setFromObject(cube);
         if (characterBox.intersectsBox(cubeBox)) {
+            // Удалить кубик со сцены и из массива
             scene.remove(cube);
             cubes.splice(index, 1);
+
+            // Создать новый кубик в случайном месте
+            const newPosition = getRandomPosition();
+            createCube(scene, newPosition);
+
+            // Вызвать callback
             onCollect();
         }
     });
