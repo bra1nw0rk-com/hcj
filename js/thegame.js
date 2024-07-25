@@ -102,6 +102,8 @@ if (WebGL.isWebGLAvailable()) {
     // Основной цикл
     let velocityY = 0;
     let isJumping = false;
+    let isTouching = false;
+    let touchStartPosition = new THREE.Vector2();
 
     function animate() {
         requestAnimationFrame(animate);
@@ -190,45 +192,68 @@ if (WebGL.isWebGLAvailable()) {
         controls.update();
     });
 
-    // Обработка изменения размера окна
+    // Обработка жестов на тачскрине
+    window.addEventListener('touchstart', (event) => {
+        touchStartPosition.set(event.touches[0].clientX, event.touches[0].clientY);
+        isTouching = true;
+    });
+
+    window.addEventListener('touchend', () => {
+        isTouching = false;
+    });
+
+    window.addEventListener('touchmove', (event) => {
+        if (!isTouching) return;
+
+        const touchEndPosition = new THREE.Vector2(event.touches[0].clientX, event.touches[0].clientY);
+        const deltaY = touchEndPosition.y - touchStartPosition.y;
+        const deltaX = touchEndPosition.x - touchStartPosition.x;
+
+        const speed = 0.2;
+
+        // Движение вперед и назад по вертикали
+        if (Math.abs(deltaY) > Math.abs(deltaX)) {
+            if (deltaY < 0) {
+                character.position.addScaledVector(getCameraDirection(), speed); // Движение вперед
+            } else {
+                character.position.addScaledVector(getCameraDirection().negate(), speed); // Движение назад
+            }
+        }
+
+        // Движение влево и вправо по горизонтали
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            const leftDirection = new THREE.Vector3(-getCameraDirection().z, 0, getCameraDirection().x);
+            const rightDirection = new THREE.Vector3(getCameraDirection().z, 0, -getCameraDirection().x);
+
+            if (deltaX < 0) {
+                character.position.addScaledVector(leftDirection, speed); // Движение влево
+            } else {
+                character.position.addScaledVector(rightDirection, speed); // Движение вправо
+            }
+        }
+
+        // Обновляем начальную позицию касания
+        touchStartPosition.copy(touchEndPosition);
+
+        // Проверка на столкновения со стенами
+        if (character.position.x < -49) character.position.x = -49;
+        if (character.position.x > 49) character.position.x = 49;
+        if (character.position.z < -49) character.position.z = -49;
+        if (character.position.z > 49) character.position.z = 49;
+
+        // Синхронизация камеры с движением персонажа
+        controls.target.set(character.position.x, character.position.y, character.position.z);
+        controls.update();
+    });
+
+    // Обработка изменения размера экрана
     function onResize() {
+        renderer.setSize(window.innerWidth, window.innerHeight);
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        controls.update(); // Обновление состояния управления после изменения размера окна
     }
 
     window.addEventListener('resize', onResize);
-
-    // Инициализация начального размера
-    onResize();
-
-    // Создание дерева
-    function createTree() {
-        const treeGroup = new THREE.Group();
-
-        // Создание ствола дерева
-        const trunkGeometry = new THREE.CylinderGeometry(0.5, 0.5, 5, 8);
-        const trunkMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513 });
-        const trunk = new THREE.Mesh(trunkGeometry, trunkMaterial);
-        trunk.position.y = 2.5;
-        treeGroup.add(trunk);
-
-        // Создание кроны дерева
-        const crownGeometry = new THREE.SphereGeometry(3);
-        const crownMaterial = new THREE.MeshBasicMaterial({ color: 0x228B22 });
-        const crown = new THREE.Mesh(crownGeometry, crownMaterial);
-        crown.position.y = 6;
-        treeGroup.add(crown);
-
-        return treeGroup;
-    }
-
-    // Добавление дерева на карту
-    const tree = createTree();
-    tree.position.set(10, 0, 10); // Позиция дерева на карте
-    scene.add(tree);
-
 } else {
     const warning = WebGL.getWebGLErrorMessage();
     document.getElementById('container').appendChild(warning);
