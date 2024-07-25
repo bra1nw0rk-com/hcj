@@ -126,6 +126,9 @@ function animate() {
 
 animate();
 
+// Инициализация текста счета
+initScoreText(scene);
+
 // Обработка ввода для движения персонажа
 window.addEventListener('keydown', (event) => {
     const speed = 0.5;
