@@ -1,6 +1,7 @@
 import * as THREE from 'three';
+import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/loaders/FontLoader.js';
 
-const fontLoader = new THREE.FontLoader();
+const fontLoader = new FontLoader();  // Создаем экземпляр FontLoader
 let scoreText;
 let font;
 
