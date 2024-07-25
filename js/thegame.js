@@ -50,6 +50,11 @@ if (WebGL.isWebGLAvailable()) {
     backWall.position.set(0, 5, -50);
     scene.add(backWall);
 
+    // Инициализация OrbitControls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(character.position.x, character.position.y, character.position.z);
+    controls.update();
+
     // Основной цикл
     let velocityY = 0;
     let isJumping = false;
@@ -75,11 +80,6 @@ if (WebGL.isWebGLAvailable()) {
     }
 
     animate();
-
-    // Управление камерой
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.target.set(character.position.x, character.position.y, character.position.z);
-    controls.update();
 
     // Обработка ввода для движения персонажа
     window.addEventListener('keydown', (event) => {
