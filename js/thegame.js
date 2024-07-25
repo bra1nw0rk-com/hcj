@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import WebGL from 'three/addons/capabilities/WebGL.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 if (WebGL.isWebGLAvailable()) {
     // Создание сцены
