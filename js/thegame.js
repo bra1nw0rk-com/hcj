@@ -1,24 +1,25 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'; // Исправленный импорт
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'; // Исправленный импорт
-import WebGL from 'three/examples/jsm/capabilities/WebGL.js';
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
 // Проверка наличия WebGL
-if (WebGL.isWebGLAvailable()) {
+if (WEBGL.isWebGLAvailable()) {
     // Создание сцены
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x87ceeb); // Голубое небо
 
     // Создание камеры
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const initialCameraDistance = 10;
+    camera.position.set(0, 5, initialCameraDistance);
 
     // Создание рендера
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    // Материалы для персонажа
+    // Создание материалов для персонажа
     const frontMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
     const backMaterial = new THREE.MeshBasicMaterial({ color: 0x404040 });
     const sideMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513 });
@@ -160,11 +161,6 @@ if (WebGL.isWebGLAvailable()) {
     controls.dampingFactor = 0.25;
     controls.target.set(character.position.x, character.position.y, character.position.z);
 
-    // Установите начальную позицию камеры
-    const initialCameraDistance = 10;
-    camera.position.set(character.position.x, character.position.y + 5, character.position.z + initialCameraDistance);
-    controls.update(); // Обновление состояния управления после установки начальной позиции
-
     // Основной цикл
     let velocityY = 0;
     let isJumping = false;
@@ -187,60 +183,41 @@ if (WebGL.isWebGLAvailable()) {
             }
         }
 
-        // Обновление позиции камеры, чтобы поддерживать фиксированное расстояние от персонажа
-        const angle = controls.getAzimuthalAngle();
-        camera.position.x = character.position.x;
-        camera.position.z = character.position.z + initialCameraDistance;
-        camera.position.y = character.position.y + 5; // Камера всегда над персонажем
-
-        // Камера всегда смотрит на персонажа
-        camera.lookAt(character.position);
-
-        // Камера всегда центрирована на персонаже
-        controls.target.set(character.position.x, character.position.y, character.position.z);
-        controls.update(); // Обновление состояния управления после установки новой позиции камеры
-
-        // Проверка на столкновения со стенами
-        if (character.position.x < -49) character.position.x = -49;
-        if (character.position.x > 49) character.position.x = 49;
-        if (character.position.z < -49) character.position.z = -49;
-        if (character.position.z > 49) character.position.z = 49;
-
-        // Проверка на столкновения с кубиками
-        cubes.forEach(cube => {
+        // Обработка столкновений с кубиками
+        cubes.forEach((cube, index) => {
             if (character.position.distanceTo(cube.position) < 1) {
                 scene.remove(cube);
-                cubes.splice(cubes.indexOf(cube), 1);
+                cubes.splice(index, 1);
                 score++;
                 updateScoreText();
             }
         });
 
+        controls.update(); // Обновление OrbitControls
         renderer.render(scene, camera);
     }
 
     animate();
 
-    // Обработка ввода для движения камеры и персонажа
+    // Обработка ввода для движения персонажа
     window.addEventListener('keydown', (event) => {
         const speed = 0.5;
-
         switch (event.key) {
             case 'w':
             case 'ArrowUp':
-                character.position.addScaledVector(getCameraDirection(), speed);
+                character.position.z -= speed;
                 break;
             case 's':
             case 'ArrowDown':
-                character.position.addScaledVector(getCameraDirection().negate(), speed);
+                character.position.z += speed;
                 break;
             case 'a':
             case 'ArrowLeft':
-                character.position.addScaledVector(new THREE.Vector3(-getCameraDirection().z, 0, getCameraDirection().x), speed);
+                character.position.x -= speed;
                 break;
             case 'd':
             case 'ArrowRight':
-                character.position.addScaledVector(new THREE.Vector3(getCameraDirection().z, 0, -getCameraDirection().x), speed);
+                character.position.x += speed;
                 break;
             case ' ':
                 if (!isJumping) {
@@ -250,43 +227,45 @@ if (WebGL.isWebGLAvailable()) {
                 break;
         }
 
-        // Синхронизация камеры с движением персонажа
-        controls.target.set(character.position.x, character.position.y, character.position.z);
+        // Обновление камеры
+        const direction = new THREE.Vector3();
+        camera.getWorldDirection(direction);
+        camera.position.set(character.position.x - direction.x * initialCameraDistance, character.position.y + 5, character.position.z - direction.z * initialCameraDistance);
         controls.update();
     });
 
     // Обработка жестов на тачскрине
     window.addEventListener('touchstart', (event) => {
-        isTouching = true;
         touchStartPosition.set(event.touches[0].clientX, event.touches[0].clientY);
+        isTouching = true;
     });
 
     window.addEventListener('touchmove', (event) => {
         if (isTouching) {
             const touchEndPosition = new THREE.Vector2(event.touches[0].clientX, event.touches[0].clientY);
-            const delta = new THREE.Vector2().subVectors(touchEndPosition, touchStartPosition);
+            const deltaX = touchEndPosition.x - touchStartPosition.x;
+            const deltaY = touchEndPosition.y - touchStartPosition.y;
+
             const speed = 0.1;
-
-            if (Math.abs(delta.y) > Math.abs(delta.x)) {
-                if (delta.y < 0) {
-                    character.position.addScaledVector(getCameraDirection(), speed); // Движение вперед
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                if (deltaX > 0) {
+                    character.position.x += speed;
                 } else {
-                    character.position.addScaledVector(getCameraDirection().negate(), speed); // Движение назад
+                    character.position.x -= speed;
+                }
+            } else {
+                if (deltaY > 0) {
+                    character.position.z += speed;
+                } else {
+                    character.position.z -= speed;
                 }
             }
 
-            if (Math.abs(delta.x) > Math.abs(delta.y)) {
-                const leftDirection = new THREE.Vector3(-getCameraDirection().z, 0, getCameraDirection().x);
-                const rightDirection = new THREE.Vector3(getCameraDirection().z, 0, -getCameraDirection().x);
-
-                if (delta.x < 0) {
-                    character.position.addScaledVector(leftDirection, speed); // Движение влево
-                } else {
-                    character.position.addScaledVector(rightDirection, speed); // Движение вправо
-                }
-            }
-
-            touchStartPosition.copy(touchEndPosition);
+            // Обновление камеры
+            const direction = new THREE.Vector3();
+            camera.getWorldDirection(direction);
+            camera.position.set(character.position.x - direction.x * initialCameraDistance, character.position.y + 5, character.position.z - direction.z * initialCameraDistance);
+            controls.update();
         }
     });
 
@@ -295,14 +274,11 @@ if (WebGL.isWebGLAvailable()) {
     });
 
     // Обработка изменения размера экрана
-    function onResize() {
-        renderer.setSize(window.innerWidth, window.innerHeight);
+    window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
-    }
-
-    window.addEventListener('resize', onResize);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
 } else {
-    const warning = WebGL.getWebGLErrorMessage();
-    document.getElementById('container').appendChild(warning);
+    document.body.appendChild(WEBGL.getWebGLErrorMessage());
 }
