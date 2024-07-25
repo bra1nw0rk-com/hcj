@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import WebGL from 'three/addons/capabilities/WebGL.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js'; // Для отображения текста
 
 if (WebGL.isWebGLAvailable()) {
     // Создание сцены
@@ -15,7 +16,7 @@ if (WebGL.isWebGLAvailable()) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    // Создание материалов для персонажа
+    // Материалы для персонажа
     const frontMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
     const backMaterial = new THREE.MeshBasicMaterial({ color: 0x404040 });
     const sideMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513 });
@@ -81,10 +82,73 @@ if (WebGL.isWebGLAvailable()) {
     backWall.position.set(0, 5, -50);
     scene.add(backWall);
 
-    // Создание группы для вращения мира
-    const worldGroup = new THREE.Group();
-    scene.add(worldGroup);
-    worldGroup.add(character); // Персонаж добавлен в мир, чтобы вращаться вместе с ним
+    // Создание дерева
+    function createTree() {
+        const treeGroup = new THREE.Group();
+
+        // Создание ствола дерева
+        const trunkGeometry = new THREE.CylinderGeometry(0.5, 0.5, 5);
+        const trunkMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513 });
+        const trunk = new THREE.Mesh(trunkGeometry, trunkMaterial);
+        trunk.position.y = 2.5;
+        treeGroup.add(trunk);
+
+        // Создание кроны дерева
+        const crownGeometry = new THREE.SphereGeometry(3);
+        const crownMaterial = new THREE.MeshBasicMaterial({ color: 0x228B22 });
+        const crown = new THREE.Mesh(crownGeometry, crownMaterial);
+        crown.position.y = 6;
+        treeGroup.add(crown);
+
+        return treeGroup;
+    }
+
+    // Добавление дерева на карту
+    const tree = createTree();
+    tree.position.set(10, 0, 10); // Позиция дерева на карте
+    scene.add(tree);
+
+    // Создание кубиков для сбора
+    const cubes = [];
+    const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff });
+    const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+
+    function createCube(position) {
+        const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        cube.position.copy(position);
+        scene.add(cube);
+        cubes.push(cube);
+    }
+
+    // Размещение нескольких кубиков
+    createCube(new THREE.Vector3(5, 0.5, 5));
+    createCube(new THREE.Vector3(-5, 0.5, -5));
+    createCube(new THREE.Vector3(7, 0.5, -7));
+
+    // Создание текстовой метки для очков
+    const loader = new THREE.FontLoader();
+    let score = 0;
+    let scoreText;
+
+    function updateScoreText() {
+        if (scoreText) {
+            scene.remove(scoreText);
+        }
+
+        loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
+            const textGeometry = new TextGeometry(`Score: ${score}`, {
+                font: font,
+                size: 1,
+                height: 0.1
+            });
+            const textMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+            scoreText = new THREE.Mesh(textGeometry, textMaterial);
+            scoreText.position.set(character.position.x - 2, character.position.y + 4, character.position.z);
+            scene.add(scoreText);
+        });
+    }
+
+    updateScoreText();
 
     // Инициализация OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -96,7 +160,7 @@ if (WebGL.isWebGLAvailable()) {
 
     // Установите начальную позицию камеры
     const initialCameraDistance = 10;
-    camera.position.set(character.position.x + initialCameraDistance, character.position.y + 5, character.position.z + initialCameraDistance);
+    camera.position.set(character.position.x, character.position.y + 5, character.position.z + initialCameraDistance);
     controls.update(); // Обновление состояния управления после установки начальной позиции
 
     // Основной цикл
@@ -122,56 +186,59 @@ if (WebGL.isWebGLAvailable()) {
         }
 
         // Обновление позиции камеры, чтобы поддерживать фиксированное расстояние от персонажа
-        camera.position.x = character.position.x + initialCameraDistance * Math.sin(controls.getAzimuthalAngle());
-        camera.position.z = character.position.z + initialCameraDistance * Math.cos(controls.getAzimuthalAngle());
+        const angle = controls.getAzimuthalAngle();
+        camera.position.x = character.position.x;
+        camera.position.z = character.position.z + initialCameraDistance;
         camera.position.y = character.position.y + 5; // Камера всегда над персонажем
 
         // Камера всегда смотрит на персонажа
         camera.lookAt(character.position);
 
         // Обновление положения мира в зависимости от угла камеры
-        worldGroup.rotation.y = -controls.getAzimuthalAngle(); // Поворачиваем мир в противоположную сторону камеры
+        controls.target.set(character.position.x, character.position.y, character.position.z);
+        controls.update(); // Обновление состояния управления после установки новой позиции камеры
 
-        controls.update(); // Обновление управления камерой
+        // Проверка на столкновения со стенами
+        if (character.position.x < -49) character.position.x = -49;
+        if (character.position.x > 49) character.position.x = 49;
+        if (character.position.z < -49) character.position.z = -49;
+        if (character.position.z > 49) character.position.z = 49;
+
+        // Проверка столкновений с кубиками
+        cubes.forEach(cube => {
+            if (character.position.distanceTo(cube.position) < 1) {
+                scene.remove(cube);
+                cubes.splice(cubes.indexOf(cube), 1);
+                score++;
+                updateScoreText();
+            }
+        });
+
         renderer.render(scene, camera);
     }
 
     animate();
 
-    // Функция для получения направления камеры
-    function getCameraDirection() {
-        const direction = new THREE.Vector3();
-        camera.getWorldDirection(direction);
-        direction.y = 0; // Игнорируем вертикальную компоненты
-        direction.normalize(); // Нормализуем направление
-        return direction;
-    }
-
-    // Обработка ввода для движения персонажа
+    // Обработка ввода для движения камеры и персонажа
     window.addEventListener('keydown', (event) => {
         const speed = 0.5;
-        const direction = getCameraDirection(); // Получаем направление камеры
 
         switch (event.key) {
             case 'w':
             case 'ArrowUp':
-                character.position.addScaledVector(direction, speed); // Движение вперед
+                character.position.addScaledVector(getCameraDirection(), speed);
                 break;
             case 's':
             case 'ArrowDown':
-                character.position.addScaledVector(direction.negate(), speed); // Движение назад
+                character.position.addScaledVector(getCameraDirection().negate(), speed);
                 break;
             case 'a':
             case 'ArrowLeft':
-                // Поворот на 90 градусов влево от направления камеры
-                const leftDirection = new THREE.Vector3(-direction.z, 0, direction.x);
-                character.position.addScaledVector(leftDirection, speed);
+                character.position.addScaledVector(new THREE.Vector3(-getCameraDirection().z, 0, getCameraDirection().x), speed);
                 break;
             case 'd':
             case 'ArrowRight':
-                // Поворот на 90 градусов вправо от направления камеры
-                const rightDirection = new THREE.Vector3(direction.z, 0, -direction.x);
-                character.position.addScaledVector(rightDirection, speed);
+                character.position.addScaledVector(new THREE.Vector3(getCameraDirection().z, 0, -getCameraDirection().x), speed);
                 break;
             case ' ':
                 if (!isJumping) {
@@ -181,12 +248,6 @@ if (WebGL.isWebGLAvailable()) {
                 break;
         }
 
-        // Проверка на столкновения со стенами
-        if (character.position.x < -49) character.position.x = -49;
-        if (character.position.x > 49) character.position.x = 49;
-        if (character.position.z < -49) character.position.z = -49;
-        if (character.position.z > 49) character.position.z = 49;
-
         // Синхронизация камеры с движением персонажа
         controls.target.set(character.position.x, character.position.y, character.position.z);
         controls.update();
@@ -194,56 +255,41 @@ if (WebGL.isWebGLAvailable()) {
 
     // Обработка жестов на тачскрине
     window.addEventListener('touchstart', (event) => {
-        touchStartPosition.set(event.touches[0].clientX, event.touches[0].clientY);
         isTouching = true;
+        touchStartPosition.set(event.touches[0].clientX, event.touches[0].clientY);
+    });
+
+    window.addEventListener('touchmove', (event) => {
+        if (isTouching) {
+            const touchEndPosition = new THREE.Vector2(event.touches[0].clientX, event.touches[0].clientY);
+            const delta = new THREE.Vector2().subVectors(touchEndPosition, touchStartPosition);
+            const speed = 0.1;
+
+            if (Math.abs(delta.y) > Math.abs(delta.x)) {
+                if (delta.y < 0) {
+                    character.position.addScaledVector(getCameraDirection(), speed); // Движение вперед
+                } else {
+                    character.position.addScaledVector(getCameraDirection().negate(), speed); // Движение назад
+                }
+            }
+
+            if (Math.abs(delta.x) > Math.abs(delta.y)) {
+                const leftDirection = new THREE.Vector3(-getCameraDirection().z, 0, getCameraDirection().x);
+                const rightDirection = new THREE.Vector3(getCameraDirection().z, 0, -getCameraDirection().x);
+
+                if (delta.x < 0) {
+                    character.position.addScaledVector(leftDirection, speed); // Движение влево
+                } else {
+                    character.position.addScaledVector(rightDirection, speed); // Движение вправо
+                }
+            }
+
+            touchStartPosition.copy(touchEndPosition);
+        }
     });
 
     window.addEventListener('touchend', () => {
         isTouching = false;
-    });
-
-    window.addEventListener('touchmove', (event) => {
-        if (!isTouching) return;
-
-        const touchEndPosition = new THREE.Vector2(event.touches[0].clientX, event.touches[0].clientY);
-        const deltaY = touchEndPosition.y - touchStartPosition.y;
-        const deltaX = touchEndPosition.x - touchStartPosition.x;
-
-        const speed = 0.2;
-
-        // Движение вперед и назад по вертикали
-        if (Math.abs(deltaY) > Math.abs(deltaX)) {
-            if (deltaY < 0) {
-                character.position.addScaledVector(getCameraDirection(), speed); // Движение вперед
-            } else {
-                character.position.addScaledVector(getCameraDirection().negate(), speed); // Движение назад
-            }
-        }
-
-        // Движение влево и вправо по горизонтали
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            const leftDirection = new THREE.Vector3(-getCameraDirection().z, 0, getCameraDirection().x);
-            const rightDirection = new THREE.Vector3(getCameraDirection().z, 0, -getCameraDirection().x);
-
-            if (deltaX < 0) {
-                character.position.addScaledVector(leftDirection, speed); // Движение влево
-            } else {
-                character.position.addScaledVector(rightDirection, speed); // Движение вправо
-            }
-        }
-
-        // Обновляем начальную позицию касания
-        touchStartPosition.copy(touchEndPosition);
-
-        // Проверка на столкновения со стенами
-        if (character.position.x < -49) character.position.x = -49;
-        if (character.position.x > 49) character.position.x = 49;
-        if (character.position.z < -49) character.position.z = -49;
-        if (character.position.z > 49) character.position.z = 49;
-
-        // Синхронизация камеры с движением персонажа
-        controls.target.set(character.position.x, character.position.y, character.position.z);
-        controls.update();
     });
 
     // Обработка изменения размера экрана
