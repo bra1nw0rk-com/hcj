@@ -215,7 +215,7 @@ if (WebGL.isWebGLAvailable()) {
         treeGroup.add(trunk);
 
         // Создание кроны дерева
-        const crownGeometry = new THREE.SphereGeometry(2, 16, 16);
+        const crownGeometry = new THREE.SphereGeometry(3);
         const crownMaterial = new THREE.MeshBasicMaterial({ color: 0x228B22 });
         const crown = new THREE.Mesh(crownGeometry, crownMaterial);
         crown.position.y = 6;
