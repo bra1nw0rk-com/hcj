@@ -75,34 +75,47 @@ if (WebGL.isWebGLAvailable()) {
             }
         }
 
-        controls.update(); // Обновление управления камерой
+        // Обновление управления камерой
+        controls.update();
         renderer.render(scene, camera);
     }
 
     animate();
 
+    // Функция для получения направления камеры
+    function getCameraDirection() {
+        const direction = new THREE.Vector3();
+        camera.getWorldDirection(direction);
+        direction.y = 0; // Игнорируем вертикальную компоненты
+        direction.normalize(); // Нормализуем направление
+        return direction;
+    }
+
     // Обработка ввода для движения персонажа
     window.addEventListener('keydown', (event) => {
         const speed = 0.5;
-        let newX = character.position.x;
-        let newZ = character.position.z;
+        const direction = getCameraDirection(); // Получаем направление камеры
 
         switch (event.key) {
             case 'w':
             case 'ArrowUp':
-                newZ -= speed;
+                character.position.addScaledVector(direction, speed); // Движение вперед
                 break;
             case 's':
             case 'ArrowDown':
-                newZ += speed;
+                character.position.addScaledVector(direction.negate(), speed); // Движение назад
                 break;
             case 'a':
             case 'ArrowLeft':
-                newX -= speed;
+                // Поворот на 90 градусов влево от направления камеры
+                const leftDirection = new THREE.Vector3(-direction.z, 0, direction.x);
+                character.position.addScaledVector(leftDirection, speed);
                 break;
             case 'd':
             case 'ArrowRight':
-                newX += speed;
+                // Поворот на 90 градусов вправо от направления камеры
+                const rightDirection = new THREE.Vector3(direction.z, 0, -direction.x);
+                character.position.addScaledVector(rightDirection, speed);
                 break;
             case ' ':
                 if (!isJumping) {
@@ -113,12 +126,10 @@ if (WebGL.isWebGLAvailable()) {
         }
 
         // Проверка на столкновения со стенами
-        if (newX > -49 && newX < 49) {
-            character.position.x = newX;
-        }
-        if (newZ > -49 && newZ < 49) {
-            character.position.z = newZ;
-        }
+        if (character.position.x < -49) character.position.x = -49;
+        if (character.position.x > 49) character.position.x = 49;
+        if (character.position.z < -49) character.position.z = -49;
+        if (character.position.z > 49) character.position.z = 49;
 
         // Синхронизация камеры с движением персонажа
         controls.target.set(character.position.x, character.position.y, character.position.z);
