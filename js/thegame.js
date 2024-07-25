@@ -60,6 +60,7 @@ if (WebGL.isWebGLAvailable()) {
     // Установите начальную позицию камеры
     const initialCameraDistance = 10;
     camera.position.set(character.position.x, character.position.y + 5, character.position.z + initialCameraDistance);
+    controls.update(); // Обновление состояния управления после установки начальной позиции
 
     // Основной цикл
     let velocityY = 0;
@@ -82,8 +83,8 @@ if (WebGL.isWebGLAvailable()) {
         }
 
         // Обновление позиции камеры, чтобы поддерживать фиксированное расстояние от персонажа
-        camera.position.x = character.position.x;
-        camera.position.z = character.position.z + initialCameraDistance;
+        camera.position.x = character.position.x + initialCameraDistance * Math.sin(controls.getAzimuthalAngle());
+        camera.position.z = character.position.z + initialCameraDistance * Math.cos(controls.getAzimuthalAngle());
         camera.position.y = character.position.y + 5; // Камера всегда над персонажем
 
         // Камера всегда смотрит на персонажа
@@ -154,6 +155,7 @@ if (WebGL.isWebGLAvailable()) {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
+        controls.update(); // Обновление состояния управления после изменения размера окна
     }
 
     window.addEventListener('resize', onResize);
