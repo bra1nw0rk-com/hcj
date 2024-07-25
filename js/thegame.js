@@ -3,7 +3,7 @@ import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/exampl
 import { createCharacter } from '/js/lib/game/character.js';
 import { createCube, updateCubes, cubes } from '/js/lib/game/cube.js';
 import { createTree } from '/js/lib/game/tree.js';
-import { updateScoreText, initScoreText, scoreText } from '/js/lib/game/ui.js';
+import { updateScoreText, initScoreText } from '/js/lib/game/ui.js';
 
 // Создание сцены
 const scene = new THREE.Scene();
@@ -116,6 +116,7 @@ function animate() {
     character.lookAt(character.position.clone().add(direction));
 
     // Обновление позиции и ориентации текста счета
+    const scoreText = scene.children.find(child => child.type === 'Mesh' && child.geometry instanceof TextGeometry);
     if (scoreText) {
         scoreText.position.set(character.position.x, character.position.y + 3, character.position.z);
         scoreText.lookAt(camera.position); // Обеспечиваем, чтобы текст всегда был направлен к камере
@@ -189,21 +190,17 @@ window.addEventListener('touchmove', (event) => {
         direction.y = 0; // Убираем вертикальную составляющую
         direction.normalize();
 
-        // Определяем вектор перемещения
-        const forward = direction.clone().multiplyScalar(speed);
-        const right = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), direction).normalize().multiplyScalar(speed);
-
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             if (deltaX > 0) {
-                character.position.add(right);
+                character.position.add(direction.clone().multiplyScalar(speed));
             } else {
-                character.position.add(right.negate());
+                character.position.add(direction.clone().negate().multiplyScalar(speed));
             }
         } else {
             if (deltaY > 0) {
-                character.position.add(forward);
+                character.position.add(new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), direction).normalize().multiplyScalar(speed));
             } else {
-                character.position.add(forward.negate());
+                character.position.add(new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), direction).negate().normalize().multiplyScalar(speed));
             }
         }
 
