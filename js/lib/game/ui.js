@@ -6,7 +6,7 @@ const fontLoader = new FontLoader();
 let scoreText;
 let font;
 
-// Функция для создания текста
+// Функция для создания текста счета
 function createScoreText(font, scene) {
     const geometry = new TextGeometry('Score: 0', {
         font: font,
@@ -23,7 +23,6 @@ function createScoreText(font, scene) {
 // Загрузка шрифта и создание начального текста
 fontLoader.load('https://cdn.jsdelivr.net/npm/three@0.167.0/examples/fonts/helvetiker_regular.typeface.json', (loadedFont) => {
     font = loadedFont;
-    // Убедитесь, что `scene` доступна
     // Передача `scene` должна быть выполнена при инициализации
 });
 
