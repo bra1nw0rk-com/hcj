@@ -1,8 +1,10 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import WebGL from 'three/addons/capabilities/WebGL.js';
-import { TextGeometry } from 'three/addons/geometries/TextGeometry.js'; // Для отображения текста
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'; // Исправленный импорт
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'; // Исправленный импорт
+import WebGL from 'three/examples/jsm/capabilities/WebGL.js';
 
+// Проверка наличия WebGL
 if (WebGL.isWebGLAvailable()) {
     // Создание сцены
     const scene = new THREE.Scene();
@@ -126,7 +128,7 @@ if (WebGL.isWebGLAvailable()) {
     createCube(new THREE.Vector3(7, 0.5, -7));
 
     // Создание текстовой метки для очков
-    const loader = new THREE.FontLoader();
+    const loader = new FontLoader();
     let score = 0;
     let scoreText;
 
@@ -194,7 +196,7 @@ if (WebGL.isWebGLAvailable()) {
         // Камера всегда смотрит на персонажа
         camera.lookAt(character.position);
 
-        // Обновление положения мира в зависимости от угла камеры
+        // Камера всегда центрирована на персонаже
         controls.target.set(character.position.x, character.position.y, character.position.z);
         controls.update(); // Обновление состояния управления после установки новой позиции камеры
 
@@ -204,7 +206,7 @@ if (WebGL.isWebGLAvailable()) {
         if (character.position.z < -49) character.position.z = -49;
         if (character.position.z > 49) character.position.z = 49;
 
-        // Проверка столкновений с кубиками
+        // Проверка на столкновения с кубиками
         cubes.forEach(cube => {
             if (character.position.distanceTo(cube.position) < 1) {
                 scene.remove(cube);
