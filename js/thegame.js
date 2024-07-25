@@ -3,7 +3,7 @@ import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/exampl
 import { createCharacter } from '/js/lib/game/character.js';
 import { createCube, updateCubes, cubes } from '/js/lib/game/cube.js';
 import { createTree } from '/js/lib/game/tree.js';
-import { updateScoreText, initScoreText } from '/js/lib/game/ui.js';
+import { updateScoreText, initScoreText, scoreText } from '/js/lib/game/ui.js';
 
 // Создание сцены
 const scene = new THREE.Scene();
@@ -92,6 +92,7 @@ function animate() {
     updateCubes(character, scene, cubes, () => {
         score++;
         updateScoreText(score);
+
         // Создание нового кубика при сборе
         const randomX = Math.random() * 90 - 45;
         const randomZ = Math.random() * 90 - 45;
@@ -113,6 +114,12 @@ function animate() {
     cameraDirection.y = 0; // Убираем вертикальную составляющую
     cameraDirection.normalize();
     character.lookAt(character.position.clone().add(cameraDirection));
+
+    // Обновление позиции текста счета
+    if (scoreText) {
+        scoreText.position.set(character.position.x, character.position.y + 2, character.position.z);
+        scoreText.lookAt(camera.position); // Обеспечиваем, чтобы текст всегда был направлен к камере
+    }
 
     renderer.render(scene, camera);
 }

@@ -3,7 +3,7 @@ import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/examples/
 import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/geometries/TextGeometry.js';
 
 const fontLoader = new FontLoader();
-let scoreText;
+export let scoreText; // Экспортируем scoreText
 let font;
 
 // Функция для создания текста счета
@@ -16,7 +16,7 @@ function createScoreText(font, scene) {
 
     const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
     scoreText = new THREE.Mesh(geometry, material);
-    scoreText.position.set(-10, 8, 0);
+    scoreText.position.set(0, 2, 0); // Начальная позиция над персонажем
     scene.add(scoreText);
 }
 
