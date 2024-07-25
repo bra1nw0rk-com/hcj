@@ -3,7 +3,7 @@ import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/exampl
 import { createCharacter } from '/js/lib/game/character.js';
 import { createCube, updateCubes, cubes } from '/js/lib/game/cube.js';
 import { createTree } from '/js/lib/game/tree.js';
-import { updateScoreText, initScoreText } from '/js/lib/game/ui.js'; // Убедитесь, что импортируется корректно
+import { updateScoreText, initScoreText, scoreText } from '/js/lib/game/ui.js'; // Убедитесь, что `scoreText` импортирован
 
 // Создание сцены
 const scene = new THREE.Scene();
@@ -72,9 +72,6 @@ let isJumping = false;
 let isTouching = false;
 let touchStartPosition = new THREE.Vector2();
 let score = 0;
-
-// Инициализация текста счета
-initScoreText(scene);
 
 function animate() {
     requestAnimationFrame(animate);
