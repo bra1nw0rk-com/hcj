@@ -103,6 +103,9 @@ function animate() {
     camera.getWorldDirection(direction);
     camera.position.set(character.position.x - direction.x * initialCameraDistance, character.position.y + 5, character.position.z - direction.z * initialCameraDistance);
 
+    // Поворот персонажа к направлению камеры
+    character.lookAt(character.position.clone().add(direction));
+
     renderer.render(scene, camera);
 }
 
