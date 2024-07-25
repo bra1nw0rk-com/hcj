@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
@@ -69,30 +70,39 @@ if (WebGL.isWebGLAvailable()) {
             }
         }
 
+        controls.update(); // Обновление управления камерой
         renderer.render(scene, camera);
     }
 
     animate();
 
-    // Обработка ввода для движения камеры
+    // Управление камерой
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(character.position.x, character.position.y, character.position.z);
+    controls.update();
+
+    // Обработка ввода для движения персонажа
     window.addEventListener('keydown', (event) => {
         const speed = 0.5;
+        let newX = character.position.x;
+        let newZ = character.position.z;
+
         switch (event.key) {
             case 'w':
             case 'ArrowUp':
-                character.position.z -= speed;
+                newZ -= speed;
                 break;
             case 's':
             case 'ArrowDown':
-                character.position.z += speed;
+                newZ += speed;
                 break;
             case 'a':
             case 'ArrowLeft':
-                character.position.x -= speed;
+                newX -= speed;
                 break;
             case 'd':
             case 'ArrowRight':
-                character.position.x += speed;
+                newX += speed;
                 break;
             case ' ':
                 if (!isJumping) {
@@ -102,44 +112,17 @@ if (WebGL.isWebGLAvailable()) {
                 break;
         }
 
-        // Синхронизация камеры с движением персонажа
-        camera.position.x = character.position.x;
-        camera.position.z = character.position.z + 10;
-    });
-
-    // Обработка жестов на тачскрине
-    let touchStartX = 0;
-    let touchStartY = 0;
-
-    window.addEventListener('touchstart', (event) => {
-        touchStartX = event.touches[0].clientX;
-        touchStartY = event.touches[0].clientY;
-    });
-
-    window.addEventListener('touchmove', (event) => {
-        const touchEndX = event.touches[0].clientX;
-        const touchEndY = event.touches[0].clientY;
-
-        const deltaX = touchEndX - touchStartX;
-        const deltaY = touchEndY - touchStartY;
-
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            if (deltaX > 0) {
-                character.position.x += 0.1; // Движение вправо
-            } else {
-                character.position.x -= 0.1; // Движение влево
-            }
-        } else {
-            if (deltaY > 0) {
-                character.position.z += 0.1; // Движение назад
-            } else {
-                character.position.z -= 0.1; // Движение вперед
-            }
+        // Проверка на столкновения со стенами
+        if (newX > -49 && newX < 49) {
+            character.position.x = newX;
+        }
+        if (newZ > -49 && newZ < 49) {
+            character.position.z = newZ;
         }
 
         // Синхронизация камеры с движением персонажа
-        camera.position.x = character.position.x;
-        camera.position.z = character.position.z + 10;
+        controls.target.set(character.position.x, character.position.y, character.position.z);
+        controls.update();
     });
 
     // Обработка изменения размера окна
