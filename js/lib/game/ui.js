@@ -24,7 +24,7 @@ function createScoreText(font, scene) {
 // Загрузка шрифта и создание начального текста
 fontLoader.load('https://cdn.jsdelivr.net/npm/three@0.167.0/examples/fonts/helvetiker_regular.typeface.json', (loadedFont) => {
     font = loadedFont;
-    // Передача `scene` должна быть выполнена при инициализации
+    createScoreText(font, scene); // Обеспечиваем, что передаем сцену здесь
 });
 
 export function updateScoreText(score) {
