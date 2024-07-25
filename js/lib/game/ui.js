@@ -3,20 +3,20 @@ import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/examples/
 import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/geometries/TextGeometry.js';
 
 const fontLoader = new FontLoader();
-export let scoreText; // Экспортируем scoreText
+let scoreText;
 let font;
 
 // Функция для создания текста счета
 function createScoreText(font, scene) {
     const geometry = new TextGeometry('Score: 0', {
         font: font,
-        size: 1,
-        height: 0.1,
+        size: 0.33, // Уменьшенный размер шрифта
+        height: 0.05,
     });
 
     const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
     scoreText = new THREE.Mesh(geometry, material);
-    scoreText.position.set(0, 2, 0); // Начальная позиция над персонажем
+    scoreText.position.set(0, 3, 0); // Поднимем выше над головой персонажа
     scene.add(scoreText);
 }
 
@@ -31,8 +31,8 @@ export function updateScoreText(score) {
         scoreText.geometry.dispose();
         scoreText.geometry = new TextGeometry(`Score: ${score}`, {
             font: font,
-            size: 1,
-            height: 0.1,
+            size: 0.33, // Уменьшенный размер шрифта
+            height: 0.05,
         });
     }
 }

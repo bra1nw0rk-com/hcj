@@ -117,7 +117,7 @@ function animate() {
 
     // Обновление позиции и ориентации текста счета
     if (scoreText) {
-        scoreText.position.set(character.position.x, character.position.y + 2, character.position.z);
+        scoreText.position.set(character.position.x, character.position.y + 3, character.position.z);
         scoreText.lookAt(camera.position); // Обеспечиваем, чтобы текст всегда был направлен к камере
     }
 
@@ -137,26 +137,26 @@ window.addEventListener('keydown', (event) => {
     direction.y = 0; // Убираем вертикальную составляющую
     direction.normalize();
 
+    // Определяем вектор перемещения
+    const forward = direction.clone().multiplyScalar(speed);
+    const right = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), direction).normalize().multiplyScalar(speed);
+
     switch (event.key) {
         case 'w':
         case 'ArrowUp':
-            character.position.add(direction.clone().multiplyScalar(speed));
+            character.position.add(forward);
             break;
         case 's':
         case 'ArrowDown':
-            character.position.add(direction.clone().multiplyScalar(-speed));
+            character.position.add(forward.negate());
             break;
         case 'a':
         case 'ArrowLeft':
-            const leftDirection = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), direction);
-            leftDirection.normalize();
-            character.position.add(leftDirection.multiplyScalar(-speed));
+            character.position.add(right.negate());
             break;
         case 'd':
         case 'ArrowRight':
-            const rightDirection = new THREE.Vector3().crossVectors(direction, new THREE.Vector3(0, 1, 0));
-            rightDirection.normalize();
-            character.position.add(rightDirection.multiplyScalar(speed));
+            character.position.add(right);
             break;
         case ' ':
             if (!isJumping) {
@@ -189,17 +189,21 @@ window.addEventListener('touchmove', (event) => {
         direction.y = 0; // Убираем вертикальную составляющую
         direction.normalize();
 
+        // Определяем вектор перемещения
+        const forward = direction.clone().multiplyScalar(speed);
+        const right = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), direction).normalize().multiplyScalar(speed);
+
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             if (deltaX > 0) {
-                character.position.add(direction.clone().multiplyScalar(speed));
+                character.position.add(right);
             } else {
-                character.position.add(direction.clone().multiplyScalar(-speed));
+                character.position.add(right.negate());
             }
         } else {
             if (deltaY > 0) {
-                character.position.add(direction.clone().multiplyScalar(speed));
+                character.position.add(forward);
             } else {
-                character.position.add(direction.clone().multiplyScalar(-speed));
+                character.position.add(forward.negate());
             }
         }
 
