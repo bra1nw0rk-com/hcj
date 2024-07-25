@@ -55,9 +55,9 @@ tree.position.set(10, 0, 10);
 scene.add(tree);
 
 // Создание кубиков
-createCube(new THREE.Vector3(5, 0.5, 5));
-createCube(new THREE.Vector3(-5, 0.5, -5));
-createCube(new THREE.Vector3(7, 0.5, -7));
+createCube(scene, new THREE.Vector3(5, 0.5, 5));
+createCube(scene, new THREE.Vector3(-5, 0.5, -5));
+createCube(scene, new THREE.Vector3(7, 0.5, -7));
 
 // Создание OrbitControls
 const controls = new OrbitControls(camera, renderer.domElement);

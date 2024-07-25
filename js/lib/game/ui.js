@@ -1,13 +1,14 @@
 import * as THREE from 'three';
 import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/loaders/FontLoader.js';
+import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/geometries/TextGeometry.js'; // Импорт TextGeometry
 
-const fontLoader = new FontLoader();  // Создаем экземпляр FontLoader
+const fontLoader = new FontLoader();
 let scoreText;
 let font;
 
 // Функция для создания текста
 function createScoreText(font) {
-    const geometry = new THREE.TextGeometry('Score: 0', {
+    const geometry = new TextGeometry('Score: 0', {  // Исправленный конструктор
         font: font,
         size: 1,
         height: 0.1,
@@ -23,13 +24,13 @@ function createScoreText(font) {
 fontLoader.load('https://cdn.jsdelivr.net/npm/three@0.167.0/examples/fonts/helvetiker_regular.typeface.json', (loadedFont) => {
     font = loadedFont;
     scoreText = createScoreText(font);
-    scene.add(scoreText);
+    scene.add(scoreText); // Убедитесь, что переменная scene доступна
 });
 
 export function updateScoreText(score) {
     if (scoreText && font) {
         scoreText.geometry.dispose();
-        scoreText.geometry = new THREE.TextGeometry(`Score: ${score}`, {
+        scoreText.geometry = new TextGeometry(`Score: ${score}`, {
             font: font,
             size: 1,
             height: 0.1,

@@ -3,7 +3,7 @@ import * as THREE from 'three';
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Зеленый кубик
 export const cubes = [];
 
-export function createCube(position) {
+export function createCube(scene, position) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const cube = new THREE.Mesh(geometry, cubeMaterial);
     cube.position.copy(position);
