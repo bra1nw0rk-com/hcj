@@ -48,8 +48,25 @@ backWall.position.set(0, 5, -50);
 scene.add(backWall);
 
 // Основной цикл
+let velocityY = 0;
+let isJumping = false;
+
 function animate() {
     requestAnimationFrame(animate);
+
+    // Обработка прыжка
+    if (isJumping) {
+        velocityY -= 0.01; // Гравитация
+        character.position.y += velocityY;
+
+        // Остановка прыжка
+        if (character.position.y <= 1) {
+            character.position.y = 1;
+            isJumping = false;
+            velocityY = 0;
+        }
+    }
+
     renderer.render(scene, camera);
 }
 
@@ -60,17 +77,62 @@ window.addEventListener('keydown', (event) => {
     const speed = 0.5;
     switch (event.key) {
         case 'w':
+        case 'ArrowUp':
             character.position.z -= speed;
             break;
         case 's':
+        case 'ArrowDown':
             character.position.z += speed;
             break;
         case 'a':
+        case 'ArrowLeft':
             character.position.x -= speed;
             break;
         case 'd':
+        case 'ArrowRight':
             character.position.x += speed;
             break;
+        case ' ':
+            if (!isJumping) {
+                velocityY = 0.2;
+                isJumping = true;
+            }
+            break;
+    }
+
+    // Синхронизация камеры с движением персонажа
+    camera.position.x = character.position.x;
+    camera.position.z = character.position.z + 10;
+});
+
+// Обработка жестов на тачскрине
+let touchStartX = 0;
+let touchStartY = 0;
+
+window.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+});
+
+window.addEventListener('touchmove', (event) => {
+    const touchEndX = event.touches[0].clientX;
+    const touchEndY = event.touches[0].clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 0) {
+            character.position.x += 0.1; // Движение вправо
+        } else {
+            character.position.x -= 0.1; // Движение влево
+        }
+    } else {
+        if (deltaY > 0) {
+            character.position.z += 0.1; // Движение назад
+        } else {
+            character.position.z -= 0.1; // Движение вперед
+        }
     }
 
     // Синхронизация камеры с движением персонажа
