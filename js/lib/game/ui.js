@@ -2,8 +2,10 @@ import * as THREE from 'three';
 
 const fontLoader = new THREE.FontLoader();
 let scoreText;
+let font;
 
-fontLoader.load('https://cdn.jsdelivr.net/npm/three@0.167.0/examples/fonts/helvetiker_regular.typeface.json', (font) => {
+// Функция для создания текста
+function createScoreText(font) {
     const geometry = new THREE.TextGeometry('Score: 0', {
         font: font,
         size: 1,
@@ -13,14 +15,21 @@ fontLoader.load('https://cdn.jsdelivr.net/npm/three@0.167.0/examples/fonts/helve
     const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
     scoreText = new THREE.Mesh(geometry, material);
     scoreText.position.set(-10, 8, 0);
+    return scoreText;
+}
+
+// Загрузка шрифта и создание начального текста
+fontLoader.load('https://cdn.jsdelivr.net/npm/three@0.167.0/examples/fonts/helvetiker_regular.typeface.json', (loadedFont) => {
+    font = loadedFont;
+    scoreText = createScoreText(font);
     scene.add(scoreText);
 });
 
 export function updateScoreText(score) {
-    if (scoreText) {
+    if (scoreText && font) {
         scoreText.geometry.dispose();
         scoreText.geometry = new THREE.TextGeometry(`Score: ${score}`, {
-            font: fontLoader.font,
+            font: font,
             size: 1,
             height: 0.1,
         });
