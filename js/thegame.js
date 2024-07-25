@@ -10,7 +10,6 @@ if (WebGL.isWebGLAvailable()) {
 
     // Создание камеры
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 5, 10);
 
     // Создание рендера
     const renderer = new THREE.WebGLRenderer();
@@ -52,8 +51,15 @@ if (WebGL.isWebGLAvailable()) {
 
     // Инициализация OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableZoom = false; // Запретить зум
+    controls.enablePan = false; // Запретить панорамирование
+    controls.enableDamping = true; // Включить сглаживание
+    controls.dampingFactor = 0.25;
     controls.target.set(character.position.x, character.position.y, character.position.z);
-    controls.update();
+
+    // Установите начальную позицию камеры
+    const initialCameraDistance = 10;
+    camera.position.set(character.position.x, character.position.y + 5, character.position.z + initialCameraDistance);
 
     // Основной цикл
     let velocityY = 0;
@@ -75,8 +81,15 @@ if (WebGL.isWebGLAvailable()) {
             }
         }
 
-        // Обновление управления камерой
-        controls.update();
+        // Обновление позиции камеры, чтобы поддерживать фиксированное расстояние от персонажа
+        camera.position.x = character.position.x;
+        camera.position.z = character.position.z + initialCameraDistance;
+        camera.position.y = character.position.y + 5; // Камера всегда над персонажем
+
+        // Камера всегда смотрит на персонажа
+        camera.lookAt(character.position);
+
+        controls.update(); // Обновление управления камерой
         renderer.render(scene, camera);
     }
 
@@ -137,11 +150,16 @@ if (WebGL.isWebGLAvailable()) {
     });
 
     // Обработка изменения размера окна
-    window.addEventListener('resize', () => {
+    function onResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+    }
+
+    window.addEventListener('resize', onResize);
+
+    // Инициализация начального размера
+    onResize();
 
 } else {
     const warning = WebGL.getWebGLErrorMessage();
