@@ -15,13 +15,6 @@ if (WebGL.isWebGLAvailable()) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    // Создание пола
-    const floorGeometry = new THREE.PlaneGeometry(100, 100);
-    const floorMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
-    const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-    floor.rotation.x = -Math.PI / 2;
-    scene.add(floor);
-
     // Создание материалов для персонажа
     const frontMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
     const backMaterial = new THREE.MeshBasicMaterial({ color: 0x404040 });
@@ -62,6 +55,13 @@ if (WebGL.isWebGLAvailable()) {
     const character = createCharacter();
     scene.add(character);
 
+    // Создание пола
+    const floorGeometry = new THREE.PlaneGeometry(100, 100);
+    const floorMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
+    const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+    floor.rotation.x = -Math.PI / 2;
+    scene.add(floor);
+
     // Создание стен
     const wallGeometry = new THREE.BoxGeometry(1, 10, 100);
     const wallMaterial = new THREE.MeshBasicMaterial({ color: 0x808080 });
@@ -81,6 +81,11 @@ if (WebGL.isWebGLAvailable()) {
     backWall.position.set(0, 5, -50);
     scene.add(backWall);
 
+    // Создание группы для вращения мира
+    const worldGroup = new THREE.Group();
+    scene.add(worldGroup);
+    worldGroup.add(character); // Персонаж добавлен в мир, чтобы вращаться вместе с ним
+
     // Инициализация OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false; // Запретить зум
@@ -91,7 +96,7 @@ if (WebGL.isWebGLAvailable()) {
 
     // Установите начальную позицию камеры
     const initialCameraDistance = 10;
-    camera.position.set(character.position.x, character.position.y + 5, character.position.z + initialCameraDistance);
+    camera.position.set(character.position.x + initialCameraDistance, character.position.y + 5, character.position.z + initialCameraDistance);
     controls.update(); // Обновление состояния управления после установки начальной позиции
 
     // Основной цикл
@@ -122,13 +127,8 @@ if (WebGL.isWebGLAvailable()) {
         // Камера всегда смотрит на персонажа
         camera.lookAt(character.position);
 
-        // Обновление направления персонажа
-        const characterDirection = new THREE.Vector3();
-        camera.getWorldDirection(characterDirection);
-        characterDirection.y = 0; // Игнорируем вертикальную компоненты
-        characterDirection.normalize();
-        const angle = Math.atan2(characterDirection.z, characterDirection.x);
-        character.rotation.y = angle;
+        // Обновление положения мира в зависимости от угла камеры
+        worldGroup.rotation.y = -controls.getAzimuthalAngle(); // Поворачиваем мир в противоположную сторону камеры
 
         controls.update(); // Обновление управления камерой
         renderer.render(scene, camera);
@@ -202,6 +202,32 @@ if (WebGL.isWebGLAvailable()) {
 
     // Инициализация начального размера
     onResize();
+
+    // Создание дерева
+    function createTree() {
+        const treeGroup = new THREE.Group();
+
+        // Создание ствола дерева
+        const trunkGeometry = new THREE.CylinderGeometry(0.5, 0.5, 5, 8);
+        const trunkMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513 });
+        const trunk = new THREE.Mesh(trunkGeometry, trunkMaterial);
+        trunk.position.y = 2.5;
+        treeGroup.add(trunk);
+
+        // Создание кроны дерева
+        const crownGeometry = new THREE.SphereGeometry(2, 16, 16);
+        const crownMaterial = new THREE.MeshBasicMaterial({ color: 0x228B22 });
+        const crown = new THREE.Mesh(crownGeometry, crownMaterial);
+        crown.position.y = 6;
+        treeGroup.add(crown);
+
+        return treeGroup;
+    }
+
+    // Добавление дерева на карту
+    const tree = createTree();
+    tree.position.set(10, 0, 10); // Позиция дерева на карте
+    scene.add(tree);
 
 } else {
     const warning = WebGL.getWebGLErrorMessage();
