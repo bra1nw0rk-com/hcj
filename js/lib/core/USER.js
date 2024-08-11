@@ -1,4 +1,5 @@
 import CustomEvents from "./CustomEvents.js";
+import Module from "./Module";
 
 export default class USER {
     events= new CustomEvents()
@@ -71,5 +72,34 @@ export default class USER {
     }
     logout() {
         this.events.call("logout");
+    }
+    init() {
+        let _this = this
+        this.addEvent('loggedIn', function () {
+            template.loadTemplate("main");
+            setTimeout(function () {
+                $("body").addClass(ui.savedTheme + '-theme');
+                topMenu.load();
+            }, 300);
+            this.setLoginTimer();
+        });
+        this.addEvent('needLogin', function () {
+            Module.call(`login-form`);
+        });
+        this.addEvent('logout', function () {
+            clearInterval(_this.loginTimer);
+            this.sessionId = null;
+            this.lastUpdate = null;
+            WS.ui.clearPage();
+            this.testLogin();
+        });
+        $('body').on("click mousemove keypress", "*", function () {
+            _this.lastUpdate = new Date().getTime();
+        }).on('click', '.submit', function (e) {
+            e.preventDefault();
+            _this.login($(this).parent().find('[name="username"]').val(), $(this).parent().find('[name="password"]').val());
+            return true;
+        });
+
     }
 }
