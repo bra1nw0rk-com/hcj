@@ -19,6 +19,8 @@ export default class LoginForm extends HTMLObject {
 			</div>                
 		`);
 		this.init();
+
+		$("body").html("").append(this.get());
 	}
 	init() {
 		$("body").on("click", "#userLoginForm .submit", function (e) {

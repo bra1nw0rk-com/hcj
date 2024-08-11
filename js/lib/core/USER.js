@@ -76,10 +76,13 @@ export default class USER {
         let _this = this
         this.addEvent('loggedIn', function () {
             Module.call(`main`);
+            /*
             setTimeout(function () {
                 $("body").addClass(WS.ui.savedTheme + '-theme');
                 //topMenu.load(); !!!!!!!!!!!
             }, 300);
+
+             */
             this.setLoginTimer();
         });
         this.addEvent('needLogin', function () {
