@@ -45,11 +45,22 @@ export default class USER {
             return true;
         }
     }
+    setLoginTimer() {
+        let _this = this
+        if (this.loginTimer !== null) {
+            clearInterval(this.loginTimer);
+        }
+        this.loginTimer = setInterval(() => {
+            if (_this.needLogin()) {
+                _this.logout();
+            }
+        }, 1000);
+    }
     testLogin() {
         if (this.needLogin()) {
             this.logout();
         } else {
-            WS.containers.call("main");
+            Module.call("main");
             this.setLoginTimer();
         }
     }
@@ -60,10 +71,11 @@ export default class USER {
         //this.events.call("loggedIn");
     }
     login(login, password) {
+        let _this = this
         if (login === "admin" && password === "admin") {
             WS.ui.closeModal("#userLoginForm", function () {
-                WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d");
-                WS.user.testLogin();
+                _this.update("dslfafhkldhjakelrhalweh54sdaf54d");
+                _this.testLogin();
             });
         } else {
             WS.ui.clearForm("#userLoginForm");
