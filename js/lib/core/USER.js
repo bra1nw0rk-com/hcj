@@ -87,7 +87,7 @@ export default class USER {
         });
         this.addEvent('needLogin', function () {
             console.log("ok")
-            Module.call(`login-form`);
+            Module.call(`forms/login-form`);
         });
         this.addEvent('logout', function () {
             clearInterval(_this.loginTimer);
