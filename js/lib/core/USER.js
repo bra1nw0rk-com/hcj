@@ -1,5 +1,4 @@
 import CustomEvents from "./CustomEvents.js";
-import Module from "./Module";
 
 export default class USER {
     events= new CustomEvents()
@@ -76,10 +75,10 @@ export default class USER {
     init() {
         let _this = this
         this.addEvent('loggedIn', function () {
-            template.loadTemplate("main");
+            Module.call(`main`);
             setTimeout(function () {
-                $("body").addClass(ui.savedTheme + '-theme');
-                topMenu.load();
+                $("body").addClass(WS.ui.savedTheme + '-theme');
+                //topMenu.load(); !!!!!!!!!!!
             }, 300);
             this.setLoginTimer();
         });
