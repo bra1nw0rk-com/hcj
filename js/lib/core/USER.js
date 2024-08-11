@@ -1,4 +1,4 @@
-import CustomEvents from "./CustomEvents";
+import CustomEvents from "./CustomEvents.js";
 
 export default class USER {
     events= new CustomEvents()
