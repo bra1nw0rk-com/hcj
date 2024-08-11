@@ -7,7 +7,7 @@ export default class OEManager extends HTMLObject {
 		super("program");
 		let _this = this;
 		this.classes = "fadeIn";
-		this.id = "oemanager";
+		this.name = "oemanager";
 		this.animated = true;
 		this.css = "/modules/oemanager/css/index.css";
 		this.template = html` <div class="menu-block">

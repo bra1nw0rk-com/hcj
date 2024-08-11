@@ -6,7 +6,7 @@ export default class LoginForm extends Form {
 		this.css = `/modules/forms/login-form/index.css`;
 		this.title = "Login";
 		this.classes = "modal fadeIn";
-		this.id ="userLoginForm"
+		this.name ="userLoginForm"
 		this.template = $(html`
 			<input type="text" id="username" name="username" placeholder="User" autocomplete="username" required />
 			<input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required />

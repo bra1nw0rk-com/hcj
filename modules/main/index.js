@@ -6,7 +6,7 @@ export default class Main extends HTMLObject {
 		let _this = this;
         this.css = `/modules/main/css/main.css`;
 		this.title = "BWOS";
-		this.id = "main";
+		this.name = "main";
 		this.classes = "fadeIn";
 		this.template = $(html`
 			<div data-module="main/menu"></div>

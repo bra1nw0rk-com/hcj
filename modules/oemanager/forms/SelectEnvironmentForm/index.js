@@ -6,7 +6,7 @@ export default class SelectEnvironmentForm extends Form {
 		let _this = this;
 		this.title = "Environment";
 		this.animated = true;
-		this.id = "selectEnvironmentForm";
+		this.name = "selectEnvironmentForm";
 		this.classes = "modal fadeIn";
 		this.css = `/modules/oemanager/css/select-environment-form.scss`;
 		this.template = $(html`

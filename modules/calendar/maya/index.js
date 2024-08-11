@@ -6,7 +6,7 @@ export default class CalendarMaya extends HTMLObject {
         super("menu");
         let _this = this;
         this.css = "/modules/calendar/maya/index.css";
-        this.id = "calendar-maya";
+        this.name = "calendar-maya";
         this.classes = "calendar-maya";
         this.template = $(html`
             <div class="calendar-mayan widget">
