@@ -1,20 +1,20 @@
-#userLoginForm {
+[name="userLoginForm"] {
     font-size: 1.3em;
 }
-#userLoginForm.error {
+[name="userLoginForm"].error {
     animation: horizontal-shaking 0.5s linear alternate;
 }
-#userLoginForm input {
+[name="userLoginForm"] input {
     width: 100%;
     margin-bottom: 0.5em;
 }
-#userLoginForm button {
+[name="userLoginForm"] button {
     background-color: var(--button-ok-bg-color);
     padding: 10px;
     cursor: pointer;
     width: 100%;
     border: 1px solid #4080a6;
 }
-#userLoginForm button:hover {
+[name="userLoginForm"] button:hover {
     background-color: #013366;
 }
