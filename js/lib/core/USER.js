@@ -86,6 +86,7 @@ export default class USER {
             this.setLoginTimer();
         });
         this.addEvent('needLogin', function () {
+            console.log("ok")
             Module.call(`login-form`);
         });
         this.addEvent('logout', function () {
@@ -102,6 +103,7 @@ export default class USER {
             _this.login($(this).parent().find('[name="username"]').val(), $(this).parent().find('[name="password"]').val());
             return true;
         });
+        this.testLogin()
 
     }
 }
