@@ -77,7 +77,7 @@ export default class USER {
         this.sessionId = null;
         this.lastUpdate = 0;
         WS.ui.clearPage();
-        Module.call("main/forms/LoginFrom.js");
+        Module.call("forms/login-form");
     }
 
 }
