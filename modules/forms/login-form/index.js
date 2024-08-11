@@ -14,6 +14,7 @@ export default class LoginForm extends Form {
 		`);
 
 		$("body").html("").append(this.get());
+		this.init()
 	}
 	init() {
 		let _this = this;
