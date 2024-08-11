@@ -1,5 +1,4 @@
-import CustomEvents from "./CustomEvents.js";
-import Module from "./Module";
+
 
 export default class USER {
     loginTimer= 0
