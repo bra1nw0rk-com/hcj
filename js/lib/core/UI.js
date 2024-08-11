@@ -7,6 +7,7 @@ export default class UI {
 	}
 	effects = {
 		shake(selector) {
+			$(selector).attr("data-animated","")
 			$(selector).removeClass("fadeIn").removeClass("modal-shake").addClass("modal-shake");
 			setTimeout(function () {
 				$(selector).removeClass("modal-shake");
