@@ -26,7 +26,6 @@ export default class Main extends HTMLObject {
 		`);
 		
 		$("body").html("").append(this.get());
-		this.init();
 	}
 
 }
