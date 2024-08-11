@@ -29,7 +29,15 @@ export default class LoginForm extends Form {
 			console.log("submit")
 			let login = $(`${_this.selector}  #username`).val()
 			let pass = $(`${_this.selector}  #password`).val()
-			WS.user.login(login,pass)
+			if(WS.user.login(login,pass)){
+				WS.ui.closeModal(`${_this.selector}`, function () {
+					WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d");
+					WS.user.testLogin();
+				});
+			}else{
+				WS.ui.clearForm(`${_this.selector}`);
+				WS.ui.effects.shake(`${_this.selector}`);
+			}
 		})
 	}
 }

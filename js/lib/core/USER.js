@@ -73,15 +73,8 @@ export default class USER {
     login(login, password) {
         let _this = this
         if (login === "admin" && password === "admin") {
-            WS.ui.closeModal("#userLoginForm", function () {
-                _this.update("dslfafhkldhjakelrhalweh54sdaf54d");
-                _this.testLogin();
-            });
-        } else {
-            WS.ui.clearForm("#userLoginForm");
-            WS.ui.effects.shake("#userLoginForm");
+            return true
         }
-        /* create api for login*/
         return false;
     }
     logout() {
