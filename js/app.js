@@ -16,6 +16,7 @@ globalThis.WS = {
 
 $(function () {
 	$("#nojavascript").remove();
+
 	let timer=0;
 	const threshold = 500;
 	$('body').on('touchend touchcancel touchmove','*', function(event){
@@ -49,8 +50,8 @@ $(function () {
 		 */
 	})
 	WS.ui.init();
-	//WS.user.init();
-	Module.call(`main`);
+	WS.user.init();
+	//Module.call(`main`);
 
 });
 
