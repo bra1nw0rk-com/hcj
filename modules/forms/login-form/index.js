@@ -21,7 +21,7 @@ export default class LoginForm extends Form {
 		console.log(`${this.selector} .submit`)
 		$("body").on("click", `${this.selector} .submit`, function (e) {
 			e.preventDefault();
-			_this.storage.set("environment", $(`${_this.selector}  #environment`).val());
+			storage.set("environment", $(`${_this.selector}  #environment`).val());
 			_this.call("submit");
 			return true;
 		});

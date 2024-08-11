@@ -9,7 +9,6 @@ globalThis.Module = Module;
 globalThis.storage = new LocalStorage("ws");
 globalThis.html = String.raw;
 globalThis.WS = {
-	//containers: new Containers(),
 	ui: new UI(),
 	user: new USER(),
 };
