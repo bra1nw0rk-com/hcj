@@ -11,9 +11,11 @@ export default class HTMLObject extends CustomEvents {
 		//this.#eventNamespace = type + "" + System.getOID();
 		this.object.attr("type", /*this.#eventNamespace*/ type);
 	}
+
 	set id(id) {
-		this.#eventNamespace = id
+		this.#eventNamespace = id + $(`[name^="${id}"]`)
 		this.object.attr("id", id);
+		this.object.attr("name", this.#eventNamespace);
 	}
 	set classes(classes) {
 		this.object.addClass(classes);
