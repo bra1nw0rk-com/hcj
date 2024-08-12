@@ -1,4 +1,3 @@
-import Module from "../../../js/lib/core/Module.js";
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class MainMenu extends HTMLObject {
@@ -33,37 +32,37 @@ export default class MainMenu extends HTMLObject {
 				Module.call("about");
 
             })
-			.on("click.mainMenu", "#main-menu", function (e) {
-				$("#main-menu .dropdown-content").removeClass("show");
+			.on("click.mainMenu", `[name="main-menu"]`, function (e) {
+				$(`[name="main-menu"] .dropdown-content`).removeClass("show");
 				e.stopPropagation();
 			})
-			.on("click.mainMenu", "#main-menu .menu-icon", function () {
+			.on("click.mainMenu", `[name="main-menu"] .menu-icon`, function () {
 				$(this).addClass("hide");
-				$("#main-menu .menu-content").addClass("show");
+				$(`[name="main-menu"] .menu-content`).addClass("show");
 			})
-			.on("click.mainMenu", "#main-menu .menu-item", function (e) {
+			.on("click.mainMenu", `[name="main-menu"] .menu-item`, function (e) {
 				e.stopPropagation();
 			})
-			.on("click.mainMenu", "#main-menu .menu-item[data-onclick]", function (e) {
+			.on("click.mainMenu", `[name="main-menu"] .menu-item[data-onclick]`, function (e) {
 				eval($(this).attr("data-onclick"));
-				$("#main-menu .dropdown-content").removeClass("show").addClass("hide");
+				$(`[name="main-menu"] .dropdown-content`).removeClass("show").addClass("hide");
 				/*
 				if (System.getCSSVar("menu-width") == "768") {
 					$("html").trigger("click");
 				}
 				 */
 			})
-			.on("click.mainMenu", "#main-menu .menu-item.dropdown, #main-menu .menu-item.submenu", function (e) {
+			.on("click.mainMenu", `[name="main-menu"] .menu-item.dropdown, [name="main-menu"] .menu-item.submenu`, function (e) {
 				$(this).find(".dropdown .dropdown-content,.submenu .dropdown-content").removeClass("show");
 				$(this).find(">.dropdown-content").toggleClass("show");
 			})
-			.on("mouseover.mainMenu", "#main-menu .menu-item.dropdown, #main-menu .menu-item.submenu", function (e) {
-				$("#main-menu .dropdown-content").removeClass("hide");
+			.on("mouseover.mainMenu", `[name="main-menu"] .menu-item.dropdown, [name="main-menu"] .menu-item.submenu`, function (e) {
+				$(`[name="main-menu"] .dropdown-content`).removeClass("hide");
 			});
 		$("html").on("click", function (event) {
-			$("#main-menu .dropdown-content").removeClass("show");
-			$("#main-menu .menu-content").removeClass("show");
-			$("#main-menu .menu-icon").removeClass("hide");
+			$(`[name="main-menu"] .dropdown-content`).removeClass("show");
+			$(`[name="main-menu"] .menu-content`).removeClass("show");
+			$(`[name="main-menu"] .menu-icon`).removeClass("hide");
 		});
 	}
 	load() {
@@ -78,7 +77,7 @@ export default class MainMenu extends HTMLObject {
 				'Accept': 'application/json'
 			},
 			success: function(data) {
-				$("#main-menu").find("[data-parent='0']").remove();
+				$(`[name="main-menu"]`).find("[data-parent='0']").remove();
 				let tmpDiv = $("<div></div>");
 				data.forEach(function (item) {
 						let icon = item.icon ? "<i class='" + item.icon + "'></i>" : "<i class='fa fa-ravelry'></i>";
@@ -114,8 +113,8 @@ export default class MainMenu extends HTMLObject {
 							parent.find(">.dropdown-content").append(newMenuItem);
 						}
 				});
-				$("#main-menu .menu-content:has(:not(.menu-icon, .menu-logo ))").remove();
-				$("#main-menu .menu-content").append(tmpDiv.html());
+				$(`[name="main-menu"] .menu-content:has(:not(.menu-icon, .menu-logo ))`).remove();
+				$(`[name="main-menu"] .menu-content`).append(tmpDiv.html());
 			},
 			error: function(xhr, status, error) {
 				console.error('Error: ' + error);
