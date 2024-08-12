@@ -7,20 +7,20 @@
  .clickable:hover {
 	 filter: brightness(3);
 }
- #main {
+[name="main"] {
 	 animation: fadeIn 0.5s linear alternate;
 	 height: 100%;
 	 width: 100%;
 }
 @media (min-width: 769px) {
-	#main #content {
+	[name="main"] #content {
 		position: relative;
 		height: calc(100vh - 3em);
 		overflow: hidden;
 		width: 100vw;
 	}
 
-	#main #content::after {
+	[name="main"] #content::after {
 		display: block;
 		position: absolute;
 		top: 50vh;
@@ -35,7 +35,7 @@
 		background-image: var(--content-bg-logo);
 	}
 
-	#main footer {
+	[name="main"] footer {
 		display: flex;
 		background-color: var(--bg1);
 		font-size: 0.75em;
@@ -51,7 +51,7 @@
 		align-items: center;
 	}
 
-	#main footer #running {
+	[name="main"] footer #running {
 		display: flex;
 		width: 33%;
 		flex-direction: row;
@@ -61,16 +61,16 @@
 		font-size: 2em;
 	}
 
-	#main footer #running i {
+	[name="main"] footer #running i {
 		padding: 5px;
 		cursor: pointer;
 	}
 
-	#main footer #running i:hover {
+	[name="main"] footer #running i:hover {
 		background-color: var(--top-menu-main-menu-item-background);
 	}
 
-	#main footer .copyright {
+	[name="main"] footer .copyright {
 		width: 33%;
 	}
 }

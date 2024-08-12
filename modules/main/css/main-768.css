@@ -2,25 +2,25 @@
     :root {
         --menu-width: 768;
    }
-    #main {
+    [name="main"] {
         --media-width: 768;
    }
-    #main #content {
+    [name="main"] #content {
         position: relative;
         height: 95.38vh;
         overflow: auto;
         width: 100vw;
         top: 45px;
    }
-    #main footer {
+    [name="main"] footer {
         font-size: 1.75em;
         height: 2.5rem;
    }
-    #main footer .copyright {
+    [name="main"] footer .copyright {
         width: 33%;
         font-size: 0.6em;
    }
-    #main footer #running i {
+    [name="main"] footer #running i {
         padding: 5px;
         font-size: 0.7em;
    }
