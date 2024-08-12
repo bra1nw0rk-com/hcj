@@ -3,7 +3,7 @@
 		--menu-width: 768;
 	}
 
-	#main-menu {
+	[name="main-menu"] {
 		--media-width: 768;
 		display: block;
 		position: fixed;
@@ -15,11 +15,11 @@
 		border-bottom: none;
 	}
 
-	#main-menu .menu-icon {
+	[name="main-menu"] .menu-icon {
 		display: block;
 	}
 
-	#main-menu .menu-content {
+	[name="main-menu"] .menu-content {
 		display: none;
 		position: absolute;
 		top: 0;
@@ -32,7 +32,7 @@
 		overflow-x: hidden;
 		border-right: 1px solid var(--border-color);
 	}
-	#main-menu .menu-content::before {
+	[name="main-menu"] .menu-content::before {
 		-webkit-backdrop-filter: blur(4px);
 		backdrop-filter: blur(4px);
 		content:"";
@@ -43,13 +43,13 @@
 		left: 0;
 	}
 
-	#main-menu .menu-content.show,
+	[name="main-menu"] .menu-content.show,
 	.show {
 		display: block;
 		animation: fadeIn 0.5s linear alternate;
 	}
 
-	#main-menu .menu-content .menu-logo {
+	[name="main-menu"] .menu-content .menu-logo {
 		position: relative;
 		background-size: 145px auto;
 		height: 22px;
@@ -59,14 +59,14 @@
 		background-image: var(--content-bg-logo);
 	}
 
-	#main-menu .menu-content .menu-item {
+	[name="main-menu"] .menu-content .menu-item {
 		padding: 0.2em;
 		display: block;
 		width: 100%;
 		border-radius: 0;
 	}
 
-	#main-menu .menu-content .menu-item:has(> .dropdown-content)::after {
+	[name="main-menu"] .menu-content .menu-item:has(> .dropdown-content)::after {
 		position: absolute;
 		top: 0;
 		right: 15px;
@@ -75,23 +75,23 @@
 		content: "\f105";
 	}
 
-	#main-menu .menu-content .menu-item:has(> .dropdown-content):has(> .show)::after {
+	[name="main-menu"] .menu-content .menu-item:has(> .dropdown-content):has(> .show)::after {
 		content: "\f107";
 	}
 
-	#main-menu .menu-content .menu-item:hover {
+	[name="main-menu"] .menu-content .menu-item:hover {
 		background-color: inherit;
 	}
 
-	#main-menu .menu-content .menu-item.dropdown:hover {
+	[name="main-menu"] .menu-content .menu-item.dropdown:hover {
 		background-color: #ffffff00;
 	}
 
-	#main-menu .menu-content .menu-item.dropdown:hover > .dropdown-content {
+	[name="main-menu"] .menu-content .menu-item.dropdown:hover > .dropdown-content {
 		display: none;
 	}
 
-	#main-menu .menu-content .menu-item.dropdown .dropdown-content {
+	[name="main-menu"] .menu-content .menu-item.dropdown .dropdown-content {
 		width: 100%;
 		border-radius: 0;
 		box-shadow: none;
@@ -104,25 +104,25 @@
 		background-color: rgba(255, 255, 255, 0);
 	}
 
-	#main-menu .menu-content .menu-item.dropdown .dropdown-content.show,
+	[name="main-menu"] .menu-content .menu-item.dropdown .dropdown-content.show,
 	.show {
 		display: block;
 		animation: fadeIn 0.5s linear alternate;
 	}
 
-	#main-menu .menu-content .menu-item.dropdown .menu-item:hover {
+	[name="main-menu"] .menu-content .menu-item.dropdown .menu-item:hover {
 		background-color: inherit;
 	}
 
-	#main-menu .menu-content .menu-separator {
+	[name="main-menu"] .menu-content .menu-separator {
 		display: none;
 	}
 
-	#main-menu .menu-content .submenu:hover .dropdown-content {
+	[name="main-menu"] .menu-content .submenu:hover .dropdown-content {
 		display: none;
 	}
 
-	#main-menu .menu-content .submenu::after {
+	[name="main-menu"] .menu-content .submenu::after {
 		font-family: "FontAwesome", serif;
 		content: "\f105";
 		position: absolute;
