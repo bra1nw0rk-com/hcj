@@ -26,7 +26,6 @@ export default class LoginForm extends Form {
 			return true;
 		});
 		this.on("submit",function(){
-			console.log("submit")
 			let login = $(`${_this.selector}  #username`).val()
 			let pass = $(`${_this.selector}  #password`).val()
 			if(WS.user.login(login,pass)){
