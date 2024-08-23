@@ -7,7 +7,7 @@ export default class AnimationLogo extends HTMLObject  {
         this.css = "/modules/animation/logo/index.css";
         this.name = "animated-logo";        
         this.template = $(html`            
-          <video autoplay="autoplay" loop="loop" muted="muted" controls="controls" class="small_video_square">
+          <video autoplay="autoplay" loop="loop" muted="muted">
             <source src="/img/logo.webm" type="video/WebM">
             Sorry, your browser doesn't support embedded videos.
           </video>
