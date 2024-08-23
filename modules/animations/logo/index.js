@@ -1,4 +1,4 @@
-import Form from "../../../js/lib/html/Form.js";
+import HTMLObject from "../../js/lib/html/HTMLObject.js";
 
 export default class AnimationLogo extends HTMLObject  {
 	 constructor() {
