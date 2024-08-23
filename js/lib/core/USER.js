@@ -82,7 +82,7 @@ export default class USER {
         this.sessionId = null;
         this.lastUpdate = 0;
         WS.ui.clearPage();
-        Module.call("forms/login-form");
+        Module.call("pages/login");
     }
 
 }
