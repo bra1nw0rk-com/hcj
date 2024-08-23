@@ -3,6 +3,7 @@
 	top: 25vh;
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
+    opacity: 0.5;
 }
 
 [name="page-login"] [name="title"]{    
@@ -13,6 +14,7 @@
 	top: 30vh;
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
+    opacity: 0.5;
 }
 
 [name="page-login"] [name="title"] .selected{    
