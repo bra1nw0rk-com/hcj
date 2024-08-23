@@ -1,4 +1,4 @@
-import HTMLObject from "../../js/lib/html/HTMLObject.js";
+import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class PageLogin extends HTMLObject  {
 	 constructor() {
@@ -8,8 +8,7 @@ export default class PageLogin extends HTMLObject  {
         this.name = "page-login";        
         this.template = $(html`            
           <div data-module="animation/logo"></div>
-          <div data-module="forms/login-form"></div>
-               
+          <div data-module="forms/login-form"></div>               
 		`);
         this.init();
     }

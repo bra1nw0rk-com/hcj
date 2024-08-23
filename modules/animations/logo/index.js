@@ -1,8 +1,8 @@
-import HTMLObject from "../../js/lib/html/HTMLObject.js";
+import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class AnimationLogo extends HTMLObject  {
 	 constructor() {
-        super("animated-logo");
+        super("");
         let _this = this;
         this.css = "/modules/animation/logo/index.css";
         this.name = "animated-logo";        
