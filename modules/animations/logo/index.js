@@ -12,7 +12,7 @@ export default class AnimationLogo extends HTMLObject  {
             Sorry, your browser doesn't support embedded videos.
           </video>
                
-		`);
+		    `);
         this.init();
     }
     init() {

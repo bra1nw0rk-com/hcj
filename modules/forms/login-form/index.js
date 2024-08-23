@@ -12,8 +12,6 @@ export default class LoginForm extends Form {
 			<input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required />
 			<button class="submit">OK</button>
 		`);
-
-		$("body").html("").append(this.get());
 		this.init()
 	}
 	init() {
