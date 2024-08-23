@@ -7,7 +7,7 @@ export default class PageLogin extends HTMLObject  {
         this.css = "/modules/pages/login/index.css";
         this.name = "page-login";        
         this.template = $(html`            
-          <div data-module="animation/logo"></div>
+          <div data-module="animations/logo"></div>
           <div data-module="forms/login-form"></div>               
 		`);
         $("body").html("").append(this.get());
