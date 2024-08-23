@@ -4,7 +4,7 @@ export default class AnimationLogo extends HTMLObject  {
 	 constructor() {
         super("");
         let _this = this;
-        this.css = "/modules/animation/logo/index.css";
+        this.css = "/modules/animations/logo/index.css";
         this.name = "animated-logo";        
         this.template = $(html`            
           <video autoplay="autoplay" loop="loop" muted="muted">
