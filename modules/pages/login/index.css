@@ -14,3 +14,7 @@
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
 }
+
+[name="page-login"] [name="title"] .selected{    
+    color:rgb(245, 123, 53);
+}
