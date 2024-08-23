@@ -10,6 +10,7 @@ export default class PageLogin extends HTMLObject  {
           <div data-module="animation/logo"></div>
           <div data-module="forms/login-form"></div>               
 		`);
+        $("body").html("").append(this.get());
         this.init();
     }
     init() {
