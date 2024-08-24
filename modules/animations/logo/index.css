@@ -1,3 +1,8 @@
 [name="animated-logo"] img{
     height: 45px;
 }
+[name="animated-logo"] img::after{
+    -webkit-animation: glow 4s infinite;
+    -moz-animation: glow 4s infinite;
+    animation: glow 4s infinite;
+}

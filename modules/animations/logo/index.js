@@ -7,7 +7,7 @@ export default class AnimationLogo extends HTMLObject  {
         this.css = "/modules/animations/logo/index.css";
         this.name = "animated-logo";        
         this.template = $(html`
-            <img src = "/img/logo_color.svg" alt="bwos logo" data-animated="" class="rotate glow"/>
+            <img src = "/img/logo_color.svg" alt="bwos logo" data-animated="" class="rotate"/>
                
 		    `);
         this.init();
