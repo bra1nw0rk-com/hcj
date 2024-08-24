@@ -1,6 +1,6 @@
 [name="page-login"] [name="animated-logo"]{    
     position: absolute;
-	top: 25vh;
+	top: 28vh;
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
     opacity: 0.5;
@@ -11,7 +11,7 @@
     font-size: 25px;
     height: 10px;
     width: auto;
-	top: 30vh;
+	top: 33vh;
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
     opacity: 0.8;

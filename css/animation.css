@@ -126,6 +126,12 @@
 	}
 }
 
+@keyframes rotate {
+	0% {
+		transform: rotateY(3.142rad);
+	}
+}
+
 [data-animated].shake {
 	animation: horizontal-shaking 0.5s linear alternate !important;
 }
@@ -146,3 +152,9 @@
 	-moz-animation: spin 4s linear infinite;
 	animation: spin 4s linear infinite;
 }
+[data-animated].rotate {
+	-webkit-animation: rotate 2s infinite;
+	-moz-animation: rotate 4s infinite;
+	animation: rotate 2s infinite;
+}
+
