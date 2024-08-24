@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-
+import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class AnimationLogo extends HTMLObject  {
