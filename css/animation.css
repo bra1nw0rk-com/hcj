@@ -130,7 +130,7 @@
 	0% {
 		transform: rotateY(180deg);
 	}
-	99% {
+	80% {
 		transform: rotateY(-180deg);
 	}
 }
