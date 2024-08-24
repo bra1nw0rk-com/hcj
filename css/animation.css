@@ -130,6 +130,9 @@
 	0% {
 		transform: rotateY(3.142rad);
 	}
+	50% {
+		transform: rotateY(0);
+	}
 }
 
 [data-animated].shake {
@@ -153,8 +156,8 @@
 	animation: spin 4s linear infinite;
 }
 [data-animated].rotate {
-	-webkit-animation: rotate 2s infinite;
+	-webkit-animation: rotate 4s infinite;
 	-moz-animation: rotate 4s infinite;
-	animation: rotate 2s infinite;
+	animation: rotate 4s infinite;
 }
 
