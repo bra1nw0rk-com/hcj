@@ -158,4 +158,8 @@
 	-moz-animation: rotate 4s infinite;
 	animation: rotate 4s infinite;
 }
-
+[data-animated].glow {
+	-webkit-animation: glow 4s infinite;
+	-moz-animation: glow 4s infinite;
+	animation: glow 4s infinite;
+}
