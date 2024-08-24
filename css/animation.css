@@ -154,12 +154,8 @@
 	animation: spin 4s linear infinite;
 }
 [data-animated].rotate {
-	-webkit-animation: rotate 4s infinite;
-	-moz-animation: rotate 4s infinite;
-	animation: rotate 4s infinite;
+	-webkit-animation: rotate 8s infinite;
+	-moz-animation: rotate 8s infinite;
+	animation: rotate 8s infinite;
 }
-[data-animated].glow {
-	-webkit-animation: glow 4s infinite;
-	-moz-animation: glow 4s infinite;
-	animation: glow 4s infinite;
-}
+
