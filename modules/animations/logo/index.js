@@ -15,54 +15,43 @@ export default class AnimationLogo extends HTMLObject  {
         this.init();
     }
     init() {
+        // Scene, camera, renderer setup
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Add some lighting
-        const ambientLight = new THREE.AmbientLight(0x404040); // Soft white light
-        scene.add(ambientLight);
+// Load SVG path data and create shape
+        const svgPathData = "M 10 10 H 90 V 90 H 10 L 10 10";
+        const shape = new THREE.Shape();
+        const path = new THREE.Path();
+        path.fromSVGString(svgPathData);
+        shape.add(path);
 
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-        directionalLight.position.set(1, 1, 1).normalize();
-        scene.add(directionalLight);
-        // Load the STL file
-        const loader = new THREE.STLLoader();
-        let mesh;
+// Extrude the shape to create a 3D object
+        const extrudeSettings = {
+            depth: 10,
+            bevelEnabled: true,
+            bevelThickness: 1,
+            bevelSize: 1,
+            bevelSegments: 1
+        };
+        const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
 
-        loader.load('/img/3d/logo.stl', function (geometry) {
-            const material = new THREE.MeshPhongMaterial({ color: 0x0055ff });
-            mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
+// Create a material and mesh
+        const material = new THREE.MeshNormalMaterial();
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
 
-            // Center the mesh
-            geometry.center();
-
-            // Position the camera
-            camera.position.z = 100;
-        });
-
-        // Infinite rotation animation
-        function animate() {
+// Position camera and start animation loop
+        camera.position.z = 100;
+        const animate = function () {
             requestAnimationFrame(animate);
-
-            if (mesh) {
-                mesh.rotation.x += 0.01;
-                mesh.rotation.y += 0.01;
-            }
-
+            mesh.rotation.x += 0.01;
+            mesh.rotation.y += 0.01;
             renderer.render(scene, camera);
-        }
-
+        };
         animate();
-
-        // Handle window resize
-        window.addEventListener('resize', function () {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }, false);
     }
 }
