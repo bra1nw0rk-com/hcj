@@ -23,7 +23,7 @@ export default class LoginForm extends Form {
 			_this.call("submit");
 			return true;
 		});
-		$("body").on("keypress", `${this.selector} .submit`, function (e) {
+		$("body").on("keypress", `${this.selector}`, function (e) {
 			if(e.which == 13) {
 				_this.call("submit");
 			}
