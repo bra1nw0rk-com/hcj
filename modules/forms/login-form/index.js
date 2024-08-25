@@ -16,6 +16,7 @@ export default class LoginForm extends Form {
 	}
 	init() {
 		let _this = this;
+		console.log("ok")
 		WS.ui.effects.show(`${_this.selector}`);
 		$("body").on("click", `${this.selector} .submit`, function (e) {
 			e.preventDefault();
