@@ -10,7 +10,6 @@ export default class Module {
 								resolve(this.module);
 							} else if (typeof this.module == "function") {
 								let module =new this.module()
-								module.init();
 								resolve(module);
 							}
 						} else {
