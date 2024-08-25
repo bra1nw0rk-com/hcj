@@ -13,7 +13,7 @@ export default class MainMenu extends HTMLObject {
 				<i class="fa fa-solid fa-bars"></i>
 			</div>
 			<div class="menu-content">
-				<div><div data-module="menu-logo"></div></div>
+				<div data-momdule="menu-logo"></div>
 				
 			</div>
 		`);
