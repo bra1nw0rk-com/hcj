@@ -1,14 +1,13 @@
 import Form from "../../js/lib/html/Form.js";
 
 
-export default class MainMenu extends Form {
+export default class AboutModal extends Form {
 	constructor() {
 		super();
 		let _this = this;
         this.css = "/modules/about/index.css";
 		this.id = "about";
 		this.classes = "modal fadeIn";
-
 		this.template = $(html`
 			<div class="header">				
                 <div class="logo"></div>
