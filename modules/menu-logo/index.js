@@ -13,6 +13,11 @@ export default class MenuLogo extends HTMLObject  {
         //this.init();
     }
     init() {
-
+        $("body")
+            .off(`.${this.selector}`)
+            .on(`click.${this.selector}`,`.${this.selector}`,function(){
+                console.log('aaa')
+                Module.call("about");
+            })
     }
 }
