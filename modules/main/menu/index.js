@@ -108,7 +108,7 @@ export default class MainMenu extends HTMLObject {
 					parent.find(">.dropdown-content").append(newMenuItem);
 				}
 			});
-			$(`[name="main-menu"] .menu-content:has(:not(.menu-icon, [data-module="menu-logo"] ))`).remove();
+			//$(`[name="main-menu"] .menu-content:has(:not(.menu-icon, [data-module="menu-logo"] ))`).remove();
 			$(`[name="main-menu"] .menu-content`).append(tmpDiv.html());
 
 		});
