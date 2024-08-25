@@ -34,7 +34,7 @@ export default class AnimationLogo extends HTMLObject  {
                     const extrudeSettings = {
                         depth: 5, // Reduce depth for a thinner object
                         bevelEnabled: true,
-                        bevelThickness: 0.5,
+                        bevelThickness: 1,
                         bevelSize: 0.5,
                         bevelSegments: 1
                     };
