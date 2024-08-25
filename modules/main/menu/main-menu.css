@@ -21,18 +21,7 @@
 	display: none;
 }
 
-[name="main-menu"] .menu-content .menu-logo {
-	display: inline-block;
-	vertical-align: middle;
 
-	background-repeat: no-repeat;
-	cursor: pointer;
-	opacity: 0.5;
-}
-
-[name="main-menu"] .menu-content .menu-logo:hover {
-	opacity: 1;
-}
 
 [name="main-menu"] .menu-content > .menu-item {
 	display: inline-block;
@@ -114,13 +103,7 @@
 	[name="main-menu"] .menu-icon {
 		display: none;
 	}
-	[name="main-menu"] .menu-content .menu-logo {
-		background-size: auto 100%;
-		background-position: center;
-		height: 14px;
-		width: 18px;
-		background-image: var(--menu-logo);
-	}
+
 	[name="main-menu"] .menu-content .menu-item.dropdown:hover > .dropdown-content {
 		display: block;
 	}

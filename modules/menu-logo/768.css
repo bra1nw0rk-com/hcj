@@ -1,0 +1,11 @@
+@media only screen and (max-width: 768px) {
+    [name="menu-logo"] {
+        position: relative;
+        background-size: 145px auto;
+        height: 22px;
+        width: 145px;
+        margin: 0.5em 50%;
+        transform: translateX(-50%);
+        background-image: var(--content-bg-logo);
+    }
+}
