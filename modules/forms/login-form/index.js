@@ -16,7 +16,6 @@ export default class LoginForm extends Form {
 	}
 	init() {
 		let _this = this;
-		console.log("ok")
 		WS.ui.effects.show(`${_this.selector}`);
 		$("body").on("click", `${this.selector} .submit`, function (e) {
 			e.preventDefault();
@@ -29,9 +28,11 @@ export default class LoginForm extends Form {
 			let pass = $(`${_this.selector}  #password`).val()
 			WS.user.login(login,pass,function(data){
 				if(data){
-					WS.ui.closeModal(`${_this.selector}`, function () {});
+					//WS.ui.closeModal(`${_this.selector}`, function () {});
+					_this.close(function(){})
 				}else{
-					WS.ui.clearForm(`${_this.selector}`);
+					//WS.ui.clearForm(`${_this.selector}`);
+					_this.clear()
 					WS.ui.effects.shake(`${_this.selector}`);
 				}
 			})

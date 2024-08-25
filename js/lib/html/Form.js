@@ -9,4 +9,12 @@ export default class Form extends HTMLObject {
 	set title(text) {
 		this.#title.html(text);
 	}
+	close(callback){
+		WS.ui.closeModal(`${this.selector}`, callback);
+	}
+	clear() {
+		$(`${this.selector}` + " input").each(function () {
+			$(this).val("");
+		});
+	}
 }

@@ -37,11 +37,7 @@ export default class UI {
 			$(this).remove();
 		});
 	}
-	clearForm(selector) {
-		$(selector + " input").each(function () {
-			$(this).val("");
-		});
-	}
+
 	closeModal(selector, callback) {
 
 		$(selector).animate(
