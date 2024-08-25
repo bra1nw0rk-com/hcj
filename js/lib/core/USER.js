@@ -80,10 +80,17 @@ export default class USER {
 
             if(data.length > 0) {
                 if (data[0].result === "ok") {
+                    WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d"/*key*/);
+                    WS.user.testLogin();
                     callback(true);
+                }else{
+                    WS.user.update(null);
+                    callback(false);
                 }
+            }else {
+                WS.user.update(null);
+                callback(false);
             }
-            callback(false);
 
         })
 

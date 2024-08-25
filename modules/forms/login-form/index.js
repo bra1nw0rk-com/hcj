@@ -29,8 +29,7 @@ export default class LoginForm extends Form {
 			WS.user.login(login,pass,function(data,key){
 				if(data){
 					WS.ui.closeModal(`${_this.selector}`, function () {
-						WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d"/*key*/);
-						WS.user.testLogin();
+
 					});
 				}else{
 					WS.ui.clearForm(`${_this.selector}`);
