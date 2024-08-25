@@ -15,7 +15,6 @@ export default class AnimationLogo extends HTMLObject  {
         this.init();
     }
     init() {
-        // Scene, camera, and renderer setup
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
@@ -53,24 +52,9 @@ export default class AnimationLogo extends HTMLObject  {
                     // Apply the offset to the geometry
                     geometry.translate(offsetX, offsetY, offsetZ);
 
-                    // Create a gradient material
-                    const vertexColors = [];
-                    const colorTop = new THREE.Color(0x0000ff); // Blue
-                    const colorBottom = new THREE.Color(0xffa500); // Orange
-
-                    // Add vertex colors for the gradient
-                    geometry.faces.forEach((face, i) => {
-                        if (i % 2 === 0) {
-                            vertexColors.push(colorTop, colorBottom, colorBottom);
-                        } else {
-                            vertexColors.push(colorTop, colorTop, colorBottom);
-                        }
-                    });
-
-                    geometry.colorsNeedUpdate = true;
-
-                    const material = new THREE.MeshPhongMaterial({
-                        vertexColors: THREE.VertexColors, // Use vertex colors for the gradient
+                    // Extract the color from the SVG path
+                    const material = new THREE.MeshBasicMaterial({
+                        color: path.color, // Use the path's color
                         side: THREE.DoubleSide
                     });
 
@@ -99,6 +83,7 @@ export default class AnimationLogo extends HTMLObject  {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 0, 100).normalize();
         scene.add(directionalLight);
+
 
     }
 }
