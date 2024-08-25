@@ -1,7 +1,11 @@
 [name="aboutModal"] {
+    .content{
+        position: relative;
+    }
     .header {
         position: relative;
     }
+
 
     .header .logo {
         display: inline-block;
