@@ -29,7 +29,10 @@ export default class LoginForm extends Form {
 			WS.user.login(login,pass,function(data){
 				if(data){
 					//WS.ui.closeModal(`${_this.selector}`, function () {});
-					_this.close(function(){})
+					_this.close(function(){
+						WS.user.testLogin();
+
+					})
 				}else{
 					//WS.ui.clearForm(`${_this.selector}`);
 					_this.clear()
