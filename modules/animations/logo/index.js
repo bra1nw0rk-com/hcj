@@ -15,7 +15,7 @@ export default class AnimationLogo extends HTMLObject  {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(45, 105);
+        renderer.setSize(105, 45);
         this.template = renderer.domElement;
 
 
@@ -57,7 +57,7 @@ export default class AnimationLogo extends HTMLObject  {
                     });
 
                     const mesh = new THREE.Mesh(geometry, material);
-                    mesh.scale.set(0.03, 0.03, 0.03); // Scale down the object
+                    mesh.scale.set(0.1, 0.1, 0.1); // Scale down the object
                     scene.add(mesh);
                 });
             });
