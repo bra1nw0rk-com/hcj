@@ -78,17 +78,15 @@ export default class USER {
             params: [login,password]
         },function(data){
             console.log(data)
-            if(data.result==="ok"){
-                return true;
+            if(data.length > 0) {
+                if (data[0].result === "ok") {
+                    return true;
+                }
             }
-        })
-        /*
-        if (login === "admin" && password === "admin") {
-            return true
-        }
+            return false;
 
-         */
-        return false;
+        })
+
     }
     logout() {
         clearInterval(this.loginTimer);
