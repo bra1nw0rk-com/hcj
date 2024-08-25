@@ -1,5 +1,7 @@
-#about {
-    .header {}
+[name="aboutModal"] {
+    .header {
+        position: relative;
+    }
 
     .header .logo {
         display: inline-block;

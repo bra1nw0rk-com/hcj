@@ -9,22 +9,14 @@ export default class AboutModal extends Form {
 		this.title = "About";
 		this.classes = "modal fadeIn";
 		this.name ="aboutModal"
-		this.template = $(html`
-			<div class="header">				
-                <div class="logo"></div>
-			</div>
-			<div class="content">
-				content
-			</div>
-            <div class="footer">
-            </div>
+		this.content = $(html`
+			BWOS - Brain Work Operating System.
 		`);
 
 
 	}
 	init() {
 		$("body #content").append(this.get());
-		console.log('aaa')
 	}
 
 }
