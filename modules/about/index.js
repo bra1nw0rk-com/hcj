@@ -1,4 +1,5 @@
-import HTMLObject from "../../../js/lib/html/HTMLObject.js";
+import Form from "../../js/lib/html/Form.js";
+
 
 export default class MainMenu extends Form {
 	constructor() {
