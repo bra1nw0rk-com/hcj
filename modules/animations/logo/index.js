@@ -20,16 +20,40 @@ export default class AnimationLogo extends HTMLObject  {
 
         camera.position.z = 100;
 
+// Create gradient texture
+        function createGradientTexture() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 512;
+            canvas.height = 512;
+            const context = canvas.getContext('2d');
+
+            // Create gradient
+            const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop(0, '#FF8E3D');
+            gradient.addColorStop(0.495838, 'white');
+            gradient.addColorStop(0.98, '#0064D9');
+
+            // Fill the canvas with the gradient
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Use the canvas as a texture
+            const texture = new THREE.CanvasTexture(canvas);
+            return texture;
+        }
+
 // Load the SVG file
         const loader = new SVGLoader();
         loader.load('/img/logo_color.svg', function(data) {
             const paths = data.paths;
 
+            const gradientTexture = createGradientTexture();
+
             paths.forEach((path) => {
                 const shapes = path.toShapes(true);
                 shapes.forEach((shape) => {
                     const extrudeSettings = {
-                        depth: 15, // Adjust depth for desired thickness
+                        depth: 15,
                         bevelEnabled: true,
                         bevelThickness: 0.5,
                         bevelSize: 0.5,
@@ -49,11 +73,9 @@ export default class AnimationLogo extends HTMLObject  {
                     // Apply the offset to the geometry
                     geometry.translate(offsetX, offsetY, offsetZ);
 
-                    // Extract the color from the SVG path's style
+                    // Apply gradient texture as a material
                     const material = new THREE.MeshBasicMaterial({
-                        color: path.userData.style.fill !== undefined && path.userData.style.fill !== 'none'
-                            ? new THREE.Color(path.userData.style.fill)
-                            : new THREE.Color(0xffffff), // Default to white if no fill color is defined
+                        map: gradientTexture,
                         side: THREE.DoubleSide
                     });
 
@@ -82,8 +104,6 @@ export default class AnimationLogo extends HTMLObject  {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 0, 100).normalize();
         scene.add(directionalLight);
-
-
 
     }
 }
