@@ -17,31 +17,65 @@ export default class AnimationLogo extends HTMLObject  {
     init() {
         // Scene, camera, and renderer setup
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
         camera.position.z = 100;
 
-        // Load the SVG file
+// Load the SVG file
         const loader = new SVGLoader();
         loader.load('/img/logo_color.svg', function(data) {
             const paths = data.paths;
-            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide, depthWrite: false });
 
             paths.forEach((path) => {
                 const shapes = path.toShapes(true);
                 shapes.forEach((shape) => {
                     const extrudeSettings = {
-                        depth: 5,
+                        depth: 5, // Reduce depth for a thinner object
                         bevelEnabled: true,
                         bevelThickness: 0.5,
                         bevelSize: 0.5,
                         bevelSegments: 1
                     };
                     const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+
+                    // Compute the bounding box
+                    geometry.computeBoundingBox();
+
+                    // Calculate the offset to center the geometry
+                    const boundingBox = geometry.boundingBox;
+                    const offsetX = -0.5 * (boundingBox.max.x + boundingBox.min.x);
+                    const offsetY = -0.5 * (boundingBox.max.y + boundingBox.min.y);
+                    const offsetZ = -0.5 * (boundingBox.max.z + boundingBox.min.z);
+
+                    // Apply the offset to the geometry
+                    geometry.translate(offsetX, offsetY, offsetZ);
+
+                    // Create a gradient material
+                    const vertexColors = [];
+                    const colorTop = new THREE.Color(0x0000ff); // Blue
+                    const colorBottom = new THREE.Color(0xffa500); // Orange
+
+                    // Add vertex colors for the gradient
+                    geometry.faces.forEach((face, i) => {
+                        if (i % 2 === 0) {
+                            vertexColors.push(colorTop, colorBottom, colorBottom);
+                        } else {
+                            vertexColors.push(colorTop, colorTop, colorBottom);
+                        }
+                    });
+
+                    geometry.colorsNeedUpdate = true;
+
+                    const material = new THREE.MeshPhongMaterial({
+                        vertexColors: THREE.VertexColors, // Use vertex colors for the gradient
+                        side: THREE.DoubleSide
+                    });
+
                     const mesh = new THREE.Mesh(geometry, material);
+                    mesh.scale.set(0.5, 0.5, 0.5); // Scale down the object
                     scene.add(mesh);
                 });
             });
@@ -52,10 +86,19 @@ export default class AnimationLogo extends HTMLObject  {
         const animate = function() {
             requestAnimationFrame(animate);
             scene.children.forEach(mesh => {
-                //mesh.rotation.z += 0.01;
+                // Rotate the mesh on the y-axis
                 mesh.rotation.y += 0.05;
             });
             renderer.render(scene, camera);
         };
+
+// Add lighting for better shading and visibility
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(0, 0, 100).normalize();
+        scene.add(directionalLight);
+
     }
 }
