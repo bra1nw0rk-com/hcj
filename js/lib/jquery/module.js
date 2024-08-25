@@ -12,7 +12,6 @@ $(
 					let moduleName = $(this).attr("data-module");
 					Module.call(moduleName).then((content) => {
 						$(this).replaceWith(content.get());
-						content.init();
 					});
 				});
 			}
