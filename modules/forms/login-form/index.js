@@ -18,12 +18,12 @@ export default class LoginForm extends Form {
 		let _this = this;
 		WS.ui.effects.show(`${_this.selector}`);
 
-		$("body").off(`.${this.selector}`).on(`click.${this.selector}`, `${this.selector} .submit`, function (e) {
+		$("body").off(`.${this.name}`).on(`click.${this.selector}`, `${this.selector} .submit`, function (e) {
 			e.preventDefault();
 			storage.set("environment", $(`${_this.selector}  #environment`).val());
 			_this.call("submit");
 			return true;
-		}).on(`keypress.${this.selector}`, `${this.selector}`, function (e) {
+		}).on(`keypress.${this.name}`, `${this.selector}`, function (e) {
 			if(e.which === 13) {
 				_this.call("submit");
 			}

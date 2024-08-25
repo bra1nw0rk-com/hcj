@@ -54,7 +54,7 @@ export default class MainMenu extends HTMLObject {
 			.on("mouseover.mainMenu", `[name="main-menu"] .menu-item.dropdown, [name="main-menu"] .menu-item.submenu`, function (e) {
 				$(`[name="main-menu"] .dropdown-content`).removeClass("hide");
 			});
-		$("html").on("click", function (event) {
+		$("html").on("click.mainMenu", function (event) {
 			$(`[name="main-menu"] .dropdown-content`).removeClass("show");
 			$(`[name="main-menu"] .menu-content`).removeClass("show");
 			$(`[name="main-menu"] .menu-icon`).removeClass("hide");
