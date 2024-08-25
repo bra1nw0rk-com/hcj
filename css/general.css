@@ -34,7 +34,7 @@ html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
-body {
+body, body::backdrop {
 	font-family: var(--font-family);
 	position: absolute;
 	display: block;
