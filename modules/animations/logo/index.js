@@ -22,7 +22,7 @@ export default class AnimationLogo extends HTMLObject  {
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        camera.position.z = 100;
+        camera.position.z = 0;
 
         // Load the SVG file
         const loader = new SVGLoader();
