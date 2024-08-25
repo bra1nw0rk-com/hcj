@@ -23,6 +23,12 @@ export default class LoginForm extends Form {
 			_this.call("submit");
 			return true;
 		});
+		$("body").on("keypress", `${this.selector} .submit`, function (e) {
+			if(e.which == 13) {
+				_this.call("submit");
+			}
+			return true;
+		});
 		this.on("submit",function(){
 			let login = $(`${_this.selector}  #username`).val()
 			let pass = $(`${_this.selector}  #password`).val()
