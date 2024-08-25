@@ -9,7 +9,6 @@ export default class MainMenu extends Form {
 		this.id = "about";
 		this.classes = "modal fadeIn";
 
-
 		this.template = $(html`
 			<div class="header">				
                 <div class="logo"></div>
@@ -21,11 +20,10 @@ export default class MainMenu extends Form {
             </div>
 		`);
 
+
 	}
 	init() {
-		this.load();		
+		$("body #content").append(this.get());
 	}
-	load() {
-		
-	}
+
 }
