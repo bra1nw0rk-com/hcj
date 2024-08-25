@@ -186,7 +186,7 @@ table {
 	transform: translateY(-50%) translateX(-50%);
 	z-index: 1;
 }
-.modal::after{
+.modal::before{
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 	content:"";
