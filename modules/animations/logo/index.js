@@ -13,7 +13,7 @@ export default class AnimationLogo extends HTMLObject  {
     }
     init() {
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(105, 45);
         this.template = renderer.domElement;
@@ -75,7 +75,7 @@ export default class AnimationLogo extends HTMLObject  {
         };
 
 // Add lighting for better shading and visibility
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
         scene.add(ambientLight);
 
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
