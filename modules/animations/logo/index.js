@@ -59,7 +59,7 @@ export default class AnimationLogo extends HTMLObject  {
                     });
 
                     const mesh = new THREE.Mesh(geometry, material);
-                    mesh.scale.set(0.5, 0.5, 0.5); // Scale down the object
+                    mesh.scale.set(0.25, 0.25, 0.25); // Scale down the object
                     scene.add(mesh);
                 });
             });
@@ -71,7 +71,7 @@ export default class AnimationLogo extends HTMLObject  {
             requestAnimationFrame(animate);
             scene.children.forEach(mesh => {
                 // Rotate the mesh on the y-axis
-                mesh.rotation.y += 0.05;
+                mesh.rotation.y += 0.001;
             });
             renderer.render(scene, camera);
         };
