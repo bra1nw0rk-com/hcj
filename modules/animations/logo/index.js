@@ -22,7 +22,7 @@ export default class AnimationLogo extends HTMLObject  {
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        camera.position.z = 1000;
+        camera.position.z = 100;
 
         // Load the SVG file
         const loader = new SVGLoader();
@@ -52,7 +52,7 @@ export default class AnimationLogo extends HTMLObject  {
         const animate = function() {
             requestAnimationFrame(animate);
             scene.children.forEach(mesh => {
-                mesh.rotation.x += 0;
+                mesh.rotation.z += 0.01;
                 mesh.rotation.y += 0.01;
             });
             renderer.render(scene, camera);
