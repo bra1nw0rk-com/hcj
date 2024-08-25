@@ -15,12 +15,16 @@ export default class AnimationLogo extends HTMLObject  {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
+
+// Set the background color to opaque (e.g., white)
+        renderer.setClearColor(0xffffff, 1);  // Color is white (#ffffff), and the alpha is 1 (fully opaque)
+
         renderer.setSize(105, 45);
         this.template = renderer.domElement;
 
         camera.position.z = 100;
 
-// Create gradient texture
+// Create gradient texture (as previously discussed)
         function createGradientTexture() {
             const canvas = document.createElement('canvas');
             canvas.width = 512;
@@ -104,6 +108,7 @@ export default class AnimationLogo extends HTMLObject  {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 0, 100).normalize();
         scene.add(directionalLight);
+
 
     }
 }
