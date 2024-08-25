@@ -19,7 +19,7 @@ export default class AnimationLogo extends HTMLObject  {
 // Set the background color to opaque (e.g., white)
         renderer.setClearColor(0xffffff, 1);  // Color is white (#ffffff), and the alpha is 1 (fully opaque)
 
-        renderer.setSize(105, 45);
+        renderer.setSize(210, 90);
         this.template = renderer.domElement;
 
         camera.position.z = 100;
