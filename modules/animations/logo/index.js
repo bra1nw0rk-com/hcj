@@ -60,7 +60,7 @@ export default class AnimationLogo extends HTMLObject  {
                         depth: 15,
                         bevelEnabled: true,
                         bevelThickness: 0.5,
-                        bevelSize: 0.5,
+                        bevelSize: 1,
                         bevelSegments: 100,
                         curveSegments: 50 // Increase for smoother curves
                     };
