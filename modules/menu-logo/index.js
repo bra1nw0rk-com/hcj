@@ -15,7 +15,7 @@ export default class MenuLogo extends HTMLObject  {
     init() {
         $("body")
             .off(`.${this.selector}`)
-            .on(`click.${this.selector}`,`.${this.selector}`,function(){
+            .on(`click.${this.selector}`,`${this.selector}`,function(){
                 console.log('aaa')
                 Module.call("about");
             })
