@@ -5,7 +5,7 @@ export default class LoginForm extends Form {
 		super();
 		this.css = `/modules/forms/login-form/index.css`;
 		this.title = "Login";
-		this.classes = "modal fadeIn";
+		this.classes = "modal hidden";
 		this.name ="userLoginForm"
 		this.template = $(html`
 			<input type="text" id="username" name="username" placeholder="User" autocomplete="username" required />
@@ -35,7 +35,8 @@ export default class LoginForm extends Form {
 				}
 			})
 
-		})
+		});
+		WS.ui.effects.show(`${_this.selector}`);
 	}
 }
 

@@ -13,6 +13,13 @@ export default class UI {
 				$(selector).removeClass("modal-shake");
 			}, 800);
 		},
+		show(selector) {
+			$(selector).attr("data-animated","")
+			$(selector).removeClass("fadeIn").removeClass("modal-shake").addClass("fadeIn");
+			setTimeout(function () {
+				$(selector).removeClass("fadeIn");
+			}, 2000);
+		},
 	};
 	constructor() {}
 	init() {
