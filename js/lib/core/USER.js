@@ -79,9 +79,10 @@ export default class USER {
         },function(data){
             if(data.length > 0) {
                 if (data[0].result === "ok") {
+                    callback(true);
                     WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d"/*key*/);
                     WS.user.testLogin();
-                    callback(true);
+
                 }else{
                     WS.user.update(null);
                     callback(false);
