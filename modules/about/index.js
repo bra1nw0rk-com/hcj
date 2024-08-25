@@ -6,8 +6,9 @@ export default class AboutModal extends Form {
 		super();
 		let _this = this;
         this.css = "/modules/about/index.css";
-		this.id = "about";
+		this.title = "About";
 		this.classes = "modal fadeIn";
+		this.name ="aboutModal"
 		this.template = $(html`
 			<div class="header">				
                 <div class="logo"></div>
