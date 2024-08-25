@@ -26,15 +26,18 @@ export default class LoginForm extends Form {
 		this.on("submit",function(){
 			let login = $(`${_this.selector}  #username`).val()
 			let pass = $(`${_this.selector}  #password`).val()
-			if(WS.user.login(login,pass)){
-				WS.ui.closeModal(`${_this.selector}`, function () {
-					WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d");
-					WS.user.testLogin();
-				});
-			}else{
-				WS.ui.clearForm(`${_this.selector}`);
-				WS.ui.effects.shake(`${_this.selector}`);
-			}
+			WS.user.login(login,pass,function(data){
+				if(data){
+					WS.ui.closeModal(`${_this.selector}`, function () {
+						WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d");
+						WS.user.testLogin();
+					});
+				}else{
+					WS.ui.clearForm(`${_this.selector}`);
+					WS.ui.effects.shake(`${_this.selector}`);
+				}
+			})
+
 		})
 	}
 }

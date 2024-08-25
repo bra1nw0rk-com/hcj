@@ -71,19 +71,19 @@ export default class USER {
         this.lastUpdate = new Date().getTime();
         //this.events.call("loggedIn");
     }
-    login(login, password) {
+    login(login, password, callback) {
         let _this = this
         WEBFS.api('/',{
             cmd:'login',
             params: [login,password]
         },function(data){
-            console.log(data)
+
             if(data.length > 0) {
                 if (data[0].result === "ok") {
-                    return true;
+                    callback(true);
                 }
             }
-            return false;
+            callback(false);
 
         })
 
