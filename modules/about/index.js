@@ -24,6 +24,7 @@ export default class AboutModal extends Form {
 	}
 	init() {
 		$("body #content").append(this.get());
+		console.log('aaa')
 	}
 
 }
