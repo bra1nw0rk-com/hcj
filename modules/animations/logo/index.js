@@ -16,14 +16,15 @@ export default class AnimationLogo extends HTMLObject  {
         const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
 
-// Set the background color to opaque white
-        renderer.setClearColor(0xffffff, 1);  // Color is white (#ffffff), and the alpha is 1 (fully opaque)
+// Set the background color to opaque (e.g., white)
+        renderer.setClearColor(0xffffff, 0);  // Color is white (#ffffff), and the alpha is 1 (fully opaque)
+
         renderer.setSize(210, 90);
         this.template = renderer.domElement;
 
         camera.position.z = 100;
 
-// Create gradient texture
+// Create gradient texture (as previously discussed)
         function createGradientTexture() {
             const canvas = document.createElement('canvas');
             canvas.width = 512;
@@ -42,10 +43,6 @@ export default class AnimationLogo extends HTMLObject  {
 
             // Use the canvas as a texture
             const texture = new THREE.CanvasTexture(canvas);
-            texture.wrapS = THREE.RepeatWrapping; // Ensure texture repeats if needed
-            texture.wrapT = THREE.RepeatWrapping;
-            texture.minFilter = THREE.LinearFilter; // Make texture filter smoother
-            texture.magFilter = THREE.LinearFilter;
             return texture;
         }
 
@@ -81,19 +78,6 @@ export default class AnimationLogo extends HTMLObject  {
                     // Apply the offset to the geometry
                     geometry.translate(offsetX, offsetY, offsetZ);
 
-                    // Map the texture coordinates for the gradient
-                    geometry.faceVertexUvs[0] = [];
-                    geometry.faces.forEach(face => {
-                        const uvs = [
-                            new THREE.Vector2(0, 1),
-                            new THREE.Vector2(1, 1),
-                            new THREE.Vector2(1, 0),
-                        ];
-                        geometry.faceVertexUvs[0].push([uvs[0], uvs[1], uvs[2]]);
-                    });
-
-                    geometry.uvsNeedUpdate = true;
-
                     // Apply gradient texture as a material
                     const material = new THREE.MeshBasicMaterial({
                         map: gradientTexture,
@@ -125,7 +109,6 @@ export default class AnimationLogo extends HTMLObject  {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 0, 100).normalize();
         scene.add(directionalLight);
-
 
 
     }
