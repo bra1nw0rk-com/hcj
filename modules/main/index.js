@@ -24,7 +24,8 @@ export default class Main extends HTMLObject {
 				</div>
 			</footer>
 		`);
-		
+
+
 		$("body").html("").append(this.get());
 	}
 
