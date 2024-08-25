@@ -71,7 +71,8 @@ export default class MainMenu extends HTMLObject {
 			method: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
-				cmd:"getMainMenu"
+				cmd:"getMenu",
+				params:["main"]
 			}),
 			headers: {
 				'Accept': 'application/json'
