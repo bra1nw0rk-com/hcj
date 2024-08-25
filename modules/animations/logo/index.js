@@ -62,7 +62,7 @@ export default class AnimationLogo extends HTMLObject  {
                         bevelThickness: 0.5,
                         bevelSize: 0.5,
                         bevelSegments: 50,
-                        curveSegments: 12 // Increase for smoother curves
+                        curveSegments: 50 // Increase for smoother curves
                     };
                     const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
 
