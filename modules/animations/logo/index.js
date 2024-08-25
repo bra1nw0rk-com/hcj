@@ -8,17 +8,14 @@ export default class AnimationLogo extends HTMLObject  {
         let _this = this;
         this.css = "/modules/animations/logo/index.css";
         this.name = "animated-logo";        
-        this.template = $(html`
-            <img src = "/img/logo_color.svg" alt="bwos logo" data-animated="" class="rotate"/>
-               
-		    `);
+        this.template = $(html``);
         this.init();
     }
     init() {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(100, 100);
+        renderer.setSize(45, 105);
         this.template = renderer.domElement;
 
 
