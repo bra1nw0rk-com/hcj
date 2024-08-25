@@ -18,7 +18,7 @@ export default class CalendarMaya extends HTMLObject {
             </div>
                 
 		`);
-        this.init();
+        //this.init();
     }
     init() {
         const tzolkinNames = [

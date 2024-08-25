@@ -22,7 +22,7 @@ export default class MainMenu extends HTMLObject {
 		}		
         
 		$("body #content").append(this.get());
-		this.init();
+		//this.init();
 	}
 	init() {
 		this.load();

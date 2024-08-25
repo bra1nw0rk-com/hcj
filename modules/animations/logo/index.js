@@ -9,7 +9,7 @@ export default class AnimationLogo extends HTMLObject  {
         this.css = "/modules/animations/logo/index.css";
         this.name = "animated-logo";        
         this.template = $(html``);
-        this.init();
+        //this.init();
     }
     init() {
         const scene = new THREE.Scene();
