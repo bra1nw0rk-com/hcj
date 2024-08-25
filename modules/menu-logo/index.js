@@ -7,7 +7,7 @@ export default class MenuLogo extends HTMLObject  {
         this.css = "/modules/menu-logo/index.css";
         this.name = "menu-logo";
         this.template = $(html`            
-          <div>Mail Manager</div>               
+                        
 		`);
 
         //this.init();
