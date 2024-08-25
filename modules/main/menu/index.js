@@ -122,4 +122,5 @@ export default class MainMenu extends HTMLObject {
 			}
 		});
 	}
+	add(parent,){}
 }
