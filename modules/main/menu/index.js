@@ -1,4 +1,5 @@
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
+import WEBFS from "../../../js/lib/core/WEBFS";
 
 export default class MainMenu extends HTMLObject {
 	constructor() {
@@ -66,60 +67,49 @@ export default class MainMenu extends HTMLObject {
 		});
 	}
 	load() {
-		$.ajax({
-			url: '/',
-			method: 'POST',
-			contentType: 'application/json',
-			data: JSON.stringify({
-				cmd:"getMenu",
-				params:["main"]
-			}),
-			headers: {
-				'Accept': 'application/json'
-			},
-			success: function(data) {
-				$(`[name="main-menu"]`).find("[data-parent='0']").remove();
-				let tmpDiv = $("<div></div>");
-				data.forEach(function (item) {
-						let icon = item.icon ? "<i class='" + item.icon + "'></i>" : "<i class='fa fa-ravelry'></i>";
-						let app = item.app ? "data-app='" + item.app + "'" : "";
-						let newMenuItem = $("<div></div>");
-						for (let key in item) {
-							newMenuItem.attr("data-" + key, item[key]);
+		WEBFS.api('/',{
+			cmd:"getMenu",
+			params:["main"]
+		},function(data) {
+			$(`[name="main-menu"]`).find("[data-parent='0']").remove();
+			let tmpDiv = $("<div></div>");
+			data.forEach(function (item) {
+				let icon = item.icon ? "<i class='" + item.icon + "'></i>" : "<i class='fa fa-ravelry'></i>";
+				let app = item.app ? "data-app='" + item.app + "'" : "";
+				let newMenuItem = $("<div></div>");
+				for (let key in item) {
+					newMenuItem.attr("data-" + key, item[key]);
+				}
+				if (item.type === "separator") {
+					newMenuItem.addClass("menu-separator");
+				} else {
+					newMenuItem.addClass("menu-item");
+					newMenuItem.html(icon + item.text);
+				}
+				if (item.parent_id === 0) {
+					newMenuItem.attr("data-level", "0");
+					tmpDiv.append(newMenuItem);
+				} else {
+					let parent = tmpDiv.find('[data-id="' + item.parent_id + '"]');
+					if (parent.attr("data-level") === "0") {
+						if (!parent.hasClass("dropdown")) {
+							parent.addClass("dropdown");
+							let dropdownContent = $('<div class="dropdown-content"></div>');
+							parent.append(dropdownContent);
 						}
-						if (item.type === "separator") {
-							newMenuItem.addClass("menu-separator");
-						} else {
-							newMenuItem.addClass("menu-item");
-							newMenuItem.html(icon + item.text);
+					} else {
+						if (!parent.hasClass("submenu")) {
+							parent.addClass("submenu");
+							let dropdownContent = $('<div class="dropdown-content"></div>');
+							parent.append(dropdownContent);
 						}
-						if (item.parent_id === 0) {
-							newMenuItem.attr("data-level", "0");
-							tmpDiv.append(newMenuItem);
-						} else {
-							let parent = tmpDiv.find('[data-id="' + item.parent_id + '"]');
-							if (parent.attr("data-level") === "0") {
-								if (!parent.hasClass("dropdown")) {
-									parent.addClass("dropdown");
-									let dropdownContent = $('<div class="dropdown-content"></div>');
-									parent.append(dropdownContent);
-								}
-							} else {
-								if (!parent.hasClass("submenu")) {
-									parent.addClass("submenu");
-									let dropdownContent = $('<div class="dropdown-content"></div>');
-									parent.append(dropdownContent);
-								}
-							}
-							parent.find(">.dropdown-content").append(newMenuItem);
-						}
-				});
-				$(`[name="main-menu"] .menu-content:has(:not(.menu-icon, .menu-logo ))`).remove();
-				$(`[name="main-menu"] .menu-content`).append(tmpDiv.html());
-			},
-			error: function(xhr, status, error) {
-				console.error('Error: ' + error);
-			}
+					}
+					parent.find(">.dropdown-content").append(newMenuItem);
+				}
+			});
+			$(`[name="main-menu"] .menu-content:has(:not(.menu-icon, .menu-logo ))`).remove();
+			$(`[name="main-menu"] .menu-content`).append(tmpDiv.html());
+
 		});
 	}
 	add(parent,){}
