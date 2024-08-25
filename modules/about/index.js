@@ -1,8 +1,8 @@
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
-export default class MainMenu extends HTMLObject {
+export default class MainMenu extends Form {
 	constructor() {
-		super("about");
+		super();
 		let _this = this;
         this.css = "/modules/about/index.css";
 		this.id = "about";
@@ -14,13 +14,12 @@ export default class MainMenu extends HTMLObject {
                 <div class="logo"></div>
 			</div>
 			<div class="content">
-				
+				content
 			</div>
             <div class="footer">
             </div>
 		`);
-		
-		this.init();
+
 	}
 	init() {
 		this.load();		
