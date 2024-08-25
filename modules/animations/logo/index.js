@@ -59,7 +59,7 @@ export default class AnimationLogo extends HTMLObject  {
                     });
 
                     const mesh = new THREE.Mesh(geometry, material);
-                    mesh.scale.set(0.01, 0.01, 0.01); // Scale down the object
+                    mesh.scale.set(0.03, 0.03, 0.03); // Scale down the object
                     scene.add(mesh);
                 });
             });
