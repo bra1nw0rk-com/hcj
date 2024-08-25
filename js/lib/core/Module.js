@@ -9,7 +9,7 @@ export default class Module {
 							if (typeof this.module == "object") {
 								resolve(this.module);
 							} else if (typeof this.module == "function") {
-								resolve((new this.module()).init());
+								resolve(new this.module());
 							}
 						} else {
 							console.log(`module ${name} hasnt default export`);
