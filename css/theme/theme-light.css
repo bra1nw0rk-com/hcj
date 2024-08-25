@@ -1,5 +1,5 @@
 /* light-theme */
-.light-theme {
+.light-theme, .light-theme::backdrop {
 	--border-color: #3232321f;
 	--active-text-color: #000;
 	--inactive-text-color: #b7b7b7;

@@ -1,5 +1,5 @@
 /* dark-theme */
-.dark-theme {
+.dark-theme ,.dark-theme::backdrop{
 	--border-color: #3232324d;
 	--bg1: #08080859;
 	--bg2: #181818;
