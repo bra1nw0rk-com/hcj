@@ -26,11 +26,9 @@ export default class LoginForm extends Form {
 		this.on("submit",function(){
 			let login = $(`${_this.selector}  #username`).val()
 			let pass = $(`${_this.selector}  #password`).val()
-			WS.user.login(login,pass,function(data,key){
+			WS.user.login(login,pass,function(data){
 				if(data){
-					WS.ui.closeModal(`${_this.selector}`, function () {
-
-					});
+					WS.ui.closeModal(`${_this.selector}`, function () {});
 				}else{
 					WS.ui.clearForm(`${_this.selector}`);
 					WS.ui.effects.shake(`${_this.selector}`);

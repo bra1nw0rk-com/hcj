@@ -36,6 +36,7 @@ export default class UI {
 		});
 	}
 	closeModal(selector, callback) {
+
 		$(selector).animate(
 			{
 				opacity: 0,
