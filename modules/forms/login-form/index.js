@@ -12,7 +12,7 @@ export default class LoginForm extends Form {
 			<input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required />
 			<button class="submit">OK</button>
 		`);
-		this.init()
+		//this.init()
 	}
 	init() {
 		let _this = this;

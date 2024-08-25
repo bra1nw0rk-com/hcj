@@ -50,4 +50,6 @@ export default class HTMLObject extends CustomEvents {
 		this.object.find(node).remove();
 		this.object.append(node);
 	}
+
+	init(){}
 }
