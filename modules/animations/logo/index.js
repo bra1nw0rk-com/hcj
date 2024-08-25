@@ -32,7 +32,7 @@ export default class AnimationLogo extends HTMLObject  {
                 const shapes = path.toShapes(true);
                 shapes.forEach((shape) => {
                     const extrudeSettings = {
-                        depth: 5, // Reduce depth for a thinner object
+                        depth: 10, // Reduce depth for a thinner object
                         bevelEnabled: true,
                         bevelThickness: 1,
                         bevelSize: 0.5,
