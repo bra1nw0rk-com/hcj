@@ -18,8 +18,7 @@ export default class WEBFS {
 			.then((data) => {
 				let json = {};
 				try {
-					json = data.response;
-					callback(json);
+					callback(data.json());
 				} catch (e) {
 					console.log(e);
 				}
