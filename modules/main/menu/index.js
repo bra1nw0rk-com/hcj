@@ -1,5 +1,5 @@
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
-import WEBFS from "../../../js/lib/core/WEBFS";
+import WEBFS from "../../../js/lib/core/WEBFS.js";
 
 export default class MainMenu extends HTMLObject {
 	constructor() {
