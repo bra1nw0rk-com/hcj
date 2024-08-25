@@ -78,6 +78,9 @@ export default class USER {
             params: [login,password]
         },function(data){
             console.log(data)
+            if(data.result==="ok"){
+                return true;
+            }
         })
         /*
         if (login === "admin" && password === "admin") {
