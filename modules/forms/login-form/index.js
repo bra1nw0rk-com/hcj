@@ -34,7 +34,7 @@ export default class LoginForm extends Form {
 					});
 				}else{
 					WS.ui.clearForm(`${_this.selector}`);
-					//WS.ui.effects.shake(`${_this.selector}`);
+					WS.ui.effects.shake(`${_this.selector}`);
 				}
 			})
 
