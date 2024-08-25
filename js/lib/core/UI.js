@@ -15,7 +15,7 @@ export default class UI {
 		},
 		show(selector) {
 			$(selector).attr("data-animated","")
-			$(selector).removeClass("fadeIn").removeClass("modal-shake").addClass("fadeIn");
+			$(selector).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
 			setTimeout(function () {
 				$(selector).removeClass("fadeIn");
 			}, 2000);
