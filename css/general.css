@@ -185,6 +185,17 @@ table {
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
 }
+.modal::before{
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	content:"";
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 10px;
+}
 .modal h2 {
 	text-align: center;
 	margin-bottom: 0.75em;
