@@ -18,7 +18,6 @@ export default class AnimationLogo extends HTMLObject  {
         renderer.setSize(105, 45);
         this.template = renderer.domElement;
 
-
         camera.position.z = 100;
 
 // Load the SVG file
@@ -30,7 +29,7 @@ export default class AnimationLogo extends HTMLObject  {
                 const shapes = path.toShapes(true);
                 shapes.forEach((shape) => {
                     const extrudeSettings = {
-                        depth: 15, // Reduce depth for a thinner object
+                        depth: 15, // Adjust depth for desired thickness
                         bevelEnabled: true,
                         bevelThickness: 0.5,
                         bevelSize: 0.5,
@@ -50,9 +49,11 @@ export default class AnimationLogo extends HTMLObject  {
                     // Apply the offset to the geometry
                     geometry.translate(offsetX, offsetY, offsetZ);
 
-                    // Extract the color from the SVG path
+                    // Extract the color from the SVG path's style
                     const material = new THREE.MeshBasicMaterial({
-                        color: path.color, // Use the path's color
+                        color: path.userData.style.fill !== undefined && path.userData.style.fill !== 'none'
+                            ? new THREE.Color(path.userData.style.fill)
+                            : new THREE.Color(0xffffff), // Default to white if no fill color is defined
                         side: THREE.DoubleSide
                     });
 
@@ -81,6 +82,7 @@ export default class AnimationLogo extends HTMLObject  {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 0, 100).normalize();
         scene.add(directionalLight);
+
 
 
     }
