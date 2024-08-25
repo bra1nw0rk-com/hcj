@@ -1,4 +1,4 @@
-import WEBFS from "./WEBFS";
+import WEBFS from "./WEBFS.js";
 
 
 export default class USER {
