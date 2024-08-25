@@ -13,8 +13,7 @@ export default class MainMenu extends HTMLObject {
 				<i class="fa fa-solid fa-bars"></i>
 			</div>
 			<div class="menu-content">
-				<div data-module="menu-logo"></div>
-				
+				<div data-module="menu-logo"></div>				
 			</div>
 		`);
 
@@ -108,7 +107,7 @@ export default class MainMenu extends HTMLObject {
 					parent.find(">.dropdown-content").append(newMenuItem);
 				}
 			});
-			//$(`[name="main-menu"] .menu-content:has(:not(.menu-icon, [data-module="menu-logo"] ))`).remove();
+			$(`[name="main-menu"] .menu-content :not(.menu-icon, [data-module="menu-logo"] )`).remove();
 			$(`[name="main-menu"] .menu-content`).append(tmpDiv.html());
 
 		});
