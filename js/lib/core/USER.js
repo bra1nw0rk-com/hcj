@@ -75,10 +75,7 @@ export default class USER {
         let _this = this
         WEBFS.api('/',{
             cmd:'login',
-            params: {
-                login: login,
-                pass: password
-            }
+            params: [login,password]
         },function(data){
             console.log(data)
         })
