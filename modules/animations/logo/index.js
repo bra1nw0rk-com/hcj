@@ -52,8 +52,8 @@ export default class AnimationLogo extends HTMLObject  {
         const animate = function() {
             requestAnimationFrame(animate);
             scene.children.forEach(mesh => {
-                mesh.rotation.z += 0.01;
-                mesh.rotation.y += 0.01;
+                //mesh.rotation.z += 0.01;
+                mesh.rotation.y += 0.05;
             });
             renderer.render(scene, camera);
         };
