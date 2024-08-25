@@ -16,7 +16,7 @@ export default class LoginForm extends Form {
 	}
 	init() {
 		let _this = this;
-		console.log(`${this.selector} .submit`)
+		WS.ui.effects.show(`${_this.selector}`);
 		$("body").on("click", `${this.selector} .submit`, function (e) {
 			e.preventDefault();
 			storage.set("environment", $(`${_this.selector}  #environment`).val());
@@ -36,7 +36,7 @@ export default class LoginForm extends Form {
 			})
 
 		});
-		WS.ui.effects.show(`${_this.selector}`);
+
 	}
 }
 

@@ -194,3 +194,6 @@ table {
 	display: block;
 	margin-bottom: 8px;
 }
+.hidden{
+	display: none;
+}
