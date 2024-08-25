@@ -4,6 +4,7 @@ export default class WEBFS {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
+				"Accept": "application/json",
 			},
 			mode: "cors",
 			body: JSON.stringify(json),
