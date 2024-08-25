@@ -77,7 +77,6 @@ export default class USER {
             cmd:'login',
             params: [login,password]
         },function(data){
-
             if(data.length > 0) {
                 if (data[0].result === "ok") {
                     WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d"/*key*/);
