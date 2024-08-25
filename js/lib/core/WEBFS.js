@@ -2,7 +2,6 @@ export default class WEBFS {
 	static api(url, json, callback) {
 		fetch(url, {
 			method: "POST",
-			referrerPolicy: "unsafe-url",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -17,8 +16,6 @@ export default class WEBFS {
 			})
 			.then((data) => {
 				let json = {};
-				// Do something with the data
-				//console.log(data.response);
 				try {
 					json = data.response;
 					callback(json);

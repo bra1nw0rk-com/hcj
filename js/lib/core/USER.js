@@ -1,3 +1,4 @@
+import WEBFS from "./WEBFS";
 
 
 export default class USER {
@@ -72,9 +73,19 @@ export default class USER {
     }
     login(login, password) {
         let _this = this
+        WEBFS.api('/',{
+            'cmd':'login',
+            'login':login,
+            'pass':password
+        },function(data){
+            console.log(data)
+        })
+        /*
         if (login === "admin" && password === "admin") {
             return true
         }
+
+         */
         return false;
     }
     logout() {
