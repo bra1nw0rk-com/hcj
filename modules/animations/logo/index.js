@@ -10,6 +10,7 @@ export default class AnimationLogo extends HTMLObject  {
     }
     init() {
         const scene = new THREE.Scene();
+        console.log(this.object.innerWidth() / this.object.innerHeight())
         const camera = new THREE.PerspectiveCamera(25, this.object.innerWidth() / this.object.innerHeight(), 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
 
