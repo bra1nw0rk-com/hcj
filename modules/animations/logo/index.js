@@ -9,8 +9,12 @@ export default class AnimationLogo extends HTMLObject  {
         this.name = "animated-logo";
     }
     init() {
+         let _this = this;
         const scene = new THREE.Scene();
-        console.log(this.object.innerWidth() / this.object.innerHeight())
+        setInterval(function(){
+            console.log(_this.object.innerWidth() / _this.object.innerHeight())
+        },1000)
+
         const camera = new THREE.PerspectiveCamera(25, this.object.innerWidth() / this.object.innerHeight(), 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
 
