@@ -26,6 +26,20 @@ export default class UI {
 	constructor() {
 
 	}
+	#mutationObserver(){
+		window.mutationObserver = new MutationObserver((mutationList) =>
+			mutationList
+				.filter((m) => m.type === "childList")
+				.forEach((m) => {
+					m.addedNodes.forEach(function (e) {
+						$(e).trigger("mutation");
+					});
+				})
+		);
+		$(document).each(function () {
+			window.mutationObserver.observe(this, { childList: true, subtree: true });
+		});
+	}
 	#module_service(){
 		$("body").on("mutation", function (e) {
 			$(this)
@@ -43,8 +57,10 @@ export default class UI {
 		});
 	}
 	init() {
-		$("body").addClass(this.savedTheme + "-theme");
+		this.#mutationObserver()
 		this.#module_service()
+		$("body").addClass(this.savedTheme + "-theme");
+
 	}
 	toggleTheme() {
 		const newTheme = this.savedTheme === "dark" ? "light" : "dark";

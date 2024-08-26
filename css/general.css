@@ -176,7 +176,7 @@ table {
 	border: 1px solid var(--border-color);
 	border-radius: 10px;
 	background-color: var(--bg1);
-	padding: 1.25em;
+	padding: 0.5em 1.25em 1.25em 1.25em;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	width: 22.125rem;
 	height: auto;
