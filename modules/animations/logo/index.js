@@ -22,6 +22,7 @@ export default class AnimationLogo extends HTMLObject  {
 // Create gradient texture (as previously discussed)
         function createGradientTexture() {
             const canvas = document.createElement('canvas');
+            console.log(renderer.getSize())
             canvas.width = renderer.getSize().width;
             canvas.height = renderer.getSize().height;
             const context = canvas.getContext('2d');
@@ -45,7 +46,32 @@ export default class AnimationLogo extends HTMLObject  {
         const loader = new SVGLoader();
         loader.load('/img/logo_color.svg', function(data) {
             const paths = data.paths;
+            const group = new THREE.Group();
+            for ( let i = 0; i < paths.length; i ++ ) {
 
+                const path = paths[ i ];
+
+                const material = new THREE.MeshBasicMaterial( {
+                    color: path.color,
+                    side: THREE.DoubleSide,
+                    depthWrite: false
+                } );
+
+                const shapes = SVGLoader.createShapes( path );
+
+                for ( let j = 0; j < shapes.length; j ++ ) {
+
+                    const shape = shapes[ j ];
+                    const geometry = new THREE.ShapeGeometry( shape );
+                    const mesh = new THREE.Mesh( geometry, material );
+                    group.add( mesh );
+
+                }
+
+            }
+
+            scene.add( group );
+            /*
             const gradientTexture = createGradientTexture();
 
             paths.forEach((path) => {
@@ -84,6 +110,8 @@ export default class AnimationLogo extends HTMLObject  {
                     scene.add(mesh);
                 });
             });
+
+             */
 
             animate();
         });
