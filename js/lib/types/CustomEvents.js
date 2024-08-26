@@ -17,7 +17,7 @@ export default class CustomEvents {
                 evnt(values);
             }
         } else {
-            console.log("[CustomEvents]:undefined");
+            console.log(`[CustomEvents]: ${name} is undefined`);
         }
     }
     remove(name, id) {
