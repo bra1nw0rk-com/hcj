@@ -18,11 +18,14 @@ export default class UI {
 		show(selector) {
 			console.log(selector)
 			console.log($(selector))
-			if($(selector).attr("data-animated")) {
-				if(!$(selector).hasClass("fadeIn")) {
-					$(selector).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
+			$(selector).each(function(){
+				if($(this).attr("data-animated")) {
+					if(!$(this).hasClass("fadeIn")) {
+						$(this).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
+					}
 				}
-			}
+			})
+
 			/*
 			setTimeout(function () {
 				$(selector).removeClass("fadeIn");
