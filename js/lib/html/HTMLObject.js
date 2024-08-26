@@ -63,7 +63,7 @@ export default class HTMLObject extends CustomEvents {
 
 	prepare(){
 		this.init()
-		WS.ui.effects.show(`#${this.#id}`);
+		WS.ui.effects.show(this.object);
 	}
 	init(){}
 }
