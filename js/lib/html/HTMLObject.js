@@ -49,6 +49,7 @@ export default class HTMLObject extends CustomEvents {
 		//this.object.find(tpl).remove();
 		this.object.append(tpl);
 	}
+
 	get() {
 		return this.object;
 	}
@@ -60,7 +61,7 @@ export default class HTMLObject extends CustomEvents {
 
 	prepare(){
 		this.init()
-		WS.ui.effects.show(`${this.selector}`);
+		WS.ui.effects.show(`#${this.#eventNamespace}`);
 	}
 	init(){}
 }
