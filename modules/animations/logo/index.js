@@ -62,7 +62,7 @@ export default class AnimationLogo extends HTMLObject  {
 
         //
 
-        window.addEventListener( 'resize', onWindowResize );
+
         this.animate();
          /*
         let _this = this;
