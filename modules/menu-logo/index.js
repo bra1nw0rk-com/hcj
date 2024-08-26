@@ -6,9 +6,6 @@ export default class MenuLogo extends HTMLObject  {
         let _this = this;
         this.css = "/modules/menu-logo/index.css";
         this.name = "menu-logo";
-        this.template = $(html``);
-
-        //this.init();
     }
     init() {
         $("body")

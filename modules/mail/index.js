@@ -10,7 +10,6 @@ export default class MailManager extends HTMLObject  {
           <div>Mail Manager</div>               
 		`);
         $("body").html("").append(this.get());
-        //this.init();
     }
     init() {
 

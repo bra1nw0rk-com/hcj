@@ -16,11 +16,7 @@ export default class MainMenu extends HTMLObject {
 				<div data-module="menu-logo"></div>				
 			</div>
 		`);
-
-
-        
 		$("body #content").append(this.get());
-		//this.init();
 	}
 	init() {
 		this.load();
