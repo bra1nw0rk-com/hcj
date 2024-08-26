@@ -3,6 +3,7 @@ import HTMLObject from "./HTMLObject.js";
 export default class Form extends HTMLObject {
 	#title = $(`<h2></h2>`);
 	#content=$(`<div class="content"></div>`);
+	
 	constructor() {
 		super("form");
 		this.object.append(this.#title);
@@ -13,7 +14,7 @@ export default class Form extends HTMLObject {
 	}
 	set content(text) {
 		this.#content.html(text);
-	}
+	}	
 	close(callback){
 		WS.ui.closeModal(`${this.selector}`, callback);
 	}

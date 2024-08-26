@@ -4,6 +4,7 @@ export default class HTMLObject extends CustomEvents {
 	#eventNamespace = "";
 	#css = "";
 	#animated = false;
+	#unique=false;
 	object = $("<div></div>");
 
 	constructor(type) {
@@ -32,6 +33,12 @@ export default class HTMLObject extends CustomEvents {
 	}
 	get selector() {
 		return `[name="${this.#eventNamespace}"]`;
+	}
+	set unique(val){
+		this.#unique = val;
+	}
+	get unique(){
+		return this.#unique;
 	}
 	getNamespace() {
 		return this.#eventNamespace;
