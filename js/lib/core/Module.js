@@ -18,7 +18,7 @@ export default class Module {
 								}else{
 									create = true;
 								}
-								WS.ui.effects.show(`${module.selector}`);
+								//WS.ui.effects.show(`${module.selector}`);
 								if(create){
 									module.prepare()
 									resolve(module);
