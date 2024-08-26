@@ -11,7 +11,11 @@ export default class AboutModal extends Form {
 		this.classes = "modal fadeIn";
 		this.name ="aboutModal"
 		this.content = `
-			BWOS - Brain Work Operating System.
+			<div>LibreIS - Libre Information System.</div>
+			<div>OS: Linux</div>
+			<div>Backend: Java</div>
+			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>
+			
 		`;
 
 
