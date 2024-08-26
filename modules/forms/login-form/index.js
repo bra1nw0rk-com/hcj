@@ -11,6 +11,7 @@ export default class LoginForm extends Modal {
 			<input type="text" id="username" name="username" placeholder="User" autocomplete="username" required />
 			<input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required />
 			<button class="submit">OK</button>
+			aaa
 		`);
 
 	}
