@@ -5,7 +5,7 @@ export default class Modal extends HTMLObject {
 	#content=$(`<div class="content"></div>`);
 	
 	constructor() {
-		super("form");
+		super("modal");
 		this.object.append(this.#title);
 		this.object.append(this.#content);
 		this.object.attr("data-animated", "")
