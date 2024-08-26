@@ -11,11 +11,11 @@ export default class AnimationLogo extends HTMLObject  {
     init() {
          let _this = this;
         const scene = new THREE.Scene();
+        this.camera = new THREE.PerspectiveCamera(25, this.object.innerWidth() / this.object.innerHeight(), 0.1, 1000);
         setInterval(function(){
-            console.log(_this.object.innerWidth() / _this.object.innerHeight())
+            this.camera = new THREE.PerspectiveCamera(25, this.object.innerWidth() / this.object.innerHeight(), 0.1, 1000);
         },1000)
 
-        const camera = new THREE.PerspectiveCamera(25, this.object.innerWidth() / this.object.innerHeight(), 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
 
 // Set the background color to opaque (e.g., white)
@@ -25,7 +25,7 @@ export default class AnimationLogo extends HTMLObject  {
         renderer.setSize(210, 90);
         this.template = renderer.domElement;
 
-        camera.position.z = 100;
+        this.camera.position.z = 100;
 
 // Create gradient texture (as previously discussed)
         function createGradientTexture() {
@@ -102,7 +102,7 @@ export default class AnimationLogo extends HTMLObject  {
                 // Rotate the mesh on the y-axis
                 mesh.rotation.y += 0.01;
             });
-            renderer.render(scene, camera);
+            renderer.render(scene, this.camera);
         };
 
 // Add lighting for better shading and visibility
