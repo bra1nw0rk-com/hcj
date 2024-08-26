@@ -14,8 +14,8 @@ export default class AnimationLogo extends HTMLObject  {
         const scene = new THREE.Scene();
 
         setInterval(function(){
-            if(this.object.innerWidth() !== undefined && this.object.innerHeight()!== undefined) {
-                _this.#camera.aspect = this.object.innerWidth() / this.object.innerHeight();
+            if(_this.object.innerWidth() !== undefined && _this.object.innerHeight()!== undefined) {
+                _this.#camera.aspect = _this.object.innerWidth() / _this.object.innerHeight();
             }
         },1000)
 
