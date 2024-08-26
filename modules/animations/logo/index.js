@@ -23,8 +23,6 @@ export default class AnimationLogo extends HTMLObject  {
         renderer.setSize(210, 90);
         this.template = renderer.domElement;
 
-        this.#camera.position.z = 100;
-
 // Create gradient texture (as previously discussed)
         function createGradientTexture() {
             const canvas = document.createElement('canvas');
@@ -119,7 +117,7 @@ export default class AnimationLogo extends HTMLObject  {
 
 
 
-            animate();
+
         });
 /*
         const animate = function() {
@@ -131,6 +129,7 @@ export default class AnimationLogo extends HTMLObject  {
         };
 
           */
+        this.animate();
     }
     animate() {
         let count = 0;
