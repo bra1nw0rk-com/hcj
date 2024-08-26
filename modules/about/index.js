@@ -12,7 +12,7 @@ export default class AboutModal extends Modal {
 		this.name ="aboutModal"
 		this.content = `
 			<div class="bold">LibreIS - Libre Information System.</div>
-			<div> </div>
+			<br>
 			<div>OS: Linux</div>
 			<div>Backend: Java</div>
 			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>
