@@ -15,14 +15,14 @@ export default class AnimationLogo extends HTMLObject  {
 
     }
     init() {
-        this.camera = new THREE.PerspectiveCamera( 33, window.innerWidth / window.innerHeight, 0.1, 100 );
+        this.camera = new THREE.PerspectiveCamera( 33, 1, 0.1, 100 );
         this.camera.position.z = 10;
 
         this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color( 0, 0, 0 );
 
         this.renderer = new SVGRenderer();
-        this.renderer.setSize( window.innerWidth, window.innerHeight );
+        this.renderer.setSize( 210, 90 );
         document.body.appendChild( this.renderer.domElement );
 
         //
