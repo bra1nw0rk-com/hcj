@@ -3,7 +3,6 @@
 	top: 28vh;
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
-    opacity: 0.5;
 }
 
 [name="page-login"] [name="title"]{    
