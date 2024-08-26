@@ -16,7 +16,7 @@ export default class LoginForm extends Modal {
 	}
 	init() {
 		let _this = this;
-		WS.ui.effects.show(`${_this.selector}`);
+//		WS.ui.effects.show(`${_this.selector}`);
 
 		$("body").off(`.${this.name}`).on(`click.${this.selector}`, `${this.selector} .submit`, function (e) {
 			e.preventDefault();
