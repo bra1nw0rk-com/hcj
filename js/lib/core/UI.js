@@ -20,6 +20,7 @@ export default class UI {
 			console.log($(selector))
 			$(selector).each(function(){
 				if($(this).attr("data-animated")) {
+					console.log("ok")
 					if(!$(this).hasClass("fadeIn")) {
 						$(this).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
 					}
