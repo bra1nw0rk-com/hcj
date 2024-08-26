@@ -19,6 +19,7 @@ export default class UI {
 			console.log(selector)
 			console.log($(selector))
 			$(selector).each(function(){
+				console.log($(this).attr("data-animated"))
 				if($(this).attr("data-animated")) {
 					console.log("ok")
 					if(!$(this).hasClass("fadeIn")) {
