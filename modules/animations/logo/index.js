@@ -3,18 +3,19 @@ import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class AnimationLogo extends HTMLObject  {
+    #camera = new THREE.PerspectiveCamera(25, 1, 0.1, 1000);
 	 constructor() {
         super("");
         this.css = "/modules/animations/logo/index.css";
         this.name = "animated-logo";
     }
     init() {
-         let _this = this;
+        let _this = this;
         const scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(25, 1, 0.1, 1000);
+
         setInterval(function(){
             if(this.object.innerWidth() !== undefined && this.object.innerHeight()!== undefined) {
-                this.camera.aspect = this.object.innerWidth() / this.object.innerHeight();
+                _this.#camera.aspect = this.object.innerWidth() / this.object.innerHeight();
             }
         },1000)
 
@@ -27,7 +28,7 @@ export default class AnimationLogo extends HTMLObject  {
         renderer.setSize(210, 90);
         this.template = renderer.domElement;
 
-        this.camera.position.z = 100;
+        this.#camera.position.z = 100;
 
 // Create gradient texture (as previously discussed)
         function createGradientTexture() {
@@ -104,7 +105,7 @@ export default class AnimationLogo extends HTMLObject  {
                 // Rotate the mesh on the y-axis
                 mesh.rotation.y += 0.01;
             });
-            renderer.render(scene, this.camera);
+            renderer.render(scene, _this.#camera);
         };
 
 // Add lighting for better shading and visibility
