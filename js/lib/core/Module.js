@@ -10,14 +10,20 @@ export default class Module {
 								resolve(this.module);
 							} else if (typeof this.module == "function") {
 								let module = new this.module()
-								if(module.unique == true){
-									if($(`${module.selector}`).length > 0){
-										resolve(null)
-									}else{
-										resolve(module);	
+								let create = false;
+								if(module.unique === true){
+									if($(`${module.selector}`).length === 0){
+										create = true;
 									}
 								}else{
+									create = true;
+								}
+								WS.ui.effects.show(`${module.selector}`);
+								if(create){
+									module.prepare()
 									resolve(module);
+								}else{
+									resolve(null)
 								}
 							}
 						} else {

@@ -58,5 +58,9 @@ export default class HTMLObject extends CustomEvents {
 		this.object.append(node);
 	}
 
+	prepare(){
+		WS.ui.effects.show(`${this.selector}`);
+		this.init()
+	}
 	init(){}
 }

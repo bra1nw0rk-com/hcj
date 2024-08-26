@@ -8,7 +8,7 @@ export default class AboutModal extends Form {
 		this.unique = true;
         this.css = "/modules/about/index.css";
 		this.title = "About";
-		this.classes = "modal fadeIn";
+		this.classes = "modal hidden";
 		this.name ="aboutModal"
 		this.content = `
 			<div>LibreIS - Libre Information System.</div>
