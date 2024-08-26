@@ -16,6 +16,8 @@ export default class UI {
 			}, 800);
 		},
 		show(selector) {
+			console.log(selector)
+			console.log($(selector))
 			if($(selector).attr("data-animated")) {
 				if(!$(selector).hasClass("fadeIn")) {
 					$(selector).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
@@ -81,7 +83,6 @@ export default class UI {
 	}
 
 	closeModal(selector, callback) {
-
 		$(selector).animate(
 			{
 				opacity: 0,
