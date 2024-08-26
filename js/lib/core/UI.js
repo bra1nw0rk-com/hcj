@@ -16,11 +16,17 @@ export default class UI {
 			}, 800);
 		},
 		show(selector) {
-			$(selector).attr("data-animated","")
-			$(selector).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
+			if($(selector).attr("data-animated")) {
+				if(!$(selector).hasClass("fadeIn")) {
+					$(selector).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
+				}
+			}
+			/*
 			setTimeout(function () {
 				$(selector).removeClass("fadeIn");
 			}, 2000);
+
+			 */
 		},
 	};
 	constructor() {

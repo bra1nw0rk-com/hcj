@@ -8,6 +8,7 @@ export default class Modal extends HTMLObject {
 		super("form");
 		this.object.append(this.#title);
 		this.object.append(this.#content);
+		this.object.attr("data-animated", "")
 	}
 	set title(text) {
 		this.#title.html(text);
