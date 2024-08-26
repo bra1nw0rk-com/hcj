@@ -16,7 +16,7 @@ export default class AnimationLogo extends HTMLObject  {
     }
     init() {
         this.camera = new THREE.PerspectiveCamera( 33, window.innerWidth / window.innerHeight, 0.1, 100 );
-        camera.position.z = 10;
+        this.camera.position.z = 10;
 
         this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color( 0, 0, 0 );
