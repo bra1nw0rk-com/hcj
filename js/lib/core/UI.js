@@ -1,3 +1,5 @@
+import Module from "./Module.js";
+
 export default class UI {
 	get savedTheme() {
 		return localStorage.getItem("theme") || "dark";
@@ -21,9 +23,28 @@ export default class UI {
 			}, 2000);
 		},
 	};
-	constructor() {}
+	constructor() {
+
+	}
+	#module_service(){
+		$("body").on("mutation", function (e) {
+			$(this)
+				.find("[data-module]:not([data-plugged])")
+				.each(function () {
+					let title = $(this).attr("data-title");
+					let name = $(this).attr("data-name");
+					let src = $(this)[0].source;
+					let moduleName = $(this).attr("data-module");
+					Module.call(moduleName).then((content) => {
+						$(this).replaceWith(content.get());
+						content.init();
+					});
+				});
+		});
+	}
 	init() {
 		$("body").addClass(this.savedTheme + "-theme");
+		this.#module_service()
 	}
 	toggleTheme() {
 		const newTheme = this.savedTheme === "dark" ? "light" : "dark";
