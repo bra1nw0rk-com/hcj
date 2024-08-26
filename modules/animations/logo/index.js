@@ -15,56 +15,7 @@ export default class AnimationLogo extends HTMLObject  {
 
     }
     init() {
-        this.camera = new THREE.PerspectiveCamera( 33, 1, 0.1, 100 );
-        this.camera.position.z = 10;
 
-        this.scene = new THREE.Scene();
-        this.scene.background = new THREE.Color( 0, 0, 0 );
-
-        this.renderer = new SVGRenderer();
-        this.renderer.setSize( 210, 90 );
-        document.body.appendChild( this.renderer.domElement );
-
-        //
-
-        const vertices = [];
-        const divisions = 50;
-
-        for ( let i = 0; i <= divisions; i ++ ) {
-            const v = ( i / divisions ) * ( Math.PI * 2 );
-            const x = Math.sin( v );
-            const z = Math.cos( v );
-            vertices.push( x, 0, z );
-        }
-
-        const geometry = new THREE.BufferGeometry();
-        geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
-        for ( let i = 1; i <= 3; i ++ ) {
-            const material = new THREE.LineBasicMaterial( {
-                color: Math.random() * 0xffffff,
-                linewidth: 10
-            } );
-            const line = new THREE.Line( geometry, material );
-            line.scale.setScalar( i / 3 );
-            this.scene.add( line );
-
-        }
-
-        const material = new THREE.LineDashedMaterial( {
-            color: 'blue',
-            linewidth: 1,
-            dashSize: 10,
-            gapSize: 10
-        } );
-        const line = new THREE.Line( geometry, material );
-        line.scale.setScalar( 2 );
-        this.scene.add( line );
-
-        //
-
-
-        this.animate();
-         /*
         let _this = this;
         const scene = new THREE.Scene();
         const renderer = new THREE.WebGLRenderer();
@@ -170,7 +121,7 @@ export default class AnimationLogo extends HTMLObject  {
 
             animate();
         });
-
+/*
         const animate = function() {
             requestAnimationFrame(animate);
             scene.children.forEach(mesh => {
