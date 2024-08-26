@@ -16,7 +16,7 @@ export default class UI {
 			}, 800);
 		},
 		show(selector) {
-			console.log(selector)
+			//console.log(selector)
 			$(selector).each(function(){
 				if($(this).attr("data-animated")!== undefined) {
 					if(!$(this).hasClass("fadeIn")) {
