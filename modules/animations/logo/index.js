@@ -1,15 +1,70 @@
 import * as THREE from 'three';
-import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
+import { SVGRenderer } from 'three/addons/renderers/SVGRenderer.js';
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class AnimationLogo extends HTMLObject  {
-    #camera = new THREE.PerspectiveCamera(25, 1, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(25, 1, 0.1, 1000);
+    scene;
+    renderer;
 	 constructor() {
         super("");
         this.css = "/modules/animations/logo/index.css";
         this.name = "animated-logo";
+        THREE.ColorManagement.enabled = false;
+        this.camera.position.z = 100;
+
     }
     init() {
+        this.camera = new THREE.PerspectiveCamera( 33, window.innerWidth / window.innerHeight, 0.1, 100 );
+        camera.position.z = 10;
+
+        this.scene = new THREE.Scene();
+        this.scene.background = new THREE.Color( 0, 0, 0 );
+
+        this.renderer = new SVGRenderer();
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( this.renderer.domElement );
+
+        //
+
+        const vertices = [];
+        const divisions = 50;
+
+        for ( let i = 0; i <= divisions; i ++ ) {
+            const v = ( i / divisions ) * ( Math.PI * 2 );
+            const x = Math.sin( v );
+            const z = Math.cos( v );
+            vertices.push( x, 0, z );
+        }
+
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
+        for ( let i = 1; i <= 3; i ++ ) {
+            const material = new THREE.LineBasicMaterial( {
+                color: Math.random() * 0xffffff,
+                linewidth: 10
+            } );
+            const line = new THREE.Line( geometry, material );
+            line.scale.setScalar( i / 3 );
+            this.scene.add( line );
+
+        }
+
+        const material = new THREE.LineDashedMaterial( {
+            color: 'blue',
+            linewidth: 1,
+            dashSize: 10,
+            gapSize: 10
+        } );
+        const line = new THREE.Line( geometry, material );
+        line.scale.setScalar( 2 );
+        this.scene.add( line );
+
+        //
+
+        window.addEventListener( 'resize', onWindowResize );
+        this.animate();
+         /*
         let _this = this;
         const scene = new THREE.Scene();
         const renderer = new THREE.WebGLRenderer();
@@ -71,7 +126,7 @@ export default class AnimationLogo extends HTMLObject  {
             }
 
             scene.add( group );
-            /*
+
             const gradientTexture = createGradientTexture();
 
             paths.forEach((path) => {
@@ -111,7 +166,7 @@ export default class AnimationLogo extends HTMLObject  {
                 });
             });
 
-             */
+
 
             animate();
         });
@@ -123,5 +178,17 @@ export default class AnimationLogo extends HTMLObject  {
             });
             renderer.render(scene, _this.#camera);
         };
+
+          */
+    }
+    animate() {
+        let count = 0;
+        const time = performance.now() / 1000;
+        this.scene.traverse( function ( child ) {
+            child.rotation.y += count + ( time / 3 );
+            count ++;
+        } );
+        this.renderer.render( this.scene, this.camera );
+        requestAnimationFrame( this.animate );
     }
 }
