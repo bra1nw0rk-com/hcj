@@ -12,13 +12,12 @@ export default class LoginForm extends Modal {
 			<input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required />
 			<button class="submit">OK</button>
 		`);
-		//this.init()
+
 	}
 	init() {
 		let _this = this;
-//		WS.ui.effects.show(`${_this.selector}`);
 
-		$("body").off(`.${this.name}`).on(`click.${this.selector}`, `${this.selector} .submit`, function (e) {
+		$("body").off(`.${this.name}`).on(`click.${this.name}`, `${this.selector} .submit`, function (e) {
 			e.preventDefault();
 			storage.set("environment", $(`${_this.selector}  #environment`).val());
 			_this.call("submit");
@@ -29,7 +28,7 @@ export default class LoginForm extends Modal {
 			}
 			return true;
 		});
-		this.on("submit",function(){
+		this.on(`submit.${this.name}`,function(){
 			let login = $(`${_this.selector}  #username`).val()
 			let pass = $(`${_this.selector}  #password`).val()
 			WS.user.login(login,pass,function(data){
