@@ -28,7 +28,7 @@ export default class LoginForm extends Modal {
 			}
 			return true;
 		});
-		this.on(`submit.${this.name}`,function(){
+		this.on(`submit`,function(){
 			let login = $(`${_this.selector}  #username`).val()
 			let pass = $(`${_this.selector}  #password`).val()
 			WS.user.login(login,pass,function(data){
