@@ -66,8 +66,8 @@ export default class UI {
 		});
 	}
 	init() {
-		this.#mutationObserver()
 		this.#module_service()
+		this.#mutationObserver()
 		$("body").addClass(this.savedTheme + "-theme");
 
 	}
