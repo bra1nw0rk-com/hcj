@@ -5,6 +5,7 @@ export default class AboutModal extends Form {
 	constructor() {
 		super();
 		let _this = this;
+		this.unique = true;
         this.css = "/modules/about/index.css";
 		this.title = "About";
 		this.classes = "modal fadeIn";
