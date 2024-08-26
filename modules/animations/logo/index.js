@@ -5,11 +5,8 @@ import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 export default class AnimationLogo extends HTMLObject  {
 	 constructor() {
         super("");
-        let _this = this;
         this.css = "/modules/animations/logo/index.css";
-        this.name = "animated-logo";        
-        this.template = $(html``);
-        //this.init();
+        this.name = "animated-logo";
     }
     init() {
         const scene = new THREE.Scene();
