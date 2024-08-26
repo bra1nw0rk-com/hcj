@@ -59,6 +59,7 @@ export default class UI {
 					let name = $(this).attr("data-name");
 					let src = $(this)[0].source;
 					let moduleName = $(this).attr("data-module");
+					$(this).attr("data-plugged","");
 					Module.call(moduleName).then((content) => {
 						$(this).replaceWith(content.get());
 					});
