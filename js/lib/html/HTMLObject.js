@@ -5,6 +5,7 @@ export default class HTMLObject extends CustomEvents {
 	#css = "";
 	#animated = false;
 	#unique=false;
+	#id = "";
 	object = $("<div></div>");
 
 	constructor(type) {
@@ -15,7 +16,8 @@ export default class HTMLObject extends CustomEvents {
 
 	set name(id) {
 		this.#eventNamespace = id
-		this.object.attr("id", id + $(`[name^="${id}"]`).length);
+		this.#id = id + $(`[name^="${id}"]`).length
+		this.object.attr("id", this.#id);
 		this.object.attr("name", this.#eventNamespace);
 	}
 	set classes(classes) {
@@ -61,7 +63,7 @@ export default class HTMLObject extends CustomEvents {
 
 	prepare(){
 		this.init()
-		WS.ui.effects.show(`#${this.#eventNamespace}`);
+		WS.ui.effects.show(`#${this.#id}`);
 	}
 	init(){}
 }
