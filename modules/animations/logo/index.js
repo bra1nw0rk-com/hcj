@@ -14,6 +14,7 @@ export default class AnimationLogo extends HTMLObject  {
         const renderer = new THREE.WebGLRenderer();
 
 // Set the background color to opaque (e.g., white)
+
         renderer.setClearColor(0xffffff, 0);  // Color is white (#ffffff), and the alpha is 1 (fully opaque)
 
         renderer.setSize(210, 90);
