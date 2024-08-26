@@ -1,6 +1,6 @@
-import Form from "../../../js/lib/html/Form.js";
+import Modal from "../../../js/lib/html/Modal.js";
 
-export default class LoginForm extends Form {
+export default class LoginForm extends Modal {
 	constructor() {
 		super();
 		this.css = `/modules/forms/login-form/index.css`;

@@ -1,6 +1,6 @@
 import HTMLObject from "./HTMLObject.js";
 
-export default class Form extends HTMLObject {
+export default class Modal extends HTMLObject {
 	#title = $(`<h2></h2>`);
 	#content=$(`<div class="content"></div>`);
 	

@@ -1,7 +1,7 @@
-import Form from "../../js/lib/html/Form.js";
+import Modal from "../../js/lib/html/Modal.js";
 
 
-export default class AboutModal extends Form {
+export default class AboutModal extends Modal {
 	constructor() {
 		super();
 		let _this = this;
@@ -23,7 +23,6 @@ export default class AboutModal extends Form {
 	}
 	init() {
 		$("body #content").append(this.get());
-		console.log("aaa")
 	}
 
 }

@@ -1,6 +1,6 @@
-import Form from "../../../../js/lib/html/Form.js";
+import Modal from "../../../../js/lib/html/Modal.js";
 
-export default class SelectEnvironmentForm extends Form {
+export default class SelectEnvironmentForm extends Modal {
 	constructor() {
 		super();
 		let _this = this;
