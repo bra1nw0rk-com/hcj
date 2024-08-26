@@ -13,7 +13,9 @@ export default class AnimationLogo extends HTMLObject  {
         const scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(25, 1, 0.1, 1000);
         setInterval(function(){
-            this.camera.aspect = this.object.innerWidth() / this.object.innerHeight();
+            if(this.object.innerWidth() !== undefined && this.object.innerHeight()!== undefined) {
+                this.camera.aspect = this.object.innerWidth() / this.object.innerHeight();
+            }
         },1000)
 
         const renderer = new THREE.WebGLRenderer();
@@ -37,7 +39,7 @@ export default class AnimationLogo extends HTMLObject  {
             // Create gradient
             const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
             gradient.addColorStop(0, '#FF8E3D');
-            gradient.addColorStop(0.495838, 'white');
+            gradient.addColorStop(0.495838, '#FFFFFF');
             gradient.addColorStop(0.98, '#0064D9');
 
             // Fill the canvas with the gradient
