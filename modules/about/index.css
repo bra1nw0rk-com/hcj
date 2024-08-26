@@ -2,3 +2,7 @@
     font-weight: bold;
     font-size: 110%;
 }
+
+[name="aboutModal"] .selected {
+    color: rgb(245, 123, 53);
+}
