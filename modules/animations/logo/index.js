@@ -13,10 +13,7 @@ export default class AnimationLogo extends HTMLObject  {
         let _this = this;
         const scene = new THREE.Scene();
         const renderer = new THREE.WebGLRenderer();
-        // Set the background color to opaque (e.g., white)
-
         renderer.setClearColor(0xffffff, 0);  // Color is white (#ffffff), and the alpha is 1 (fully opaque)
-
         renderer.setSize(210, 90);
         this.template = renderer.domElement;
 
@@ -25,8 +22,8 @@ export default class AnimationLogo extends HTMLObject  {
 // Create gradient texture (as previously discussed)
         function createGradientTexture() {
             const canvas = document.createElement('canvas');
-            canvas.width = 512;
-            canvas.height = 512;
+            canvas.width = renderer.getSize().width;
+            canvas.height = renderer.getSize().height;
             const context = canvas.getContext('2d');
 
             // Create gradient
@@ -94,20 +91,9 @@ export default class AnimationLogo extends HTMLObject  {
         const animate = function() {
             requestAnimationFrame(animate);
             scene.children.forEach(mesh => {
-                // Rotate the mesh on the y-axis
                 mesh.rotation.y += 0.01;
             });
             renderer.render(scene, _this.#camera);
         };
-
-// Add lighting for better shading and visibility
-       // const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-        //scene.add(ambientLight);
-
-       // const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-       // directionalLight.position.set(0, 0, 100).normalize();
-        //scene.add(directionalLight);
-
-
     }
 }
