@@ -11,7 +11,7 @@ export default class AboutModal extends Modal {
 		this.classes = "modal hidden";
 		this.name ="aboutModal"
 		this.content = `
-			<div>LibreIS - Libre Information System.</div>
+			<div class="bold">LibreIS - Libre Information System.</div>
 			<div> </div>
 			<div>OS: Linux</div>
 			<div>Backend: Java</div>
