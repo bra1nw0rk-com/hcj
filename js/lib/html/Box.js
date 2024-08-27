@@ -19,7 +19,7 @@ export default class Box extends HTMLObject {
 		this.#content.html(text);
 	}
 	get btn(){
-		_this = this;
+		let _this = this;
 		return {
 			close(){
 				console.log(_this)
