@@ -22,10 +22,10 @@ export default class Box extends HTMLObject {
 		let _this = this;
 		return {
 			close(){
-				console.log(_this)				
-				_this.#head.append($(html`
-					<div data-module="items/buttons/close"></div>
-					`));				
+				let closeBtn = $(`<div data-module="items/buttons/close"></div>`)
+				console.log(_this.#head.find(closeBtn))
+
+				//_this.#head.append($(html``));				
 				return _this.btn;
 			}
 		}
