@@ -1,32 +1,9 @@
-import HTMLObject from "./HTMLObject.js";
+import Box from "./Box.js";
 
-export default class Modal extends HTMLObject {
-	#head = $(html`<div class="head"></div>`)
-	#title = $(`<h2></h2>`);	
-	#content=$(`<div class="content"></div>`);
-	
+export default class Modal extends Box {	
 	constructor() {
-		super("div");
-		this.object.append(this.#head);				
-		this.object.append(this.#content);
-		this.#head.append(this.#title);
-		this.#head.append($(html`
-			<div data-module="items/buttons/close"></div>
-			`));
-		this.object.attr("data-animated", "")
+		super();
+		this.buttons.close();
 	}
-	set title(text) {
-		this.#title.html(text);
-	}
-	set content(text) {
-		this.#content.html(text);
-	}	
-	close(callback){
-		WS.ui.closeModal(`${this.selector}`, callback);
-	}
-	clear() {
-		$(`${this.selector}` + " input").each(function () {
-			$(this).val("");
-		});
-	}
+	
 }
