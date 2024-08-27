@@ -91,9 +91,7 @@ export default class UI {
 			type:"info",
 			title:"Info",
 			content:`
-			<div>${msg}</div>
-			<div>${JSON.stringify(console)}</div>
-			<div>${JSON.stringify(arguments)}</div>			
+			<div>${msg}</div>					
 			`
 		})
 	}
