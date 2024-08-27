@@ -14,8 +14,9 @@ $(function () {
 
                     this.obj = new CloseButton();
                     $(this).append(this.obj.object);
+                    console.log("ok",`click.${this.obj.name}`,`#${this.obj.id}`)
                     $("body").on(`click.${this.obj.name}`,`#${this.obj.id}`,function(){
-                        console.log($(this).closest(`[box]`)[0])
+
                         $(this).closest(`[box]`)[0].parameters.close(function(){});
                     })
 
