@@ -73,6 +73,7 @@ export default class UI {
 
 		console.error = this.consoleToModal;
 		console.log = this.consoleToModal;
+		console.warning = this.consoleToModal;
 
 	}
 	toggleTheme() {
@@ -88,6 +89,8 @@ export default class UI {
 			title:"Info",
 			content:msg
 		})
+
+		console.log(console.arguments)
 	}
 	clearPage() {
 		$("#main").each(function () {
