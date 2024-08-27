@@ -23,14 +23,22 @@ $(function () {
                             }
                         })
                     }else{
+                        let create= true;
                         let obj = new Box(options.unique);
                         obj.title = options.title;
                         obj.classes = "modal hidden";
-                        obj.name ="consoleModal"
+                        obj.name = "consoleModal"
                         obj.content = options.content;
                         obj.button.close();
-                        $(_this).append(obj.get());
-                        obj.prepare();
+                        if(options.unique){
+                            if($(this).find(`${obj.selector}`).length !== 0){
+                                create = false;
+                            }
+                        }
+                        if(create) {
+                            $(_this).append(obj.get());
+                            obj.prepare();
+                        }
                     }
                     return this;
                 });
