@@ -89,8 +89,8 @@ export default class UI {
 			title:"Info",
 			content:`
 			<div>${msg}</div>
-			<div>${console}</div>
-			<div>${arguments}</div>			
+			<div>${console.toString()}</div>
+			<div>${arguments.toString()}</div>			
 			`
 		})
 
