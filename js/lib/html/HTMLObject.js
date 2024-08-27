@@ -4,7 +4,7 @@ export default class HTMLObject extends CustomEvents {
 	#eventNamespace = "";
 	#css = "";
 	#animated = false;
-	#unique=false;
+	#unique= false;
 	#id = "";
 	object = $("<div></div>");
 

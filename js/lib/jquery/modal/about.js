@@ -13,7 +13,6 @@ $(function () {
                     let _this = this;
 
                     this.obj = new Box();
-                    this.obj.unique = true;
                     this.obj.css = "/modules/about/index.css";
                     this.obj.title = "About";
                     this.obj.classes = "modal hidden";
@@ -26,8 +25,9 @@ $(function () {
                         <div>Backend: Java</div>
                         <div>Frontend: JavaScript, JQuery, HTML, CSS</div>			
                     `;
-
-                    $(this).append(this.obj.object);
+                    if($(this).find(this.obj.object).length === 0) {
+                        $(this).append(this.obj.object);
+                    }
 
                     return this;
                 });
