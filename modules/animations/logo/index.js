@@ -15,7 +15,7 @@ export default class AnimationLogo extends HTMLObject  {
 
     }
     init() {
-
+/*
         let _this = this;
         const scene = new THREE.Scene();
         const renderer = new THREE.WebGLRenderer();
@@ -119,19 +119,12 @@ export default class AnimationLogo extends HTMLObject  {
 
 
         });
-/*
-        const animate = function() {
-            requestAnimationFrame(animate);
-            scene.children.forEach(mesh => {
-                mesh.rotation.y += 0.01;
-            });
-            renderer.render(scene, _this.#camera);
-        };
 
-          */
         this.animate();
+        */
     }
     animate() {
+        /*
         let count = 0;
         const time = performance.now() / 1000;
         this.scene.traverse( function ( child ) {
@@ -140,5 +133,6 @@ export default class AnimationLogo extends HTMLObject  {
         } );
         this.renderer.render( this.scene, this.camera );
         requestAnimationFrame( this.animate );
+        */
     }
 }
