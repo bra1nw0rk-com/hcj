@@ -18,7 +18,6 @@ $(function () {
                     if(options.module !== "") {
                         Module.call(options.module).then(function (obj) {
                             $(_this).append(obj.get());
-                            console.log(obj.get().parameters)
                         })
                     }else{
 

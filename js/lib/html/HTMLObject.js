@@ -12,7 +12,7 @@ export default class HTMLObject extends CustomEvents {
 	constructor(type) {
 		super();
 		this.object =  $(`<${type}></${type}>`);
-		this.object.parameters = this
+		this.object[0].parameters = this
 		//this.object.attr("type", type);
 	}
 	
