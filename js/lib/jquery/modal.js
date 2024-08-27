@@ -30,7 +30,11 @@ $(function () {
                         obj.name = "consoleModal"
                         obj.content = options.content;
                         obj.button.close();
-                        if(options.type==="info"){obj.icon.info();}
+                        if(options.type==="info"){
+                            obj.icon.info();
+                        }else if(options.type==="error"){
+                            obj.icon.error();
+                        }
                         if(options.unique){
                             if($(this).find(`${obj.selector}`).length !== 0){
                                 create = false;
