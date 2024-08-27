@@ -18,13 +18,15 @@ export default class Box extends HTMLObject {
 	set content(text) {
 		this.#content.html(text);
 	}
-    buttons={
-		_this : this,
+    buttons={		
         close(){
-            _this.#head.append($(html`
+			console.log(this)
+			/*
+            this.#head.append($(html`
                 <div data-module="items/buttons/close"></div>
                 `));
-            return _this.buttons;
+				*/
+            return this;
         }
     }	
 	close(callback){
