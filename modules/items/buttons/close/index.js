@@ -4,8 +4,8 @@ export default class CloseBtn extends HTMLObject  {
 	 constructor() {
         super("span");
         let _this = this;
-        this.css = "/modules/items/buttons/modal-close/index.css";
-        this.name = "modal-close-btn";        
+        this.css = "/modules/items/buttons/close/index.css";
+        this.name = "close-btn";
         this.template = $(html`<i class="fa fa-close"></i>`);        
     }    
 }
