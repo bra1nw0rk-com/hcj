@@ -28,10 +28,10 @@ export default class Box extends HTMLObject {
 	}    
 
 	close(callback){
-		WS.ui.closeModal(`${this.selector}`, callback);
+		WS.ui.closeModal(`${this.id}`, callback);
 	}
 	clear() {
-		$(`${this.selector}` + " input").each(function () {
+		$(`${this.id}` + " input").each(function () {
 			$(this).val("");
 		});
 	}
