@@ -230,8 +230,8 @@ table {
 [box] .head .fa-info{
 	position: relative;
 	left: 9px;
-	font-size: 22px;
-	top: 0;
+	font-size: 18px;
+	top: 4px;
 	opacity: 0.2;
 }
 [box] .head .fa-times-circle{
