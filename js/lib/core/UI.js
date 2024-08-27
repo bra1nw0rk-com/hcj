@@ -72,6 +72,7 @@ export default class UI {
 		$("body").addClass(this.savedTheme + "-theme");
 
 		console.error = this.consoleToModal;
+		console.log = this.consoleToModal;
 
 	}
 	toggleTheme() {
