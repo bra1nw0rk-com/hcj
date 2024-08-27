@@ -87,10 +87,13 @@ export default class UI {
 	consoleToModal(msg){
 		$(`#content`).modal({
 			title:"Info",
-			content:msg
+			content:`
+			<div>${msg}</div>
+			<div>${console}</div>
+			<div>${arguments}</div>			
+			`
 		})
 
-		console.log(console.arguments)
 	}
 	clearPage() {
 		$("#main").each(function () {
