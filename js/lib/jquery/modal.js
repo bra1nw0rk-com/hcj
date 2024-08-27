@@ -28,6 +28,7 @@ $(function () {
                         obj.content = options.content;
                         obj.button.close();
                         $(_this).append(obj.get());
+                        obj.prepare();
                     }
                     return this;
                 });
