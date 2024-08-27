@@ -3,4 +3,9 @@
     right: 5px;
     font-size: 20px;
     top: 1px;
+    color: #ff0000;
+    opacity: 60%;
+}
+[name="close-btn"]:hover{
+    opacity: 80%;
 }
