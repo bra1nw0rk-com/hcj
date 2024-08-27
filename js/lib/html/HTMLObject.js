@@ -10,7 +10,7 @@ export default class HTMLObject extends CustomEvents {
 
 	constructor(type) {
 		super();
-		this.object = object = $(`<${type}></${type}>`);
+		this.object =  $(`<${type}></${type}>`);
 		//this.object.attr("type", type);
 	}
 	
