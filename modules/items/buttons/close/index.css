@@ -4,8 +4,8 @@
     font-size: 20px;
     top: 1px;
     color: #ff0000;
-    opacity: 60%;
+    opacity: 0.4;
 }
 [name="close-btn"]:hover{
-    opacity: 80%;
+    opacity: 0.6;
 }
