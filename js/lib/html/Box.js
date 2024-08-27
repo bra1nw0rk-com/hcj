@@ -25,7 +25,15 @@ export default class Box extends HTMLObject {
 				_this.#head.closeBoxButton();
 			}
 		}
-	}    
+	}
+	get icon(){
+		let _this = this;
+		return {
+			info(){
+				_this.#head.prepend($(`<i class="fa fa-info" aria-hidden="true"></i>`));
+			}
+		}
+	}
 
 	close(callback){
 		WS.ui.closeModal(`#${this.id}`, callback);
