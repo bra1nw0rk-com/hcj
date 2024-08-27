@@ -10,9 +10,10 @@ export default class HTMLObject extends CustomEvents {
 
 	constructor(type) {
 		super();
-		this.object.attr("type", type);
+		this.object = object = $(`<${type}></${type}>`);
+		//this.object.attr("type", type);
 	}
-
+	
 	set name(id) {
 		this.#eventNamespace = id
 		this.#id = id + $(`[name^="${id}"]`).length
