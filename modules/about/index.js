@@ -1,7 +1,8 @@
 import Modal from "../../js/lib/html/Modal.js";
+import Box from "../../js/lib/html/Box";
 
 
-export default class AboutModal extends Modal {
+export default class AboutModal extends Box {
 	constructor() {
 		super();
 		let _this = this;
@@ -15,10 +16,9 @@ export default class AboutModal extends Modal {
 			<br>
 			<div>OS: Linux</div>
 			<div>Backend: Java</div>
-			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>
-			
+			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>			
 		`;
-		this.btn.close();
+		this.button.close();
 
 	}
 	init() {

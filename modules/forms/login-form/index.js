@@ -1,6 +1,7 @@
 import Modal from "../../../js/lib/html/Modal.js";
+import Box from "../../../js/lib/html/Box";
 
-export default class LoginForm extends Modal {
+export default class LoginForm extends Box {
 	constructor() {
 		super();
 		this.css = `/modules/forms/login-form/index.css`;

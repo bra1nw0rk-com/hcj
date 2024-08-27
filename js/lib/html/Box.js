@@ -17,7 +17,7 @@ export default class Box extends HTMLObject {
 	set content(text) {
 		this.#content.html(text);
 	}
-	get btn(){
+	get button(){
 		let _this = this;
 		return {
 			close(){
