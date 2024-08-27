@@ -1,5 +1,4 @@
-import Box from "../html/Box.js";
-import Module from "../core/Module";
+import Module from "../core/Module.js";
 
 $(function () {
     $.fn.extend({
