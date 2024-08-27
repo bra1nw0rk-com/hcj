@@ -18,7 +18,9 @@ $(function () {
                     let _this = this;
                     if(options.module !== "") {
                         Module.call(options.module).then(function (obj) {
-                            $(_this).append(obj.get());
+                            if(obj!== null) {
+                                $(_this).append(obj.get());
+                            }
                         })
                     }else{
                         let obj = new Box(options.unique);
