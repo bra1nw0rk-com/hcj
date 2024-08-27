@@ -15,22 +15,9 @@ $(function () {
                     this.obj = new CloseButton();
                     $(this).append(this.obj.object);
                     $("body").on(`click.${this.obj.name}`,`${this.obj.selector}`,function(){
-                        $(this).closest(`[box]`)[0].parameters.close(function(){
-                            console.log("ok")
-                        });
+                        $(this).closest(`[box]`)[0].parameters.close(function(){});
                     })
-                    /*
-                    this.refresh = () => {
-                        this.obj.load(1);
-                    };
-                    this.update = () => {
-                        this.obj.start();
-                        this.refresh();
-                        this.obj.loadCount();
-                    };
 
-                    this.update();
-                    */
                     return this;
                 });
             }
