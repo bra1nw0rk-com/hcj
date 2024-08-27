@@ -13,7 +13,7 @@ $(function () {
                 return $(this).each(function (e, i) {
                     let _this = this;
                     Module.call(options.module).then(function(obj){
-                        $(this).append(obj.get());
+                        $(_this).append(obj.get());
                     })
                     return this;
                 });
