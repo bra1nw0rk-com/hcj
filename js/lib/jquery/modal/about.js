@@ -25,7 +25,7 @@ $(function () {
                         <div>Backend: Java</div>
                         <div>Frontend: JavaScript, JQuery, HTML, CSS</div>			
                     `;
-                    if($(this).find(this.obj.object).length === 0) {
+                    if($(this).find(`${this.obj.selector}`).length === 0) {
                         $(this).append(this.obj.object);
                     }
 
