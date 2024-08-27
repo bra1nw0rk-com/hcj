@@ -1,4 +1,5 @@
 import Module from "../core/Module.js";
+import Box from "../html/Box";
 
 $(function () {
     $.fn.extend({
@@ -20,6 +21,7 @@ $(function () {
                             $(_this).append(obj.get());
                         })
                     }else{
+                        let obj = new Box();
 
                     }
                     return this;

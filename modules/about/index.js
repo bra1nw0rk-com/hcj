@@ -3,9 +3,8 @@ import Box from "../../js/lib/html/Box.js";
 
 export default class AboutModal extends Box {
 	constructor() {
-		super();
+		super(true);
 		let _this = this;
-		this.unique = true;
         this.css = "/modules/about/index.css";
 		this.title = "About";
 		this.classes = "modal hidden";

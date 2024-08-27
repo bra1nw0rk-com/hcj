@@ -3,7 +3,7 @@ import Box from "../../../js/lib/html/Box";
 
 export default class LoginForm extends Box {
 	constructor() {
-		super();
+		super(true);
 		this.css = `/modules/forms/login-form/index.css`;
 		this.title = "Login";
 		this.classes = "modal hidden";

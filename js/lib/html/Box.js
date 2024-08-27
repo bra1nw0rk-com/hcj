@@ -4,8 +4,9 @@ export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`)
 	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);		
-	constructor() {
+	constructor(unique) {
 		super("div box");
+		this.unique = unique;
 		this.object.append(this.#head);				
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
