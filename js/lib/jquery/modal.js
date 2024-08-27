@@ -21,7 +21,7 @@ $(function () {
                             $(_this).append(obj.get());
                         })
                     }else{
-                        let obj = new Box();
+                        let obj = new Box(options.unique);
 
                     }
                     return this;
