@@ -234,3 +234,11 @@ table {
 	top: 4px;
 	opacity: 0.2;
 }
+[box] .head .fa-times-circle{
+	position: relative;
+	left: 8px;
+	font-size: 15px;
+	color: red;
+	top: 4px;
+	opacity: 0.2;
+}

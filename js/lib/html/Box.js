@@ -31,6 +31,10 @@ export default class Box extends HTMLObject {
 		return {
 			info(){
 				_this.#head.prepend($(`<i class="fa fa-info" aria-hidden="true"></i>`));
+			},
+			error(){
+				_this.#head.prepend($(`<i className="fa fa-times-circle" aria-hidden="true"></i>`));
+
 			}
 		}
 	}
