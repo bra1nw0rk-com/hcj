@@ -1,5 +1,4 @@
-import Modal from "../../js/lib/html/Modal.js";
-import Box from "../../js/lib/html/Box";
+import Box from "../../js/lib/html/Box.js";
 
 
 export default class AboutModal extends Box {
