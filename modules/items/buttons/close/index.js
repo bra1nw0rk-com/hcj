@@ -6,6 +6,6 @@ export default class CloseBtn extends HTMLObject  {
         let _this = this;
         this.css = "/modules/items/buttons/close/index.css";
         this.name = "close-btn";
-        this.template = $(html`<i class="fa fa-close"></i>`);        
+        this.template = $(html`<i class="fa fa-times" aria-hidden="true"></i>`);
     }    
 }
