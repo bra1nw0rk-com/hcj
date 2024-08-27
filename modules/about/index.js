@@ -18,7 +18,7 @@ export default class AboutModal extends Modal {
 			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>
 			
 		`;
-
+		this.btn.close();
 
 	}
 	init() {
