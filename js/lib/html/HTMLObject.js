@@ -65,5 +65,7 @@ export default class HTMLObject extends CustomEvents {
 		this.init()
 		WS.ui.effects.show(this.object);
 	}
-	init(){}
+	init(){
+		$("body").off(`.${this.name}`)
+	}
 }

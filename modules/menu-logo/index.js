@@ -1,4 +1,4 @@
-import HTMLObject from "../../../js/lib/html/HTMLObject.js";
+import HTMLObject from "../../js/lib/html/HTMLObject.js";
 
 export default class MenuLogo extends HTMLObject  {
     constructor() {
