@@ -12,7 +12,7 @@ export default class CloseBtn extends HTMLObject  {
     init() {
             super.init();
         $("body").on(`click.${this.name}`,`${this.selector}`,function(){
-            console.log($(this).closest(`[box]`).get(0));
+            $(this).closest(`[box]`).get(0).close();
         })
     }
 }
