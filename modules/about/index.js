@@ -22,7 +22,7 @@ export default class AboutModal extends Box {
 
 	}
 	init() {
-		$("body #content").append(this.get());
+		//$("body #content").append(this.get());
 	}
 
 }
