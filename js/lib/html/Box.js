@@ -21,7 +21,7 @@ export default class Box extends HTMLObject {
 	}
     buttons={
         close(){
-            _this.#head.append($(html`
+            this.#head.append($(html`
                 <div data-module="items/buttons/close"></div>
                 `));
             return _this.buttons;
