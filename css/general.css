@@ -212,7 +212,7 @@ table {
 	margin-bottom: 0.75em;
 	font-size: 18px;
 	position: absolute;	
-	top: 12px;
+	top: 11px;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
 }
@@ -229,16 +229,16 @@ table {
 
 [box] .head .fa-info{
 	position: relative;
-	left: 8px;
-	font-size: 15px;
-	top: 4px;
+	left: 3px;
+	font-size: 22px;
+	top: 0px;
 	opacity: 0.2;
 }
 [box] .head .fa-times-circle{
 	position: relative;
-	left: 8px;
-	font-size: 15px;
+	left: 3px;
+	font-size: 22px;
 	color: red;
-	top: 4px;
+	top: 0px;
 	opacity: 0.2;
 }
