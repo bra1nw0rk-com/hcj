@@ -72,6 +72,7 @@ export default class UI {
 		$("body").addClass(this.savedTheme + "-theme");
 
 		console.error = this.consoleToModalError;
+		console.trace = this.consoleToModalError;
 		console.log = this.consoleToModalInfo;
 		//console.warn = this.consoleToModal;
 		console.info = this.consoleToModalInfo;
