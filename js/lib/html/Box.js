@@ -18,6 +18,20 @@ export default class Box extends HTMLObject {
 	set content(text) {
 		this.#content.html(text);
 	}
+	get btn(){
+		_this = this;
+		return {
+			close(){
+				console.log(_this)
+				/*
+				this.#head.append($(html`
+					<div data-module="items/buttons/close"></div>
+					`));
+					*/
+				//return _this.;
+			}
+		}
+	}
     buttons={		
         close(){
 			console.log(this.parent)
