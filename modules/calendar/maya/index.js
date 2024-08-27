@@ -3,7 +3,7 @@ import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class CalendarMaya extends HTMLObject {
     constructor() {
-        super("menu");
+        super("div");
         let _this = this;
         this.css = "/modules/calendar/maya/index.css";
         this.name = "calendar-maya";

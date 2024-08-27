@@ -6,7 +6,7 @@ export default class Modal extends HTMLObject {
 	#content=$(`<div class="content"></div>`);
 	
 	constructor() {
-		super("modal");
+		super("div");
 		this.object.append(this.#head);				
 		this.object.append(this.#content);
 		this.#head.append(this.#title);

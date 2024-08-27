@@ -3,7 +3,7 @@ import WEBFS from "../../../js/lib/core/WEBFS.js";
 
 export default class MainMenu extends HTMLObject {
 	constructor() {
-		super("menu");
+		super("div");
 		let _this = this;
         this.css = "/modules/main/menu/main-menu.css";
 		this.name = "main-menu";

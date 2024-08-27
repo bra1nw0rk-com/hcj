@@ -2,7 +2,7 @@ import HTMLObject from "../../js/lib/html/HTMLObject.js";
 
 export default class Main extends HTMLObject {
 	constructor() {
-		super("main");
+		super("div");
 		let _this = this;
         this.css = `/modules/main/css/main.css`;
 		this.title = "BWOS";

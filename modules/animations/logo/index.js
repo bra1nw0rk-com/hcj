@@ -7,7 +7,7 @@ export default class AnimationLogo extends HTMLObject  {
     scene;
     renderer;
 	 constructor() {
-        super("");
+        super("canvas");
         this.css = "/modules/animations/logo/index.css";
         this.name = "animated-logo";
         THREE.ColorManagement.enabled = false;
