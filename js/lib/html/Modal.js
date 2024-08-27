@@ -1,13 +1,18 @@
 import HTMLObject from "./HTMLObject.js";
 
 export default class Modal extends HTMLObject {
-	#title = $(`<h2></h2>`);
+	#head = $(html`<div class="head"></div>`)
+	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);
 	
 	constructor() {
 		super("modal");
-		this.object.append(this.#title);
+		this.object.append(this.#head);				
 		this.object.append(this.#content);
+		this.#head.append(this.#title);
+		this.#head.append($(html`
+			<div data-module="items/buttons/close"></div>
+			`));
 		this.object.attr("data-animated", "")
 	}
 	set title(text) {

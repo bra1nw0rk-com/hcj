@@ -1,10 +1,10 @@
-import HTMLObject from "../../../js/lib/html/HTMLObject.js";
+import HTMLObject from "../../../../js/lib/html/HTMLObject.js";
 
-export default class PageLogin extends HTMLObject  {
+export default class CloseBtn extends HTMLObject  {
 	 constructor() {
         super("");
         let _this = this;
-        this.css = "/modules/pages/login/index.css";
+        this.css = "/modules/items/buttons/close/index.css";
         this.name = "page-login";        
         this.template = $(html`            
           <div data-module="animations/logo"></div>

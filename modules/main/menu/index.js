@@ -22,7 +22,6 @@ export default class MainMenu extends HTMLObject {
 		this.load();
 		$("body")
 			.off(".mainMenu")
-
 			.on("click.mainMenu", `[name="main-menu"]`, function (e) {
 				$(`[name="main-menu"] .dropdown-content`).removeClass("show");
 				e.stopPropagation();
