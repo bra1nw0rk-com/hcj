@@ -9,10 +9,5 @@ export default class CloseBtn extends HTMLObject  {
         this.classes = "button";
         this.template = $(html`<i class="fa fa-times" aria-hidden="true"></i>`);
     }
-    init() {
-            super.init();
-        $("body").on(`click.${this.name}`,`${this.selector}`,function(){
-            console.log($(this).closest(`[box]`));
-        })
-    }
+
 }

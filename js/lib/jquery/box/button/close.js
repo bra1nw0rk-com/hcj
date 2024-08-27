@@ -14,6 +14,9 @@ $(function () {
 
                     this.obj = new CloseButton();
                     $(this).append(this.obj.object);
+                    $("body").on(`click.${this.obj.name}`,`${this.obj.selector}`,function(){
+                        console.log($(this).closest(`[box]`));
+                    })
                     /*
                     this.refresh = () => {
                         this.obj.load(1);
