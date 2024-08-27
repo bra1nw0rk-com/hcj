@@ -207,6 +207,9 @@ table {
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
 }
+.modal .content{
+	margin-top:30px;
+}
 .modal label {
 	display: block;
 	margin-bottom: 8px;
