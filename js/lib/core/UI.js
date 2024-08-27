@@ -71,12 +71,6 @@ export default class UI {
 		this.#mutationObserver()
 		$("body").addClass(this.savedTheme + "-theme");
 
-		console.error = this.consoleToModalError;
-		console.trace = this.consoleToModalError;
-		console.log = this.consoleToModalInfo;
-		//console.warn = this.consoleToModal;
-		console.info = this.consoleToModalInfo;
-
 	}
 	toggleTheme() {
 		const newTheme = this.savedTheme === "dark" ? "light" : "dark";
@@ -86,26 +80,22 @@ export default class UI {
 		this.savedTheme = newTheme;
 	}
 
-	consoleToModalInfo(msg){
+	modal(msg,type){
+		let title="";
+		if(type==="info"){
+			title = "Info"
+		}else if(type==="error"){
+			title = "Error"
+		}
 		$(`#content`).modal({
-			type:"info",
-			title:"Info",
+			type:type,
+			title:title,
 			content:`
-			<div>${String(msg)}</div>					
+			<div>${msg}</div>					
 			`
 		})
 	}
-	consoleToModalError(msg){
-		$(`#content`).modal({
-			type:"error",
-			title:"Error",
-			content:`
-			<div>${msg}</div>
-			<div>${JSON.stringify(console)}</div>
-			<div>${JSON.stringify(arguments)}</div>			
-			`
-		})
-	}
+
 	clearPage() {
 		$("#main").each(function () {
 			$(this).remove();
