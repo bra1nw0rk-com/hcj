@@ -3,8 +3,7 @@ import HTMLObject from "./HTMLObject.js";
 export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`)
 	#title = $(`<h2></h2>`);	
-	#content=$(`<div class="content"></div>`);	
-	_this = this
+	#content=$(`<div class="content"></div>`);		
 	constructor() {
 		super("div box");
 		this.object.append(this.#head);				
@@ -20,8 +19,9 @@ export default class Box extends HTMLObject {
 		this.#content.html(text);
 	}
     buttons={
+		_this : this,
         close(){
-            this.#head.append($(html`
+            _this.#head.append($(html`
                 <div data-module="items/buttons/close"></div>
                 `));
             return _this.buttons;
