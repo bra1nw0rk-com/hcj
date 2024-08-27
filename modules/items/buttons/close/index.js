@@ -6,11 +6,6 @@ export default class CloseBtn extends HTMLObject  {
         let _this = this;
         this.css = "/modules/items/buttons/close/index.css";
         this.name = "page-login";        
-        this.template = $(html`            
-          <div data-module="animations/logo"></div>
-          <div name="title">Libre<span class="selected">IS</span></div>
-          <div data-module="forms/login-form"></div>               
-		`);
-        $("body").html("").append(this.get());
+        this.template = $(html`<i class="fa fa-close" class="btn-close"></i>`);        
     }    
 }
