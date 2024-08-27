@@ -83,7 +83,7 @@ option {
 select:focus {
 	outline: none;
 }
-button {
+button,.button {
 	cursor: pointer;
 }
 button:hover {
