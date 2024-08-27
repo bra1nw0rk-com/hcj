@@ -2,7 +2,7 @@ import Box from "../../html/Box.js";
 
 $(function () {
     $.fn.extend({
-        box: function (options) {
+        about: function (options) {
             let defaults = {
                 url: "",
             };
