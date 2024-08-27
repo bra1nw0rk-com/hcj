@@ -22,7 +22,18 @@ $(function () {
                         })
                     }else{
                         let obj = new Box(options.unique);
-
+                        obj.title = "About";
+                        obj.classes = "modal hidden";
+                        obj.name ="aboutModal"
+                        obj.content = `
+                            <div class="strong">Libre<span class="selected">IS</span> - Libre Information System.</div>
+                            <br>
+                            <div>OS: Linux</div>
+                            <div>Backend: Java</div>
+                            <div>Frontend: JavaScript, JQuery, HTML, CSS</div>			
+                        `;
+                        obj.button.close();
+                        $(_this).append(obj.get());
                     }
                     return this;
                 });
