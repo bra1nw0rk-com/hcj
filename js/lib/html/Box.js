@@ -10,7 +10,6 @@ export default class Box extends HTMLObject {
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
-		this.object.object = this;
 	}
 	set title(text) {
 		this.#title.html(text);
@@ -22,10 +21,14 @@ export default class Box extends HTMLObject {
 		let _this = this;
 		return {
 			close(){
+				_this.object.#head.closeBoxButton();
+				/*
 				let closeBtn = $(`<div data-module="items/buttons/close"></div>`)
 				console.log(_this.#head)
 				_this.#head.append(closeBtn);								
 				return _this.btn;
+
+				 */
 			}
 		}
 	}    
