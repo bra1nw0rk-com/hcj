@@ -226,3 +226,11 @@ table {
 .hidden{
 	display: none;
 }
+
+[box] .head .fa-info{
+	position: relative;
+	left: 8px;
+	font-size: 15px;
+	top: 4px;
+	opacity: 0.2;
+}
