@@ -20,7 +20,7 @@ export default class Box extends HTMLObject {
 	}
     buttons={		
         close(){
-			console.log(this)
+			console.log(this.parent)
 			/*
             this.#head.append($(html`
                 <div data-module="items/buttons/close"></div>
@@ -28,7 +28,8 @@ export default class Box extends HTMLObject {
 				*/
             return this;
         }
-    }	
+    }.parent = this;
+
 	close(callback){
 		WS.ui.closeModal(`${this.selector}`, callback);
 	}
