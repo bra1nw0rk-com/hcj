@@ -71,6 +71,8 @@ export default class UI {
 		this.#mutationObserver()
 		$("body").addClass(this.savedTheme + "-theme");
 
+		console.error = this.consoleToModal;
+
 	}
 	toggleTheme() {
 		const newTheme = this.savedTheme === "dark" ? "light" : "dark";
@@ -78,6 +80,13 @@ export default class UI {
 			.removeClass(this.savedTheme + "-theme")
 			.addClass(newTheme + "-theme");
 		this.savedTheme = newTheme;
+	}
+
+	consoleToModal(msg){
+		$(`#content`).modal({
+			title:"Info",
+			content:msg
+		})
 	}
 	clearPage() {
 		$("#main").each(function () {
