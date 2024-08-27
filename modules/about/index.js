@@ -17,6 +17,7 @@ export default class AboutModal extends Box {
 			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>			
 		`;
 		this.button.close();
+		this.icon.info();
 
 	}
 	init() {
