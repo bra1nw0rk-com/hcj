@@ -229,9 +229,9 @@ table {
 
 [box] .head .fa-info{
 	position: relative;
-	left: 3px;
+	left: 9px;
 	font-size: 22px;
-	top: 0px;
+	top: 0;
 	opacity: 0.2;
 }
 [box] .head .fa-times-circle{
@@ -239,6 +239,6 @@ table {
 	left: 3px;
 	font-size: 22px;
 	color: red;
-	top: 0px;
+	top: 0;
 	opacity: 0.2;
 }
