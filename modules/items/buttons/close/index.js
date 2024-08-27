@@ -1,6 +1,6 @@
 import HTMLObject from "../../../../js/lib/html/HTMLObject.js";
 
-export default class ModalCloseBtn extends HTMLObject  {
+export default class CloseBtn extends HTMLObject  {
 	 constructor() {
         super("span");
         let _this = this;
