@@ -14,7 +14,7 @@ $(function () {
 
                     this.obj = new CloseButton();
                     $(this).append(this.obj.object);
-                    $("body").on(`click.${this.obj.name}`,`${this.obj.selector}`,function(){
+                    $("body").on(`click.${this.obj.name}`,`${this.obj.id}`,function(){
                         $(this).closest(`[box]`)[0].parameters.close(function(){});
                     })
 
