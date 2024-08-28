@@ -141,11 +141,11 @@
 }
 
 [data-animated].hide {
-	animation: fadeOut 1s cubic-bezier(0.55, 0.09, 0.68, 0.53) alternate;
+	animation: fadeOut 0.5s cubic-bezier(0.55, 0.09, 0.68, 0.53) alternate;
 }
 
 [data-animated].fadeIn {
-	animation: fadeIn 1s cubic-bezier(0.4, 0, 1, 1) alternate;
+	animation: fadeIn 0.5s cubic-bezier(0.4, 0, 1, 1) alternate;
 }
 [data-animated].spin {
 	-webkit-animation: spin 4s linear infinite;
