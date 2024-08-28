@@ -46,7 +46,8 @@ export default class Box extends HTMLObject {
 			let obj = $(this).closest(`[box]`)[0].parameters;
 			if(obj.moveX !== null && obj.moveY !== null){
 				console.log( obj.moveX - e.pageX, obj.moveY - e.pageY)
-				$(this).closest(`[box]`).css({top: obj.moveY - e.pageY, left: obj.moveX - e.pageX});
+				let elem = $(this).closest(`[box]`);
+				elem.css({top: elem.position().top + (e.pageY - obj.moveY), left: elem.position().left +  (e.pageX - obj.moveX)});
 			}
 			
 		})
