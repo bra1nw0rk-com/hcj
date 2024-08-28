@@ -3,7 +3,11 @@ import HTMLObject from "./HTMLObject.js";
 export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`)
 	#title = $(`<h2></h2>`);	
-	#content=$(`<div class="content"></div>`);		
+	#content=$(`<div class="content"></div>`);
+	#startPosition={
+		x:null,
+		y:null
+	}		
 	constructor(unique) {
 		super("div box");
 		this.unique = unique;
@@ -15,11 +19,20 @@ export default class Box extends HTMLObject {
 		this.eventListener()
 	}
 	eventListener(){
-		$(this.#head).on("mousedown",function(){
-			$(this).addClass("cursor-move")
-			console.log("ok");
+		let _this=this;
+		$(this.#head).on("mousedown",function(e){
+			_this.#startPosition.x = e.ClientX;
+			_this.#startPosition.y = e.ClientY;
+			$(this).addClass("cursor-move")			
 		}).on("mouseup",function(){
 			$(this).removeClass("cursor-move")
+			_this.#startPosition.x = null;
+			_this.#startPosition.y = null;
+		}).on("mousemove",function(e){
+			if(_this.#startPosition.x !== null && _this.#startPosition.y !== null){
+				console.log("move")
+			}
+			
 		})
 	}
 	set title(text) {
