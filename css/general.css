@@ -245,3 +245,6 @@ table {
 	top: 0;
 	opacity: 0.2;
 }
+.cursor-move{
+	cursor: move;
+}

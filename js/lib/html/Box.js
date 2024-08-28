@@ -18,6 +18,8 @@ export default class Box extends HTMLObject {
 		$(this.#head).on("mousedown",function(){
 
 			console.log("ok");
+		}).on("mouseup",function(){
+			
 		})
 	}
 	set title(text) {
