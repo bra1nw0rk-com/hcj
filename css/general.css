@@ -237,6 +237,7 @@ table {
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
 	cursor: n-resize;
+	z-index: 10;
 }
 [box] .right-side{
 	position: absolute;
@@ -246,6 +247,7 @@ table {
 	height: calc(100% - 7px);
 	background-color: rgba(255, 0, 0, 0.27);
 	cursor: e-resize;
+	z-index: 10;
 }
 [box] .bottom-side{
 	position: absolute;
@@ -255,6 +257,7 @@ table {
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
 	cursor: n-resize;
+	z-index: 10;
 }
 [box] .left-side{
 	position: absolute;
@@ -264,6 +267,7 @@ table {
 	height: calc(100% - 7px);
 	background-color: rgba(255, 0, 0, 0.27);
 	cursor: e-resize;
+	z-index: 10;
 }
 
 [box] .head .fa-info{
