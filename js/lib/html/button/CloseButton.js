@@ -10,9 +10,15 @@ export default class CloseButton extends HTMLObject  {
         this.object.attr("aria-hidden","true")
     }
     init() {
-            super.init();
-        $("body").on(`click.${this.name}`,`${this.selector}`,function(){
-            console.log($(this).closest(`[box]`));
+        super.init();
+        console.log("ok",`click.${this.id}`,`#${this.id}`)
+        $("body").on(`click.${this.id}`,`#${this.id}`,function(e){
+            e.stopPropagation()
+            $(this).closest(`[box]`)[0].parameters.close(function(){});
+        }).on(`mousedown.${this.id}`,`#${this.id}`,function(e){
+            console.log(e)
+            e.stopPropagation()
+            return false
         })
     }
 }
