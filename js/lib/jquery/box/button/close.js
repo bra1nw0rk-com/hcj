@@ -10,7 +10,7 @@ $(function () {
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
                     let obj = new CloseButton();
-                    obj.prepare();
+                    obj.init();
                     $(this).append(obj.object);
                     return this;
                 });
