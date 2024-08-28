@@ -16,10 +16,10 @@ export default class Box extends HTMLObject {
 	}
 	eventListener(){
 		$(this.#head).on("mousedown",function(){
-
+			$(this).addClass("cursor-move")
 			console.log("ok");
 		}).on("mouseup",function(){
-			
+			$(this).removeClass("cursor-move")
 		})
 	}
 	set title(text) {
