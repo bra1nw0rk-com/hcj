@@ -268,8 +268,8 @@ table {
 
 [box] .top-left-side{
 	position: absolute;
-	top: -6px;
-	left: -6px;
+	top: -4px;
+	left: -4px;
 	width: 7px;
 	height: 7px;
 	cursor: nw-resize;
@@ -277,8 +277,8 @@ table {
 }
 [box] .top-right-side{
 	position: absolute;
-	top: -6px;
-	right: -6px;
+	top: -5px;
+	right: -5px;
 	width: 7px;
 	height: 7px;
 	cursor: ne-resize;
@@ -286,8 +286,8 @@ table {
 }
 [box] .bottom-right-side{
 	position: absolute;
-	bottom: -6px;
-	right: -6px;
+	bottom: -4px;
+	right: -4px;
 	width: 7px;
 	height: 7px;
 	cursor: se-resize;
@@ -295,8 +295,8 @@ table {
 }
 [box] .bottom-left-side{
 	position: absolute;
-	bottom: -6px;
-	left: -6px;
+	bottom: -4px;
+	left: -4px;
 	width: 7px;
 	height: 7px;
 	cursor: sw-resize;
