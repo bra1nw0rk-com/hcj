@@ -235,7 +235,6 @@ table {
 	left: 3px;
 	width: calc(100% - 7px);
 	height: 7px;
-	background-color: rgba(255, 0, 0, 0.27);
 	cursor: n-resize;
 	z-index: 10;
 }
@@ -245,7 +244,6 @@ table {
 	right: -4px;
 	width: 7px;
 	height: calc(100% - 7px);
-	background-color: rgba(255, 0, 0, 0.27);
 	cursor: e-resize;
 	z-index: 10;
 }
@@ -255,7 +253,6 @@ table {
 	left: 3px;
 	width: calc(100% - 7px);
 	height: 7px;
-	background-color: rgba(255, 0, 0, 0.27);
 	cursor: n-resize;
 	z-index: 10;
 }
@@ -265,6 +262,46 @@ table {
 	left: -4px;
 	width: 7px;
 	height: calc(100% - 7px);
+	cursor: e-resize;
+	z-index: 10;
+}
+
+[box] .top-left-side{
+	position: absolute;
+	top: -4px;
+	left: -4px;
+	width: 7px;
+	height: 7px;
+	background-color: rgba(255, 0, 0, 0.27);
+	cursor: n-resize;
+	z-index: 10;
+}
+[box] .top-right-side{
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	width: 7px;
+	height: 7px;
+	background-color: rgba(255, 0, 0, 0.27);
+	cursor: e-resize;
+	z-index: 10;
+}
+[box] .bottom-right-side{
+	position: absolute;
+	bottom: -4px;
+	left: -4px;
+	width: 7px;
+	height: 7px;
+	background-color: rgba(255, 0, 0, 0.27);
+	cursor: n-resize;
+	z-index: 10;
+}
+[box] .bottom-left-side{
+	position: absolute;
+	top: -4px;
+	left: -4px;
+	width: 7px;
+	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
 	cursor: e-resize;
 	z-index: 10;
