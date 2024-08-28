@@ -11,6 +11,14 @@ export default class Box extends HTMLObject {
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
+
+		this.eventListener()
+	}
+	eventListener(){
+		$(this.#head).on("mousedown",function(){
+
+			console.log("ok");
+		})
 	}
 	set title(text) {
 		this.#title.html(text);
