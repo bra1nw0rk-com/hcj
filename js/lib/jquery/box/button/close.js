@@ -20,6 +20,7 @@ $(function () {
                         $(this).closest(`[box]`)[0].parameters.close(function(){});
                     }).on(`mousedown.${this.obj.id}`,`#${this.obj.id}`,function(e){
                         e.stopPropagation()
+                        return false
                     })
 
                     return this;
