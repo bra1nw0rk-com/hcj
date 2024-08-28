@@ -39,20 +39,22 @@ export default class Box extends HTMLObject {
 			obj.moveY = e.pageY;
 			$(this).addClass("cursor-move")			
 		}).on("mouseup",function(){
+			$(`body`).off('.boxMove')
 			let obj = $(this).closest(`[box]`)[0].parameters;
 			$(this).removeClass("cursor-move")
 			obj.moveX = null;
 			obj.moveY = null;
+
 		}).on("mousemove",function(e){
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(obj.moveX !== null && obj.moveY !== null){
-				$(`body`).on("mousemove",function(e){
-					console.log(elem)
+				$(`body`).on("mousemove.boxMove",function(e){
 					elem.css({
 						transform:'none',
 						top: elem.position().top + (e.pageY - obj.moveY),
-						left: elem.position().left +  (e.pageX - obj.moveX)});
+						left: elem.position().left +  (e.pageX - obj.moveX)
+					});
 
 					obj.moveX = e.pageX;
 					obj.moveY = e.pageY;
