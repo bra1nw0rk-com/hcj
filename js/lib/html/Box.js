@@ -37,7 +37,16 @@ export default class Box extends HTMLObject {
 			let obj = elem[0].parameters;
 			obj.moveX = e.pageX;
 			obj.moveY = e.pageY;
-			$(this).addClass("cursor-move")			
+			$(this).addClass("cursor-move")
+			$(`body`).on("mousemove.boxMove",function(e){
+				elem.css({
+					top: elem.position().top + (e.pageY - obj.moveY),
+					left: elem.position().left +  (e.pageX - obj.moveX)
+				});
+
+				obj.moveX = e.pageX;
+				obj.moveY = e.pageY;
+			})
 		}).on("mouseup",function(){
 			$(`body`).off('.boxMove')
 			let obj = $(this).closest(`[box]`)[0].parameters;
@@ -46,23 +55,15 @@ export default class Box extends HTMLObject {
 			obj.moveY = null;
 
 		}).on("mousemove",function(e){
+			e.stopPropagation()
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(obj.moveX !== null && obj.moveY !== null){
-				$(`body`).on("mousemove.boxMove",function(e){
-					elem.css({
-						transform:'none',
-						top: elem.position().top + (e.pageY - obj.moveY),
-						left: elem.position().left +  (e.pageX - obj.moveX)
-					});
-
-					obj.moveX = e.pageX;
-					obj.moveY = e.pageY;
-				})
 				elem.css({
 					transform:'none',
 					top: elem.position().top + (e.pageY - obj.moveY),
-					left: elem.position().left +  (e.pageX - obj.moveX)});
+					left: elem.position().left +  (e.pageX - obj.moveX)
+				});
 
 				obj.moveX = e.pageX;
 				obj.moveY = e.pageY;
