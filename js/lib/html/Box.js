@@ -117,7 +117,7 @@ export default class Box extends HTMLObject {
 					}else if (obj.resizeClass === "left-side") {
 						elem.css({
 							transform:'none',
-							left: elem.position().left - (e.pageX - obj.resizeX),
+							//left: elem.position().left - (e.pageX - obj.resizeX),
 							width: elem.outerHeight() + (e.pageX - obj.resizeX),
 						});
 					}
