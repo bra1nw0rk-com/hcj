@@ -98,8 +98,15 @@ export default class UI {
 
 	clearPage() {
 		$("#main").each(function () {
-			
-			$(this).remove();
+			$(selector).animate(
+				{
+					opacity: 0,
+				},
+				500,
+				function () {
+					$(this).remove();					
+				}
+			);			
 		});
 	}
 
