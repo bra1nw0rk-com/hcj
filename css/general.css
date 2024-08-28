@@ -268,8 +268,8 @@ table {
 
 [box] .top-left-side{
 	position: absolute;
-	top: -4px;
-	left: -4px;
+	top: -6px;
+	left: -6px;
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
@@ -278,8 +278,8 @@ table {
 }
 [box] .top-right-side{
 	position: absolute;
-	top: -4px;
-	right: -4px;
+	top: -6px;
+	right: -6px;
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
@@ -288,8 +288,8 @@ table {
 }
 [box] .bottom-right-side{
 	position: absolute;
-	bottom: -4px;
-	right: -4px;
+	bottom: -6px;
+	right: -6px;
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
@@ -298,8 +298,8 @@ table {
 }
 [box] .bottom-left-side{
 	position: absolute;
-	bottom: -4px;
-	left: -4px;
+	bottom: -6px;
+	left: -6px;
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
