@@ -118,7 +118,7 @@ export default class Box extends HTMLObject {
 						elem.css({
 							transform:'none',
 							//left: elem.position().left - (e.pageX - obj.resizeX),
-							width: elem.outerHeight() + (e.pageX - obj.resizeX),
+							width: elem.outerWidth() + (e.pageX - obj.resizeX),
 						});
 					}
 					obj.resizeX = e.pageX;
