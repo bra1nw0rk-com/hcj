@@ -59,6 +59,21 @@ export default class Box extends HTMLObject {
 				obj.moveY = e.pageY;
 			}
 			
+		}).on("mouseout",function(e){
+			let elem = $(this).closest(`[box]`);
+			let obj = elem[0].parameters;
+			if(obj.moveX !== null && obj.moveY !== null){
+				console.log( e.pageX - obj.moveX, e.pageY - obj.moveY)
+				console.log( elem.position().top, elem.position().left)
+				elem.css({
+					transform:'none',
+					top: elem.position().top + (e.pageY - obj.moveY),
+					left: elem.position().left +  (e.pageX - obj.moveX)
+				});
+				obj.moveX = e.pageX;
+				obj.moveY = e.pageY;
+			}
+
 		})
 	}
 	set title(text) {
