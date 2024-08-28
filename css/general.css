@@ -272,7 +272,6 @@ table {
 	left: -6px;
 	width: 7px;
 	height: 7px;
-	background-color: rgba(255, 0, 0, 0.27);
 	cursor: nw-resize;
 	z-index: 10;
 }
@@ -282,7 +281,6 @@ table {
 	right: -6px;
 	width: 7px;
 	height: 7px;
-	background-color: rgba(255, 0, 0, 0.27);
 	cursor: ne-resize;
 	z-index: 10;
 }
@@ -292,7 +290,6 @@ table {
 	right: -6px;
 	width: 7px;
 	height: 7px;
-	background-color: rgba(255, 0, 0, 0.27);
 	cursor: se-resize;
 	z-index: 10;
 }
@@ -302,7 +299,6 @@ table {
 	left: -6px;
 	width: 7px;
 	height: 7px;
-	background-color: rgba(255, 0, 0, 0.27);
 	cursor: sw-resize;
 	z-index: 10;
 }
