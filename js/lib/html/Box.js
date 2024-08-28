@@ -35,8 +35,6 @@ export default class Box extends HTMLObject {
 		$(this.#head).on("mousedown",function(e){
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
-			console.log({top: elem.offset().top, left: elem.offset().left},{top: elem.position().top, left: elem.position().left})
-			elem.css({top: elem.offset().top, left: elem.offset().left});
 			obj.moveX = e.pageX;
 			obj.moveY = e.pageY;
 			$(this).addClass("cursor-move")			
@@ -52,7 +50,11 @@ export default class Box extends HTMLObject {
 				console.log( e.pageX - obj.moveX, e.pageY - obj.moveY)
 				console.log( elem.position().top, elem.position().left)
 
-				elem.css({top: elem.position().top + (e.pageY - obj.moveY), left: elem.position().left +  (e.pageX - obj.moveX)});
+				elem.css({
+					transform:'none',
+					top: elem.position().top + (e.pageY - obj.moveY),
+					left: elem.position().left +  (e.pageX - obj.moveX)});
+
 				obj.moveX = e.pageX;
 				obj.moveY = e.pageY;
 			}
