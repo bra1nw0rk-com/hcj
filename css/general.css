@@ -235,7 +235,7 @@ table {
 	left:0;
 	width: 100%;
 	height:6px;
-	color:red;
+	background-color:red;
 }
 [box] .head .fa-info{
 	position: relative;
