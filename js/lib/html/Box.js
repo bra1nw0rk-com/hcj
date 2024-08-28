@@ -35,7 +35,7 @@ export default class Box extends HTMLObject {
 		$(this.#head).on("mousedown",function(e){
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
-			console.log({top: elem.offset().top, left: elem.offset().left})
+			console.log({top: elem.offset().top, left: elem.offset().left},{top: elem.position().top, left: elem.position().left})
 			elem.css({top: elem.offset().top, left: elem.offset().left});
 			obj.moveX = e.pageX;
 			obj.moveY = e.pageY;
