@@ -253,7 +253,7 @@ table {
 	left: 3px;
 	width: calc(100% - 7px);
 	height: 7px;
-	cursor: n-resize;
+	cursor: s-resize;
 	z-index: 10;
 }
 [box] .left-side{
@@ -262,7 +262,7 @@ table {
 	left: -4px;
 	width: 7px;
 	height: calc(100% - 7px);
-	cursor: e-resize;
+	cursor: w-resize;
 	z-index: 10;
 }
 
@@ -273,7 +273,7 @@ table {
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
-	cursor: n-resize;
+	cursor: nw-resize;
 	z-index: 10;
 }
 [box] .top-right-side{
@@ -283,7 +283,7 @@ table {
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
-	cursor: e-resize;
+	cursor: ne-resize;
 	z-index: 10;
 }
 [box] .bottom-right-side{
@@ -293,7 +293,7 @@ table {
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
-	cursor: n-resize;
+	cursor: se-resize;
 	z-index: 10;
 }
 [box] .bottom-left-side{
@@ -303,7 +303,7 @@ table {
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
-	cursor: e-resize;
+	cursor: sw-resize;
 	z-index: 10;
 }
 
