@@ -105,7 +105,7 @@ export default class Box extends HTMLObject {
 				if($(this).hasClass(obj.resizeClass)) {
 					if (obj.resizeClass === "bottom-side") {
 						elem.css({
-							height: elem.outerHeight() + (e.pageY - obj.resizeY),
+							height: elem.outerHeight() + ((e.pageY - obj.resizeY)*2),
 						});
 					}
 					obj.resizeX = e.pageX;
