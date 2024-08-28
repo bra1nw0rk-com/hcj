@@ -14,6 +14,10 @@ export default class Box extends HTMLObject {
 		x:null,
 		y:null
 	}
+	#resizePosition={
+		x:null,
+		y:null
+	}
 
 	constructor(unique) {
 		super("div box");
@@ -37,10 +41,67 @@ export default class Box extends HTMLObject {
 	set moveY(val){
 		this.#movePosition.y = val;
 	}
+	get resizeX(){
+		return this.#resizePosition.x;
+	}
+	set resizeX(val){
+		this.#resizePosition.x = val;
+	}
+	get resizeY(){
+		return this.#resizePosition.y;
+	}
+	set resizeY(val){
+		this.#resizePosition.y = val;
+	}
 	eventListener(){
 		let _this=this;
-		$(this.#head).on("mousedown",function(e){
+		$(this.#resizing).on('mousedown',function(e){
+			e.stopPropagation()
+			console.log(e)
+			let elem = $(this).closest(`[box]`);
+			let obj = elem[0].parameters;
+			if(e.which === 1) {
+				obj.resizeX = e.pageX;
+				obj.resizeY = e.pageY;
+				/*
+				$(`body`).on("mousemove.boxResizing", function (e) {
+					elem.css({
+						top: elem.position().top + (e.pageY - obj.moveY),
+						left: elem.position().left + (e.pageX - obj.moveX)
+					});
+					obj.moveX = e.pageX;
+					obj.moveY = e.pageY;
+				})
 
+				 */
+			}
+		}).on("mouseup",function(){
+			$(`body`).off('.boxResizing')
+			let obj = $(this).closest(`[box]`)[0].parameters;
+			obj.resizeX = null;
+			obj.resizeY = null;
+
+		}).on("mousemove",function(e){
+			e.stopPropagation()
+			let elem = $(this).closest(`[box]`);
+			let obj = elem[0].parameters;
+			if(obj.resizeX !== null && obj.resizeY !== null){
+				console.log(elem.height())
+				/*
+				elem.css({
+					transform:'none',
+					top: elem.position().top + (e.pageY - obj.resizeY),
+					left: elem.position().left +  (e.pageX - obj.resizeX)
+				});
+
+				 */
+
+				obj.resizeX = e.pageX;
+				obj.resizeY = e.pageY;
+			}
+
+		})
+		$(this.#head).on("mousedown",function(e){
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(e.which === 1) {
