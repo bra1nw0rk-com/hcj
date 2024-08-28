@@ -15,7 +15,10 @@ export default class Box extends HTMLObject {
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
-
+		this.#startPosition={
+			x:null,
+			y:null
+		}
 		this.eventListener()
 	}
 	eventListener(){
@@ -30,7 +33,6 @@ export default class Box extends HTMLObject {
 			_this.#startPosition.y = null;
 		}).on("mousemove",function(e){
 			if(_this.#startPosition.x !== null && _this.#startPosition.y !== null){
-
 				console.log( _this.#startPosition.y, _this.#startPosition.x)
 				$(_this.object).css({top: _this.#startPosition.y - e.ClientY, left: _this.#startPosition.x - e.ClientX});
 			}
