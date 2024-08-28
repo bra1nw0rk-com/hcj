@@ -17,7 +17,6 @@ export default class CloseButton extends HTMLObject  {
         }).on(`mousedown`,function(e){
             console.log(e)
             e.stopPropagation()
-            return false
         })
     }
 }
