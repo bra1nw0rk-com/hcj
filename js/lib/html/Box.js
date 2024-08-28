@@ -3,7 +3,14 @@ import HTMLObject from "./HTMLObject.js";
 export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`)
 	#title = $(`<h2></h2>`);	
-	#content=$(`<div class="content"></div>`);
+	#content=$(`
+		<span class="top-side"></span>
+		<span class="right-side"></span>		
+		<div class="content"></div>
+		<span class="bottom-side"></span>
+		<span class="left-side"></span>
+		
+	`);
 	#movePosition={
 		x:null,
 		y:null
