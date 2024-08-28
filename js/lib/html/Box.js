@@ -82,14 +82,12 @@ export default class Box extends HTMLObject {
 			obj.resizeY = null;
 
 		}).on("mousemove",function(e){
-			let target = e.target;
-			console.log(target)
 			e.stopPropagation()
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(obj.resizeX !== null && obj.resizeY !== null){
 				console.log(elem.height())
-
+				console.log($(this))
 				/*
 				elem.css({
 					transform:'none',
