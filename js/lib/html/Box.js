@@ -30,11 +30,11 @@ export default class Box extends HTMLObject {
 	}
 	eventListener(){
 		let _this=this;
-		$(this.#head).on("mousedown",function(event){
+		$(this.#head).on("mousedown",function(e){
 			let obj = $(this).closest(`[box]`)[0].parameters;
-			obj.x = event.ClientX;
-			obj.y = e.ClientY;
-			console.log(obj,obj.x)
+			obj.x = e.clientX;
+			obj.y = e.clientY;
+			console.log(e.pageX,e.pageY)
 			$(this).addClass("cursor-move")			
 		}).on("mouseup",function(){
 			let obj = $(this).closest(`[box]`)[0].parameters;
