@@ -79,17 +79,46 @@ export default class Box extends HTMLObject {
 				obj.resizeX = e.pageX;
 				obj.resizeY = e.pageY;
 
-				/*
+
 				$(`body`).on("mousemove.boxResizing", function (e) {
-					elem.css({
-						top: elem.position().top + (e.pageY - obj.moveY),
-						left: elem.position().left + (e.pageX - obj.moveX)
-					});
-					obj.moveX = e.pageX;
-					obj.moveY = e.pageY;
+					if (obj.resizeClass === "bottom-side") {
+						elem.css({
+							transform:'none',
+							top: elem.position().top,
+							left:elem.position().left,
+							height: elem.outerHeight() + (e.pageY - obj.resizeY),
+							width: elem.outerWidth()
+						});
+					}else if (obj.resizeClass === "top-side") {
+						elem.css({
+							transform:'none',
+							top: elem.position().top + (e.pageY - obj.resizeY),
+							left:elem.position().left,
+							height: elem.outerHeight() - (e.pageY - obj.resizeY),
+							width: elem.outerWidth()
+						});
+					}else if (obj.resizeClass === "left-side") {
+						elem.css({
+							transform:'none',
+							top: elem.position().top,
+							left:elem.position().left + (e.pageX - obj.resizeX),
+							height: elem.outerHeight(),
+							width: elem.outerWidth() - (e.pageX - obj.resizeX),
+						});
+					}else if (obj.resizeClass === "right-side") {
+						elem.css({
+							transform:'none',
+							top: elem.position().top,
+							left:elem.position().left,
+							height: elem.outerHeight(),
+							width: elem.outerWidth() + (e.pageX - obj.resizeX),
+						});
+					}
+					obj.resizeX = e.pageX;
+					obj.resizeY = e.pageY;
 				})
 
-				 */
+
 			}
 		}).on("mouseup",function(){
 			$(`body`).off('.boxResizing')
