@@ -86,16 +86,12 @@ export default class Box extends HTMLObject {
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(obj.resizeX !== null && obj.resizeY !== null){
-				console.log(elem.height())
-				console.log($(this))
-				/*
-				elem.css({
-					transform:'none',
-					top: elem.position().top + (e.pageY - obj.resizeY),
-					left: elem.position().left +  (e.pageX - obj.resizeX)
-				});
+				if($(this).hasClass(`.bottom-side`)){
+					elem.css({
+						height: elem.height().top + (e.pageY - obj.resizeY),
+					});
+				}
 
-				 */
 
 				obj.resizeX = e.pageX;
 				obj.resizeY = e.pageY;
