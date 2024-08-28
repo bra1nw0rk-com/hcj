@@ -30,6 +30,7 @@ export default class Box extends HTMLObject {
 			_this.#startPosition.y = null;
 		}).on("mousemove",function(e){
 			if(_this.#startPosition.x !== null && _this.#startPosition.y !== null){				
+				console.log( _this.#startPosition.y - e.ClientY, _this.#startPosition.x - e.ClientX)
 				$(_this.object).css({top: _this.#startPosition.y - e.ClientY, left: _this.#startPosition.x - e.ClientX});
 			}
 			
