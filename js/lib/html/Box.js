@@ -57,7 +57,6 @@ export default class Box extends HTMLObject {
 		let _this=this;
 		$(this.#resizing).on('mousedown',function(e){
 			e.stopPropagation()
-			console.log(e)
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(e.which === 1) {
@@ -87,12 +86,11 @@ export default class Box extends HTMLObject {
 			let obj = elem[0].parameters;
 			if(obj.resizeX !== null && obj.resizeY !== null){
 				if($(this).hasClass(`.bottom-side`)){
+					console.log("ok")
 					elem.css({
 						height: elem.height().top + (e.pageY - obj.resizeY),
 					});
 				}
-
-
 				obj.resizeX = e.pageX;
 				obj.resizeY = e.pageY;
 			}
