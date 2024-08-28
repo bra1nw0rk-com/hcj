@@ -21,20 +21,32 @@ export default class Box extends HTMLObject {
 		}
 		this.eventListener()
 	}
+	get x(){
+		return this.#startPosition.x;
+	}
+	set x(val){
+		this.#startPosition.x = val;
+	}
+	get y(){
+		return this.#startPosition.y;
+	}
+	set y(val){
+		this.#startPosition.y = val;
+	}
 	eventListener(){
 		let _this=this;
 		$(this.#head).on("mousedown",function(e){
-			_this.#startPosition.x = e.ClientX;
-			_this.#startPosition.y = e.ClientY;
+			_this.x = e.ClientX;
+			_this.y = e.ClientY;
 			$(this).addClass("cursor-move")			
 		}).on("mouseup",function(){
 			$(this).removeClass("cursor-move")
-			_this.#startPosition.x = null;
-			_this.#startPosition.y = null;
+			_this.x = null;
+			_this.y = null;
 		}).on("mousemove",function(e){
-			if(_this.#startPosition.x !== null && _this.#startPosition.y !== null){
-				console.log( _this.#startPosition.y, _this.#startPosition.x)
-				$(_this.object).css({top: _this.#startPosition.y - e.ClientY, left: _this.#startPosition.x - e.ClientX});
+			if(_this.x !== null && _this.y !== null){
+				console.log( _this.y, _this.x)
+				$(_this.object).css({top: _this.y - e.ClientY, left: _this.x - e.ClientX});
 			}
 			
 		})
