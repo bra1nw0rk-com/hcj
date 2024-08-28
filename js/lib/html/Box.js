@@ -179,16 +179,16 @@ export default class Box extends HTMLObject {
 					}else if (obj.resizeClass === "top-left-side") {
 						elem.css({
 							transform:'none',
-							top: elem.position().top,
+							top: elem.position().top + (e.pageY - obj.resizeY),
 							left:elem.position().left + (e.pageX - obj.resizeX),
-							height: elem.outerHeight() + (e.pageY - obj.resizeY),
-							width: elem.outerWidth()
+							height: elem.outerHeight() - (e.pageY - obj.resizeY),
+							width: elem.outerWidth() - (e.pageX - obj.resizeX),
 						});
 					}else if (obj.resizeClass === "top-right-side") {
 						elem.css({
 							transform:'none',
 							top: elem.position().top + (e.pageY - obj.resizeY),
-							left:elem.position().left + (e.pageX - obj.resizeX),
+							left: elem.position().left + (e.pageX - obj.resizeX),
 							height: elem.outerHeight() - (e.pageY - obj.resizeY),
 							width: elem.outerWidth() - (e.pageX - obj.resizeX),
 						});
