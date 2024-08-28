@@ -11,10 +11,10 @@ export default class CloseButton extends HTMLObject  {
     }
     init() {
         super.init();
-        $("body").on(`click`,`#${this.id}`,function(e){
+        $(`#${this.id}`).on(`click`,function(e){
             e.stopPropagation()
             $(this).closest(`[box]`)[0].parameters.close(function(){});
-        }).on(`mousedown.${this.id}`,`#${this.id}`,function(e){
+        }).on(`mousedown`,function(e){
             console.log(e)
             e.stopPropagation()
             return false
