@@ -190,7 +190,7 @@ export default class Box extends HTMLObject {
 							top: elem.position().top + (e.pageY - obj.resizeY),
 							left:elem.position().left + (e.pageX - obj.resizeX),
 							height: elem.outerHeight() - (e.pageY - obj.resizeY),
-							width: elem.outerWidth() + (e.pageX - obj.resizeX),
+							width: elem.outerWidth() - (e.pageX - obj.resizeX),
 						});
 					}else if (obj.resizeClass === "bottom-right-side") {
 						elem.css({
