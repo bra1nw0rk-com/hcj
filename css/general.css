@@ -289,7 +289,7 @@ table {
 [box] .bottom-right-side{
 	position: absolute;
 	bottom: -4px;
-	left: -4px;
+	right: -4px;
 	width: 7px;
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
