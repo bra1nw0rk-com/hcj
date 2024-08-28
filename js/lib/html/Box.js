@@ -85,12 +85,12 @@ export default class Box extends HTMLObject {
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(obj.resizeX !== null && obj.resizeY !== null){
-				let paddingH = elem.css('padding-top')+elem.css('padding-bottom')
+				let height = elem.height() + elem.css('padding-top') + elem.css('padding-bottom')+ elem.css('border-top') + elem.css('border-bottom')
 				let paddingV = elem.css('padding-left')+elem.css('padding-right')
 				if($(this).hasClass(`bottom-side`)){
-					console.log(elem.height() , e.pageY , obj.resizeY)
+					console.log(height )
 					elem.css({
-						height: elem.height()+paddingH + (e.pageY - obj.resizeY),
+						height: height + (e.pageY - obj.resizeY),
 					});
 				}
 				obj.resizeX = e.pageX;
