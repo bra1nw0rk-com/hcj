@@ -4,10 +4,9 @@ export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`)
 	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);
-	#startPosition={
-		x:null,
-		y:null
-	}		
+	#x=null
+	#y=null
+
 	constructor(unique) {
 		super("div box");
 		this.unique = unique;
@@ -15,23 +14,19 @@ export default class Box extends HTMLObject {
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
-		this.#startPosition={
-			x:null,
-			y:null
-		}
 		this.eventListener()
 	}
 	get x(){
-		return this.#startPosition.x;
+		return this.#x;
 	}
 	set x(val){
-		this.#startPosition.x = val;
+		this.#x = val;
 	}
 	get y(){
-		return this.#startPosition.y;
+		return this.#y;
 	}
 	set y(val){
-		this.#startPosition.y = val;
+		this.#y = val;
 	}
 	eventListener(){
 		let _this=this;
