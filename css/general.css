@@ -298,7 +298,7 @@ table {
 }
 [box] .bottom-left-side{
 	position: absolute;
-	top: -4px;
+	bottom: -4px;
 	left: -4px;
 	width: 7px;
 	height: 7px;
