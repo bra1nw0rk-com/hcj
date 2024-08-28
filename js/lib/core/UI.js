@@ -98,7 +98,7 @@ export default class UI {
 
 	clearPage() {
 		$("#main").each(function () {
-			$(selector).animate(
+			$(this).animate(
 				{
 					opacity: 0,
 				},
