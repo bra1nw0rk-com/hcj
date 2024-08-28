@@ -109,6 +109,19 @@ export default class UI {
 			);			
 		});
 	}
+	clearWindow() {
+		$("body *").each(function () {
+			$(this).animate(
+				{
+					opacity: 0,
+				},
+				500,
+				function () {
+					$(this).remove();					
+				}
+			);			
+		});
+	}
 
 	closeModal(selector, callback) {
 		$(selector).animate(

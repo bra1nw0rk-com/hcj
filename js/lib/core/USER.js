@@ -99,7 +99,7 @@ export default class USER {
         clearInterval(this.loginTimer);
         this.sessionId = null;
         this.lastUpdate = 0;
-        WS.ui.clearPage();
+        WS.ui.clearWindow();
         Module.call("pages/login");
     }
 
