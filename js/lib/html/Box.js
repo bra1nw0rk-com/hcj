@@ -79,6 +79,7 @@ export default class Box extends HTMLObject {
 				obj.resizeX = e.pageX;
 				obj.resizeY = e.pageY;
 
+				/*
 				$(`body`).on("mousemove.boxResizing", function (e) {
 					elem.css({
 						top: elem.position().top + (e.pageY - obj.moveY),
@@ -87,6 +88,8 @@ export default class Box extends HTMLObject {
 					obj.moveX = e.pageX;
 					obj.moveY = e.pageY;
 				})
+
+				 */
 			}
 		}).on("mouseup",function(){
 			$(`body`).off('.boxResizing')
