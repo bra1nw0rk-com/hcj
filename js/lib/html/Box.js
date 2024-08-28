@@ -36,6 +36,8 @@ export default class Box extends HTMLObject {
 	eventListener(){
 		let _this=this;
 		$(this.#head).on("mousedown",function(e){
+			let obj = $(this).closest(`box`)[0];
+			console.log(obj)
 			_this.x = e.ClientX;
 			_this.y = e.ClientY;
 			$(this).addClass("cursor-move")			
@@ -44,6 +46,7 @@ export default class Box extends HTMLObject {
 			_this.x = null;
 			_this.y = null;
 		}).on("mousemove",function(e){
+
 			if(_this.x !== null && _this.y !== null){
 				console.log( _this.y, _this.x)
 				$(_this.object).css({top: _this.y - e.ClientY, left: _this.x - e.ClientX});
