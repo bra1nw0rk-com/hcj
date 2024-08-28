@@ -3,9 +3,13 @@ import HTMLObject from "./HTMLObject.js";
 export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`);
 	#resizing=$(`
+		<span class="top-left-side"></span>
 		<span class="top-side"></span>
+		<span class="top-right-side"></span>
 		<span class="right-side"></span>
+		<span class="bottom-right-side"></span>
 		<span class="bottom-side"></span>
+		<span class="bottom-left-side"></span>
 		<span class="left-side"></span>
 	`)
 	#title = $(`<h2></h2>`);	
