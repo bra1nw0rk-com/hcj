@@ -14,7 +14,8 @@ export default class Box extends HTMLObject {
 		x:null,
 		y:null
 	}
-	#resizePosition={
+	#resize={
+		class:"",
 		x:null,
 		y:null
 	}
@@ -42,16 +43,22 @@ export default class Box extends HTMLObject {
 		this.#movePosition.y = val;
 	}
 	get resizeX(){
-		return this.#resizePosition.x;
+		return this.#resize.x;
 	}
 	set resizeX(val){
-		this.#resizePosition.x = val;
+		this.#resize.x = val;
 	}
 	get resizeY(){
-		return this.#resizePosition.y;
+		return this.#resize.y;
 	}
 	set resizeY(val){
-		this.#resizePosition.y = val;
+		this.#resize.y = val;
+	}
+	get resizeClass(){
+		return this.#resize.class;
+	}
+	set resizeClass(val){
+		this.#resize.class = val;
 	}
 	eventListener(){
 		let _this=this;
@@ -60,9 +67,18 @@ export default class Box extends HTMLObject {
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(e.which === 1) {
+				if($(this).hasClass('top-side')){
+					obj.resizeClass = 'top-side'
+				}else if($(this).hasClass('right-side')){
+					obj.resizeClass = 'right-side'
+				}else if($(this).hasClass('bottom-side')){
+					obj.resizeClass = 'bottom-side'
+				}else if($(this).hasClass('left-side')){
+					obj.resizeClass = 'left-side'
+				}
 				obj.resizeX = e.pageX;
 				obj.resizeY = e.pageY;
-				/*
+
 				$(`body`).on("mousemove.boxResizing", function (e) {
 					elem.css({
 						top: elem.position().top + (e.pageY - obj.moveY),
@@ -71,8 +87,6 @@ export default class Box extends HTMLObject {
 					obj.moveX = e.pageX;
 					obj.moveY = e.pageY;
 				})
-
-				 */
 			}
 		}).on("mouseup",function(){
 			$(`body`).off('.boxResizing')
@@ -85,15 +99,15 @@ export default class Box extends HTMLObject {
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(obj.resizeX !== null && obj.resizeY !== null){
-
-				if($(this).hasClass(`bottom-side`)){
-
-					elem.css({
-						height: elem.outerHeight()+ (e.pageY - obj.resizeY),
-					});
+				if($(this).hasClass(obj.resizeClass)) {
+					if (obj.resizeClass === "bottom-side") {
+						elem.css({
+							height: elem.outerHeight() + (e.pageY - obj.resizeY),
+						});
+					}
+					obj.resizeX = e.pageX;
+					obj.resizeY = e.pageY;
 				}
-				obj.resizeX = e.pageX;
-				obj.resizeY = e.pageY;
 			}
 
 		})
