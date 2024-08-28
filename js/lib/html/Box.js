@@ -85,7 +85,8 @@ export default class Box extends HTMLObject {
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
 			if(obj.resizeX !== null && obj.resizeY !== null){
-				if($(this).hasClass(`.bottom-side`)){
+
+				if($(this).hasClass(`bottom-side`)){
 					console.log("ok")
 					elem.css({
 						height: elem.height().top + (e.pageY - obj.resizeY),
