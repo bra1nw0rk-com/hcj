@@ -79,6 +79,14 @@ export default class Box extends HTMLObject {
 					obj.resizeClass = 'bottom-side'
 				}else if($(this).hasClass('left-side')){
 					obj.resizeClass = 'left-side'
+				}else if($(this).hasClass('top-left-side')){
+					obj.resizeClass = 'top-left-side'
+				}else if($(this).hasClass('top-right-side')){
+					obj.resizeClass = 'top-right-side'
+				}else if($(this).hasClass('bottom-right-side')){
+					obj.resizeClass = 'bottom-right-side'
+				}else if($(this).hasClass('bottom-left-side')){
+					obj.resizeClass = 'bottom-left-side'
 				}
 				obj.resizeX = e.pageX;
 				obj.resizeY = e.pageY;
@@ -161,6 +169,38 @@ export default class Box extends HTMLObject {
 							width: elem.outerWidth() - (e.pageX - obj.resizeX),
 						});
 					}else if (obj.resizeClass === "right-side") {
+						elem.css({
+							transform:'none',
+							top: elem.position().top,
+							left:elem.position().left,
+							height: elem.outerHeight(),
+							width: elem.outerWidth() + (e.pageX - obj.resizeX),
+						});
+					}else if (obj.resizeClass === "top-left-side") {
+						elem.css({
+							transform:'none',
+							top: elem.position().top,
+							left:elem.position().left + (e.pageX - obj.resizeX),
+							height: elem.outerHeight() + (e.pageY - obj.resizeY),
+							width: elem.outerWidth()
+						});
+					}else if (obj.resizeClass === "top-right-side") {
+						elem.css({
+							transform:'none',
+							top: elem.position().top + (e.pageY - obj.resizeY),
+							left:elem.position().left + (e.pageX - obj.resizeX),
+							height: elem.outerHeight() - (e.pageY - obj.resizeY),
+							width: elem.outerWidth() - (e.pageX - obj.resizeX),
+						});
+					}else if (obj.resizeClass === "bottom-right-side") {
+						elem.css({
+							transform:'none',
+							top: elem.position().top,
+							left:elem.position().left + (e.pageX - obj.resizeX),
+							height: elem.outerHeight(),
+							width: elem.outerWidth() - (e.pageX - obj.resizeX),
+						});
+					}else if (obj.resizeClass === "bottom-right-side") {
 						elem.css({
 							transform:'none',
 							top: elem.position().top,
