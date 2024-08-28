@@ -4,8 +4,10 @@ export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`)
 	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);
-	#x=null
-	#y=null
+	#movePosition={
+		x:null,
+		y:null
+	}
 
 	constructor(unique) {
 		super("div box");
@@ -16,38 +18,35 @@ export default class Box extends HTMLObject {
 		this.object.attr("data-animated", "")
 		this.eventListener()
 	}
-	get x(){
-		return this.#x;
+	get moveX(){
+		return this.#movePosition.x;
 	}
-	set x(val){
-		this.#x = val;
+	set moveX(val){
+		this.#movePosition.x = val;
 	}
-	get y(){
-		return this.#y;
+	get moveY(){
+		return this.#movePosition.y;
 	}
-	set y(val){
-		this.#y = val;
+	set moveY(val){
+		this.#movePosition.y = val;
 	}
 	eventListener(){
 		let _this=this;
 		$(this.#head).on("mousedown",function(e){
 			let obj = $(this).closest(`[box]`)[0].parameters;
-			obj.x = e.clientX;
-			obj.y = e.clientY;
-			console.log(e.pageX,e.pageY)
+			obj.moveX = e.pageX;
+			obj.moveY = e.pageY;
 			$(this).addClass("cursor-move")			
 		}).on("mouseup",function(){
 			let obj = $(this).closest(`[box]`)[0].parameters;
 			$(this).removeClass("cursor-move")
-			obj.x = null;
-			obj.y = null;
-			console.log(obj)
+			obj.moveX = null;
+			obj.moveY = null;
 		}).on("mousemove",function(e){
-			console.log(e.ClientX,e.ClientY)
 			let obj = $(this).closest(`[box]`)[0].parameters;
 			if(obj.x !== null && obj.y !== null){
-				console.log( obj.y, obj.x)
-				$(obj.object).css({top: obj.y - e.ClientY, left: obj.x - e.ClientX});
+				console.log( obj.moveX, obj.moveY)
+				$(obj.object).css({top: obj.moveY - e.ClientY, left: obj.moveX - e.ClientX});
 			}
 			
 		})
