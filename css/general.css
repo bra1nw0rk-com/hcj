@@ -233,7 +233,7 @@ table {
 	position: absolute;
 	top: -3px;
 	left: 3px;
-	width: calc(100% - 6px);
+	width: calc(100% - 7px);
 	height: 7px;
 	background-color: rgba(255, 0, 0, 0.27);
 	cursor: n-resize;
@@ -243,10 +243,29 @@ table {
 	top: 3px;
 	right: -3px;
 	width: 7px;
-	height: calc(100% - 6px);
+	height: calc(100% - 7px);
 	background-color: rgba(255, 0, 0, 0.27);
 	cursor: e-resize;
 }
+[box] .bottom-side{
+	position: absolute;
+	bottom: -3px;
+	left: 3px;
+	width: calc(100% - 7px);
+	height: 7px;
+	background-color: rgba(255, 0, 0, 0.27);
+	cursor: n-resize;
+}
+[box] .right-side{
+	position: absolute;
+	top: 3px;
+	left: -3px;
+	width: 7px;
+	height: calc(100% - 7px);
+	background-color: rgba(255, 0, 0, 0.27);
+	cursor: e-resize;
+}
+
 [box] .head .fa-info{
 	position: relative;
 	left: 9px;
