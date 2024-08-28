@@ -141,7 +141,7 @@
 }
 
 [data-animated].hide {
-	animation: fadeOut 3s cubic-bezier(0.55, 0.09, 0.68, 0.53) alternate;
+	animation: fadeOut 1s cubic-bezier(0.55, 0.09, 0.68, 0.53) alternate;
 }
 
 [data-animated].fadeIn {

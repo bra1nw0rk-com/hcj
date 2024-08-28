@@ -98,6 +98,7 @@ export default class UI {
 
 	clearPage() {
 		$("#main").each(function () {
+			
 			$(this).remove();
 		});
 	}
