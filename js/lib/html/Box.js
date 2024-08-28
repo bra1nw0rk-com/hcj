@@ -50,6 +50,8 @@ export default class Box extends HTMLObject {
 				console.log( elem.position().top, elem.position().left)
 
 				elem.css({top: elem.position().top + (e.pageY - obj.moveY), left: elem.position().left +  (e.pageX - obj.moveX)});
+				obj.moveX = e.pageX;
+				obj.moveY = e.pageY;
 			}
 			
 		})
