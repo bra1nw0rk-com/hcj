@@ -36,7 +36,7 @@ export default class Box extends HTMLObject {
 	eventListener(){
 		let _this=this;
 		$(this.#head).on("mousedown",function(e){
-			let obj = $(this).closest(`box`);
+			let obj = $(this).closest(`[box]`)[0];
 			console.log(obj)
 			_this.x = e.ClientX;
 			_this.y = e.ClientY;
