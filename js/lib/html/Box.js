@@ -81,9 +81,9 @@ export default class Box extends HTMLObject {
 			obj.resizeX = null;
 			obj.resizeY = null;
 
-		})
-		$(this.#resizing).find(`span`).on("mousemove",function(e){
-			console.log(e)
+		}).on("mousemove",function(e){
+			let target = e.target;
+			console.log(target)
 			e.stopPropagation()
 			let elem = $(this).closest(`[box]`);
 			let obj = elem[0].parameters;
