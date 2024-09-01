@@ -1,12 +1,6 @@
 @import "/modules/main/css/table.css";
 @import "/modules/main/css/main-768.css";
 
-.clickable {
-	 cursor: pointer;
-}
- .clickable:hover {
-	 filter: brightness(3);
-}
 [name="main"] {
 	 animation: fadeIn 0.5s linear alternate;
 	 height: 100%;
