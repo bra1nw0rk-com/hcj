@@ -23,6 +23,7 @@ export default class TimeCalendar extends HTMLObject  {
                     + _this.addZero(currentDate.getMinutes()) + ":"
                     + _this.addZero(currentDate.getSeconds()))
         },1000);
+
     }
     addZero(inp){
         if(inp < 10){
