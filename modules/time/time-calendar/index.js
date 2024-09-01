@@ -8,7 +8,8 @@ export default class TimeCalendar extends HTMLObject  {
         super("div");
         let _this = this;
         this.css = "/modules/time/time-calendar/index.css";
-        this.name = "time-calendar";        
+        this.name = "time-calendar";
+        this.classes = "clickable"
         this.template = $(html``);
         this.object.append(this.dateObj)
         this.object.append(this.timeObj)
