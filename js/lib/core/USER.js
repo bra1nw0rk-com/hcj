@@ -79,10 +79,8 @@ export default class USER {
         },function(data){
             if(data.length > 0) {
                 if (data[0].result === "ok") {
+                    WS.user.update(data[0].accessKey);
                     callback(true);
-                    WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d"/*key*/);
-
-
                 }else{
                     WS.user.update(null);
                     callback(false);
