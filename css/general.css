@@ -325,6 +325,6 @@ table {
 .clickable{
 	cursor: pointer;
 }
-.clickable{
+.clickable:hover{
 	background-color: var(--top-menu-main-menu-item-background);
 }
