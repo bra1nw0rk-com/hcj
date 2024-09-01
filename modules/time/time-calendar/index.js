@@ -25,7 +25,7 @@ export default class TimeCalendar extends HTMLObject  {
         },1000);
     }
     addZero(inp){
-        if(inp < 0){
+        if(inp < 10){
                 return "0"+inp;
         }
         return inp;
