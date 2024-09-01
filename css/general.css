@@ -321,3 +321,10 @@ table {
 .cursor-move{
 	cursor: move;
 }
+
+.clickable{
+	cursor: pointer;
+}
+.clickable{
+	background-color: var(--top-menu-main-menu-item-background);
+}
