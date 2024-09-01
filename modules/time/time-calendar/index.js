@@ -24,7 +24,7 @@ export default class TimeCalendar extends HTMLObject  {
                     + _this.addZero(currentDate.getSeconds()))
         },1000);
     }
-    addZero(int){
+    addZero(inp){
         if(inp < 0){
                 return "0"+inp;
         }
