@@ -1,3 +1,6 @@
+[name="time-calendar"] {
+    padding: 2px;
+}
 [name="time-calendar"] .current-time{
     margin-top: 4px;
 }
