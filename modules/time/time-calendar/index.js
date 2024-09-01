@@ -14,8 +14,20 @@ export default class TimeCalendar extends HTMLObject  {
         this.object.append(this.timeObj)
         this.timerHandler = setInterval(function(){
                 let currentDate = new Date();
-                _this.dateObj.html(currentDate.getDate() + "." + (currentDate.getMonth()+1)  + "." + currentDate.getFullYear())
-                _this.timeObj.html(currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds())
+                _this.dateObj.html(
+                    _this.addZero(currentDate.getDate()) + "."
+                    + _this.addZero((currentDate.getMonth()+1))  + "."
+                    + currentDate.getFullYear())
+                _this.timeObj.html(
+                    _this.addZero(currentDate.getHours()) + ":"
+                    + _this.addZero(currentDate.getMinutes()) + ":"
+                    + _this.addZero(currentDate.getSeconds()))
         },1000);
-    }    
+    }
+    addZero(int){
+        if(inp < 0){
+                return "0"+inp;
+        }
+        return inp;
+    }
 }
