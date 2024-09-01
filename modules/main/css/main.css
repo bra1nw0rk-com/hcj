@@ -73,5 +73,11 @@
 	[name="main"] footer .copyright {
 		width: 33%;
 	}
+
+	[name="main"] footer .right-side{
+		position: absolute;
+		right: 0;
+		margin-right: 4px;
+	}
 }
  
