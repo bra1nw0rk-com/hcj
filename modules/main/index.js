@@ -18,8 +18,7 @@ export default class Main extends HTMLObject {
 					<i class="fa fa-table clickable"></i>
 					<i class="fa fa-table clickable"></i>
 				</div>
-				<div class="copyright">&copy; 2022-∞ bra1nw0rk </div>
-
+				
 				<div class="right-side">
 					<span data-module="time/time-calendar"></span>
 				</div>

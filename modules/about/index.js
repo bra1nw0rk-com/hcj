@@ -14,7 +14,9 @@ export default class AboutModal extends Box {
 			<br>
 			<div>OS: Linux</div>
 			<div>Backend: Java</div>
-			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>			
+			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>	
+			<br>
+			<div class="copyright">&copy; 2022-∞ bra1nw0rk </div>		
 		`;
 		this.button.close();
 		this.icon.info();

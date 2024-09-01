@@ -52,6 +52,7 @@
 		align-content: center;
 		justify-content: flex-start;
 		font-size: 21px;
+		position: absolute;
 	}
 
 	[name="main"] footer #running i {
@@ -61,10 +62,6 @@
 
 	[name="main"] footer #running i:hover {
 		background-color: var(--top-menu-main-menu-item-background);
-	}
-
-	[name="main"] footer .copyright {
-		width: 33%;
 	}
 
 	[name="main"] footer .right-side{
