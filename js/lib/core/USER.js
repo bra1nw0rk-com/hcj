@@ -54,6 +54,14 @@ export default class USER {
         this.loginTimer = setInterval(() => {
             if (_this.needLogin()) {
                 _this.logout();
+            }else{
+                WEBFS.api('/',{
+                    cmd:'refresh',
+                    params: [_this.sessionId]
+                },function(data){
+
+
+                })
             }
         }, 1000);
     }
