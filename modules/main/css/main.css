@@ -47,17 +47,16 @@
 
 	[name="main"] footer #running {
 		display: flex;
-		width: 33%;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		align-content: center;
 		justify-content: flex-start;
-		font-size: 2em;
+		font-size: 21px;
 	}
 
 	[name="main"] footer #running i {
 		padding: 5px;
-		cursor: pointer;
+		border-radius: 8px;
 	}
 
 	[name="main"] footer #running i:hover {

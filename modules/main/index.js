@@ -15,8 +15,8 @@ export default class Main extends HTMLObject {
 			</div>
 			<footer>
 				<div id="running">
-					<i class="fa fa-table"></i>
-					<i class="fa fa-table"></i>
+					<i class="fa fa-table clickable"></i>
+					<i class="fa fa-table clickable"></i>
 				</div>
 				<div class="copyright">&copy; 2022-∞ bra1nw0rk </div>
 
