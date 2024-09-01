@@ -37,7 +37,7 @@
 		position: fixed;
 		bottom: 0;
 		width: 100vw;
-		height: 2rem;
+		height: 40px;
 		border-top: 1px solid var(--border-color);
 		flex-direction: row;
 		flex-wrap: nowrap;
