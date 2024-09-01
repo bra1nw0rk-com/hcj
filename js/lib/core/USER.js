@@ -56,7 +56,7 @@ export default class USER {
                 _this.logout();
             }else{
                 WEBFS.api('/',{
-                    cmd:'refresh',
+                    cmd:'user.refresh',
                     params: [_this.sessionId]
                 },function(data){
 
