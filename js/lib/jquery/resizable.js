@@ -29,6 +29,7 @@ $(function () {
                     }
 
                     obj.doResize=()=>{
+                        console.log(obj.resize)
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
                                 transform:'none',
@@ -46,7 +47,7 @@ $(function () {
                                 width: elem.outerWidth()
                             });
                         }else if (obj.resize.class === "left-side") {
-                            console.log(obj.resize)
+
                             elem.css({
                                 transform:'none',
                                 top: elem.position().top,
