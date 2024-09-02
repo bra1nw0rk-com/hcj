@@ -29,7 +29,7 @@ $(function () {
                     }
 
                     obj.doResize=()=>{
-                        console.log(obj.resize)
+
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
                                 transform:'none',
@@ -98,6 +98,7 @@ $(function () {
                         }
                         obj.resize.x = e.pageX;
                         obj.resize.y = e.pageY;
+                        console.log(obj.resize)
                     }
 
                     $(resizing).on('mousedown',function(e){
