@@ -27,7 +27,7 @@ $(function () {
                         x:null,
                         y:null
                     }
-                    console.log(obj)
+                    console.log(elem)
 
                     obj.doResize=()=>{
                         if (obj.resize.class === "bottom-side") {
