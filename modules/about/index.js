@@ -18,6 +18,7 @@ export default class AboutModal extends Box {
 			<br>
 			<div class="copyright">&copy; 2022-∞ bra1nw0rk </div>		
 		`;
+		this.draggable = true;
 		this.button.close();
 		this.icon.info();
 
