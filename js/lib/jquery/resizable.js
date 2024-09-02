@@ -46,7 +46,6 @@ $(function () {
                                 width: elem.outerWidth()
                             });
                         }else if (obj.resize.class === "left-side") {
-                            console.log(elem)
                             console.log(obj.resize)
                             elem.css({
                                 transform:'none',
@@ -122,7 +121,6 @@ $(function () {
                             }
                             obj.resize.x = e.pageX;
                             obj.resize.y = e.pageY;
-                            console.log(obj.resize)
 
 
                             $(`body`).on("mousemove.boxResizing", function (e) {
