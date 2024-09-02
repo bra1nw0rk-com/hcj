@@ -47,6 +47,7 @@ $(function () {
                             });
                         }else if (obj.resize.class === "left-side") {
                             console.log(elem)
+                            console.log(obj.resize)
                             elem.css({
                                 transform:'none',
                                 top: elem.position().top,
