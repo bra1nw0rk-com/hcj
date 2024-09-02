@@ -7,7 +7,7 @@ export default class DateTime extends HTMLObject  {
 	 constructor() {
         super("div");
         let _this = this;
-        this.css = "/modules/time/time-calendar/index.css";
+        this.css = "/modules/time/date-time/index.css";
         this.name = "date-time";
         this.classes = "clickable"
         this.template = $(html``);
