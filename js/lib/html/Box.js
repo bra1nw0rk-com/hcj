@@ -14,10 +14,7 @@ export default class Box extends HTMLObject {
 	`)
 	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);
-	// #movePosition={
-	// 	x:null,
-	// 	y:null
-	// }
+
 	#resize={
 		class:"",
 		x:null,
@@ -30,6 +27,11 @@ export default class Box extends HTMLObject {
 		}
 	}
 
+	set resizable(val){
+		if(val === true){
+			this.object.resizable()
+		}
+	}
 	constructor(unique) {
 		super("div box");
 		this.unique = unique;

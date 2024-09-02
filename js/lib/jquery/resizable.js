@@ -1,7 +1,7 @@
 
 $(function () {
     $.fn.extend({
-        draggable: function (options) {
+        resizable: function (options) {
             let defaults = {
 
             };
@@ -10,6 +10,19 @@ $(function () {
                 return $(this).each(function (e, i) {
                     let elem = $(this).closest(`[box]`);
                     let obj = elem[0];
+
+                    let resizing=$(`
+                        <span class="top-left-side"></span>
+                        <span class="top-side"></span>
+                        <span class="top-right-side"></span>
+                        <span class="right-side"></span>
+                        <span class="bottom-right-side"></span>
+                        <span class="bottom-side"></span>
+                        <span class="bottom-left-side"></span>
+                        <span class="left-side"></span>
+                    `)
+
+
 
                     obj.movePosition={
                         x:null,
