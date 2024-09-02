@@ -124,7 +124,9 @@ $(function () {
 
 
                             $(`body`).on("mousemove.boxResizing", function (e) {
-                                obj.doResize()
+                                if(obj.resize.x !== null && obj.resize.y !== null) {
+                                    obj.doResize()
+                                }
                             })
 
 
@@ -134,12 +136,12 @@ $(function () {
                         obj.resize.x = null;
                         obj.resize.y = null;
                     }).on("mousemove",function(e){
-                        e.stopPropagation()
-                        if(obj.resize.x !== null && obj.resize.y !== null){
-                            if($(this).hasClass(obj.resize.class)) {
-                                obj.doResize()
-                            }
-                        }
+                        // e.stopPropagation()
+                        // if(obj.resize.x !== null && obj.resize.y !== null){
+                        //     if($(this).hasClass(obj.resize.class)) {
+                        //         obj.doResize()
+                        //     }
+                        // }
 
                     })
 
