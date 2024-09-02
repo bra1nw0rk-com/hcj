@@ -29,7 +29,6 @@ $(function () {
                     }
 
                     obj.doResize=(e)=>{
-
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
                                 transform:'none',
@@ -98,7 +97,6 @@ $(function () {
                         }
                         obj.resize.x = e.pageX;
                         obj.resize.y = e.pageY;
-                        console.log(obj.resize)
                     }
 
                     $(resizing).on('mousedown',function(e){
@@ -137,14 +135,6 @@ $(function () {
                         $(`body`).off('.boxResizing')
                         obj.resize.x = null;
                         obj.resize.y = null;
-                    }).on("mousemove",function(e){
-                        // e.stopPropagation()
-                        // if(obj.resize.x !== null && obj.resize.y !== null){
-                        //     if($(this).hasClass(obj.resize.class)) {
-                        //         obj.doResize()
-                        //     }
-                        // }
-
                     })
 
 
