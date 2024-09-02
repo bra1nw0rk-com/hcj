@@ -24,6 +24,12 @@ export default class Box extends HTMLObject {
 		y:null
 	}
 
+	set draggable(val){
+		if(val === true){
+			this.#head.draggable()
+		}
+	}
+
 	constructor(unique) {
 		super("div box");
 		this.unique = unique;
