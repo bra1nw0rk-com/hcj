@@ -28,7 +28,7 @@ $(function () {
                         y:null
                     }
 
-                    obj.doResize=()=>{
+                    obj.doResize=(e)=>{
 
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
@@ -127,7 +127,7 @@ $(function () {
 
                             $(`body`).on("mousemove.boxResizing", function (e) {
                                 if(obj.resize.x !== null && obj.resize.y !== null) {
-                                    obj.doResize()
+                                    obj.doResize(e)
                                 }
                             })
 
