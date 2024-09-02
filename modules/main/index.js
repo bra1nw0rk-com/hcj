@@ -20,7 +20,7 @@ export default class Main extends HTMLObject {
 				</div>
 				
 				<div class="right-side">
-					<span data-module="time/time-calendar"></span>
+					<span data-module="time/date-time"></span>
 				</div>
 			</footer>
 		`);

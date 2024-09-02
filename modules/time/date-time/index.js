@@ -1,6 +1,6 @@
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
-export default class TimeCalendar extends HTMLObject  {
+export default class DateTime extends HTMLObject  {
         timerHandler = null;
         dateObj=$(`<div class="current-date"></div>`);
         timeObj=$(`<div class="current-time"></div>`)
@@ -8,7 +8,7 @@ export default class TimeCalendar extends HTMLObject  {
         super("div");
         let _this = this;
         this.css = "/modules/time/time-calendar/index.css";
-        this.name = "time-calendar";
+        this.name = "date-time";
         this.classes = "clickable"
         this.template = $(html``);
         this.object.append(this.dateObj)
@@ -29,10 +29,12 @@ export default class TimeCalendar extends HTMLObject  {
     }
 
     init(){
+        let _this = this;
         super.init()
         $(`body`)
             .off(`.${this.id}`)
             .on(`click.${this.id}`,`#${this.id}`,function(){
+
             WS.ui.modal("Test","info");
         })
 

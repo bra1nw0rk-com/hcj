@@ -1,7 +1,7 @@
-[name="time-calendar"] {
+[name="date-time"] {
     padding: 5px;
     border-radius: 8px;
 }
-[name="time-calendar"] .current-time{
+[name="date-time"] .current-time{
     margin-top: 4px;
 }
