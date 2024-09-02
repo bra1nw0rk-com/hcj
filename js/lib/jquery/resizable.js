@@ -34,24 +34,24 @@ $(function () {
                                 transform:'none',
                                 top: elem.position().top,
                                 left:elem.position().left,
-                                height: elem.outerHeight() + (e.pageY - obj.obj.resize.y),
+                                height: elem.outerHeight() + (e.pageY - obj.resize.y),
                                 width: elem.outerWidth()
                             });
                         }else if (obj.resize.class === "top-side") {
                             elem.css({
                                 transform:'none',
-                                top: elem.position().top + (e.pageY - obj.obj.resize.y),
+                                top: elem.position().top + (e.pageY - obj.resize.y),
                                 left:elem.position().left,
-                                height: elem.outerHeight() - (e.pageY - obj.obj.resize.y),
+                                height: elem.outerHeight() - (e.pageY - obj.resize.y),
                                 width: elem.outerWidth()
                             });
                         }else if (obj.resize.class === "left-side") {
                             elem.css({
                                 transform:'none',
                                 top: elem.position().top,
-                                left:elem.position().left + (e.pageX - obj.obj.resize.x),
+                                left:elem.position().left + (e.pageX - obj.resize.x),
                                 height: elem.outerHeight(),
-                                width: elem.outerWidth() - (e.pageX - obj.obj.resize.x),
+                                width: elem.outerWidth() - (e.pageX - obj.resize.x),
                             });
                         }else if (obj.resize.class === "right-side") {
                             elem.css({
@@ -59,43 +59,43 @@ $(function () {
                                 top: elem.position().top,
                                 left:elem.position().left,
                                 height: elem.outerHeight(),
-                                width: elem.outerWidth() + (e.pageX - obj.obj.resize.x),
+                                width: elem.outerWidth() + (e.pageX - obj.resize.x),
                             });
                         }else if (obj.resize.class === "top-left-side") {
                             elem.css({
                                 transform:'none',
-                                top: elem.position().top + (e.pageY - obj.obj.resize.y),
-                                left:elem.position().left + (e.pageX - obj.obj.resize.x),
-                                height: elem.outerHeight() - (e.pageY - obj.obj.resize.y),
-                                width: elem.outerWidth() - (e.pageX - obj.obj.resize.x),
+                                top: elem.position().top + (e.pageY - obj.resize.y),
+                                left:elem.position().left + (e.pageX - obj.resize.x),
+                                height: elem.outerHeight() - (e.pageY - obj.resize.y),
+                                width: elem.outerWidth() - (e.pageX - obj.resize.x),
                             });
                         }else if (obj.resize.class === "top-right-side") {
                             elem.css({
                                 transform:'none',
-                                top: elem.position().top + (e.pageY - obj.obj.resize.y),
+                                top: elem.position().top + (e.pageY - obj.resize.y),
                                 left:elem.position().left,
-                                height: elem.outerHeight() - (e.pageY - obj.obj.resize.y),
-                                width: elem.outerWidth() + (e.pageX - obj.obj.resize.x),
+                                height: elem.outerHeight() - (e.pageY - obj.resize.y),
+                                width: elem.outerWidth() + (e.pageX - obj.resize.x),
                             });
                         }else if (obj.resize.class === "bottom-right-side") {
                             elem.css({
                                 transform:'none',
                                 top: elem.position().top,
                                 left:elem.position().left,
-                                height: elem.outerHeight() + (e.pageY - obj.obj.resize.y),
-                                width: elem.outerWidth() + (e.pageX - obj.obj.resize.x),
+                                height: elem.outerHeight() + (e.pageY - obj.resize.y),
+                                width: elem.outerWidth() + (e.pageX - obj.resize.x),
                             });
                         }else if (obj.resize.class === "bottom-left-side") {
                             elem.css({
                                 transform:'none',
                                 top: elem.position().top,
-                                left:elem.position().left + (e.pageX - obj.obj.resize.x),
-                                height: elem.outerHeight() + (e.pageY - obj.obj.resize.y),
-                                width: elem.outerWidth() - (e.pageX - obj.obj.resize.x),
+                                left:elem.position().left + (e.pageX - obj.resize.x),
+                                height: elem.outerHeight() + (e.pageY - obj.resize.y),
+                                width: elem.outerWidth() - (e.pageX - obj.resize.x),
                             });
                         }
-                        obj.obj.resize.x = e.pageX;
-                        obj.obj.resize.y = e.pageY;
+                        obj.resize.x = e.pageX;
+                        obj.resize.y = e.pageY;
                     }
 
                     $(resizing).on('mousedown',function(e){
@@ -118,8 +118,8 @@ $(function () {
                             }else if($(this).hasClass('bottom-left-side')){
                                 obj.resize.class = 'bottom-left-side'
                             }
-                            obj.obj.resize.x = e.pageX;
-                            obj.obj.resize.y = e.pageY;
+                            obj.resize.x = e.pageX;
+                            obj.resize.y = e.pageY;
 
 
                             $(`body`).on("mousemove.boxResizing", function (e) {
@@ -130,12 +130,12 @@ $(function () {
                         }
                     }).on("mouseup",function(){
                         $(`body`).off('.boxResizing')
-                        obj.obj.resize.x = null;
-                        obj.obj.resize.y = null;
+                        obj.resize.x = null;
+                        obj.resize.y = null;
 
                     }).on("mousemove",function(e){
                         e.stopPropagation()
-                        if(obj.obj.resize.x !== null && obj.obj.resize.y !== null){
+                        if(obj.resize.x !== null && obj.resize.y !== null){
                             if($(this).hasClass(obj.resize.class)) {
                                 obj.doResize()
                             }
