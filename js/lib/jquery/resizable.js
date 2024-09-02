@@ -46,6 +46,7 @@ $(function () {
                                 width: elem.outerWidth()
                             });
                         }else if (obj.resize.class === "left-side") {
+                            console.log(elem.css())
                             elem.css({
                                 transform:'none',
                                 top: elem.position().top,
