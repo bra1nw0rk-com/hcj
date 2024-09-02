@@ -29,8 +29,12 @@ export default class TimeCalendar extends HTMLObject  {
     }
 
     init(){
-            super.init()
-        WS.ui.modal("ok","info")
+        super.init()
+        $(`body`)
+            .off(`.${this.id}`)
+            .on(`click.${this.id}`,`#${this.id}`,function(){
+            WS.ui.modal("Test","info");
+        })
 
     }
     addZero(inp){
