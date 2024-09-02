@@ -25,6 +25,13 @@ export default class TimeCalendar extends HTMLObject  {
                     + _this.addZero(currentDate.getSeconds()))
         },1000);
 
+
+    }
+
+    init(){
+            super.init()
+        WS.ui.modal("ok","info")
+
     }
     addZero(inp){
         if(inp < 10){
