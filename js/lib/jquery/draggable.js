@@ -51,6 +51,7 @@ $(function () {
 
                     }).on("mousemove",function(e){
                         e.stopPropagation()
+                        console.log(obj)
                         if(obj.moveX !== null && obj.moveY !== null){
                             elem.css({
                                 transform:'none',
