@@ -35,8 +35,10 @@ export default class DateTime extends HTMLObject  {
             .off(`.${this.id}`)
             .on(`click.${this.id}`,`#${this.id}`,function(){
 
-            let calendar = Module.call(`calendar/sun`);
-            console.log(calendar)
+            Module.call(`calendar/sun`).then(function(obj){
+                console.log(obj)
+            });
+
         })
 
     }
