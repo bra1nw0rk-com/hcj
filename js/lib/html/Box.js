@@ -14,10 +14,10 @@ export default class Box extends HTMLObject {
 	`)
 	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);
-	#movePosition={
-		x:null,
-		y:null
-	}
+	// #movePosition={
+	// 	x:null,
+	// 	y:null
+	// }
 	#resize={
 		class:"",
 		x:null,
@@ -40,18 +40,18 @@ export default class Box extends HTMLObject {
 		this.object.attr("data-animated", "")
 		this.eventListener()
 	}
-	get moveX(){
-		return this.#movePosition.x;
-	}
-	set moveX(val){
-		this.#movePosition.x = val;
-	}
-	get moveY(){
-		return this.#movePosition.y;
-	}
-	set moveY(val){
-		this.#movePosition.y = val;
-	}
+	// get moveX(){
+	// 	return this.#movePosition.x;
+	// }
+	// set moveX(val){
+	// 	this.#movePosition.x = val;
+	// }
+	// get moveY(){
+	// 	return this.#movePosition.y;
+	// }
+	// set moveY(val){
+	// 	this.#movePosition.y = val;
+	// }
 	get resizeX(){
 		return this.#resize.x;
 	}
@@ -253,43 +253,43 @@ export default class Box extends HTMLObject {
 			}
 
 		})
-		$(this.#head).on("mousedown",function(e){
-			let elem = $(this).closest(`[box]`);
-			let obj = elem[0].parameters;
-			if(e.which === 1) {
-				obj.moveX = e.pageX;
-				obj.moveY = e.pageY;
-				$(`body`).on("mousemove.boxMove", function (e) {
-					elem.css({
-						top: elem.position().top + (e.pageY - obj.moveY),
-						left: elem.position().left + (e.pageX - obj.moveX)
-					});
-					obj.moveX = e.pageX;
-					obj.moveY = e.pageY;
-				})
-			}
-		}).on("mouseup",function(){
-			$(`body`).off('.boxMove')
-			let obj = $(this).closest(`[box]`)[0].parameters;
-			obj.moveX = null;
-			obj.moveY = null;
-
-		}).on("mousemove",function(e){
-			e.stopPropagation()
-			let elem = $(this).closest(`[box]`);
-			let obj = elem[0].parameters;
-			if(obj.moveX !== null && obj.moveY !== null){
-				elem.css({
-					transform:'none',
-					top: elem.position().top + (e.pageY - obj.moveY),
-					left: elem.position().left +  (e.pageX - obj.moveX)
-				});
-
-				obj.moveX = e.pageX;
-				obj.moveY = e.pageY;
-			}
-			
-		})
+		// $(this.#head).on("mousedown",function(e){
+		// 	let elem = $(this).closest(`[box]`);
+		// 	let obj = elem[0].parameters;
+		// 	if(e.which === 1) {
+		// 		obj.moveX = e.pageX;
+		// 		obj.moveY = e.pageY;
+		// 		$(`body`).on("mousemove.boxMove", function (e) {
+		// 			elem.css({
+		// 				top: elem.position().top + (e.pageY - obj.moveY),
+		// 				left: elem.position().left + (e.pageX - obj.moveX)
+		// 			});
+		// 			obj.moveX = e.pageX;
+		// 			obj.moveY = e.pageY;
+		// 		})
+		// 	}
+		// }).on("mouseup",function(){
+		// 	$(`body`).off('.boxMove')
+		// 	let obj = $(this).closest(`[box]`)[0].parameters;
+		// 	obj.moveX = null;
+		// 	obj.moveY = null;
+		//
+		// }).on("mousemove",function(e){
+		// 	e.stopPropagation()
+		// 	let elem = $(this).closest(`[box]`);
+		// 	let obj = elem[0].parameters;
+		// 	if(obj.moveX !== null && obj.moveY !== null){
+		// 		elem.css({
+		// 			transform:'none',
+		// 			top: elem.position().top + (e.pageY - obj.moveY),
+		// 			left: elem.position().left +  (e.pageX - obj.moveX)
+		// 		});
+		//
+		// 		obj.moveX = e.pageX;
+		// 		obj.moveY = e.pageY;
+		// 	}
+		//
+		// })
 	}
 	set title(text) {
 		this.#title.html(text);
