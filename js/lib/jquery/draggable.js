@@ -37,23 +37,16 @@ $(function () {
 
                     }).on("mousemove",function(e){
                         e.stopPropagation()
-                        console.log(obj)
                         if(obj.movePosition.x !== null && obj.movePosition.y !== null){
                             elem.css({
                                 transform:'none',
                                 top: elem.position().top + (e.pageY - obj.movePosition.y),
                                 left: elem.position().left +  (e.pageX - obj.movePosition.x)
                             });
-
                             obj.movePosition.x = e.pageX;
                             obj.movePosition.y = e.pageY;
                         }
-
                     })
-
-
-                    console.log("ok")
-
                     return this;
                 });
             }
