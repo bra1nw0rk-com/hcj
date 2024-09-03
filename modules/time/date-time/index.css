@@ -5,5 +5,5 @@
     display: inline-block;
 }
 [name="date-time"] .current-time{
-    margin-top: 4px;
+    /*margin-top: 4px;*/
 }
