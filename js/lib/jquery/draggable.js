@@ -28,7 +28,7 @@ $(function () {
                                 left: elem.position().left
                             });
                             $(`body`).on("mousemove.boxMove", function (e) {
-                                if(e.target === obj){                                                                
+                                if(e.target === parent[0]){                                                                
                                     if(obj.movePosition.x !== null && obj.movePosition.y !== null){
                                         console.log(e)
                                         console.log(elem.position().top, elem.position().left, elem.position().top + (e.pageY - obj.movePosition.y),elem.position().left + (e.pageX - obj.movePosition.x))
