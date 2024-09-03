@@ -53,9 +53,10 @@
 		justify-content: flex-start;
 		font-size: 21px;
 		position: absolute;
+		padding-left: 3px;
 	}
 	[name="main"] footer #running .fa{
-		width: 22px;
+		width: 34px;
 	}
 
 	[name="main"] footer #running i {
