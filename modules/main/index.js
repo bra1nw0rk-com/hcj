@@ -1,5 +1,4 @@
 import HTMLObject from "../../js/lib/html/HTMLObject.js";
-import Module from "../../js/lib/core/Module";
 
 export default class Main extends HTMLObject {
 	#mainMenu = $(`<div data-module="main/menu"></div>`)
