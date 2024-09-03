@@ -1,5 +1,6 @@
 [name="userLoginForm"] {
     font-size: 1.3em;
+    max-width: 345px;
 }
 [name="userLoginForm"].error {
     animation: horizontal-shaking 0.5s linear alternate;
