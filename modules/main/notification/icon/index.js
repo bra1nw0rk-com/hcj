@@ -2,11 +2,14 @@ import HTMLObject from "../../../../js/lib/html/HTMLObject.js";
 
 export default class NotificationIcon extends HTMLObject  {
     constructor() {
-        super("i");
+        super("div");
         let _this = this;
         this.css = "/modules/main/notification/icon/index.css";
         this.name = "notification-icon";
-        this.classes = `fa fa-bell-o`
+        this.content = `
+            <i class="fa fa-bell-o" aria-hidden="true"></i>
+        
+        `
     }
     init() {
         $("body")
