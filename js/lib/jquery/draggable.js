@@ -18,21 +18,17 @@ $(function () {
 
 
                     $(this).on("mousedown",function(e){
-                        console.log(e,elem)
                         e.stopPropagation()
                         if(e.which === 1) {
                             obj.movePosition.x = e.pageX;
-                            obj.movePosition.y = e.pageY;
-                            elem.css({
-                                top: elem.position().top,
-                                left: elem.position().left
-                            });
+                            obj.movePosition.y = e.pageY;                            
                             $(`body`).on("mousemove.boxMove", function (e) {
                                 if(e.target === parent){                                                                
                                     if(obj.movePosition.x !== null && obj.movePosition.y !== null){
                                         console.log(e)
                                         console.log(elem.position().top, elem.position().left, elem.position().top + (e.pageY - obj.movePosition.y),elem.position().left + (e.pageX - obj.movePosition.x))
                                         elem.css({
+                                            transform:'none',
                                             top: elem.position().top + (e.pageY - obj.movePosition.y),
                                             left: elem.position().left + (e.pageX - obj.movePosition.x)
                                         });
