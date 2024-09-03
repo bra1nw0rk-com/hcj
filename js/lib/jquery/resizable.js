@@ -35,10 +35,10 @@ $(function () {
                     }
 
                     obj.doResize=(e)=>{
-                        console.log(elem.css(`width`) , elem.css(`min-width`))
+                        let oldWidth = elem.outerHeight();
+                        let oldHeight = elem.outerHeight();
                         if(elem.css(`width`) <= elem.css(`min-width`)) {
                             return;
-
                         }
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
@@ -108,6 +108,9 @@ $(function () {
                         }
                         obj.resize.x = e.pageX;
                         obj.resize.y = e.pageY;
+                        if(elem.outerHeight() === oldHeight && elem.outerWidth()===oldWidth){
+                            obj.stopResize()
+                        }
                     }
 
                     $(resizing).on('mousedown',function(e){
