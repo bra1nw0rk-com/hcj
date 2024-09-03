@@ -18,6 +18,7 @@ $(function () {
 
 
                     $(this).on("mousedown",function(e){
+                        e.stopPropagation()
                         if(e.which === 1) {
                             obj.movePosition.x = e.pageX;
                             obj.movePosition.y = e.pageY;
@@ -38,6 +39,7 @@ $(function () {
                             })
                         }
                     }).on("mouseup",function(){
+                        e.stopPropagation()
                         $(`body`).off('.boxMove')
                         obj.movePosition.x = null;
                         obj.movePosition.y = null;
