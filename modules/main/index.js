@@ -30,14 +30,16 @@ export default class Main extends HTMLObject {
 	}
 	init(){
 		let _this = this;
-		$("body").on("mutation", function (e) {
-			$(this).find("[box]").each(function () {
+		$("body")
+			.off("mutation.main")
+			.on("mutation.main", function (e) {
+				$(this).find("[box]").each(function () {
 					let newObj = $($(this)[0].parameters.faIcon)
-					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
-					newObj.addClass('clickable')
-					_this.#running.append(newObj)
+					//newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
+					//newObj.addClass('clickable')
+					//_this.#running.append(newObj)
 				});
-		});
+			});
 	}
 
 }
