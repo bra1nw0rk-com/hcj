@@ -1,6 +1,15 @@
 import HTMLObject from "../../js/lib/html/HTMLObject.js";
+import Module from "../../js/lib/core/Module";
 
 export default class Main extends HTMLObject {
+	#mainMenu = $(`<div data-module="main/menu"></div>`)
+	#content = $(`<div id="content">
+				<div data-module="calendar/maya"></div>
+			</div>`)
+	#footer = $(`<footer></footer>`)
+	#running = $(`<div id="running"></div>`)
+	#rightSide = $(`<div class="right-side"></div>`)
+
 	constructor() {
 		super("div");
 		let _this = this;
@@ -8,26 +17,30 @@ export default class Main extends HTMLObject {
 		this.title = "BWOS";
 		this.name = "main";
 		this.classes = "fadeIn";
-		this.template = $(html`
-			<div data-module="main/menu"></div>
-			<div id="content">
-				<div data-module="calendar/maya"></div>
-			</div>
-			<footer>
-				<div id="running">
-					<i class="fa fa-table clickable"></i>
-					<i class="fa fa-table clickable"></i>
-				</div>
-				
-				<div class="right-side">
-					<span data-module="time/date-time"></span>
-					<span data-module="main/notification/icon"></span>
-				</div>
-			</footer>
-		`);
 
-
+		this.object.append(this.#mainMenu)
+		this.object.append(this.#content)
+		this.object.append(this.#footer)
+		this.#footer.append(this.#running)
+		this.#footer.append(this.#rightSide)
+		this.#rightSide.append($(`<span data-module="time/date-time"></span>`))
+		this.#rightSide.append($(`<span data-module="main/notification/icon"></span>`))
 		$("body").html("").append(this.get());
+		this.init()
+
+	}
+	init(){
+		let _this = this;
+		$("body").on("mutation", function (e) {
+			$(this).find("[box]").each(function () {
+					let icon = $(this)[0].parameters.#icon;
+					let id = $(this)[0].parameters.id;
+					let newObj = $(icon)
+					newObj.attr(`data-obj-id`,id)
+					newObj.addClass('clickable')
+					_this.#running.append(newObj)
+				});
+		});
 	}
 
 }
