@@ -11,6 +11,7 @@ export default class NotificationIcon extends HTMLObject  {
             <i class="fa fa-bell-o" aria-hidden="true"></i>
         
         `
+        this.init()
     }
     init() {
         $("body")
