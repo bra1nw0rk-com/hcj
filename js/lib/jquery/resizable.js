@@ -127,7 +127,13 @@ $(function () {
                                 if(obj.resize.x !== null && obj.resize.y !== null) {
                                     obj.doResize(e)
                                 }
-                            })
+                            }).on('keyup.boxResizing',function(evt) {
+                                if (evt.keyCode == 27) {
+                                    $(`body`).off('.boxResizing')
+                                    obj.resize.x = null;
+                                    obj.resize.y = null;
+                                }
+                            });
 
 
                         }
