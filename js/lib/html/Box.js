@@ -42,6 +42,9 @@ export default class Box extends HTMLObject {
 			}
 		}
 	}
+	get faIcon(){
+		return this.#icon
+	}
 	get icon(){
 		let _this = this;
 		return {

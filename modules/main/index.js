@@ -33,7 +33,7 @@ export default class Main extends HTMLObject {
 		let _this = this;
 		$("body").on("mutation", function (e) {
 			$(this).find("[box]").each(function () {
-					let icon = $(this)[0].parameters.#icon;
+					let icon = $(this)[0].parameters.faIcon;
 					let id = $(this)[0].parameters.id;
 					let newObj = $(icon)
 					newObj.attr(`data-obj-id`,id)
