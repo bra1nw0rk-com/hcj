@@ -38,7 +38,7 @@ $(function () {
                         obj.movePosition.y = null;
 
                     }).on("mousemove",function(e){
-                        e.stopPropagation()
+                        /*e.stopPropagation()*/
                         /*
                         if(obj.movePosition.x !== null && obj.movePosition.y !== null){
                             elem.css({
