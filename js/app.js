@@ -53,7 +53,7 @@ $(function () {
 	WS.ui.init();
 	WS.user.init();
 	//Module.call(`main`);
-
+console.log(Notification.permission)
 });
 
 $(window).on("orientationchange", function (e) {
