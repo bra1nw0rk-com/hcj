@@ -56,19 +56,7 @@ $(function () {
 	WS.user.init();
 	WS.notification.init()
 	//Module.call(`main`);
-	if (("Notification" in window)) {
-		if (Notification.permission === "default") {
 
-			Notification.requestPermission().then(r => {
-				console.log(r);
-			});
-		}
-		if(Notification.permission === "granted"){
-			const img = "/img/maskable-icon.png";
-			const text = `HEY! Your task ____ is now overdue.`;
-			const notification = new Notification("To do list", { body: text, icon: img });
-		}
-	}
 });
 
 $(window).on("orientationchange", function (e) {
