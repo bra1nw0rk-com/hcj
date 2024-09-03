@@ -22,12 +22,14 @@ $(function () {
                             obj.movePosition.x = e.pageX;
                             obj.movePosition.y = e.pageY;
                             $(`body`).on("mousemove.boxMove", function (e) {
-                                elem.css({
-                                    top: elem.position().top + (e.pageY - obj.movePosition.y),
-                                    left: elem.position().left + (e.pageX - obj.movePosition.x)
-                                });
-                                obj.movePosition.x = e.pageX;
-                                obj.movePosition.y = e.pageY;
+                                if(obj.movePosition.x !== null && obj.movePosition.y !== null){
+                                    elem.css({
+                                        top: elem.position().top + (e.pageY - obj.movePosition.y),
+                                        left: elem.position().left + (e.pageX - obj.movePosition.x)
+                                    });
+                                    obj.movePosition.x = e.pageX;
+                                    obj.movePosition.y = e.pageY;
+                                }
                             })
                         }
                     }).on("mouseup",function(){
@@ -37,6 +39,7 @@ $(function () {
 
                     }).on("mousemove",function(e){
                         e.stopPropagation()
+                        /*
                         if(obj.movePosition.x !== null && obj.movePosition.y !== null){
                             elem.css({
                                 transform:'none',
@@ -46,6 +49,7 @@ $(function () {
                             obj.movePosition.x = e.pageX;
                             obj.movePosition.y = e.pageY;
                         }
+                            */
                     })
                     return this;
                 });
