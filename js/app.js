@@ -6,6 +6,7 @@ import Module from "./lib/core/Module.js";
 import LocalStorage from "./lib/core/LocalStorage.js";
 import "/js/lib/main.js";
 import USER from "./lib/core/USER.js";
+import NOTIFICATION from "./lib/core/NOTIFICATION";
 
 globalThis.Module = Module;
 globalThis.storage = new LocalStorage("ws");
@@ -13,6 +14,7 @@ globalThis.html = String.raw;
 globalThis.WS = {
 	ui: ui,
 	user: new USER(),
+	notification: new NOTIFICATION()
 };
 
 $(function () {
@@ -52,6 +54,7 @@ $(function () {
 	})
 	WS.ui.init();
 	WS.user.init();
+	WS.notification.init()
 	//Module.call(`main`);
 	if (("Notification" in window)) {
 		if (Notification.permission === "default") {
