@@ -21,6 +21,7 @@ export default class Main extends HTMLObject {
 				
 				<div class="right-side">
 					<span data-module="time/date-time"></span>
+					<span data-module="main/notification/icon"></span>
 				</div>
 			</footer>
 		`);
