@@ -181,13 +181,14 @@ table {
 	background-color: var(--bg1);
 	padding: 0.5em 1.25em 1.25em 1.25em;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	width: 22.125rem;
-	height: auto;
+	min-width: 150px;
+	min-height: 50px;
 	position: absolute;
 	top: 50vh;
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
 	z-index: 1;
+	overflow: hidden;
 }
 .modal::before{
 	-webkit-backdrop-filter: blur(4px);
