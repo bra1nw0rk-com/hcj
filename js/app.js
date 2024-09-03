@@ -56,12 +56,11 @@ $(function () {
 	if (("Notification" in window)) {
 		if (Notification.permission === "default") {
 
-			Notification.requestPermission((result) => {
-				console.log(result);
-			}).then(r => {
-				console.log(result);
+			Notification.requestPermission().then(r => {
+				console.log(r);
 			});
-		}else if(Notification.permission === "granted"){
+		}
+		if(Notification.permission === "granted"){
 			const img = "/img/maskable-icon.png";
 			const text = `HEY! Your task ____ is now overdue.`;
 			const notification = new Notification("To do list", { body: text, icon: img });
