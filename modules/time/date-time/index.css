@@ -1,6 +1,8 @@
 [name="date-time"] {
     padding: 5px;
     border-radius: 8px;
+    width: fit-content;
+    display: inline-block;
 }
 [name="date-time"] .current-time{
     margin-top: 4px;
