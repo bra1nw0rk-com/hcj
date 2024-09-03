@@ -25,13 +25,15 @@ $(function () {
                     obj.resize={
                         class:"",
                         x:null,
-                        y:null
+                        y:null,
+                        fail:0
                     }
 
                     obj.stopResize=()=>{
                         $(`body`).off('.boxResizing')
                         obj.resize.x = null;
                         obj.resize.y = null;
+                        obj.resize.fail=0
                     }
 
                     obj.doResize=(e)=>{
@@ -109,6 +111,9 @@ $(function () {
                         obj.resize.x = e.pageX;
                         obj.resize.y = e.pageY;
                         if(elem.outerHeight() === oldHeight && elem.outerWidth()===oldWidth){
+                            obj.resize.fail++
+                        }
+                        if(obj.resize.fail>3){
                             obj.stopResize()
                         }
                     }
