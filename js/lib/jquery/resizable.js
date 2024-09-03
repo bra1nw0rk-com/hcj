@@ -28,7 +28,14 @@ $(function () {
                         y:null
                     }
 
+                    obj.stopResize(){
+                        $(`body`).off('.boxResizing')
+                        obj.resize.x = null;
+                        obj.resize.y = null;
+                    }
+
                     obj.doResize=(e)=>{
+                        if(elem.css(`width`) <= elem.css(`min-width`)) return;
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
                                 transform:'none',
@@ -129,18 +136,14 @@ $(function () {
                                 }
                             }).on('keyup.boxResizing',function(evt) {
                                 if (evt.keyCode == 27) {
-                                    $(`body`).off('.boxResizing')
-                                    obj.resize.x = null;
-                                    obj.resize.y = null;
+                                    obj.stopResize()
                                 }
                             });
 
 
                         }
                     }).on("mouseup",function(){
-                        $(`body`).off('.boxResizing')
-                        obj.resize.x = null;
-                        obj.resize.y = null;
+                       obj.stopResize()
                     })
 
 
