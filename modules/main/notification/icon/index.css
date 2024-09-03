@@ -5,3 +5,6 @@
     display: inline-block;
     font-size: 16px;
 }
+[name="notification-icon"] .fa-bell-o,[name="notification-icon"] .fa-bell{
+    padding-top: 3px;
+}
