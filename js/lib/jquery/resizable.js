@@ -162,6 +162,9 @@ $(function () {
                     elem.on("mousedown.boxResizing",function(){
                         obj.stopResize()
                     })
+                    $(`body`).on("mousedown.boxResizing",function(){
+                        obj.stopResize()
+                    })
 
 
 
