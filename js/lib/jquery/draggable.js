@@ -18,6 +18,7 @@ $(function () {
 
 
                     $(this).on("mousedown",function(e){
+                        console.log(e)
                         e.stopPropagation()
                         if(e.which === 1) {
                             obj.movePosition.x = e.pageX;
@@ -26,8 +27,9 @@ $(function () {
                                 top: elem.position().top,
                                 left: elem.position().left
                             });
-                            $(`body`).on("mousemove.boxMove", function (e) {                                
+                            $(`body`).on("mousemove.boxMove", function (e) {                                                                
                                 if(obj.movePosition.x !== null && obj.movePosition.y !== null){
+                                    console.log(e)
                                     console.log(elem.position().top, elem.position().left, elem.position().top + (e.pageY - obj.movePosition.y),elem.position().left + (e.pageX - obj.movePosition.x))
                                     elem.css({
                                         top: elem.position().top + (e.pageY - obj.movePosition.y),
