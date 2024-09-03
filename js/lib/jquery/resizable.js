@@ -28,7 +28,7 @@ $(function () {
                         y:null
                     }
 
-                    obj.stopResize(){
+                    obj.stopResize=()=>{
                         $(`body`).off('.boxResizing')
                         obj.resize.x = null;
                         obj.resize.y = null;
