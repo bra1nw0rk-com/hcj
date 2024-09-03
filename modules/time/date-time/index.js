@@ -11,8 +11,8 @@ export default class DateTime extends HTMLObject  {
         this.name = "date-time";
         this.classes = "clickable"
         this.template = $(html``);
-        this.object.append(this.dateObj)
         this.object.append(this.timeObj)
+        this.object.append(this.dateObj)        
         this.timerHandler = setInterval(function(){
                 let currentDate = new Date();
                 _this.dateObj.html(
