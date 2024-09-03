@@ -324,6 +324,14 @@ table {
 	top: 0;
 	opacity: 0.2;
 }
+[box] .head .fa-cors{
+	position: relative;
+	left: 3px;
+	font-size: 22px;
+	color: red;
+	top: 0;
+	opacity: 0.2;
+}
 .cursor-move{
 	cursor: move;
 }
