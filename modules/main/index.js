@@ -41,6 +41,12 @@ export default class Main extends HTMLObject {
 					console.log(newObj)
 					_this.#running.append(newObj)
 				});
+
+				$(_this.#running).find(`[data-obj-id]`).each(function(){
+					if($(`body`).find(`#${$(this).attr("data-obj-id")}`).length === 0){
+						$(this).remove()
+					}
+				})
 			});
 	}
 
