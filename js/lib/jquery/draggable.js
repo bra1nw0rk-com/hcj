@@ -22,7 +22,6 @@ $(function () {
                             obj.movePosition.x = e.pageX;
                             obj.movePosition.y = e.pageY;
                             $(`body`).on("mousemove.boxMove", function (e) {
-                                console.log(obj)
                                 if(obj.movePosition.x !== null && obj.movePosition.y !== null){
                                     elem.css({
                                         top: elem.position().top + (e.pageY - obj.movePosition.y),
@@ -38,19 +37,6 @@ $(function () {
                         obj.movePosition.x = null;
                         obj.movePosition.y = null;
 
-                    }).on("mousemove",function(e){
-                        /*e.stopPropagation()*/
-                        /*
-                        if(obj.movePosition.x !== null && obj.movePosition.y !== null){
-                            elem.css({
-                                transform:'none',
-                                top: elem.position().top + (e.pageY - obj.movePosition.y),
-                                left: elem.position().left +  (e.pageX - obj.movePosition.x)
-                            });
-                            obj.movePosition.x = e.pageX;
-                            obj.movePosition.y = e.pageY;
-                        }
-                            */
                     })
                     return this;
                 });
