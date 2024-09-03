@@ -6,7 +6,7 @@ export default class Box extends HTMLObject {
 	#content=$(`<div class="content"></div>`);
 	set draggable(val){
 		if(val === true){
-			this.#head.draggable()
+			this.#head.draggable({parent:this.object})
 		}
 	}
 	set resizable(val){

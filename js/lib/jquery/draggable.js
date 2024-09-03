@@ -3,12 +3,12 @@ $(function () {
     $.fn.extend({
         draggable: function (options) {
             let defaults = {
-
+                parent:null
             };
             options = $.extend(defaults, options);
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
-                    let elem = $(this).closest(`[box]`);
+                    let elem = /*(this).closest(`[box]`)*/ options.parent;
                     let obj = elem[0];
 
                     obj.movePosition={
