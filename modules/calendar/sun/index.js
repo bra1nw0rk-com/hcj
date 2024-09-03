@@ -23,7 +23,7 @@ export default class SunCalendar extends HTMLObject  {
             .off(`.${this.id}`)
             .on(`click.${this.id}`,function(){
 
-                WS.ui.hide(`#${this.id}`);
+                WS.ui.hide(`#${_this.id}`);
             })
 
     }
