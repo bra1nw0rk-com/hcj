@@ -54,6 +54,9 @@
 		font-size: 21px;
 		position: absolute;
 	}
+	[name="main"] footer #running .fa{
+		width: 22px;
+	}
 
 	[name="main"] footer #running i {
 		padding: 5px;
