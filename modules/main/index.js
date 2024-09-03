@@ -43,9 +43,10 @@ export default class Main extends HTMLObject {
 				});
 
 				$(_this.#running).find(`[data-obj-id]`).each(function(){
-					console.log($(`body`).find(`#${$(this).attr("data-obj-id")}`).length)
-					if($(`body`).find(`#${$(this).attr("data-obj-id")}`).length === 0){
+					if($(`#${$(this).attr("data-obj-id")}`).length === 0){
 						$(this).remove()
+					}else{
+						console.log($(`#${$(this).attr("data-obj-id")}`).length)
 					}
 				})
 			});
