@@ -38,7 +38,7 @@ export default class Main extends HTMLObject {
 					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
 					newObj.addClass('clickable')
 					console.log(newObj)
-					//_this.#running.append(newObj)
+					_this.#running.append(newObj)
 				});
 			});
 	}
