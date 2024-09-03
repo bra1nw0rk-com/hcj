@@ -35,8 +35,9 @@ export default class Main extends HTMLObject {
 			.on("mutation.main", function (e) {
 				$(this).find("[box]").each(function () {
 					let newObj = $($(this)[0].parameters.faIcon)
-					//newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
-					//newObj.addClass('clickable')
+					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
+					newObj.addClass('clickable')
+					console.log(newObj)
 					//_this.#running.append(newObj)
 				});
 			});
