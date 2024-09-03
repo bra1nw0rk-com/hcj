@@ -37,8 +37,8 @@ export default class Main extends HTMLObject {
 					let newObj = $($(this)[0].parameters.faIcon)
 					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
 					newObj.addClass('clickable fadeIn')
+					newObj.attr("data-animated","");
 					$(this).attr("run-added","");
-					$(this).attr("data-animated","");
 					_this.#running.append(newObj)
 				});
 			})
