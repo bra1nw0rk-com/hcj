@@ -38,18 +38,14 @@ export default class Main extends HTMLObject {
 					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
 					newObj.addClass('clickable')
 					$(this).attr("run-added","");
-					console.log(newObj)
 					_this.#running.append(newObj)
 				});
+			})
+			.on("click.main",`[name="close-btn"]`,function(){
+				let id = $(this).closest(`[box]`).attr("id");
+				$(_this.#running).find(`[data-obj-id="${id}"]`).remove();
 
-				$(_this.#running).find(`[data-obj-id]`).each(function(){
-					if($(`#${$(this).attr("data-obj-id")}`).length === 0){
-						$(this).remove()
-					}else{
-						console.log($(`#${$(this).attr("data-obj-id")}`).length)
-					}
-				})
-			});
+			})
 	}
 
 }
