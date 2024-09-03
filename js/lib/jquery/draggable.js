@@ -22,6 +22,7 @@ $(function () {
                             obj.movePosition.x = e.pageX;
                             obj.movePosition.y = e.pageY;
                             $(`body`).on("mousemove.boxMove", function (e) {
+                                console.log(obj.movePosition)
                                 if(obj.movePosition.x !== null && obj.movePosition.y !== null){
                                     elem.css({
                                         top: elem.position().top + (e.pageY - obj.movePosition.y),
