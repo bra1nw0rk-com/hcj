@@ -112,6 +112,8 @@ $(function () {
                         obj.resize.y = e.pageY;
                         if(elem.outerHeight() === oldHeight && elem.outerWidth()===oldWidth){
                             obj.resize.fail++
+                        }else{
+                            obj.resize.fail=0
                         }
                         if(obj.resize.fail>3){
                             obj.stopResize()
