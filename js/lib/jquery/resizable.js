@@ -120,7 +120,7 @@ $(function () {
                         }
                     }
 
-                    $(resizing).on('mousedown',function(e){
+                    $(resizing).on('mousedown.boxResizing',function(e){
                         e.stopPropagation()
                         if(e.which === 1) {
                             if($(this).hasClass('top-side')){
@@ -156,8 +156,11 @@ $(function () {
 
 
                         }
-                    }).on("mouseup",function(){
+                    }).on("mouseup.boxResizing",function(){
                        obj.stopResize()
+                    })
+                    elem.on("mousedown.boxResizing",function(){
+                        obj.stopResize()
                     })
 
 
