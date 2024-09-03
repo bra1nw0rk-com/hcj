@@ -1,4 +1,4 @@
-import Box from "../../js/lib/html/Box.js";
+import Box from "../../../js/lib/html/Box.js";
 
 
 export default class PushSettings extends Box {
