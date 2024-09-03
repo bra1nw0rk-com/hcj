@@ -36,8 +36,9 @@ export default class Main extends HTMLObject {
 				$(this).find("[box]:not([run-added])").each(function () {
 					let newObj = $($(this)[0].parameters.faIcon)
 					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
-					newObj.addClass('clickable')
+					newObj.addClass('clickable fadeIn')
 					$(this).attr("run-added","");
+					$(this).attr("data-animated","");
 					_this.#running.append(newObj)
 				});
 			})
