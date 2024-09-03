@@ -4,6 +4,6 @@
     width: fit-content;
     display: inline-block;
 }
-[name="date-time"] .current-time{
-    /*margin-top: 4px;*/
+[name="date-time"] .current-date{
+    margin-top: 4px;
 }
