@@ -37,6 +37,7 @@ $(function () {
                     }
 
                     obj.doResize=(e)=>{
+                        console.log("ok")
                         let oldWidth = elem.outerWidth();
                         let oldHeight = elem.outerHeight();
                         if(elem.css(`width`) <= elem.css(`min-width`)) {
@@ -122,7 +123,6 @@ $(function () {
 
                     $(resizing).on('mousedown.boxResizing',function(e){
                         e.stopPropagation()
-                        console.log("ok")
                         if(e.which === 1) {
                             if($(this).hasClass('top-side')){
                                 obj.resize.class = 'top-side'
