@@ -169,7 +169,7 @@ export default class UI {
 
     minimizeModal(selector) {
 		$(selector)[0].parameters.lastPosition.x =$(selector).position().top;
-		$(selector)[0].parameters.lastPosition.t =$(selector).position().left;
+		$(selector)[0].parameters.lastPosition.y =$(selector).position().left;
 		console.log($(selector)[0].parameters.lastPosition)
 		$(selector).animate(
 			{
