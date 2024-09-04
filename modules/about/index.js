@@ -25,8 +25,5 @@ export default class AboutModal extends Box {
 		this.icon.info();
 
 	}
-	init() {
-		//$("body #content").append(this.get());
-	}
 
 }

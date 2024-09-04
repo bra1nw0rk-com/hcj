@@ -19,8 +19,6 @@ export default class PushSettings extends Box {
         this.icon.settings();
 
     }
-    init() {
-        //$("body #content").append(this.get());
-    }
+
 
 }
