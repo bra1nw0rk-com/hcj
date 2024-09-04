@@ -7,6 +7,9 @@ export default class HTMLObject extends CustomEvents {
 	#unique= false;
 	#id = "";
 	object = $("<div></div>");
+	lastPosition={
+
+	}
 	constructor(type) {
 		super();
 		this.object =  $(`<${type}></${type}>`);

@@ -177,7 +177,8 @@ export default class UI {
     minimizeModal(selector) {
 		$(selector).animate(
 			{
-				zoom: '1%'
+				zoom: '1%',
+				top: '100%'
 			},
 			500,
 			function () {
@@ -190,7 +191,7 @@ export default class UI {
 		$(selector).show()
 		$(selector).animate(
 			{
-				zoom: '100%'
+				zoom: '100%',
 			},
 			500,
 			function () {

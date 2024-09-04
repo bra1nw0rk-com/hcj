@@ -181,7 +181,7 @@ table {
 	background-color: var(--bg1);
 	padding: 0.5em 1.25em 1.25em 1.25em;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	min-width: 30%;
+	min-width: 345px;
 	min-height: 100px;
 	position: absolute;
 	top: 50vh;
