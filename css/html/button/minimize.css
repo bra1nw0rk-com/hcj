@@ -1,9 +1,9 @@
 [name="minimize-btn"]{
-    position:absolute;
-    right: 5px;
-    font-size: 20px;
-    top: 1px;
-    color: #ff0000;
+    position: absolute;
+    right: 24px;
+    font-size: 14px;
+    top: 5px;
+    color: #ff8400;
     opacity: 0.2;
 }
 [name="minimize-btn"]:hover{
