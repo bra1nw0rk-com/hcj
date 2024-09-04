@@ -20,6 +20,7 @@ export default class AboutModal extends Box {
 		`;
 		this.draggable = true;
 		this.resizable = true;
+		this.button.minimize();
 		this.button.close();
 		this.icon.info();
 

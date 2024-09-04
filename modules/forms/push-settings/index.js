@@ -14,7 +14,7 @@ export default class PushSettings extends Box {
         this.content = `
 					
 		`;
-
+        this.button.minimize();
         this.button.close();
         this.icon.settings();
 
