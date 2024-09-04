@@ -192,6 +192,7 @@ export default class UI {
 			{
 				zoom: '100%',
 				top: `${$(selector)[0].parameters.lastPosition.x}%`,
+				left: `${$(selector)[0].parameters.lastPosition.y}%`,
 			},
 			500,
 			function () {
