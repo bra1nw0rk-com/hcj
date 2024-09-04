@@ -33,7 +33,6 @@ export default class Box extends HTMLObject {
 		this.object
 			.off(`.#${this.id}`)
 			.on(`click.#${this.id}`,function(e){
-				console.log("ok")
 				$(`[box]`).css({
 					'z-index':1
 				})
