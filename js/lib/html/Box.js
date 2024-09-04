@@ -1,4 +1,5 @@
 import HTMLObject from "./HTMLObject.js";
+import CloseButton from "./button/CloseButton.js";
 
 export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`);
@@ -38,7 +39,9 @@ export default class Box extends HTMLObject {
 		let _this = this;
 		return {
 			close(){
-				_this.#head.closeBoxButton();
+				let obj = new CloseButton();
+				obj.init();
+				_this.#head.append(obj);
 			}
 		}
 	}
