@@ -187,6 +187,7 @@ export default class UI {
     }
 
 	maximizeModal(selector) {
+		console.log("ok")
 		$(selector).animate(
 			{
 				zoom: '100%'
