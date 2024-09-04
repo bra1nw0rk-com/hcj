@@ -48,7 +48,7 @@ export default class Main extends HTMLObject {
 			}).on(`click.main`,`[data-obj-id]`,function(e){
 				e.stopPropagation()
 				let id = $(this).attr(`data-obj-id`)
-				console.log(id)
+				console.log(id,$(`#${id}`))
 				$(`#${id}`)[0].parameters.maximize();
 			})
 	}
