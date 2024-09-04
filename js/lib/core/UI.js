@@ -170,6 +170,7 @@ export default class UI {
     minimizeModal(selector) {
 		$(selector)[0].parameters.lastPosition.x = $(window).height() / $(selector).position().top;
 		$(selector)[0].parameters.lastPosition.y = $(window).width() / $(selector).position().left;
+		console.log($(selector)[0].parameters.lastPosition)
 		$(selector).animate(
 			{
 				zoom: '1%',
