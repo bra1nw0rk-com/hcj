@@ -37,7 +37,7 @@ $(function () {
                     }
 
                     obj.doResize=(e)=>{
-                        console.log("ok")
+                        console.log(obj.resize)
                         let oldWidth = elem.outerWidth();
                         let oldHeight = elem.outerHeight();
                         if(elem.css(`width`) <= elem.css(`min-width`)) {
