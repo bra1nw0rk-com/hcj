@@ -173,7 +173,7 @@ export default class UI {
 		$(selector).animate(
 			{
 				zoom: '1%',
-				top: '100%'
+				top: $(window).height()
 			},
 			500,
 			function () {
