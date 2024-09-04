@@ -62,12 +62,6 @@ $(function () {
 $(window).on("orientationchange", function (e) {
 	//location.reload();
 });
-//import "/js/lib/types/Function.js";
-//import "/js/lib/types/Windows.js";
-//import "/js/lib/types/SessionStructure.js";
-//import "/js/lib/SessionClient.js";
-//import "/html/lib/HTML.js";
-//import "/js/lib/ui/index.js";
 
 // https://www.w3schools.com/jsref/prop_win_localstorage.asp
-//import "./plugin/Selector.js";
+

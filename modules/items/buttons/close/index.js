@@ -8,6 +8,12 @@ export default class CloseBtn extends HTMLObject  {
         this.name = "close-btn";
         this.classes = "button";
         this.template = $(html`<i class="fa fa-times" aria-hidden="true"></i>`);
+
+             super("i");
+             this.css = "/modules/items/buttons/close/index.css";
+             this.name = "close-btn";
+             this.classes = "fa fa-times button";
+             this.object.attr("aria-hidden","true")
     }
 
 }
