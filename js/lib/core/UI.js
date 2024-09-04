@@ -190,7 +190,7 @@ export default class UI {
 		$(selector).animate(
 			{
 				zoom: '100%',
-				//top: $(selector)[0].parameters.lastPosition.x,
+				top: $(selector)[0].parameters.lastPosition.x,
 			},
 			500,
 			function () {
