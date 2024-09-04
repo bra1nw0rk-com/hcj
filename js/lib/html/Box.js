@@ -41,7 +41,7 @@ export default class Box extends HTMLObject {
 			close(){
 				let obj = new CloseButton();
 				obj.init();
-				_this.#head.append(obj);
+				_this.#head.append(obj.get());
 			}
 		}
 	}
