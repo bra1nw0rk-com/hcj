@@ -168,8 +168,8 @@ export default class UI {
 	}
 
     minimizeModal(selector) {
-		$(selector)[0].parameters.lastPosition.x = $(window).height() / $(selector).position().top;
-		$(selector)[0].parameters.lastPosition.y = $(window).width() / $(selector).position().left;
+		$(selector)[0].parameters.lastPosition.x =   $(selector).position().top / $(window).height() * 100;
+		$(selector)[0].parameters.lastPosition.y =  $(selector).position().left / $(window).width() * 100;
 		console.log($(selector)[0].parameters.lastPosition)
 		$(selector).animate(
 			{
