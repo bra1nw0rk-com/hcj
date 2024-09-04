@@ -185,4 +185,16 @@ export default class UI {
 			}
 		);
     }
+
+	maximizeModal(selector) {
+		$(selector).animate(
+			{
+				zoom: '100%'
+			},
+			500,
+			function () {
+				$(selector).hide()
+			}
+		);
+	}
 }

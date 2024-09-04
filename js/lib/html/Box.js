@@ -80,6 +80,9 @@ export default class Box extends HTMLObject {
 	minimize(callback){
 		WS.ui.minimizeModal(`#${this.id}`, callback);
 	}
+	maximize(callback){
+		WS.ui.maximizeModal(`#${this.id}`, callback);
+	}
 	clear() {
 		$(`#${this.id}` + " input").each(function () {
 			$(this).val("");

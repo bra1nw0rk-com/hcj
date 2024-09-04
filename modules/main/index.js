@@ -13,7 +13,7 @@ export default class Main extends HTMLObject {
 		super("div");
 		let _this = this;
         this.css = `/modules/main/css/main.css`;
-		this.title = "BWOS";
+		this.title = "LibreIS";
 		this.name = "main";
 		this.classes = "fadeIn";
 
@@ -45,7 +45,11 @@ export default class Main extends HTMLObject {
 			.on("click.main",`[name="close-btn"]`,function(){
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
-
+			}).on(`click.main`,`[data-obj-id]`,function(){
+				let id = $(this).attr(`data-obj-id`)
+				$(this).find(`#{id}[box][run-added]`).each(function () {
+					$(this)[0].parameters.maximizeModal();
+				});
 			})
 	}
 
