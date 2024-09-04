@@ -40,23 +40,24 @@ export default class Main extends HTMLObject {
 					newObj.attr("data-animated","");
 					$(this).attr("run-added","");
 					_this.#running.append(newObj)
+					newObj.on(`click`,function(e){
+						console.log(e)
+						let id = $(this).attr(`data-obj-id`)
+						let item = $(`#${id}`)
+						if(item.css('display')==="none"){
+							item[0].parameters.maximize();
+						}else {
+							item[0].parameters.minimize();
+						}
+
+					})
 				});
 			})
 			.on("click.main",`[name="close-btn"]`,function(){
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
 			})
-			.on(`click.main`,`[data-obj-id]`,function(e){
-				e.stopPropagation()
-				console.log(e)
-				let id = $(this).attr(`data-obj-id`)
-				if($(`#${id}`).css('display')==="none"){
-					$(`#${id}`)[0].parameters.maximize();
-				}else {
-					$(`#${id}`)[0].parameters.minimize();
-				}
 
-			})
 	}
 
 }
