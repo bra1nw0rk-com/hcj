@@ -47,7 +47,7 @@ export default class Main extends HTMLObject {
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
 			}).on(`click.main`,`[data-obj-id]`,function(){
 				let id = $(this).attr(`data-obj-id`)
-				$(this).find(`#{id}[box][run-added]`).each(function () {
+				$(`body`).find(`#${id}[box][run-added]`).each(function () {
 					$(this)[0].parameters.maximizeModal();
 				});
 			})
