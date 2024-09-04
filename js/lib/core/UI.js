@@ -177,6 +177,9 @@ export default class UI {
 			},
 			500,
 			function () {
+				$(selector).css({
+					transform:'none',
+				})
 				$(selector).hide()
 			}
 		);
