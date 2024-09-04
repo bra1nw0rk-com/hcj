@@ -199,7 +199,12 @@ export default class UI {
 			},
 			500,
 			function () {
-
+				$(`[box]`).css({
+					'z-index':1
+				})
+				$(selector).css({
+					'z-index':2
+				})
 			}
 		);
 	}
