@@ -48,7 +48,7 @@ export default class Main extends HTMLObject {
 			}).on(`click.main`,`[data-obj-id]`,function(){
 				let id = $(this).attr(`data-obj-id`)
 				$(`body`).find(`#${id}[box][run-added]`).each(function () {
-					$(this)[0].parameters.maximizeModal();
+					$(this)[0].parameters.maximize();
 				});
 			})
 	}
