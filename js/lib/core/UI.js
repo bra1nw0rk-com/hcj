@@ -187,14 +187,14 @@ export default class UI {
     }
 
 	maximizeModal(selector) {
-		console.log("ok")
+		$(selector).show()
 		$(selector).animate(
 			{
 				zoom: '100%'
 			},
 			500,
 			function () {
-				$(selector).hide()
+
 			}
 		);
 	}
