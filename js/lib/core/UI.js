@@ -24,13 +24,6 @@ export default class UI {
 					}
 				}
 			})
-
-			/*
-			setTimeout(function () {
-				$(selector).removeClass("fadeIn");
-			}, 2000);
-
-			 */
 		},
 	};
 	constructor() {
@@ -175,6 +168,9 @@ export default class UI {
 	}
 
     minimizeModal(selector) {
+		$(selector)[0].parameters.lastPosition.x =$(selector).position().top;
+		$(selector)[0].parameters.lastPosition.t =$(selector).position().left;
+		console.log($(selector)[0].parameters.lastPosition)
 		$(selector).animate(
 			{
 				zoom: '1%',

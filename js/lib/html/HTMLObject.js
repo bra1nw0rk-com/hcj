@@ -8,7 +8,7 @@ export default class HTMLObject extends CustomEvents {
 	#id = "";
 	object = $("<div></div>");
 	lastPosition={
-
+		x:0,y:0
 	}
 	constructor(type) {
 		super();
