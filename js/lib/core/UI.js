@@ -168,12 +168,12 @@ export default class UI {
 	}
 
     minimizeModal(selector) {
-		$(selector)[0].parameters.lastPosition.x =$(selector).position().top;
-		$(selector)[0].parameters.lastPosition.y =$(selector).position().left;
+		$(selector)[0].parameters.lastPosition.x = $(window).height() / $(selector).position().top;
+		$(selector)[0].parameters.lastPosition.y = $(window).width() / $(selector).position().left;
 		$(selector).animate(
 			{
 				zoom: '1%',
-				top: $(window).height()
+				top: '100%'
 			},
 			500,
 			function () {
@@ -190,7 +190,7 @@ export default class UI {
 		$(selector).animate(
 			{
 				zoom: '100%',
-				top: $(selector)[0].parameters.lastPosition.x,
+				top: `${$(selector)[0].parameters.lastPosition.x}%`,
 			},
 			500,
 			function () {
