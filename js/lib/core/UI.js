@@ -173,4 +173,16 @@ export default class UI {
 			$(selector).removeClass("hide").addClass("show");
 		}
 	}
+
+    minimizeModal(selector) {
+		$(selector).animate(
+			{
+				height: 0,
+			},
+			500,
+			function () {
+				$(selector).hide()
+			}
+		);
+    }
 }

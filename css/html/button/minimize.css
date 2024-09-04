@@ -1,0 +1,11 @@
+[name="minimize-btn"]{
+    position:absolute;
+    right: 5px;
+    font-size: 20px;
+    top: 1px;
+    color: #ff0000;
+    opacity: 0.2;
+}
+[name="minimize-btn"]:hover{
+    opacity: 0.6;
+}
