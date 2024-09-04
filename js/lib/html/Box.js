@@ -25,6 +25,21 @@ export default class Box extends HTMLObject {
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
 		this.eventListener()
+
+
+	}
+	init(){
+		super.init()
+		this.object
+			.off(`.#${this.id}`)
+			.on(`click.#${this.id}`,function(e){
+				$(`[box]`).css({
+					'z-index':1
+				})
+				$(this).css({
+					'z-index':2
+				})
+			})
 	}
 
 	eventListener(){
