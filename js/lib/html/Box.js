@@ -1,6 +1,6 @@
 import HTMLObject from "./HTMLObject.js";
 import CloseButton from "./button/CloseButton.js";
-import MinimizeButton from "./button/MinimizeButton";
+import MinimizeButton from "./button/MinimizeButton.js";
 
 export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`);
