@@ -1,9 +1,9 @@
 import HTMLObject from "../HTMLObject.js";
 
-export default class CloseButton extends HTMLObject  {
+export default class MinimizeButton extends HTMLObject  {
 	 constructor() {
         super("i");
-        this.css = "/css/html/button/close.css";
+        this.css = "/modules/items/buttons/close/index.css";
         this.name = "close-btn";
         this.classes = "fa fa-times button";
         this.object.attr("aria-hidden","true")
