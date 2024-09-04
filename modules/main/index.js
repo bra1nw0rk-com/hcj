@@ -45,11 +45,13 @@ export default class Main extends HTMLObject {
 			.on("click.main",`[name="close-btn"]`,function(){
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
-			}).on(`click.main`,`[data-obj-id]`,function(e){
+			})
+			.on(`click.main`,`[data-obj-id]`,function(e){
 				e.stopPropagation()
 				let id = $(this).attr(`data-obj-id`)
 				console.log(id,$(`#${id}`))
 				$(`#${id}`)[0].parameters.maximize();
+				return false;
 			})
 	}
 
