@@ -46,7 +46,6 @@ export default class Main extends HTMLObject {
 						if(item.css('display')==="none"){
 							item[0].parameters.maximize();
 						}else {
-							console.log(item[0].parameters.isOnFront())
 							if(!item[0].parameters.isOnFront()){
 								item[0].parameters.toFront()
 							}else{

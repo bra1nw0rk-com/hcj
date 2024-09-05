@@ -35,7 +35,7 @@ export default class Box extends HTMLObject {
 			.off(`.#${this.id}`)
 			.on(`click.#${this.id}`,function(e){
 				_this.toFront()
-			})
+			});
 	}
 
 	eventListener(){
