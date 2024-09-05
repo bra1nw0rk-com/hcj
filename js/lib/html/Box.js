@@ -70,20 +70,17 @@ export default class Box extends HTMLObject {
 		let _this = this;
 		return {
 			info(){
-				_this.#icon = $(`<i class="fa fa-info" aria-hidden="true"></i>`)
-				_this.#head.prepend(_this.#icon);
-				_this.#head.prepend($(`<span>aaaa</span>`));
-
-				console.log(_this.#icon,_this.#head)
+				_this.#icon = `<i class="fa fa-info" aria-hidden="true"></i>`
+				_this.#head.prepend($(_this.#icon));
 			},
 			error(){
 				_this.#icon = $(`<i class="fa fa-times-circle" aria-hidden="true"></i>`);
-				_this.#head.prepend(_this.#icon);
+				_this.#head.prepend($(_this.#icon));
 
 			},
 			settings(){
-				_this.#icon = $(`<i class="fa fa-cogs" aria-hidden="true"></i>`);
-				_this.#head.prepend(_this.#icon);
+				_this.#icon = `<i class="fa fa-cogs" aria-hidden="true"></i>`;
+				_this.#head.prepend($(_this.#icon));
 			}
 		}
 	}
