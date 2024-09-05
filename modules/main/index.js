@@ -75,8 +75,7 @@ export default class Main extends HTMLObject {
 			}).on(`removeClass.main`,`[box]`,function(e,data){
 				console.log(e,data)
 				if(data.class === `top`){
-					$(`[data-obj-id]`).removeClass("selected")
-					$(`[data-obj-id="${this.id}"]`).addClass("selected")
+					$(`[data-obj-id="${this.id}"]`).removeClass("selected")
 				}
 			})
 
