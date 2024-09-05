@@ -44,6 +44,7 @@ export default class Main extends HTMLObject {
 
 					newObj.on(`mousedown`,function(e){
 						if(e.which === 1) {
+							e.stopPropagation()
 							let id = $(this).attr(`data-obj-id`)
 							let item = $(`#${id}`)
 							if (item.css('display') === "none") {
