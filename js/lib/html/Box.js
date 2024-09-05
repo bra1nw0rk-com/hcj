@@ -6,7 +6,7 @@ export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`);
 	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);
-	#icon = $("<i></i>")
+	#icon = ``
 	set draggable(val){
 		if(val === true){
 			this.#head.draggable({parent:this.object})
