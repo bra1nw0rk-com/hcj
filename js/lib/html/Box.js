@@ -104,6 +104,7 @@ export default class Box extends HTMLObject {
 		})
 	}
 	isOnFront(){
+		console.log($(`#${this.id}`).css('z-index'))
 		return($(`#${this.id}`).css('z-index')===2)
 	}
 
