@@ -191,20 +191,22 @@ export default class UI {
 
 	maximizeModal(selector) {
 		$(selector).show()
+		$(`[data-obj-id]`).removeClass("selected")
+		$(`[box]`).css({
+			'z-index':1
+		})
+		$(selector).css({
+			'z-index':2
+		})
 		$(selector).animate(
 			{
 				zoom: '100%',
 				top: `${$(selector)[0].parameters.lastPosition.x}%`,
-				left: `${$(selector)[0].parameters.lastPosition.y}%`,
+				left: `${$(selector)[0].parameters.lastPosition.y}%`
 			},
 			500,
 			function () {
-				$(`[box]`).css({
-					'z-index':1
-				})
-				$(selector).css({
-					'z-index':2
-				})
+				$(selector).addClass("selected")
 			}
 		);
 	}
