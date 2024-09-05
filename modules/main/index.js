@@ -58,6 +58,8 @@ export default class Main extends HTMLObject {
 							}
 						}
 
+					}).on(`click`,function(e){
+						e.stopPropagation()
 					})
 				});
 			})
