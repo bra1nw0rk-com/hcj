@@ -32,11 +32,21 @@ export default class Box extends HTMLObject {
 		super.init()
 		let _this = this;
 		this.object
-			.off(`.#${this.id}`)
-			.on(`click.#${this.id}`,function(e){
+			.off(`.${this.id}`)
+			.on(`click.${this.id}`,function(e){
 				_this.toFront()
 			});
+		$(`body`).on(`click.${this.id}`,function(){
+			_this.deactivate()
+		})
 
+	}
+
+	deactivate(){
+		$(`[box]`).css({
+			'z-index':1
+		})
+		$(`[data-obj-id]`).removeClass("selected")
 	}
 
 	eventListener(){
