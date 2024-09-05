@@ -42,6 +42,7 @@ $(function () {
                             }
                         }
                         if(create) {
+                            $(`[box]`).removeClass(`top`)
                             $(_this).append(obj.get());
                             obj.prepare();
                         }

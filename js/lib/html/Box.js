@@ -31,6 +31,7 @@ export default class Box extends HTMLObject {
 	init(){
 		super.init()
 		let _this = this;
+		this.classes = `top`
 		this.object
 			.off(`.${this.id}`)
 			.on(`click.${this.id}`,function(e){
