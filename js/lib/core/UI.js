@@ -184,6 +184,7 @@ export default class UI {
 					transform:'none',
 				})
 				$(selector).hide()
+				$(`[data-obj-id]`).removeClass("selected")
 			}
 		);
     }
