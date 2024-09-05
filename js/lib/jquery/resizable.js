@@ -119,8 +119,6 @@ $(function () {
                     }
 
                     $(resizing).on('mousedown.boxResizing',function(e){
-                        elem.addClass(`top`)
-                        e.stopPropagation()
                         if(e.which === 1) {
                             if($(this).hasClass('top-side')){
                                 obj.resize.class = 'top-side'
