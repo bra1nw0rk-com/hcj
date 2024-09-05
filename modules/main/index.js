@@ -34,7 +34,7 @@ export default class Main extends HTMLObject {
 			.off("mutation.main")
 			.on("mutation.main", function (e) {
 				$(this).find("[box]:not([run-added])").each(function () {
-					let newObj = $($(this)[0].parameters.faIcon)
+					let newObj = $(this)[0].parameters.faIcon
 					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
 					newObj.addClass('clickable fadeIn')
 					newObj.attr("data-animated","");
