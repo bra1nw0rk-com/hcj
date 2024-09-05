@@ -36,6 +36,9 @@ export default class Box extends HTMLObject {
 			.on(`click.${this.id}`,function(e){
 				e.stopPropagation()
 				_this.toFront()
+			}).on(`mousedown.${this.id}`,function(e){
+				e.stopPropagation()
+				_this.toFront()
 			});
 		$(`body`).on(`click.${this.id}`,function(){
 			_this.deactivate()
