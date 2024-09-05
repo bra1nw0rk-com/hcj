@@ -70,14 +70,14 @@ export default class Box extends HTMLObject {
 		let _this = this;
 		return {
 			info(){
-				_this.#icon = `<i class="fa fa-info" aria-hidden="true"></i>`
+				_this.#icon = $(`<i class="fa fa-info" aria-hidden="true"></i>`)
 			},
 			error(){
-				_this.#icon = `<i class="fa fa-times-circle" aria-hidden="true"></i>`;
+				_this.#icon = $(`<i class="fa fa-times-circle" aria-hidden="true"></i>`);
 
 			},
 			settings(){
-				_this.#icon = `<i class="fa fa-cogs" aria-hidden="true"></i>`;
+				_this.#icon = $(`<i class="fa fa-cogs" aria-hidden="true"></i>`);
 			}
 		}
 	}
