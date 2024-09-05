@@ -63,8 +63,6 @@ export default class Main extends HTMLObject {
 			.on("click.main",`[name="close-btn"]`,function(){
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
-			}).on("click.main",function(){
-				$(`[data-obj-id]`).removeClass("selected")
 			})
 
 	}
