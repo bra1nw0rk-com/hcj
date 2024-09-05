@@ -6,7 +6,7 @@ export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`);
 	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);
-	#icon = ""
+	#icon = $("<i></i>")
 	set draggable(val){
 		if(val === true){
 			this.#head.draggable({parent:this.object})
@@ -21,6 +21,7 @@ export default class Box extends HTMLObject {
 		super("div box");
 		this.unique = unique;
 		this.object.append(this.#head);
+		this.#head.prepend($(this.#icon));
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
@@ -70,17 +71,13 @@ export default class Box extends HTMLObject {
 		return {
 			info(){
 				_this.#icon = `<i class="fa fa-info" aria-hidden="true"></i>`
-				_this.#head.prepend($(_this.#icon));
 			},
 			error(){
 				_this.#icon = `<i class="fa fa-times-circle" aria-hidden="true"></i>`;
-				_this.#head.prepend($(_this.#icon));
 
 			},
 			settings(){
 				_this.#icon = `<i class="fa fa-cogs" aria-hidden="true"></i>`;
-				_this.#head.prepend($(_this.#icon));
-
 			}
 		}
 	}
