@@ -40,7 +40,6 @@ $(function () {
                         
                         let oldWidth = elem.outerWidth();
                         let oldHeight = elem.outerHeight();
-                        console.log(obj.resize)
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
                                 transform:'none',
