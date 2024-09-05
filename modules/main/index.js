@@ -41,12 +41,12 @@ export default class Main extends HTMLObject {
 					$(this).attr("run-added","");
 					_this.#running.append(newObj)
 					newObj.on(`mousedown`,function(e){
-						console.log(e)
 						let id = $(this).attr(`data-obj-id`)
 						let item = $(`#${id}`)
 						if(item.css('display')==="none"){
 							item[0].parameters.maximize();
 						}else {
+							console.log(item[0].parameters.isOnFront())
 							if(!item[0].parameters.isOnFront()){
 								item[0].parameters.toFront()
 							}else{
