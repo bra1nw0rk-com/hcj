@@ -102,6 +102,8 @@ export default class Box extends HTMLObject {
 		$(`#${this.id}`).css({
 			'z-index':2
 		})
+		$(`[data-obj-id]`).removeClass(".selected")
+		$(`[data-obj-id="${this.id}"]`).addClass(".selected")
 	}
 	isOnFront(){
 		return($(`#${this.id}`).css('z-index')==='2')
