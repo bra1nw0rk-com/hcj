@@ -64,11 +64,11 @@
 		border-radius: 8px;
 	}
 
-	[name="main"] footer #running i.selected {
+	[name="main"] footer #running i.selected::after {
 		border-bottom: 1px solid #2667cb;
 	}
 
-	[name="main"] footer #running i:hover, [name="main"] footer #running i.selected {
+	[name="main"] footer #running i:hover, [name="main"] footer #running i.selected::after {
 		background-color: var(--top-menu-main-menu-item-background);
 	}
 
