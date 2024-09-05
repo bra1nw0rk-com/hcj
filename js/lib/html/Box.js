@@ -21,7 +21,6 @@ export default class Box extends HTMLObject {
 		super("div box");
 		this.unique = unique;
 		this.object.append(this.#head);
-
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
