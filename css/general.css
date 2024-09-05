@@ -236,7 +236,7 @@ table {
 .hidden{
 	display: none;
 }
-[box] .top{
+[box].top{
 	z-index: 2;
 }
 [box] .top-side{
