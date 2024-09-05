@@ -119,6 +119,7 @@ $(function () {
                     }
 
                     $(resizing).on('mousedown.boxResizing',function(e){
+                        //e.stopPropagation()
                         if(e.which === 1) {
                             if($(this).hasClass('top-side')){
                                 obj.resize.class = 'top-side'
@@ -153,12 +154,13 @@ $(function () {
 
 
                         }
-                    }).on("mouseup.boxResizing",function(){
+                    }).on("mouseup.boxResizing, mouseout.boxResizing",function(){
                        obj.stopResize()
                     })
+                    /*
                     elem.on("mousedown.boxResizing",function(){
                         obj.stopResize()
-                    })
+                    })*/
                     $(`body`).on("mousedown.boxResizing",function(){
                         obj.stopResize()
                     })
