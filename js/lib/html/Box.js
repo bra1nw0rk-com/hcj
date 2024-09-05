@@ -48,7 +48,6 @@ export default class Box extends HTMLObject {
 
 	deactivate(){
 		$(`[box]`).removeClass(`top`)
-		$(`[data-obj-id]`).removeClass("selected")
 	}
 
 	eventListener(){
@@ -111,7 +110,6 @@ export default class Box extends HTMLObject {
 	toFront(){
 		this.deactivate()
 		$(`#${this.id}`).addClass(`top`)
-		$(`[data-obj-id="${this.id}"]`).addClass("selected")
 	}
 	isOnFront(){
 		return($(`#${this.id}`).hasClass(`top`))
