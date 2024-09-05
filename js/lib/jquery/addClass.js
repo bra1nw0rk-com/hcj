@@ -6,6 +6,7 @@ $(function () {
                 return $(this).each(function (e, i) {
                     //$(this).addClass(className)
                     if(!$(this).hasClass(className)) {
+                        console.log($(this)[0].classList)
                         $(this)[0].classList.add(className);
                         $(this).trigger('addClass', {
                             class: className
