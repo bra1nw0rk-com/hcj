@@ -191,8 +191,8 @@ export default class UI {
 
 	maximizeModal(selector) {
 		$(selector).show()
-		$(`[data-obj-id]`).removeClass("selected")
-		$(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
+		// $(`[data-obj-id]`).removeClass("selected")
+		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
 		$(selector).animate(
