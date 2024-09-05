@@ -30,12 +30,7 @@ $(function () {
                         obj.name = "consoleModal"
                         obj.content = options.content;
                         obj.button.close();
-                        $(`[box]`).css({
-                            'z-index':1
-                        })
-                        obj.css({
-                            'z-index':2
-                        })
+                        obj.toFront()
                         if(options.type==="info"){
                             obj.icon.info();
                         }else if(options.type==="error"){

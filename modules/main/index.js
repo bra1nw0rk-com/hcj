@@ -40,7 +40,7 @@ export default class Main extends HTMLObject {
 					newObj.attr("data-animated","");
 					$(this).attr("run-added","");
 					_this.#running.append(newObj)
-					newObj.on(`click`,function(e){
+					newObj.on(`mousedown`,function(e){
 						console.log(e)
 						let id = $(this).attr(`data-obj-id`)
 						let item = $(`#${id}`)
