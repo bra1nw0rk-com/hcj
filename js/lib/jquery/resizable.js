@@ -154,8 +154,10 @@ $(function () {
 
 
                         }
-                    }).on("mouseup.boxResizing, mouseout.boxResizing",function(){
+                    }).on("mouseup.boxResizing",function(){
                        obj.stopResize()
+                    }).on("mouseout.boxResizing",function(){
+                            obj.resize.fail++
                     })
                     /*
                     elem.on("mousedown.boxResizing",function(){
