@@ -40,9 +40,11 @@ $(function () {
                         
                         let oldWidth = elem.outerWidth();
                         let oldHeight = elem.outerHeight();
+                        /*
                         if(elem.css(`width`) <= elem.css(`min-width`)) {
                             return;
                         }
+                            */
                         console.log(obj.resize)
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
