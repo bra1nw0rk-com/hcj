@@ -192,6 +192,7 @@ export default class UI {
 	maximizeModal(selector) {
 		$(selector).show()
 		$(`[data-obj-id]`).removeClass("selected")
+		$(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).css({
 			'z-index':1
 		})
@@ -207,7 +208,7 @@ export default class UI {
 			500,
 			function () {
 
-				$(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
+
 			}
 		);
 	}
