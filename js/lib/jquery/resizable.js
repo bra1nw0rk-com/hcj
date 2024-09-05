@@ -37,12 +37,13 @@ $(function () {
                     }
 
                     obj.doResize=(e)=>{
-                        console.log(obj.resize)
+                        
                         let oldWidth = elem.outerWidth();
                         let oldHeight = elem.outerHeight();
                         if(elem.css(`width`) <= elem.css(`min-width`)) {
                             return;
                         }
+                        console.log(obj.resize)
                         if (obj.resize.class === "bottom-side") {
                             elem.css({
                                 transform:'none',
