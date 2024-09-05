@@ -1,6 +1,6 @@
 [name="userLoginForm"] {
     font-size: 1.3em;
-    width: 345px;
+    width: 285px;
 }
 [name="userLoginForm"].error {
     animation: horizontal-shaking 0.5s linear alternate;
@@ -11,7 +11,7 @@
 }
 [name="userLoginForm"] button {
     background-color: var(--button-ok-bg-color);
-    padding: 10px;
+    padding: 7px;
     cursor: pointer;
     width: 100%;
     border: 1px solid #4080a6;
