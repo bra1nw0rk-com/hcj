@@ -206,7 +206,8 @@ export default class UI {
 			},
 			500,
 			function () {
-				$(selector).addClass("selected")
+
+				$(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 			}
 		);
 	}
