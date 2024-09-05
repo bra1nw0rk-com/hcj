@@ -1,18 +1,26 @@
 
 $(function () {
     $.fn.extend({
-        addClass: function (className) {
+        addClass: function (classNames) {
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
                     //$(this).addClass(className)
-                    if(!$(this).hasClass(className)) {
-                        console.log($(this)[0].classList)
-                        $(this)[0].classList.add(className);
-                        $(this).trigger('addClass', {
-                            class: className
-                        })
-                        console.log(`Class ${className} added to`, $(this))
-                    }
+
+                    let classArr = classNames.split(/\s+/);
+                    $.each(classArr, function(index, value){
+                        if(!$(this).hasClass(value)) {
+                            console.log($(this)[0].classList)
+                            $(this)[0].classList.add(value);
+
+                            $(this).trigger('addClass', {
+                                class: value
+                            })
+                            console.log(`Class ${value} added to`, $(this))
+                        }
+                    });
+
+
+
                     return this;
                 });
             }
