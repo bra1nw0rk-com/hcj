@@ -47,9 +47,7 @@ export default class Box extends HTMLObject {
 	}
 
 	deactivate(){
-		$(`[box]`).css({
-			'z-index':1
-		})
+		$(`[box]`).removeClass(`top`)
 		$(`[data-obj-id]`).removeClass("selected")
 	}
 
@@ -112,13 +110,11 @@ export default class Box extends HTMLObject {
 
 	toFront(){
 		this.deactivate()
-		$(`#${this.id}`).css({
-			'z-index':2
-		})
+		$(`#${this.id}`).addClass(`top`)
 		$(`[data-obj-id="${this.id}"]`).addClass("selected")
 	}
 	isOnFront(){
-		return($(`#${this.id}`).css('z-index')==='2')
+		return($(`#${this.id}`).hasClass(`top`))
 	}
 
 	clear() {

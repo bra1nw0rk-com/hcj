@@ -184,6 +184,7 @@ export default class UI {
 					transform:'none',
 				})
 				$(selector).hide()
+				$(selector).removeClass(`top`)
 				$(`[data-obj-id]`).removeClass("selected")
 			}
 		);
@@ -193,12 +194,8 @@ export default class UI {
 		$(selector).show()
 		$(`[data-obj-id]`).removeClass("selected")
 		$(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
-		$(`[box]`).css({
-			'z-index':1
-		})
-		$(selector).css({
-			'z-index':2
-		})
+		$(`[box]`).removeClass(`top`)
+		$(selector).addClass(`top`)
 		$(selector).animate(
 			{
 				zoom: '100%',
