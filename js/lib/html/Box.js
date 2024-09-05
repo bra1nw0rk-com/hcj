@@ -72,6 +72,7 @@ export default class Box extends HTMLObject {
 			info(){
 				_this.#icon = $(`<i class="fa fa-info" aria-hidden="true"></i>`)
 				_this.#head.prepend(_this.#icon);
+				console.log(_this.#icon,_this.#head)
 			},
 			error(){
 				_this.#icon = $(`<i class="fa fa-times-circle" aria-hidden="true"></i>`);
