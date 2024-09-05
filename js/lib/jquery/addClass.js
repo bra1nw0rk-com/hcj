@@ -1,7 +1,7 @@
 
 $(function () {
     $.fn.extend({
-        addClass: function (className) {
+        add_class: function (className) {
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
                     $(this).addClass(className)
