@@ -30,15 +30,11 @@ export default class Box extends HTMLObject {
 	}
 	init(){
 		super.init()
+		let _this = this;
 		this.object
 			.off(`.#${this.id}`)
 			.on(`click.#${this.id}`,function(e){
-				$(`[box]`).css({
-					'z-index':1
-				})
-				$(this).css({
-					'z-index':2
-				})
+				_this.toFront()
 			})
 	}
 
@@ -98,6 +94,19 @@ export default class Box extends HTMLObject {
 	maximize(){
 		WS.ui.maximizeModal(`#${this.id}`);
 	}
+
+	toFront(){
+		$(`[box]`).css({
+			'z-index':1
+		})
+		$(`#${this.id}`).css({
+			'z-index':2
+		})
+	}
+	isOnFront(){
+		return($(`#${this.id}`).css('z-index')===2)
+	}
+
 	clear() {
 		$(`#${this.id}` + " input").each(function () {
 			$(this).val("");

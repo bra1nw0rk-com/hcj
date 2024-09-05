@@ -47,7 +47,11 @@ export default class Main extends HTMLObject {
 						if(item.css('display')==="none"){
 							item[0].parameters.maximize();
 						}else {
-							item[0].parameters.minimize();
+							if(!item[0].parameters.isOnFront()){
+								item[0].parameters.toFront()
+							}else{
+								item[0].parameters.minimize();
+							}
 						}
 
 					})
