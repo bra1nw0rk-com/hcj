@@ -45,7 +45,7 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.unbind();
                             boxObj.find(`*`).unbind();
                             boxObj.css({
-                                transform:'scale(50%)',
+                                transform:'scale(70%)',
                                 position:"unset"
                             })
                             _this.#content.append(boxObj)
