@@ -121,6 +121,9 @@ export default class Box extends HTMLObject {
 		$(`#${this.id}`).addClass(`top`)
 	}
 	isOnFront(){
+		if($(`[box].top`).length > 1) {
+			return false;
+		}
 		return($(`#${this.id}`).hasClass(`top`))
 	}
 
