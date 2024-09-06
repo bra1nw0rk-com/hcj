@@ -5,6 +5,7 @@ export default class Main extends HTMLObject {
 	#content = $(`<div id="content">
 				<div data-module="calendar/maya"></div>
 			</div>`)
+	#boxManager = $(`<div data-module="main/box-manager"></div>`)
 	#footer = $(`<footer></footer>`)
 	#running = $(`<div id="running"></div>`)
 	#rightSide = $(`<div class="right-side"></div>`)
@@ -18,6 +19,7 @@ export default class Main extends HTMLObject {
 		this.classes = "fadeIn";
 
 		this.object.append(this.#mainMenu)
+		this.object.append(this.#boxManager)
 		this.object.append(this.#content)
 		this.object.append(this.#footer)
 		this.#footer.append(this.#running)
@@ -25,6 +27,7 @@ export default class Main extends HTMLObject {
 		this.#rightSide.append($(`<span data-module="time/date-time"></span>`))
 		this.#rightSide.append($(`<span data-module="main/notification/icon"></span>`))
 		$("body").html("").append(this.get());
+
 		this.init()
 
 	}

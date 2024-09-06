@@ -1,0 +1,12 @@
+[name="box-manager"]{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 50vh;
+    left: 50vw;
+    z-index: 5;
+    transform: translateY(-50%) translateX(-50%);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--bg1);
+}
