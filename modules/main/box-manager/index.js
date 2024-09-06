@@ -1,6 +1,7 @@
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class BoxManager extends HTMLObject  {
+    keys = "";
 	 constructor() {
         super("div");
         let _this = this;
@@ -19,6 +20,10 @@ export default class BoxManager extends HTMLObject  {
         $(`body`)
             .off(`.${this.id}`)
             .on(`keydown.${this.id}`,function(e){
+                if(e.which === 18){
+                    e.stopPropagation()
+                    this.keys+="18"
+                }
             console.log(e.which)
 
         })
