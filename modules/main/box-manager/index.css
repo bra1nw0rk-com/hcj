@@ -55,9 +55,11 @@
 [name="box-manager"] > .content [miniature-id]{
     transform: scale(50%);
     position:unset;
-    padding: 5px;
 }
-[name="box-manager"] > .content [miniature-id]:hover{
+[name="box-manager"] > .content [miniature-id]:hover::after{
+    content: "";
+    height: 110%;
+    width: 110%;
     border: 3px solid #ff8800;
 
 }
