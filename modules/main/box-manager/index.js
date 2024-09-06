@@ -39,11 +39,10 @@ export default class BoxManager extends HTMLObject  {
                     _this.object.removeClass('hidden')
                     if($(`[box]`).length > 0){
                         $(`[box]`).each(function(){
-                            let newObj = $(`<div class="newBoxObject"></div>`)
                             let boxObj = $(this).clone()
-                            newObj.append(boxObj)
                             boxObj.attr("miniature-id",boxObj.attr("id"))
-                            boxObj.attr("id","")
+                            boxObj.removeAttr("id")
+                            boxObj.removeAttr("box")
                             boxObj.removeClass('top fadeIn')
 
                             boxObj.css({
@@ -51,7 +50,7 @@ export default class BoxManager extends HTMLObject  {
                                 position:'unset',
 
                             })
-                            _this.#content.append(newObj)
+                            _this.#content.append(boxObj)
                         })
 
                     }else{
