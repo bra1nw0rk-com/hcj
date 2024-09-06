@@ -38,6 +38,7 @@ export default class BoxManager extends HTMLObject  {
                 if(_this.keys==="k16k9"){
                     _this.object.removeClass('hidden')
                     if($(`[box]`).length > 0){
+                        _this.#content.html("")
                         $(`[box]`).each(function(){
                             let boxObj = $(this).clone()
                             boxObj.attr("miniature-id",boxObj.attr("id"))
