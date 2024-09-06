@@ -33,9 +33,9 @@ export default class BoxManager extends HTMLObject  {
                 e.stopPropagation()
                 e.preventDefault()
                 if(!_this.keys.includes(`-${e.which}`)){
-                    _this.keys+=`-${e.which}`
+                    _this.keys+=`k${e.which}`
                 }
-                if(_this.keys==="-16-9"){
+                if(_this.keys==="k16k9"){
                     _this.object.removeClass('hidden')
                     if($(`[box]`).length > 0){
                         _this.#content.html(``)
@@ -49,7 +49,7 @@ export default class BoxManager extends HTMLObject  {
             }).on(`keyup.${this.id}`,function(e){
                 e.stopPropagation()                                    
                 e.preventDefault()
-                _this.keys=_this.keys.replace(`-${e.which}`,'')
+                _this.keys=_this.keys.replace(`k${e.which}`,'')
 
                 if(_this.keys===""){
                     _this.object.addClass('hidden')
