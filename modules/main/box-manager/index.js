@@ -32,7 +32,7 @@ export default class BoxManager extends HTMLObject  {
                     _this.keys+=`-${e.which}`
                 }
                 if(_this.keys==="-16-9"){
-                    _this.removeClass('hidden')
+                    _this.object.removeClass('hidden')
                 }
                 console.log(e.which, _this.keys)
                 return false;
@@ -42,7 +42,7 @@ export default class BoxManager extends HTMLObject  {
                 _this.keys=_this.keys.replace(`-${e.which}`,'')
 
                 if(_this.keys===""){
-                    _this.addClass('hidden')
+                    _this.object.addClass('hidden')
                 }
                 console.log(e.which, _this.keys)
                 return false;
