@@ -6,8 +6,8 @@
  **/
 [name="box-manager"]{
     position: absolute;
-    height: 50%;
-    width: 50%;
+    min-height: 15%;
+    min-width: 25%;
     top: 50vh;
     left: 50vw;
     z-index: 5;
