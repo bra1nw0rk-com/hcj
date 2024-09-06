@@ -18,7 +18,7 @@ export default class BoxManager extends HTMLObject  {
         super.init()
         $(`body`)
             .off(`.${this.id}`)
-            .on(`keydown.${this.id}`,function(){
+            .on(`keydown.${this.id}`,function(e){
             console.log(e.which)
 
         })
