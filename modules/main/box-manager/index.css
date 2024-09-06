@@ -37,9 +37,13 @@
     text-transform: uppercase;
 }
 [name="box-manager"] .content{
-    margin-top:30px;
+    margin-top: 30px;
     height: calc(100% - 20px);
     overflow: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
 }
