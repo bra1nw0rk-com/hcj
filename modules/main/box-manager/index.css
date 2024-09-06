@@ -54,4 +54,5 @@
 }
 [name="box-manager"] > .content [miniature-id]{
     transform: scale(50%);
+    position:unset;
 }
