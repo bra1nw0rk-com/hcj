@@ -5,7 +5,7 @@
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  **/
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
-import html2canvas from '../../../js/lib/html2canvas.min.js';
+import html2canvas from '../../../js/lib/html2canvas.esm.js';
 export default class BoxManager extends HTMLObject  {
     keys = "";
     #content = $(`<div class="content"></div>`)
