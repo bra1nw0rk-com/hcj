@@ -48,17 +48,12 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.on(`click`,function(e){
                                 let selObj = $(`#${$(this).attr("miniature-id")}`)
                                 if(e.which === 1){
-                                    if (selObj.css('display') === "none") {
-                                        selObj[0].parameters.maximize();
-                                        _this.object.addClass('hidden').removeClass("fadeIn")
-                                        _this.keys=""
-                                    } else {
-                                        if (!selObj[0].parameters.isOnFront()) {
-                                            selObj[0].parameters.toFront()
-                                            _this.object.addClass('hidden').removeClass("fadeIn")
-                                            _this.keys=""
-                                        }
-                                    }
+
+                                selObj[0].parameters.maximize();
+                                selObj[0].parameters.toFront()
+                                _this.object.addClass('hidden').removeClass("fadeIn")
+                                _this.keys=""
+
                                 }
                             })
 
