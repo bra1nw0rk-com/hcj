@@ -41,7 +41,7 @@ export default class BoxManager extends HTMLObject  {
                         _this.#content.html("")
                         $(`[box]`).each(function(){
                             let boxObj = $(``);
-                            html2canvas(document.querySelector("#capture")).then(canvas => {
+                            html2canvas(document.querySelector(`#${$(this).attr("id")}`)).then(canvas => {
                                 boxObj = $(canvas)
                                 boxObj.attr("miniature-id",$(this).attr("id"))
                                 _this.#content.append(boxObj)
