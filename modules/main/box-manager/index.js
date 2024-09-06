@@ -36,7 +36,7 @@ export default class BoxManager extends HTMLObject  {
             }).on(`keyup.${this.id}`,function(e){
                 e.stopPropagation()                                    
                 e.preventDefault()
-                _this.keys.replace(`-${e.which}`,'')
+                _this.keys=_this.keys.replace(`-${e.which}`,'')
                 console.log(e.which, _this.keys)
                 return false;
             }).on(`keypress`,function(e){
