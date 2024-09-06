@@ -16,6 +16,18 @@
     border-radius: 10px;
     background-color: var(--bg1);
 }
+[name="box-manager"]::before{
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    content:"";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: -1;
+}
 [name="box-manager"] h2 {
     font-size: 12px;
     position: absolute;
