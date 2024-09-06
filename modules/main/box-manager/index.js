@@ -21,12 +21,16 @@ export default class BoxManager extends HTMLObject  {
             .off(`.${this.id}`)
             .on(`keydown.${this.id}`,function(e){
                 e.stopPropagation()
+                e.preventDefault()
                  _this.keys+=`-${e.which}`
-                console.log(e.which, this.keys)
+                console.log(e.which, _this.keys)
+                return false;
             }).on(`keyup.${this.id}`,function(e){
                 e.stopPropagation()                                    
+                e.preventDefault()
                 _this.keys.replace(`-${e.which}`,'')
-                console.log(e.which, this.keys)
+                console.log(e.which, _this.keys)
+                return false;
             })
 
     }
