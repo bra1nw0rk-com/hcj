@@ -44,7 +44,8 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.removeAttr("id")
                             boxObj.removeAttr("box")
                             boxObj.css({
-                                transform:'scale(50%)'
+                                transform:'scale(50%)',
+                                position:"unset"
                             })
                             _this.#content.append(boxObj)
 
