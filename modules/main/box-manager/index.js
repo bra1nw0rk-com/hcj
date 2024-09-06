@@ -48,7 +48,7 @@ export default class BoxManager extends HTMLObject  {
 
                             boxObj.css({
                                 'z-index':'',
-                                'zoom':'50%',
+                                'zoom':'30%',
                                 position:'',
                                 top:'',
                                 left:'',
