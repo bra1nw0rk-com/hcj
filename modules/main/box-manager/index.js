@@ -14,8 +14,9 @@ export default class BoxManager extends HTMLObject  {
         this.css = "/modules/main/box-manager/index.css";
         this.classes = "hidden"
         this.name = "box-manager";        
-        this.template = $(html`            
-            test
+        this.template = $(html`
+            <h2>Box manager</h2>
+            
             `);
 
     }
