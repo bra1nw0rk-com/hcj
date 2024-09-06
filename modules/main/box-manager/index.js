@@ -38,7 +38,7 @@ export default class BoxManager extends HTMLObject  {
                 if(_this.keys==="-16-9"){
                     _this.object.removeClass('hidden')
                     if($(`[box]`).length > 0){
-
+                        _this.#content.html(``)
                     }else{
                         _this.#content.html(`NOTHING TO SHOW`)
                     }
