@@ -55,9 +55,9 @@
 [name="box-manager"] > .content [miniature-id]{
     transform: scale(50%);
     position:unset;
-    opacity: 80%;
+    filter: grayscale(1);
 }
 [name="box-manager"] > .content [miniature-id]:hover{
     border: 1px solid var(--bg1);
-    opacity: 100%;
+    filter: grayscale(0);
 }
