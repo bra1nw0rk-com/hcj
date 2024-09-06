@@ -40,7 +40,14 @@ export default class BoxManager extends HTMLObject  {
                     if($(`[box]`).length > 0){
                         $(`[box]`).each(function(){
                             let boxObj = $(this).clone()
+                            boxObj.css({
+                                'z-index':'',
+                                'zoom':'50%',
+                                position:'',
+                                top:'',
+                                left:'',
 
+                            })
                             _this.#content.append(boxObj)
                         })
 
