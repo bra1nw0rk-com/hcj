@@ -18,7 +18,7 @@ export default class BoxManager extends HTMLObject  {
         this.template = $(html`
             <h2>Box manager</h2>
             
-            `);
+        `);
 
         this.object.append(this.#content)
 
