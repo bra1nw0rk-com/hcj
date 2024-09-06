@@ -32,7 +32,7 @@ export default class BoxManager extends HTMLObject  {
             .on(`keydown.${this.id}`,function(e){
                 e.stopPropagation()
                 e.preventDefault()
-                if(!_this.keys.includes(`-${e.which}`)){
+                if(!_this.keys.includes(`k${e.which}`)){
                     _this.keys+=`k${e.which}`
                 }
                 if(_this.keys==="k16k9"){
