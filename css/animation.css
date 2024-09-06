@@ -150,7 +150,7 @@
 	animation: fadeOut 0.5s cubic-bezier(0.55, 0.09, 0.68, 0.53) alternate;
 }
 
-[data-animated].fadeIn {
+.fadeIn {
 	animation: fadeIn 0.5s cubic-bezier(0.4, 0, 1, 1) alternate;
 }
 [data-animated].spin {
