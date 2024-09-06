@@ -40,12 +40,13 @@ export default class BoxManager extends HTMLObject  {
                     if($(`[box]`).length > 0){
                         _this.#content.html("")
                         $(`[box]`).each(function(){
-                            let boxObj = $(this)[0].getContext('2d');
+                            let boxObj = $(``);
                             html2canvas(document.querySelector("#capture")).then(canvas => {
-                                document.body.appendChild(canvas)
+                                boxObj = $(canvas)
+                                boxObj.attr("miniature-id",$(this).attr("id"))
+                                _this.#content.append(boxObj)
                             });
-                            boxObj.attr("miniature-id",$(this).attr("id"))
-                            _this.#content.append(boxObj)
+
                         })
 
                     }else{
