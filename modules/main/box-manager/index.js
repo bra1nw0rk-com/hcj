@@ -47,7 +47,7 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.removeClass('top fadeIn')
 
                             boxObj.css({
-                                'z-index':'',
+                                'z-index':'1',
                                 'zoom':'30%',
                                 position:'inherit',
                                 top:'auto',
