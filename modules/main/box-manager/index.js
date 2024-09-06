@@ -42,7 +42,8 @@ export default class BoxManager extends HTMLObject  {
                             let boxObj = $(this).clone();
                             boxObj.attr("miniature-id",$(this).attr("id"))
                             boxObj.removeAttr("id")
-                            boxObj.removeAttr("box")
+                            boxObj.unbind();
+                            boxObj.find(`*`).unbind();
                             boxObj.css({
                                 transform:'scale(50%)',
                                 position:"unset"
