@@ -30,7 +30,7 @@
     border-radius: 10px;
     z-index: -1;
 }
-[name="box-manager"] h2 {
+[name="box-manager"] > h2 {
     font-size: 12px;
     position: absolute;
     top: 11px;
