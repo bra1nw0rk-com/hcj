@@ -1,3 +1,9 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
 import "./lib/jquery/index.js";
 import UI from "./lib/core/UI.js";
 let ui = new UI();
