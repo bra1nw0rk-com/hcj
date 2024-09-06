@@ -34,7 +34,6 @@ export default class BoxManager extends HTMLObject  {
                 if(_this.keys==="-16-9"){
                     _this.object.removeClass('hidden')
                 }
-                console.log(e.which, _this.keys)
                 return false;
             }).on(`keyup.${this.id}`,function(e){
                 e.stopPropagation()                                    
@@ -44,7 +43,6 @@ export default class BoxManager extends HTMLObject  {
                 if(_this.keys===""){
                     _this.object.addClass('hidden')
                 }
-                console.log(e.which, _this.keys)
                 return false;
             }).on(`keypress`,function(e){
                 e.stopPropagation()                                    
