@@ -35,7 +35,7 @@ export default class BoxManager extends HTMLObject  {
                     _this.keys+=`k${e.which}`
                 }
                 if(_this.keys==="k16k9"){
-                    _this.object.removeClass('hidden')
+                    _this.object.removeClass('hidden').addClass("fadeIn")
                     if($(`[box]`).length > 0){
                         _this.#content.html("")
                         $(`[box]`).each(function(){
@@ -63,7 +63,7 @@ export default class BoxManager extends HTMLObject  {
                 _this.keys=_this.keys.replace(`k${e.which}`,'')
 
                 if(_this.keys===""){
-                    _this.object.addClass('hidden')
+                    _this.object.addClass('hidden').removeClass("fadeIn")
                 }
                 return false;
             }).on(`keypress`,function(e){
