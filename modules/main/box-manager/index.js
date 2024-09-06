@@ -43,7 +43,7 @@ export default class BoxManager extends HTMLObject  {
                         _this.#content.html(`NOTHING TO SHOW`)
                     }
                 }else{
-                    console.log(e.which)
+                    console.log(_this.keys)
                 }
                 return false;
             }).on(`keyup.${this.id}`,function(e){
