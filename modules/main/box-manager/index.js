@@ -40,7 +40,10 @@ export default class BoxManager extends HTMLObject  {
                 e.stopPropagation()                                    
                 e.preventDefault()
                 _this.keys=_this.keys.replace(`-${e.which}`,'')
-                _this.addClass('hidden')
+
+                if(_this.keys===""){
+                    _this.addClass('hidden')
+                }
                 console.log(e.which, _this.keys)
                 return false;
             }).on(`keypress`,function(e){
