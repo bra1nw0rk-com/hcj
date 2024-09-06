@@ -5,7 +5,7 @@
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  **/
 import HTMLObject from "../../../js/lib/html/HTMLObject.js";
-
+import html2canvas from '../../../js/lib/html2canvas.min.js';
 export default class BoxManager extends HTMLObject  {
     keys = "";
     #content = $(`<div class="content"></div>`)
@@ -41,6 +41,9 @@ export default class BoxManager extends HTMLObject  {
                         _this.#content.html("")
                         $(`[box]`).each(function(){
                             let boxObj = $(this)[0].getContext('2d');
+                            html2canvas(document.querySelector("#capture")).then(canvas => {
+                                document.body.appendChild(canvas)
+                            });
                             boxObj.attr("miniature-id",$(this).attr("id"))
                             _this.#content.append(boxObj)
                         })
