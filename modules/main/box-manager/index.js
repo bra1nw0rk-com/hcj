@@ -24,7 +24,7 @@ export default class BoxManager extends HTMLObject  {
                     e.stopPropagation()
                     this.keys+="18"
                 }
-            console.log(e.which)
+            console.log(e.which, this.keys)
 
         })
 
