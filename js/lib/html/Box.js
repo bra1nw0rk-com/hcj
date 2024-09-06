@@ -36,6 +36,7 @@ export default class Box extends HTMLObject {
 	}
 	init(){
 		super.init()
+		$(`box`).removeClass(`top`)
 		let _this = this;
 		this.classes = `top`
 		this.object
@@ -50,6 +51,7 @@ export default class Box extends HTMLObject {
 		$(`body`).on(`click.${this.id}`,function(){
 			_this.deactivate()
 		})
+
 
 	}
 
