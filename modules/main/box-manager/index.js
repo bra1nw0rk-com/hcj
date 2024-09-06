@@ -20,16 +20,12 @@ export default class BoxManager extends HTMLObject  {
         $(`body`)
             .off(`.${this.id}`)
             .on(`keydown.${this.id}`,function(e){
-                if(e.which === 18){
-                    e.stopPropagation()
-                    _this.keys+="-18"
-                }
+                e.stopPropagation()
+                 _this.keys+=`-${e.which}`
                 console.log(e.which, this.keys)
             }).on(`keyup.${this.id}`,function(e){
-                if(e.which === 18){
-                    e.stopPropagation()
-                    _this.keys.replace("-18",'')
-                }
+                e.stopPropagation()                                    
+                _this.keys.replace(`-${e.which}`,'')
                 console.log(e.which, this.keys)
             })
 
