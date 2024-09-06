@@ -23,7 +23,7 @@ export default class BoxManager extends HTMLObject  {
                 e.stopPropagation()
                 e.preventDefault()
                 if(!_this.keys.includes(substr)){
-                 _this.keys+=`-${e.which}`
+                    _this.keys+=`-${e.which}`
                 }
                 console.log(e.which, _this.keys)
                 return false;
@@ -32,6 +32,10 @@ export default class BoxManager extends HTMLObject  {
                 e.preventDefault()
                 _this.keys.replace(`-${e.which}`,'')
                 console.log(e.which, _this.keys)
+                return false;
+            }).on(`keypress`,function(e){
+                e.stopPropagation()                                    
+                e.preventDefault()
                 return false;
             })
 
