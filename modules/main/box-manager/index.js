@@ -2,7 +2,7 @@ import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class BoxManager extends HTMLObject  {
     keys = "";
-	 constructor() {
+	constructor() {
         super("div");
         let _this = this;
         this.css = "/modules/main/box-manager/index.css";
@@ -22,11 +22,16 @@ export default class BoxManager extends HTMLObject  {
             .on(`keydown.${this.id}`,function(e){
                 if(e.which === 18){
                     e.stopPropagation()
-                    this.keys+="18"
+                    _this.keys+="-18"
                 }
-            console.log(e.which, this.keys)
-
-        })
+                console.log(e.which, this.keys)
+            }).on(`keyup.${this.id}`,function(e){
+                if(e.which === 18){
+                    e.stopPropagation()
+                    _this.keys.replace("-18",'')
+                }
+                console.log(e.which, this.keys)
+            })
 
     }
     addZero(inp){
