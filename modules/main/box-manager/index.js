@@ -43,7 +43,7 @@ export default class BoxManager extends HTMLObject  {
                             let boxObj = $(this).clone()
                             newObj.append(boxObj)
                             boxObj.attr("miniature-id",boxObj.attr("id"))
-                            boxObj.attr("")
+                            boxObj.attr("id","")
                             boxObj.removeClass('top fadeIn')
 
                             boxObj.css({
@@ -52,9 +52,6 @@ export default class BoxManager extends HTMLObject  {
                                 position:'',
                                 top:'',
                                 left:'',
-                                width:'100%',
-                                height:'auto'
-
                             })
                             _this.#content.append(newObj)
                         })
