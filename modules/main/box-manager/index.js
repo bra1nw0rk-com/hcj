@@ -31,12 +31,16 @@ export default class BoxManager extends HTMLObject  {
                 if(!_this.keys.includes(`-${e.which}`)){
                     _this.keys+=`-${e.which}`
                 }
+                if(_this.keys==="-16-9"){
+                    _this.removeClass('hidden')
+                }
                 console.log(e.which, _this.keys)
                 return false;
             }).on(`keyup.${this.id}`,function(e){
                 e.stopPropagation()                                    
                 e.preventDefault()
                 _this.keys=_this.keys.replace(`-${e.which}`,'')
+                _this.addClass('hidden')
                 console.log(e.which, _this.keys)
                 return false;
             }).on(`keypress`,function(e){
