@@ -58,11 +58,11 @@
 }
 [name="box-manager"] > .content [miniature-id]:hover::after{
     position: absolute;
-    top: -1%;
-    left: -1%;
+    top: 0;
+    left: 0;
     content: "";
-    height: 110%;
-    width: 110%;
-    border: 3px solid #ff8800;
-
+    height: 100%;
+    width: 100%;
+    background: #ff88000f;
+    z-index: -1;
 }
