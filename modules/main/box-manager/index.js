@@ -22,7 +22,9 @@ export default class BoxManager extends HTMLObject  {
             .on(`keydown.${this.id}`,function(e){
                 e.stopPropagation()
                 e.preventDefault()
+                if(!_this.keys.includes(substr)){
                  _this.keys+=`-${e.which}`
+                }
                 console.log(e.which, _this.keys)
                 return false;
             }).on(`keyup.${this.id}`,function(e){
