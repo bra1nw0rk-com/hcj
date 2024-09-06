@@ -56,7 +56,6 @@ export default class HTMLObject extends CustomEvents {
 		//this.object.find(tpl).remove();
 		this.object.append(tpl);
 	}
-
 	get() {
 		return this.object;
 	}

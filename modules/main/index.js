@@ -39,26 +39,46 @@ export default class Main extends HTMLObject {
 				$(this).find("[box]:not([run-added])").each(function () {
 					let newObj = $($(this)[0].parameters.faIcon)
 					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
-					newObj.addClass('clickable fadeIn')
+					newObj.addClass('clickable fadeIn selected')
 					newObj.attr("data-animated","");
 					$(this).attr("run-added","");
+					$(`[data-obj-id]`).removeClass("selected")
 					_this.#running.append(newObj)
-					newObj.on(`click`,function(e){
-						console.log(e)
-						let id = $(this).attr(`data-obj-id`)
-						let item = $(`#${id}`)
-						if(item.css('display')==="none"){
-							item[0].parameters.maximize();
-						}else {
-							item[0].parameters.minimize();
+
+					newObj.on(`mousedown`,function(e){
+						if(e.which === 1) {
+							e.stopPropagation()
+							let id = $(this).attr(`data-obj-id`)
+							let item = $(`#${id}`)
+							if (item.css('display') === "none") {
+								item[0].parameters.maximize();
+							} else {
+								if (!item[0].parameters.isOnFront()) {
+									item[0].parameters.toFront()
+								} else {
+									item[0].parameters.minimize();
+								}
+							}
 						}
 
+					}).on(`click`,function(e){
+						e.stopPropagation()
 					})
 				});
 			})
 			.on("click.main",`[name="close-btn"]`,function(){
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
+			}).on(`addClass.main`,`[box]`,function(e,data){
+				if(data.class === `top`){
+					$(`[data-obj-id]`).removeClass("selected")
+					$(`[data-obj-id="${this.id}"]`).addClass("selected")
+				}
+			}).on(`removeClass.main`,`[box]`,function(e,data){
+				console.log(e,data)
+				if(data.class === `top`){
+					$(`[data-obj-id="${this.id}"]`).removeClass("selected")
+				}
 			})
 
 	}

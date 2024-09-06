@@ -65,6 +65,7 @@ button {
 	box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
 	padding: 8px;
 	color: var(--color);
+	height: 29px;
 }
 select {
 	-webkit-appearance: none;
@@ -181,7 +182,7 @@ table {
 	background-color: var(--bg1);
 	padding: 0.5em 1.25em 1.25em 1.25em;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	min-width: 345px;
+	min-width: 285px;
 	min-height: 100px;
 	position: absolute;
 	top: 50vh;
@@ -191,8 +192,8 @@ table {
 	overflow: hidden;
 }
 .modal::before{
-	-webkit-backdrop-filter: blur(4px);
-	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(7px);
 	content:"";
 	position: absolute;
 	height: 100%;
@@ -212,13 +213,12 @@ table {
     border-radius: 10px 10px 0 0;
 }
 .modal h2 {
-	text-align: center;
-	margin-bottom: 0.75em;
-	font-size: 18px;
-	position: absolute;	
+	font-size: 12px;
+	position: absolute;
 	top: 11px;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
+	text-transform: uppercase;
 }
 .modal .content{
 	margin-top:30px;
@@ -234,6 +234,9 @@ table {
 }
 .hidden{
 	display: none;
+}
+[box].top{
+	z-index: 2;
 }
 [box] .top-side{
 	position: absolute;

@@ -1,8 +1,8 @@
 [name="minimize-btn"]{
     position: absolute;
-    right: 24px;
-    font-size: 14px;
-    top: 5px;
+    right: 22px;
+    font-size: 11px;
+    top: 6px;
     color: #ff8400;
     opacity: 0.2;
 }

@@ -184,26 +184,27 @@ export default class UI {
 					transform:'none',
 				})
 				$(selector).hide()
+				$(selector).removeClass(`top`)
 			}
 		);
     }
 
 	maximizeModal(selector) {
 		$(selector).show()
+		// $(`[data-obj-id]`).removeClass("selected")
+		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
+		$(`[box]`).removeClass(`top`)
+		$(selector).addClass(`top`)
 		$(selector).animate(
 			{
 				zoom: '100%',
 				top: `${$(selector)[0].parameters.lastPosition.x}%`,
-				left: `${$(selector)[0].parameters.lastPosition.y}%`,
+				left: `${$(selector)[0].parameters.lastPosition.y}%`
 			},
 			500,
 			function () {
-				$(`[box]`).css({
-					'z-index':1
-				})
-				$(selector).css({
-					'z-index':2
-				})
+
+
 			}
 		);
 	}

@@ -6,7 +6,7 @@ export default class Box extends HTMLObject {
 	#head = $(html`<div class="head"></div>`);
 	#title = $(`<h2></h2>`);	
 	#content=$(`<div class="content"></div>`);
-	#icon = ""
+	#icon = ``
 	set draggable(val){
 		if(val === true){
 			this.#head.draggable({parent:this.object})
@@ -30,16 +30,25 @@ export default class Box extends HTMLObject {
 	}
 	init(){
 		super.init()
+		let _this = this;
+		this.classes = `top`
 		this.object
-			.off(`.#${this.id}`)
-			.on(`click.#${this.id}`,function(e){
-				$(`[box]`).css({
-					'z-index':1
-				})
-				$(this).css({
-					'z-index':2
-				})
-			})
+			.off(`.${this.id}`)
+			.on(`click.${this.id}`,function(e){
+				e.stopPropagation()
+				//_this.toFront()
+			}).on(`mousedown.${this.id}`,function(e){
+				e.stopPropagation()
+				_this.toFront()
+			});
+		$(`body`).on(`click.${this.id}`,function(){
+			_this.deactivate()
+		})
+
+	}
+
+	deactivate(){
+		$(`[box]`).removeClass(`top`)
 	}
 
 	eventListener(){
@@ -77,20 +86,20 @@ export default class Box extends HTMLObject {
 				_this.#head.prepend($(_this.#icon));
 			},
 			error(){
-				_this.#icon = `<i class="fa fa-times-circle" aria-hidden="true"></i>`;
+				_this.#icon = $(`<i class="fa fa-times-circle" aria-hidden="true"></i>`);
 				_this.#head.prepend($(_this.#icon));
 
 			},
 			settings(){
 				_this.#icon = `<i class="fa fa-cogs" aria-hidden="true"></i>`;
 				_this.#head.prepend($(_this.#icon));
-
 			}
 		}
 	}
 
 	close(callback){
 		WS.ui.closeModal(`#${this.id}`, callback);
+		$(`[data-obj-id="${this.id}"]`).delete();
 	}
 	minimize(){
 		WS.ui.minimizeModal(`#${this.id}`);
@@ -98,6 +107,15 @@ export default class Box extends HTMLObject {
 	maximize(){
 		WS.ui.maximizeModal(`#${this.id}`);
 	}
+
+	toFront(){
+		this.deactivate()
+		$(`#${this.id}`).addClass(`top`)
+	}
+	isOnFront(){
+		return($(`#${this.id}`).hasClass(`top`))
+	}
+
 	clear() {
 		$(`#${this.id}` + " input").each(function () {
 			$(this).val("");
