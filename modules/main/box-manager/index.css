@@ -16,3 +16,11 @@
     border-radius: 10px;
     background-color: var(--bg1);
 }
+[name="box-manager"] h2 {
+    font-size: 12px;
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    text-transform: uppercase;
+}

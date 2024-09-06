@@ -8,6 +8,7 @@ import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 
 export default class BoxManager extends HTMLObject  {
     keys = "";
+    #content = $(`<div class="content"></div>`)
 	constructor() {
         super("div");
         let _this = this;
@@ -18,6 +19,8 @@ export default class BoxManager extends HTMLObject  {
             <h2>Box manager</h2>
             
             `);
+
+        this.object.append(this.#content)
 
     }
 
