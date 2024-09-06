@@ -40,14 +40,8 @@ export default class BoxManager extends HTMLObject  {
                     if($(`[box]`).length > 0){
                         _this.#content.html("")
                         $(`[box]`).each(function(){
-                            let boxObj = $(this).clone()
-                            boxObj.attr("miniature-id",boxObj.attr("id"))
-                            boxObj.removeClass('top fadeIn')
-                            boxObj.css({
-                                transform: 'scale(0.5)',
-                                position:'unset',
-
-                            })
+                            let boxObj = $(this)[0].getContext('2d');
+                            boxObj.attr("miniature-id",$(this).attr("id"))
                             _this.#content.append(boxObj)
                         })
 
