@@ -45,6 +45,9 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.removeAttr("style")
                             boxObj.unbind();
                             boxObj.find(`*`).unbind();
+                            if ($(`#${boxObj.attr("miniature-id")}`).parameters.isOnFront()) {
+                                boxObj.addClass('active')
+                            }
                             _this.#content.append(boxObj)
                             boxObj.on(`click`,function(e){
                                 let selObj = $(`#${$(this).attr("miniature-id")}`)
