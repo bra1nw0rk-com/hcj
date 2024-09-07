@@ -17,6 +17,9 @@ $(function () {
                 return $(this).each(function (e, i) {
                     if($(this)[0].parameters.tooltip !==""){
                         let _this = $(this)
+                        let posLeft = (($(this).position().left / $(window).width()) * 100).toFixed(4);
+                        let posTop = (($(this).position().top / $(window).height()) * 100).toFixed(4);
+
                         let tooltipObj = new HTMLObject('div')
                         tooltipObj.name ="tooltip-box"
                         tooltipObj.html = options.html

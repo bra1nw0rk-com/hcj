@@ -197,7 +197,7 @@ table {
 	z-index: 1;
 	overflow: hidden;
 }
-.modal::before{
+.modal::before, [name="tooltip-box"]::before{
 	-webkit-backdrop-filter: blur(7px);
 	backdrop-filter: blur(7px);
 	content:"";
@@ -350,4 +350,15 @@ table {
 }
 .clickable:hover{
 	background-color: var(--top-menu-main-menu-item-background);
+}
+[name="tooltip-box"]{
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	background-color: var(--bg1);
+	padding: 0.5em 1.25em 1.25em 1.25em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	max-width: 50px;
+	min-height: 10px;
+	position: absolute;
+	z-index: 100;
 }
