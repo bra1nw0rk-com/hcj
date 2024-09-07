@@ -15,19 +15,17 @@ $(function () {
             options = $.extend(defaults, options);
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
-                    console.log($(this))
-                    /*
                     if($(this)[0].parameters.tooltip !==""){
+                        let _this = $(this)
                         let tooltipObj = new HTMLObject('div')
                         tooltipObj.html = options.html
-                        this.object.on(`mouseover.${this.id}`,function(){
+                        $(this).on(`mouseover`,function(){
                             if(_this.tooltip !== "") {
                                 console.log("tooltip")
                             }
                         })
                     }
 
-                     */
                     return this;
                 });
             }
