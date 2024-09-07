@@ -65,6 +65,9 @@ export default class Box extends HTMLObject {
 	set title(text) {
 		this.#title.html(text);
 	}
+	get title(){
+		return this.#title.html();
+	}
 	set content(text) {
 		this.#content.html(text);
 	}

@@ -47,6 +47,7 @@ export default class Main extends HTMLObject {
 					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
 					newObj.addClass('clickable fadeIn selected')
 					newObj.attr("data-animated","");
+					newObj.attr("data-title",$(this)[0].parameters.title)
 					$(this).attr("run-added","");
 					$(`[data-obj-id]`).removeClass("selected")
 					_this.#running.append(newObj)
