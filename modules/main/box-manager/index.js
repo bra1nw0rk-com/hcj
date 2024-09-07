@@ -26,6 +26,10 @@ export default class BoxManager extends HTMLObject  {
     init(){
         let _this = this;
         super.init()
+        $(window).on('blur', function () {
+            // Append this text to the `body` element.
+            _this.keys = ""
+        });
         $(`body`)
             .off(`.${this.id}`)
             .on(`keydown.${this.id}`,function(e){
