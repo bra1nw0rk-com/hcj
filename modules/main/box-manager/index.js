@@ -110,9 +110,9 @@ export default class BoxManager extends HTMLObject  {
                 e.stopPropagation()                                    
                 e.preventDefault()
                 if(_this.keys!=="k16k9"){
-                    let selObj = _this.find(`[box-item].selected`).next()
+                    let selObj = _this.object.find(`[box-item].selected`).next()
                     if(selObj.length === 0) {
-                        selObj = _this.find(`[box-item].selected`).first()
+                        selObj = _this.object.find(`[box-item].selected`).first()
                     }
                     if(selObj!==0) {
                         if (selObj.css('display') === "none") {
