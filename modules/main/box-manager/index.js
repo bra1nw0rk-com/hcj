@@ -47,11 +47,11 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.attr("miniature-id",$(this).attr("id"))
                             boxObj.removeAttr("id")
                             //boxObj.removeAttr("style")
-                            /*
+
                             boxObj.css({
-                                transform:"scale(50%) translateY(0%) translateX(-53%)"
+                                top:"scale(50%) translateY(0%) translateX(-53%)"
                             })
-                            */
+
                             boxObj.unbind();
                             boxObj.find(`*`).unbind();
 
