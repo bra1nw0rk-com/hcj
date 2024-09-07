@@ -15,10 +15,14 @@ $(function () {
             options = $.extend(defaults, options);
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
+                    console.log($(this)[0])
+                    /*
                     if($(this)[0].parameters.tooltip !==""){
                         let tooltipObj = new HTMLObject('div')
                         tooltipObj.html = options.html
                     }
+
+                     */
                     return this;
                 });
             }
