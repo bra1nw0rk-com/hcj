@@ -46,16 +46,16 @@ export default class Main extends HTMLObject {
 					//let newObj = $($(this)[0].parameters.faIcon)
 					let newObj = new HTMLObject('i')
 					newObj.object = $($(this)[0].parameters.faIcon)
-					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
-					newObj.addClass('clickable fadeIn selected')
-					newObj.attr("data-animated","");
+					newObj.object.attr(`data-obj-id`,$(this)[0].parameters.id)
+					newObj.object.addClass('clickable fadeIn selected')
+					newObj.object.attr("data-animated","");
 					//newObj.attr("data-title",$(this)[0].parameters.title)
 					newObj[0].parameters.tooltip =$(this)[0].parameters.title
-						$(this).attr("run-added","");
+					$(this).attr("run-added","");
 					$(`[data-obj-id]`).removeClass("selected")
-					_this.#running.append(newObj)
+					_this.#running.append(newObj.get())
 
-					newObj.on(`mousedown`,function(e){
+					newObj.object.on(`mousedown`,function(e){
 						if(e.which === 1) {
 							e.stopPropagation()
 							let id = $(this).attr(`data-obj-id`)
