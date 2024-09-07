@@ -115,6 +115,7 @@ export default class BoxManager extends HTMLObject  {
                         if (selObj.length === 0) {
                             selObj = _this.object.find(`[box-item]`).first()
                         }
+                        console.log(selObj)
                         if (selObj.length !== 0) {
                             _this.object.find(`[box-item]`).removeClass(`active`)
                             selObj.addClass(`active`)
