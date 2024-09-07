@@ -42,7 +42,7 @@ export default class BoxManager extends HTMLObject  {
                             let boxObj = $(this).clone();
                             boxObj.attr("miniature-id",$(this).attr("id"))
                             boxObj.removeAttr("id")
-                            boxObj.removeAttr("style")
+                            //boxObj.removeAttr("style")
                             boxObj.unbind();
                             boxObj.find(`*`).unbind();
 

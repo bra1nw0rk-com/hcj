@@ -51,15 +51,7 @@ export default class Main extends HTMLObject {
 					newObj.object.attr("data-animated","");
 					newObj.name = "running-icon"
 					//newObj.attr("data-title",$(this)[0].parameters.title)
-					let boxObj = $(this).clone();
-					boxObj.attr("miniature-id",$(this).attr("id"))
-					boxObj.removeAttr("id")
-					//boxObj.removeAttr("style")
-					boxObj.removeClass(`fadeIn`)
-					boxObj.unbind();
-					boxObj.find(`*`).unbind();
 
-					newObj.tooltip =/*$(this)[0].parameters.title*/ boxObj
 					$(this).attr("run-added","");
 					$(`[data-obj-id]`).removeClass("selected")
 					newObj.init()
@@ -83,6 +75,16 @@ export default class Main extends HTMLObject {
 
 					}).on(`click`,function(e){
 						e.stopPropagation()
+					}).on(`mouseover`,function(){
+						let boxObj = $(this).clone();
+						boxObj.attr("miniature-id",$(this).attr("id"))
+						boxObj.removeAttr("id")
+						//boxObj.removeAttr("style")
+						boxObj.removeClass(`fadeIn`)
+						boxObj.unbind();
+						boxObj.find(`*`).unbind();
+
+						newObj.tooltip =/*$(this)[0].parameters.title*/ boxObj
 					})
 				});
 			})
