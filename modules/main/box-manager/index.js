@@ -58,7 +58,9 @@ export default class BoxManager extends HTMLObject  {
                             }
 
                             let zoom = 30.
-                            console.log((boxObj.outerWidth() / $(`body`).outerWidth()),(boxObj.outerHeight()/ $(`body`).outerHeight()))
+                            let relWZoom = (boxObj.outerWidth() / $(`body`).outerWidth())
+                            let relHZoom = (boxObj.outerHeight()/ $(`body`).outerHeight())
+                            console.log(100-(((relWZoom+relHZoom)/2)*100))
 
                             boxObj.css({
                                 top:'unset',
