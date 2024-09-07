@@ -26,7 +26,7 @@ export default class BoxManager extends HTMLObject  {
     init(){
         let _this = this;
         super.init()
-        $(window).on('blur', function () {
+        $(window).on('blur focus', function () {
             // Append this text to the `body` element.
             _this.keys = ""
         });
