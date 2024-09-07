@@ -48,7 +48,11 @@
     justify-content: center;
     align-items: flex-start;
 }
-[name="box-manager"] > .content .content-title{
+[name="box-manager"] > .content [box-item]{
+    display: block;
+    margin: 5px;
+}
+[name="box-manager"] > .content [box-item] > .content-title{
     font-size: 12px;
     position: absolute;
     top: 11px;
@@ -61,7 +65,6 @@
     display: block;
     top: unset;
     left: unset;
-    margin: 2px;
     transform: none;
 }
 [name="box-manager"] > .content [miniature-id]:hover::after, [name="box-manager"] > .content [miniature-id].active::after{
