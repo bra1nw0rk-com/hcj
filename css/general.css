@@ -355,7 +355,7 @@ table {
 	border: 1px solid var(--border-color);
 	border-radius: 10px;
 	background-color: var(--bg1);
-	padding: 0.5em 1.25em 1.25em 1.25em;
+	padding: 7px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	max-width: 50px;
 	min-height: 10px;
