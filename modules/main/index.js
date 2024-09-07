@@ -54,6 +54,7 @@ export default class Main extends HTMLObject {
 					boxObj.attr("miniature-id",$(this).attr("id"))
 					boxObj.removeAttr("id")
 					boxObj.removeAttr("style")
+					boxObj.removeClass(`fadeIn`)
 					boxObj.unbind();
 					boxObj.find(`*`).unbind();
 
