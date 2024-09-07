@@ -20,7 +20,7 @@ export default class HTMLObject extends CustomEvents {
 	constructor(val) {
 		super();
 		if(typeof val === 'object'){
-			this.object = val
+			this.object = val.clone()
 		}else{
 			this.object =  $(`<${val}></${val}>`);
 		}
