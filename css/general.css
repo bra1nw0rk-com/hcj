@@ -361,14 +361,12 @@ table {
 	min-height: 10px;
 	position: absolute;
 	z-index: 100;
-	height: fit-content;
-	width: fit-content;
 }
 [name="tooltip-box"] > [miniature-id]{
 	transform: scale(50%);
-	position:unset;
-	display:block;
+	position: relative;
+	display: block;
 	zoom: unset;
-	top: unset;
-	left: unset;
+	top: 0;
+	left: 0;
 }
