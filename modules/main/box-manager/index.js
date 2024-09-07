@@ -44,7 +44,6 @@ export default class BoxManager extends HTMLObject  {
                         _this.#content.html("")
                         $(`[box]`).each(function(){
                             let title = $(`<div class="content-title">${$(this)[0].parameters.title}</div>`)
-                            console.log(title)
                             let boxItem = $(this).clone()
                             let boxObj = $(`<div box-item></div>`);
                             boxObj.append(title)
@@ -53,7 +52,8 @@ export default class BoxManager extends HTMLObject  {
 
                             boxItem.attr("miniature-id",$(this).attr("id"))
                             boxItem.removeAttr("id")
-                            //boxObj.removeAttr("style")
+                            boxItem.removeAttr("name")
+                            boxObj.removeClass("top fadeIn")
 
 
                             boxItem.unbind();
