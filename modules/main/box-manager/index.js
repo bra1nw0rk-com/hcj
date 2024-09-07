@@ -141,6 +141,7 @@ export default class BoxManager extends HTMLObject  {
                 if(_this.keys===""){
                     _this.object.addClass('hidden').removeClass("fadeIn")
                     _this.#content.html(``)
+                    _this.showed = false;
                 }
                 return false;
             }).on(`keypress`,function(e){
