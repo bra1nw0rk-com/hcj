@@ -133,7 +133,6 @@ export default class BoxManager extends HTMLObject  {
                             }
                         }
                         _this.keys = ""
-                        _this.showed = false;
                     }
                 }
                 _this.keys=_this.keys.replace(`k${e.which}`,'')
