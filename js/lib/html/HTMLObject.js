@@ -79,11 +79,7 @@ export default class HTMLObject extends CustomEvents {
 	init(){
 		let _this = this
 		$("body").off(`.${this.id}`)
-		this.object.on(`mouseover.${this.id}`,function(){
-			if(_this.tooltip !== "") {
-				console.log("tooltip")
-			}
-		})
+
 	}
 
 	set tooltip(value){
