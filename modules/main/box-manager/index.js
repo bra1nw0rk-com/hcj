@@ -44,6 +44,7 @@ export default class BoxManager extends HTMLObject  {
                         _this.#content.html("")
                         $(`[box]`).each(function(){
                             let boxObj = $(this).clone();
+                            _this.#content.append(boxObj)
                             boxObj.attr("miniature-id",$(this).attr("id"))
                             boxObj.removeAttr("id")
                             //boxObj.removeAttr("style")
@@ -55,7 +56,7 @@ export default class BoxManager extends HTMLObject  {
                             if ($(`#${boxObj.attr("miniature-id")}`)[0].parameters.isOnFront()) {
                                 boxObj.addClass('active')
                             }
-                            _this.#content.append(boxObj)
+
                             let zoom = 30.
                             console.log(boxObj.width(),boxObj.height(),boxObj.css('width'),boxObj.css('height'))
                             boxObj.css({
