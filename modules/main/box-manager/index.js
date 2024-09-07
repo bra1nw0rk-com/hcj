@@ -47,13 +47,7 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.attr("miniature-id",$(this).attr("id"))
                             boxObj.removeAttr("id")
                             //boxObj.removeAttr("style")
-                            let zoom = 30.
-                            console.log(boxObj.width(),boxObj.height(),boxObj.css('width'),boxObj.css('height'))
-                            boxObj.css({
-                                top:'unset',
-                                left:'unset',
-                                zoom:`${zoom}%`
-                            })
+
 
                             boxObj.unbind();
                             boxObj.find(`*`).unbind();
@@ -62,6 +56,13 @@ export default class BoxManager extends HTMLObject  {
                                 boxObj.addClass('active')
                             }
                             _this.#content.append(boxObj)
+                            let zoom = 30.
+                            console.log(boxObj.width(),boxObj.height(),boxObj.css('width'),boxObj.css('height'))
+                            boxObj.css({
+                                top:'unset',
+                                left:'unset',
+                                zoom:`${zoom}%`
+                            })
                             boxObj.on(`click`,function(e){
                                 let selObj = $(`#${$(this).attr("miniature-id")}`)
                                 if(e.which === 1){
