@@ -51,6 +51,7 @@
 [name="box-manager"] > .content [box-item]{
     display: block;
     margin: 5px;
+    position: relative;
 }
 [name="box-manager"] > .content [box-item] > .content-title{
     font-size: 12px;
@@ -59,6 +60,7 @@
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     text-transform: uppercase;
+    z-index: 3;
 }
 [name="box-manager"] > .content [miniature-id]{
     position: relative;
