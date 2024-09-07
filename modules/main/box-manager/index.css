@@ -40,12 +40,12 @@
 }
 [name="box-manager"] > .content{
     margin-top: 30px;
-    display: block;
+    display: flex;
 }
 [name="box-manager"] > .content [miniature-id]{
     position: relative;
-    display: inline-flex;
-    zoom: 70%;
+    display: block;
+    zoom: 60%;
     top: unset;
     left: unset;
     flex: 0 1 450px;
