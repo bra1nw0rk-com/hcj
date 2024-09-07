@@ -54,13 +54,17 @@
     position: relative;
 }
 [name="box-manager"] > .content [box-item] > .content-title{
-    font-size: 12px;
+    font-size: 10px;
     position: absolute;
-    top: 11px;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    top: -1px;
+    left: 0;
     text-transform: uppercase;
     z-index: 3;
+    background-color: var(--bg2);
+    width: 100%;
+    padding: 6px;
+    border: 1px solid var(--border-color);
+    text-align: center;
 }
 [name="box-manager"] > .content [miniature-id]{
     position: relative;
