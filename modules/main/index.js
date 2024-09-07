@@ -49,6 +49,7 @@ export default class Main extends HTMLObject {
 					newObj.object.attr(`data-obj-id`,$(this)[0].parameters.id)
 					newObj.object.addClass('clickable fadeIn selected')
 					newObj.object.attr("data-animated","");
+					newObj.name = "running-icon"
 					//newObj.attr("data-title",$(this)[0].parameters.title)
 					let boxObj = $(this).clone();
 					boxObj.attr("miniature-id",$(this).attr("id"))
