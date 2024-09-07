@@ -27,7 +27,7 @@ $(function () {
                             if(_this.tooltip !== "") {
                                 tooltipObj.object.css({
                                     top:`calc(${e.pageX}px + 10px)`,
-                                    left:`calc(${e.pageX}px + 10px)`
+                                    left:`calc(${e.pageY}px + 10px)`
 
                                 })
                                 $(`body`).append(tooltipObj.get())
