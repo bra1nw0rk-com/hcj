@@ -11,6 +11,7 @@ export default class HTMLObject extends CustomEvents {
 	#css = "";
 	#animated = false;
 	#unique= false;
+	#tooltip =""
 	#id = "";
 	object = $("<div></div>");
 	lastPosition={
@@ -77,5 +78,13 @@ export default class HTMLObject extends CustomEvents {
 	}
 	init(){
 		$("body").off(`.${this.id}`)
+		$(`${this.id}`).on(`mouseover.${this.id}`,function(){
+			console.log("tooltip")
+		})
+	}
+
+	set tooltip(value){
+		this.#tooltip = value;
+
 	}
 }
