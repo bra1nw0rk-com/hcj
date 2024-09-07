@@ -57,6 +57,8 @@
     position:unset;
     display:block;
     zoom: unset;
+    top: unset;
+    left: unset;
 }
 [name="box-manager"] > .content [miniature-id]:hover::after{
     position: absolute;
