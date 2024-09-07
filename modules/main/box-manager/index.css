@@ -64,17 +64,20 @@
     width: 100%;
     padding: 6px;
     border: 1px solid var(--border-color);
+    border-radius: 8px 8px 0 0;
     text-align: center;
 }
 [name="box-manager"] > .content [box-item]:hover::after, [name="box-manager"] > .content [box-item].active::after{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -4px;
+    left: -3px;
     content: "";
-    height: 100%;
-    width: 100%;
-    background: #ff88000f;
+    height: calc(100% + 3px);
+    width: calc(100% + 2px);
     z-index: -1;
+    padding: 1px;
+    border: 1px solid #ff880038;
+    border-radius: 8px;
 }
 [name="box-manager"] > .content [miniature-id]{
     position: relative;
