@@ -25,7 +25,7 @@ $(function () {
                             }
                         }).on(`mouseout`,function(){
                             if(_this.tooltip !== "") {
-                                $(`body`).remove(tooltipObj.get())
+                                tooltipObj.object.remove()
                             }
                         })
                     }
