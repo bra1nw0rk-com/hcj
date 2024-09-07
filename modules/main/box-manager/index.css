@@ -60,7 +60,7 @@
     top: unset;
     left: unset;
 }
-[name="box-manager"] > .content [miniature-id]:hover::after{
+[name="box-manager"] > .content [miniature-id]:hover::after, [name="box-manager"] > .content [miniature-id].active::after{
     position: absolute;
     top: 0;
     left: 0;
