@@ -57,7 +57,7 @@ export default class Main extends HTMLObject {
 					boxObj.unbind();
 					boxObj.find(`*`).unbind();
 
-					newObj.tooltip =/*$(this)[0].parameters.title*/ boxObj.get()
+					newObj.tooltip =/*$(this)[0].parameters.title*/ boxObj
 					$(this).attr("run-added","");
 					$(`[data-obj-id]`).removeClass("selected")
 					newObj.init()
