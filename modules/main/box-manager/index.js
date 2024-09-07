@@ -45,34 +45,36 @@ export default class BoxManager extends HTMLObject  {
                         $(`[box]`).each(function(){
                             let title = $(`<div class="content-title">${$(this)[0].parameters.title}</div>`)
                             console.log(title)
-                            let boxObj = $(this).clone();
-                            _this.#content.append(title)
+                            let boxItem = $(this).clone()
+                            let boxObj = $(`<div box-item></div>`);
+                            boxObj.append(title)
+                            boxObj.append(boxItem)
                             _this.#content.append(boxObj)
 
-                            boxObj.attr("miniature-id",$(this).attr("id"))
-                            boxObj.removeAttr("id")
+                            boxItem.attr("miniature-id",$(this).attr("id"))
+                            boxItem.removeAttr("id")
                             //boxObj.removeAttr("style")
 
 
-                            boxObj.unbind();
-                            boxObj.find(`*`).unbind();
+                            boxItem.unbind();
+                            boxItem.find(`*`).unbind();
 
-                            if ($(`#${boxObj.attr("miniature-id")}`)[0].parameters.isOnFront()) {
-                                boxObj.addClass('active')
+                            if ($(`#${boxItem.attr("miniature-id")}`)[0].parameters.isOnFront()) {
+                                boxItem.addClass('active')
                             }
 
 
-                            let relWZoom = (boxObj.outerWidth() / $(`body`).outerWidth())
-                            let relHZoom = (boxObj.outerHeight()/ $(`body`).outerHeight())
+                            let relWZoom = (boxItem.outerWidth() / $(`body`).outerWidth())
+                            let relHZoom = (boxItem.outerHeight()/ $(`body`).outerHeight())
                             let zoom = (100-(((relWZoom+relHZoom)/2)*100))
-                            boxObj.find(`.top-left-side, .top-side, .top-right-side, .right-side, .bottom-right-side, .bottom-side, .bottom-left-side, .left-side`).remove()
+                            boxItem.find(`.top-left-side, .top-side, .top-right-side, .right-side, .bottom-right-side, .bottom-side, .bottom-left-side, .left-side`).remove()
 
-                            boxObj.css({
+                            boxItem.css({
                                 top:'unset',
                                 left:'unset',
                                 zoom:`${zoom}%`
                             })
-                            boxObj.on(`click`,function(e){
+                            boxItem.on(`click`,function(e){
                                 let selObj = $(`#${$(this).attr("miniature-id")}`)
                                 if(e.which === 1){
                                     e.stopPropagation()
