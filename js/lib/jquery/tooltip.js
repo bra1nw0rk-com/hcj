@@ -17,19 +17,21 @@ $(function () {
                 return $(this).each(function (e, i) {
                     if($(this)[0].parameters.tooltip !==""){
                         let _this = $(this)
-                        let posLeft = (($(this).position().left / $(window).width()) * 100).toFixed(4);
-                        let posTop = (($(this).position().top / $(window).height()) * 100).toFixed(4);
+
 
                         let tooltipObj = new HTMLObject('div')
                         tooltipObj.name ="tooltip-box"
                         tooltipObj.html = options.html
-                        tooltipObj.object.css({
-                            top:`${posTop}%`,
-                            left:`${posLeft}%`
 
-                        })
                         $(this).on(`mouseover`,function(){
                             if(_this.tooltip !== "") {
+                                let posLeft = ((_this.position().left / $(window).width()) * 100).toFixed(4);
+                                let posTop = ((_this.position().top / $(window).height()) * 100).toFixed(4);
+                                tooltipObj.object.css({
+                                    top:`${posTop}%`,
+                                    left:`${posLeft}%`
+
+                                })
                                 $(`body`).append(tooltipObj.get())
                             }
                         }).on(`mouseout`,function(){
