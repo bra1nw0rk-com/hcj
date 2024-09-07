@@ -48,7 +48,7 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.removeAttr("id")
                             //boxObj.removeAttr("style")
                             let zoom = 30.
-                            console.log(boxObj.width,boxObj.height,boxObj.css('width'),boxObj.css('height'))
+                            console.log(boxObj.width(),boxObj.height(),boxObj.css('width'),boxObj.css('height'))
                             boxObj.css({
                                 top:'unset',
                                 left:'unset',
