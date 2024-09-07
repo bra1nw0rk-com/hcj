@@ -18,6 +18,7 @@ $(function () {
                     if($(this)[0].parameters.tooltip !==""){
                         let _this = $(this)
                         let tooltipObj = new HTMLObject('div')
+                        tooltipObj.name ="tooltip-box"
                         tooltipObj.html = options.html
                         $(this).on(`mouseover`,function(){
                             if(_this.tooltip !== "") {
