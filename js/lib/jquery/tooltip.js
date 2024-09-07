@@ -21,7 +21,11 @@ $(function () {
                         tooltipObj.html = options.html
                         $(this).on(`mouseover`,function(){
                             if(_this.tooltip !== "") {
-                                console.log("tooltip")
+                                $(`body`).append(tooltipObj.get())
+                            }
+                        }).on(`mouseout`,function(){
+                            if(_this.tooltip !== "") {
+                                $(`body`).remove(tooltipObj.get())
                             }
                         })
                     }
