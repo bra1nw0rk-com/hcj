@@ -43,6 +43,8 @@ export default class BoxManager extends HTMLObject  {
                     if($(`[box]`).length > 0){
                         _this.#content.html("")
                         $(`[box]`).each(function(){
+                            let title = $(this)[0].properties.title
+                            console.log(title)
                             let boxObj = $(this).clone();
                             _this.#content.append(boxObj)
 
@@ -63,9 +65,7 @@ export default class BoxManager extends HTMLObject  {
                             let relHZoom = (boxObj.outerHeight()/ $(`body`).outerHeight())
                             let zoom = (100-(((relWZoom+relHZoom)/2)*100))
                             boxObj.find(`.top-left-side, .top-side, .top-right-side, .right-side, .bottom-right-side, .bottom-side, .bottom-left-side, .left-side`).remove()
-                            boxObj.find(`> .head > h2`).css({
-                                zoom:`${((83 - zoom)*2) + 100 }%`
-                            })
+
                             boxObj.css({
                                 top:'unset',
                                 left:'unset',
