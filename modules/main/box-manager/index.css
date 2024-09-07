@@ -60,6 +60,7 @@
     zoom: unset;
     top: unset;
     left: unset;
+    flex: 0 1 200px;
 }
 [name="box-manager"] > .content [miniature-id]:hover::after, [name="box-manager"] > .content [miniature-id].active::after{
     position: absolute;
