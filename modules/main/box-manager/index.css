@@ -50,6 +50,7 @@
     top: unset;
     left: unset;
     margin: 2px;
+    transform: none;
 }
 [name="box-manager"] > .content [miniature-id]:hover::after, [name="box-manager"] > .content [miniature-id].active::after{
     position: absolute;
