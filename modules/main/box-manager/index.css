@@ -48,7 +48,7 @@
     zoom: 60%;
     top: unset;
     left: unset;
-    flex: 0 1 450px;
+    margin: 2px;
 }
 [name="box-manager"] > .content [miniature-id]:hover::after, [name="box-manager"] > .content [miniature-id].active::after{
     position: absolute;
