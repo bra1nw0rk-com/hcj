@@ -49,7 +49,8 @@ export default class BoxManager extends HTMLObject  {
                             //boxObj.removeAttr("style")
 
                             boxObj.css({
-                                top:"scale(50%) translateY(0%) translateX(-53%)"
+                                top:'unset',
+                                left:'unset'
                             })
 
                             boxObj.unbind();
