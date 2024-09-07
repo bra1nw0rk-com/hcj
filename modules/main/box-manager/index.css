@@ -55,6 +55,8 @@
 [name="box-manager"] > .content [miniature-id]{
     transform: scale(50%);
     position:unset;
+    display:block;
+    zoom: unset;
 }
 [name="box-manager"] > .content [miniature-id]:hover::after{
     position: absolute;
