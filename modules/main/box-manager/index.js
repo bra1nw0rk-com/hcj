@@ -53,7 +53,7 @@ export default class BoxManager extends HTMLObject  {
                             boxItem.attr("miniature-id",$(this).attr("id"))
                             boxItem.removeAttr("id")
                             boxItem.removeAttr("name")
-                            boxObj.removeClass("top fadeIn")
+                            boxItem.removeClass("top fadeIn")
 
 
                             boxItem.unbind();
