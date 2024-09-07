@@ -23,6 +23,11 @@ $(function () {
                         let tooltipObj = new HTMLObject('div')
                         tooltipObj.name ="tooltip-box"
                         tooltipObj.html = options.html
+                        tooltipObj.object.css({
+                            top:`${posTop}%`,
+                            left:`${posLeft}%`
+
+                        })
                         $(this).on(`mouseover`,function(){
                             if(_this.tooltip !== "") {
                                 $(`body`).append(tooltipObj.get())
