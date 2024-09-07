@@ -77,14 +77,20 @@ export default class HTMLObject extends CustomEvents {
 		WS.ui.effects.show(this.object);
 	}
 	init(){
+		let _this = this
 		$("body").off(`.${this.id}`)
 		$(`${this.id}`).on(`mouseover.${this.id}`,function(){
-			console.log("tooltip")
+			if(_this.tooltip !== "") {
+				console.log("tooltip")
+			}
 		})
 	}
 
 	set tooltip(value){
 		this.#tooltip = value;
 
+	}
+	get tooltip(){
+		return this.#tooltip
 	}
 }
