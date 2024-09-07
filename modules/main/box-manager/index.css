@@ -40,16 +40,19 @@
 }
 [name="box-manager"] > .content{
     margin-top: 10px;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
 }
 [name="box-manager"] > .content [miniature-id]{
-    transform: scale(50%);
-    position:unset;
-    display:block;
-    zoom: unset;
+    position: relative;
+    display: inline-flex;
+    zoom: 70%;
     top: unset;
     left: unset;
-    flex: 0 1 200px;
+    flex: 0 1 450px;
 }
 [name="box-manager"] > .content [miniature-id]:hover::after, [name="box-manager"] > .content [miniature-id].active::after{
     position: absolute;
