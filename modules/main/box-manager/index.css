@@ -40,7 +40,8 @@
 }
 [name="box-manager"] > .content{
     margin-top: 30px;
-    height: calc(100% - 20px);
+    height: fit-content;
+    width: fit-content;
     overflow: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -48,9 +49,9 @@
     flex-wrap: wrap;
     flex-direction: row;
     gap: 5px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    align-content: center;
+    align-content: flex-start;
 }
 [name="box-manager"] > .content [miniature-id]{
     transform: scale(50%);
