@@ -26,8 +26,8 @@ $(function () {
                         $(this).on(`mouseover`,function(e){
                             if(_this.tooltip !== "") {
                                 tooltipObj.object.css({
-                                    left:`calc(${e.pageX}px)`,
-                                    bottom:`calc(100% - ${e.pageY}px)`
+                                    left:`calc(${_this.offset().left}px)`,
+                                    bottom:`calc(100% - ${_this.offset().top}px)`
 
                                 })
                                 $(`body`).append(tooltipObj.get())
