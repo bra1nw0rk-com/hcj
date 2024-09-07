@@ -43,8 +43,7 @@ export default class BoxManager extends HTMLObject  {
                     if($(`[box]`).length > 0){
                         _this.#content.html("")
                         $(`[box]`).each(function(){
-                            console.log($(this))
-                            let title =  $(this)[0].properties.title
+                            let title =  $(this)[0].parameters.title
                             let boxObj = $(this).clone();
                             _this.#content.append(boxObj)
                             let header = $(`<h2>${title}</h2>`)
