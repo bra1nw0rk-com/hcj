@@ -41,6 +41,7 @@
 [name="box-manager"] > .content{
     margin-top: 30px;
     display: flex;
+    padding: 5px;
 }
 [name="box-manager"] > .content [miniature-id]{
     position: relative;
