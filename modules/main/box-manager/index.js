@@ -45,7 +45,7 @@ export default class BoxManager extends HTMLObject  {
                             boxObj.removeAttr("style")
                             boxObj.unbind();
                             boxObj.find(`*`).unbind();
-                            if ($(`#${boxObj.attr("miniature-id")}`).parameters.isOnFront()) {
+                            if ($(`#${boxObj.attr("miniature-id")}`)[0].parameters.isOnFront()) {
                                 boxObj.addClass('active')
                             }
                             _this.#content.append(boxObj)
