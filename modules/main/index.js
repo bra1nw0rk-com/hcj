@@ -44,8 +44,7 @@ export default class Main extends HTMLObject {
 			.on("mutation.main", function (e) {
 				$(this).find("[box]:not([run-added])").each(function () {
 					//let newObj = $($(this)[0].parameters.faIcon)
-					let newObj = new HTMLObject('i')
-					console.log(typeof $($(this)[0].parameters.faIcon))
+					let newObj = new HTMLObject($($(this)[0].parameters.faIcon))
 					newObj.object = $($(this)[0].parameters.faIcon)
 					newObj.object.attr(`data-obj-id`,$(this)[0].parameters.id)
 					newObj.object.addClass('clickable fadeIn selected')

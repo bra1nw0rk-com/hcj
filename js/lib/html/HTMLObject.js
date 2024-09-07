@@ -17,11 +17,16 @@ export default class HTMLObject extends CustomEvents {
 	lastPosition={
 		x:0,y:0
 	}
-	constructor(type) {
+	constructor(val) {
 		super();
-		this.object =  $(`<${type}></${type}>`);
+		if(typeof val === 'object'){
+			this.object = val
+		}else{
+			this.object =  $(`<${val}></${val}>`);
+		}
+
 		this.object[0].parameters = this
-		//this.object.attr("type", type);
+
 	}
 	get id(){
 		return this.#id;
