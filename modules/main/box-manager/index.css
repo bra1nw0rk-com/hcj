@@ -66,14 +66,7 @@
     border: 1px solid var(--border-color);
     text-align: center;
 }
-[name="box-manager"] > .content [miniature-id]{
-    position: relative;
-    display: block;
-    top: unset;
-    left: unset;
-    transform: none;
-}
-[name="box-manager"] > .content [miniature-id]:hover::after, [name="box-manager"] > .content [miniature-id].active::after{
+[name="box-manager"] > .content [box-item]:hover::after, [name="box-manager"] > .content [box-item].active::after{
     position: absolute;
     top: 0;
     left: 0;
@@ -83,3 +76,11 @@
     background: #ff88000f;
     z-index: -1;
 }
+[name="box-manager"] > .content [miniature-id]{
+    position: relative;
+    display: block;
+    top: unset;
+    left: unset;
+    transform: none;
+}
+

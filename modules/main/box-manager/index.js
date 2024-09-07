@@ -60,7 +60,7 @@ export default class BoxManager extends HTMLObject  {
                             boxItem.find(`*`).unbind();
 
                             if ($(`#${boxItem.attr("miniature-id")}`)[0].parameters.isOnFront()) {
-                                boxItem.addClass('active')
+                                boxObj.addClass('active')
                             }
 
 
