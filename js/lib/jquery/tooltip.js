@@ -25,8 +25,8 @@ $(function () {
 
                         $(this).on(`mouseover`,function(){
                             if(_this.tooltip !== "") {
-                                let posLeft = ((_this.position().left / $(window).width()) * 100).toFixed(4);
-                                let posTop = ((_this.position().top / $(window).height()) * 100).toFixed(4);
+                                let posLeft = ((_this.offset().left / $(window).width()) * 100).toFixed(4);
+                                let posTop = ((_this.offset().top / $(window).height()) * 100).toFixed(4);
                                 tooltipObj.object.css({
                                     top:`${posTop}%`,
                                     left:`${posLeft}%`
