@@ -357,10 +357,12 @@ table {
 	background-color: var(--bg1);
 	padding: 7px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	max-width: 50px;
+	max-width: 150px;
 	min-height: 10px;
 	position: absolute;
 	z-index: 100;
+	height: fit-content;
+	width: fit-content;
 }
 [name="tooltip-box"] > [miniature-id]{
 	transform: scale(50%);
