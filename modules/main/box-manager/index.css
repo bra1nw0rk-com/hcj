@@ -46,7 +46,7 @@
 [name="box-manager"] > .content [miniature-id]{
     position: relative;
     display: block;
-    zoom: 60%;
+    zoom: 30%;
     top: unset;
     left: unset;
     margin: 2px;
