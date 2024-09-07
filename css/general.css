@@ -362,3 +362,11 @@ table {
 	position: absolute;
 	z-index: 100;
 }
+[name="tooltip-box"] > [miniature-id]{
+	transform: scale(50%);
+	position:unset;
+	display:block;
+	zoom: unset;
+	top: unset;
+	left: unset;
+}
