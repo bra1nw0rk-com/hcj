@@ -23,7 +23,7 @@ $(function () {
                         tooltipObj.name ="tooltip-box"
                         tooltipObj.html = options.html
 
-                        $(this).on(`mouseover`,function(){
+                        $(this).on(`mouseover`,function(e){
                             if(_this.tooltip !== "") {
                                 tooltipObj.object.css({
                                     top:`calc(${e.pageX}px + 10px)`,
