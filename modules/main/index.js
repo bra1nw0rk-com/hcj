@@ -53,6 +53,7 @@ export default class Main extends HTMLObject {
 					newObj.tooltip =$(this)[0].parameters.title
 					$(this).attr("run-added","");
 					$(`[data-obj-id]`).removeClass("selected")
+					newObj.init()
 					_this.#running.append(newObj.get())
 
 					newObj.object.on(`mousedown`,function(e){
