@@ -88,9 +88,18 @@ export default class HTMLObject extends CustomEvents {
 
 	set tooltip(value){
 		this.#tooltip = value;
+		this.object.tooltip({html:value})
 
 	}
 	get tooltip(){
 		return this.#tooltip
+	}
+
+	set html(val){
+		this.object.html(val)
+	}
+
+	get html(){
+		return this.object.html()
 	}
 }
