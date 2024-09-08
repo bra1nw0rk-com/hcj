@@ -76,8 +76,8 @@ export default class BoxManager extends HTMLObject  {
                                 }
 
 
-                                let relWZoom = (boxItem.outerWidth() / $(`body`).outerWidth())
-                                let relHZoom = (boxItem.outerHeight()/ $(`body`).outerHeight())
+                                let relWZoom = (boxItem.outerWidth() / 200)
+                                let relHZoom = (boxItem.outerHeight()/ 100)
                                 let zoom = (100-(((relWZoom+relHZoom)/2)*100))
                                 boxItem.find(`.top-left-side, .top-side, .top-right-side, .right-side, .bottom-right-side, .bottom-side, .bottom-left-side, .left-side`).remove()
 
