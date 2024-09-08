@@ -75,8 +75,8 @@ export default class BoxManager extends HTMLObject  {
                                     boxObj.addClass('active')
                                 }
 
-                                let relWZoom = 100/(boxItem.outerWidth()/225)
-                                let relHZoom = 100/(boxItem.outerHeight()/225)
+                                let relWZoom = 100/((boxItem.outerWidth()/225)+1)
+                                let relHZoom = 100/((boxItem.outerHeight()/225)+1)
                                 let max =Math.max(relWZoom, relHZoom)
                                 let coef = max / 15
                                 console.log(max)
