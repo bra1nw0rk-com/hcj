@@ -199,7 +199,8 @@ export default class UI {
 		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
-		let topP = ($(selector)[0].parameters.lastPosition.y / $(`body`).outerHeight())*100
+		console.log($(`body`).height(),$(`body`).outerHeight())
+		let topP = ($(selector)[0].parameters.lastPosition.y / $(`body`).height())*100
 		$(selector).animate(
 			{
 				top: `${topP}%`,
