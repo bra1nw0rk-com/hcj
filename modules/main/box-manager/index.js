@@ -43,12 +43,13 @@ export default class BoxManager extends HTMLObject  {
         $(`body`)
             .off(`.${this.id}`)
             .on(`keydown.${this.id}`,function(e){
-                e.stopPropagation()
-                e.preventDefault()
+
                 if(!_this.keys.includes(`k${e.which}`)){
                     _this.keys+=`k${e.which}`
                 }
                 if(_this.keys==="k16k9"){
+                    e.preventDefault()
+                    e.stopPropagation()
                     if(!_this.showed){
                         _this.showed = true;
                         _this.object.removeClass('hidden').addClass("fadeIn")
@@ -115,7 +116,7 @@ export default class BoxManager extends HTMLObject  {
                     console.log(_this.keys)
                 }
             }).on(`keyup.${this.id}`,function(e){
-                e.preventDefault()
+
                 if(_this.showed) {
                     if (_this.keys === "k16k9") {
                         if(_this.canChange) {
@@ -163,7 +164,7 @@ export default class BoxManager extends HTMLObject  {
                     _this.hide()
                 }
             }).on(`keypress`,function(e){
-                e.preventDefault()
+
             })
 
     }
