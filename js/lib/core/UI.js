@@ -201,12 +201,12 @@ export default class UI {
 		$(selector).addClass(`top`)
 
 		let topP = ((Math.ceil($(selector)[0].parameters.lastPosition.y) / $(selector).parent().height())*100)
+		let leftP = ((Math.ceil($(selector)[0].parameters.lastPosition.x) / $(selector).parent().width())*100)
 		$(selector).animate(
 			{
 				top: `${topP}%`,
+				left: `${leftP}%`,
 				zoom: '100%',
-				left: `${$(selector)[0].parameters.lastPosition.x}px`,
-
 			},500,function(){}
 		);
 	}
