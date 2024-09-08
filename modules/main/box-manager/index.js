@@ -161,7 +161,7 @@ export default class BoxManager extends HTMLObject  {
                     e.preventDefault()
                     e.stopPropagation()
 
-                    $(`[box]`).each(function(){
+                    $(`[box][id]`).each(function(){
                         if($(this).css('display')!=='none') {
                             $(this)[0].parameters.minimize()
                         }
