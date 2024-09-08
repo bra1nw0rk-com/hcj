@@ -206,7 +206,7 @@ export default class UI {
 			{
 				top: `${topP}%`,
 				zoom: '100%',
-				left: `${$(selector)[0].parameters.lastPosition.x}px`,
+				left: `calc(${$(selector)[0].parameters.lastPosition.x}px + 10% )`,
 
 			},500,function(){
 				$(selector).animate(
