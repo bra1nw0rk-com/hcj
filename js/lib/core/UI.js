@@ -184,7 +184,7 @@ export default class UI {
 			{
 				zoom: '1%',
 				top: '100%',
-				left: `${iconLeft}%`
+				left: `${iconLeft}px`
 			},
 			500,
 			function () {
@@ -206,8 +206,8 @@ export default class UI {
 		$(selector).animate(
 			{
 				zoom: '100%',
-				top: `${$(selector)[0].parameters.lastPosition.x}%`,
-				left: `${$(selector)[0].parameters.lastPosition.y}%`
+				top: `${$(selector)[0].parameters.lastPosition.x}px`,
+				left: `${$(selector)[0].parameters.lastPosition.y}px`
 			},
 			500,
 			function () {
