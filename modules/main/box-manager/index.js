@@ -91,6 +91,7 @@ export default class BoxManager extends HTMLObject  {
 
                                         _this.object.addClass('hidden').removeClass("fadeIn")
                                         _this.keys=""
+                                        _this.showed = false
 
                                     }
                                 })
@@ -125,7 +126,7 @@ export default class BoxManager extends HTMLObject  {
                     if (_this.keys === "k16") {
                         let selObj = _this.object.find(`[box-item].active`)
                         console.log(selObj)
-                        if (selObj.length !== 0) {
+                        if (selObj.length > 0) {
                             if (selObj.css('display') === "none") {
                                 selObj[0].parameters.maximize();
                             } else {
