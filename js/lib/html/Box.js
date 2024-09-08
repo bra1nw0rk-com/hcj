@@ -30,7 +30,6 @@ export default class Box extends HTMLObject {
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
-		this.eventListener()
 
 
 	}
@@ -39,7 +38,7 @@ export default class Box extends HTMLObject {
 		$(`[box]`).removeClass(`top`)
 		let _this = this;
 		this.classes = `top`
-		this.lastPosition.y =  this.object.position().top
+		this.lastPosition.y =  this.object.offset().top
 		this.lastPosition.x =  this.object.position().left
 		this.object
 			.off(`.${this.id}`)
@@ -61,9 +60,6 @@ export default class Box extends HTMLObject {
 		$(`[box]`).removeClass(`top`)
 	}
 
-	eventListener(){
-		let _this=this;
-	}
 	set title(text) {
 		this.#title.html(text);
 	}

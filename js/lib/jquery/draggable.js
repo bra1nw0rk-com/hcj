@@ -13,7 +13,7 @@ $(function () {
             };
             options = $.extend(defaults, options);
             if ($(this).length > 0) {
-                return $(this).each(function (e, i) {
+                return $(this).each(function () {
                     let elem = /*(this).closest(`[box]`)*/ options.parent;
                     let obj = elem[0];
 
@@ -36,7 +36,7 @@ $(function () {
                                     });
                                     obj.movePosition.x = e.pageX;
                                     obj.movePosition.y = e.pageY;
-                                    obj.parameters.lastPosition.y =  elem.position().top
+                                    obj.parameters.lastPosition.y =  /*elem.position().top*/ elem.offset().top
                                     obj.parameters.lastPosition.x =  elem.position().left
                                 }                                
                             })
