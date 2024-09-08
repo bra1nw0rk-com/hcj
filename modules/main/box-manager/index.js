@@ -8,7 +8,8 @@ import HTMLObject from "../../../js/lib/html/HTMLObject.js";
 export default class BoxManager extends HTMLObject  {
     keys = "";
     #content = $(`<div class="content"></div>`)
-    showed=false;
+    showed= false;
+    canChange = false;
 	constructor() {
         super("div");
         let _this = this;
@@ -22,6 +23,14 @@ export default class BoxManager extends HTMLObject  {
 
         this.object.append(this.#content)
 
+    }
+
+    hide(){
+        this.object.addClass('hidden').removeClass("fadeIn")
+        this.keys=""
+        this.#content.html(``)
+        this.showed = false
+        this.canChange = false
     }
 
     init(){
@@ -89,9 +98,7 @@ export default class BoxManager extends HTMLObject  {
                                             }
                                         }
 
-                                        _this.object.addClass('hidden').removeClass("fadeIn")
-                                        _this.keys=""
-                                        _this.showed = false
+                                        _this.hide()
 
                                     }
                                 })
@@ -112,14 +119,18 @@ export default class BoxManager extends HTMLObject  {
                 e.preventDefault()
                 if(_this.showed) {
                     if (_this.keys === "k16k9") {
-                        let selObj = _this.object.find(`[box-item].active`).next()
-                        if (selObj.length === 0) {
-                            selObj = _this.object.find(`[box-item]`).first()
-                        }
-                        console.log(selObj)
-                        if (selObj.length !== 0) {
-                            _this.object.find(`[box-item]`).removeClass(`active`)
-                            selObj.addClass(`active`)
+                        if(_this.canChange) {
+                            let selObj = _this.object.find(`[box-item].active`).next()
+                            if (selObj.length === 0) {
+                                selObj = _this.object.find(`[box-item]`).first()
+                            }
+                            console.log(selObj)
+                            if (selObj.length !== 0) {
+                                _this.object.find(`[box-item]`).removeClass(`active`)
+                                selObj.addClass(`active`)
+                            }
+                        }else{
+                            _this.canChange = true
                         }
                     }
 
@@ -144,9 +155,7 @@ export default class BoxManager extends HTMLObject  {
 
 
                 if(_this.keys===""){
-                    _this.object.addClass('hidden').removeClass("fadeIn")
-                    _this.#content.html(``)
-                    _this.showed = false;
+                    _this.hide()
                 }
                 return false;
             }).on(`keypress`,function(e){
