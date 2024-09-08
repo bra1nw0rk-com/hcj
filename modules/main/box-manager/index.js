@@ -117,7 +117,7 @@ export default class BoxManager extends HTMLObject  {
                     return false;
 
                 }else{
-                    console.log(_this.keys)
+
                 }
             }).on(`keyup.${this.id}`,function(e){
 
