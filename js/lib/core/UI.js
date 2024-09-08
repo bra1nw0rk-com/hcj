@@ -201,7 +201,7 @@ export default class UI {
 		$(selector).addClass(`top`)
 		$(selector).animate(
 			{
-				top: `${$(selector)[0].parameters.lastPosition.y}px`,
+				/*top: `${$(selector)[0].parameters.lastPosition.y}px`,*/
 				zoom: '100%',
 				left: `${$(selector)[0].parameters.lastPosition.x}px`,
 
