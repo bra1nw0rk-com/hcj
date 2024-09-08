@@ -152,6 +152,9 @@ export default class BoxManager extends HTMLObject  {
                 }
 
                 if (_this.keys === "k16k27") {
+                    e.preventDefault()
+                    e.stopPropagation()
+
                     $(`[box]`).each(function(){
                         $(this)[0].parameters.minimize()
                     })
