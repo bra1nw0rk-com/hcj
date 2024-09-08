@@ -132,6 +132,7 @@ export default class BoxManager extends HTMLObject  {
                                 }
                             }
                         }
+                        console.log(selObj)
                         _this.keys = ""
                     }
                 }
