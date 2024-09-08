@@ -49,6 +49,7 @@ export default class BoxManager extends HTMLObject  {
                                 let title = $(`<div class="content-title">${$(this)[0].parameters.title}</div>`)
                                 let boxItem = $(this).clone()
                                 let boxObj = $(`<div box-item></div>`);
+                                boxObj[0].parameters = $(this)[0].parameters
                                 boxObj.append(title)
                                 boxObj.append(boxItem)
                                 _this.#content.append(boxObj)
