@@ -51,13 +51,13 @@ export default class UI {
 		});
 	}
 	#module_service(){
-		$("body").on("mutation", function (e) {
+		$("body").on("mutation", function () {
 			$(this)
 				.find("[data-module]:not([data-plugged])")
 				.each(function () {
-					let title = $(this).attr("data-title");
-					let name = $(this).attr("data-name");
-					let src = $(this)[0].source;
+			//		let title = $(this).attr("data-title");
+			//		let name = $(this).attr("data-name");
+			//		let src = $(this)[0].source;
 					let moduleName = $(this).attr("data-module");
 					$(this).attr("data-plugged","");
 					Module.call(moduleName).then((content) => {
@@ -201,7 +201,7 @@ export default class UI {
 		$(selector).addClass(`top`)
 
 		let topP = ($(selector)[0].parameters.lastPosition.y / $(`body`).height())*100
-		console.log(topP,topP2)
+		console.log(topP)
 		$(selector).animate(
 			{
 				top: `${topP}%`,
