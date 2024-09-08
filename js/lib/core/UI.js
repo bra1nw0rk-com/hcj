@@ -183,7 +183,7 @@ export default class UI {
 		$(selector).animate(
 			{
 				zoom: '1%',
-				bottom: '0%',
+				top: '100%',
 				left: `${iconLeft}px`
 			},
 			500,
