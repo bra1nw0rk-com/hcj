@@ -36,6 +36,7 @@ export default class HTMLObject extends CustomEvents {
 		this.#id = id + $(`[name^="${id}"]`).length
 		this.object.attr("id", this.#id);
 		this.object.attr("name", this.#eventNamespace);
+		this.object.addClass(id)
 	}
 	set classes(classes) {
 		this.object.addClass(classes);
