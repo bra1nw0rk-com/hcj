@@ -78,15 +78,13 @@ export default class BoxManager extends HTMLObject  {
                                 let relWZoom = 100/((boxItem.outerWidth()/225)+1)
                                 let relHZoom = 100/((boxItem.outerHeight()/225)+1)
                                 let max =Math.max(relWZoom, relHZoom)
-                                let coef = max / 15
                                 console.log(max)
-                                let zoom = (95-((relWZoom+relHZoom)/2))
                                 boxItem.find(`.top-left-side, .top-side, .top-right-side, .right-side, .bottom-right-side, .bottom-side, .bottom-left-side, .left-side`).remove()
 
                                 boxItem.css({
                                     top:'unset',
                                     left:'unset',
-                                    zoom:`${zoom}%`,
+                                    zoom:`${max}%`,
                                     display:'block'
                                 })
                                 boxItem.on(`click`,function(e){
