@@ -186,6 +186,7 @@ export default class UI {
 			function () {
 				$(selector).css({
 					transform:'none',
+					left:`${($(selector).position().left * 100)}px`
 				})
 				$(selector).hide()
 				$(selector).removeClass(`top`)
@@ -199,10 +200,6 @@ export default class UI {
 		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
-		console.log($(selector).position().left * 100)
-		$(selector).css({
-			left:`${($(selector).position().left * 100)}px`
-		})
 		$(selector).animate(
 			{
 				zoom: '100%',
