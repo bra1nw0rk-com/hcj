@@ -36,7 +36,7 @@ $(function () {
                                     });
                                     obj.movePosition.x = e.pageX;
                                     obj.movePosition.y = e.pageY;
-                                    obj.parameters.lastPosition.y =  /*elem.position().top*/ elem.offset().top
+                                    obj.parameters.lastPosition.y =  /*elem.position().top*/ elem.offset().top +8
                                     obj.parameters.lastPosition.x =  elem.position().left
                                 }                                
                             })
