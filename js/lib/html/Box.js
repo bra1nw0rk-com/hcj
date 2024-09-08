@@ -44,6 +44,8 @@ export default class Box extends HTMLObject {
 			this.object.css({
 				left:this.lastPosition.x,
 				top:this.lastPosition.y,
+				height:	this.object.offsetHeight,
+				width:	this.object.offsetWidth,
 				transform:'none'
 			})
 		}
