@@ -164,6 +164,7 @@ export default class BoxManager extends HTMLObject  {
                     $(`[box][id]`).each(function(){
                         if($(this).css('display')!=='none') {
                             $(this)[0].parameters.minimize()
+                        _this.object.find(`[box-item] [miniature-id="${$(this)[0].parameters.id}"]`).removeClass(`active`)
                         }
                     })
                     //_this.keys = ""
