@@ -27,6 +27,7 @@ $(function () {
                         Module.call(options.module).then(function (obj) {
                             if(obj!== null) {
                                 $(_this).append(obj.get());
+                                obj.prepare()
                             }
                         })
                     }else{
