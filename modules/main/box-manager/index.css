@@ -50,16 +50,16 @@
 }
 [name="box-manager"] > .content [box-item]{
     display: block;
-    margin: 5px;
+    margin: 20px 5px 5px 5px;
     position: relative;
 }
 [name="box-manager"] > .content [box-item] > .content-title{
     font-size: 10px;
     position: absolute;
-    top: -1px;
+    top: -20px;
     left: 0;
     text-transform: uppercase;
-    z-index: 3;
+    z-index: 0;
     background-color: var(--bg2);
     width: 100%;
     padding: 6px;
@@ -69,10 +69,10 @@
 }
 [name="box-manager"] > .content [box-item]:hover::after, [name="box-manager"] > .content [box-item].active::after{
     position: absolute;
-    top: -4px;
+    top: -23px;
     left: -3px;
     content: "";
-    height: calc(100% + 3px);
+    height: calc(100% + 22px);
     width: calc(100% + 2px);
     z-index: -1;
     padding: 1px;
