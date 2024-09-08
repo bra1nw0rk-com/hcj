@@ -114,7 +114,6 @@ export default class BoxManager extends HTMLObject  {
                 }else{
                     console.log(_this.keys)
                 }
-                return false;
             }).on(`keyup.${this.id}`,function(e){
                 e.preventDefault()
                 if(_this.showed) {
@@ -163,12 +162,8 @@ export default class BoxManager extends HTMLObject  {
                 if(_this.keys===""){
                     _this.hide()
                 }
-
-
-                return false;
             }).on(`keypress`,function(e){
                 e.preventDefault()
-                return false;
             })
 
     }
