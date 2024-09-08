@@ -175,7 +175,7 @@ export default class UI {
 	}
 
     minimizeModal(selector) {
-		$(selector)[0].parameters.lastPosition.x =   ((($(selector).offset().top )  / $(`body`).height()) * 100 );
+		$(selector)[0].parameters.lastPosition.x =   ((($(selector).offset().top + 2)  / $(`body`).height()) * 100 );
 		$(selector)[0].parameters.lastPosition.y =  (($(selector).offset().left / $(`body`).width()) * 100);
 		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).offset().left / $(`body`).width()) * 100);
 
