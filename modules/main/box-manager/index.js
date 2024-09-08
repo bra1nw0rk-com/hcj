@@ -160,7 +160,9 @@ export default class BoxManager extends HTMLObject  {
                     e.stopPropagation()
 
                     $(`[box]`).each(function(){
-                        $(this)[0].parameters.minimize()
+                        if($(this)[0].parameters.isOnFront()) {
+                            $(this)[0].parameters.minimize()
+                        }
                     })
                     return false;
                 }
