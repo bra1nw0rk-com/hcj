@@ -49,7 +49,6 @@ export default class BoxManager extends HTMLObject  {
                                 let title = $(`<div class="content-title">${$(this)[0].parameters.title}</div>`)
                                 let boxItem = $(this).clone()
                                 let boxObj = $(`<div box-item></div>`);
-                                boxObj[0].parameters = $(this)[0].parameters
                                 boxObj.append(title)
                                 boxObj.append(boxItem)
                                 _this.#content.append(boxObj)
@@ -126,13 +125,14 @@ export default class BoxManager extends HTMLObject  {
 
                     if (_this.keys === "k16") {
                         let selObj = _this.object.find(`[box-item].active`)
+                        let boxObj = $(`#${$(this).attr("miniature-id")}`)
                         console.log(selObj)
                         if (selObj.length > 0) {
-                            if (selObj.css('display') === "none") {
-                                selObj[0].parameters.maximize();
+                            if (boxObj.css('display') === "none") {
+                                boxObj[0].parameters.maximize();
                             } else {
-                                if (!selObj[0].parameters.isOnFront()) {
-                                    selObj[0].parameters.toFront()
+                                if (!boxObj[0].parameters.isOnFront()) {
+                                    boxObj[0].parameters.toFront()
                                 }
                             }
                         }
