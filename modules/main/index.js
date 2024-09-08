@@ -76,6 +76,7 @@ export default class Main extends HTMLObject {
 					}).on(`click`,function(e){
 						e.stopPropagation()
 					}).on(`mouseover`,function(){
+						/*
 						let boxObj = $(this).clone();
 						boxObj.attr("miniature-id",$(this).attr("id"))
 						boxObj.removeAttr("id")
@@ -84,7 +85,8 @@ export default class Main extends HTMLObject {
 						boxObj.unbind();
 						boxObj.find(`*`).unbind();
 
-						newObj.tooltip =/*$(this)[0].parameters.title*/ boxObj
+						newObj.tooltip =$(this)[0].parameters.title
+						*/
 					})
 				});
 			})
