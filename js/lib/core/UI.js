@@ -200,7 +200,7 @@ export default class UI {
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
 
-		let topP = ($(selector)[0].parameters.lastPosition.y / $(`body`).height())*100
+		let topP = (($(selector)[0].parameters.lastPosition.y / $(`body`).height())*100) + 10
 		console.log(topP)
 		$(selector).animate(
 			{
