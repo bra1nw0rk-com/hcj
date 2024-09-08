@@ -12,7 +12,6 @@ export default class BoxManager extends HTMLObject  {
     canChange = false;
 	constructor() {
         super("div");
-        let _this = this;
         this.css = "/modules/main/box-manager/index.css";
         this.classes = "hidden"
         this.name = "box-manager";        
@@ -158,6 +157,7 @@ export default class BoxManager extends HTMLObject  {
                     $(`[box]`).each(function(){
                         $(this)[0].parameters.minimize()
                     })
+                    return false;
                 }
 
                 _this.keys=_this.keys.replace(`k${e.which}`,'')
