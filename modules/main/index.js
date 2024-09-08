@@ -43,51 +43,53 @@ export default class Main extends HTMLObject {
 			.off("mutation.main")
 			.on("mutation.main", function (e) {
 				$(this).find("[box]:not([run-added])").each(function () {
-					//let newObj = $($(this)[0].parameters.faIcon)
-					let newObj = new HTMLObject($($(this)[0].parameters.faIcon))
-					//newObj.object = $($(this)[0].parameters.faIcon)
-					newObj.object.attr(`data-obj-id`,$(this)[0].parameters.id)
-					newObj.object.addClass('clickable fadeIn selected')
-					newObj.object.attr("data-animated","");
-					newObj.name = "running-icon"
-					//newObj.attr("data-title",$(this)[0].parameters.title)
+					let icon = $(this)[0].parameters.faIcon
+					if (icon !== "") {
+						let newObj = new HTMLObject($(icon))
+						//newObj.object = $($(this)[0].parameters.faIcon)
+						newObj.object.attr(`data-obj-id`, $(this)[0].parameters.id)
+						newObj.object.addClass('clickable fadeIn selected')
+						newObj.object.attr("data-animated", "");
+						newObj.name = "running-icon"
+						//newObj.attr("data-title",$(this)[0].parameters.title)
 
-					$(this).attr("run-added","");
-					$(`[data-obj-id]`).removeClass("selected")
-					newObj.init()
-					_this.#running.append(newObj.get())
+						$(this).attr("run-added", "");
+						$(`[data-obj-id]`).removeClass("selected")
+						newObj.init()
+						_this.#running.append(newObj.get())
 
-					newObj.object.on(`mouseup`,function(e){
-						if(e.which === 1) {
-							e.stopPropagation()
-							let id = $(this).attr(`data-obj-id`)
-							let item = $(`#${id}`)
-							if (item.css('display') === "none") {
-								item[0].parameters.maximize();
-							} else {
-								if (!item[0].parameters.isOnFront()) {
-									item[0].parameters.toFront()
+						newObj.object.on(`mouseup`, function (e) {
+							if (e.which === 1) {
+								e.stopPropagation()
+								let id = $(this).attr(`data-obj-id`)
+								let item = $(`#${id}`)
+								if (item.css('display') === "none") {
+									item[0].parameters.maximize();
 								} else {
-									item[0].parameters.minimize();
+									if (!item[0].parameters.isOnFront()) {
+										item[0].parameters.toFront()
+									} else {
+										item[0].parameters.minimize();
+									}
 								}
 							}
-						}
 
-					}).on(`click`,function(e){
-						e.stopPropagation()
-					}).on(`mouseover`,function(){
-						/*
-						let boxObj = $(this).clone();
-						boxObj.attr("miniature-id",$(this).attr("id"))
-						boxObj.removeAttr("id")
-						//boxObj.removeAttr("style")
-						boxObj.removeClass(`fadeIn`)
-						boxObj.unbind();
-						boxObj.find(`*`).unbind();
+						}).on(`click`, function (e) {
+							e.stopPropagation()
+						}).on(`mouseover`, function () {
+							/*
+                            let boxObj = $(this).clone();
+                            boxObj.attr("miniature-id",$(this).attr("id"))
+                            boxObj.removeAttr("id")
+                            //boxObj.removeAttr("style")
+                            boxObj.removeClass(`fadeIn`)
+                            boxObj.unbind();
+                            boxObj.find(`*`).unbind();
 
-						newObj.tooltip =$(this)[0].parameters.title
-						*/
-					})
+                            newObj.tooltip =$(this)[0].parameters.title
+                            */
+						})
+					}
 				});
 			})
 			.on("click.main",`[name="close-btn"]`,function(){
