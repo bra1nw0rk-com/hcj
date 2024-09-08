@@ -175,9 +175,9 @@ export default class UI {
 	}
 
     minimizeModal(selector) {
-		$(selector)[0].parameters.lastPosition.x =   ((($(selector).position().top )  / $(window).height()) * 100 +1.761).toFixed(4);
-		$(selector)[0].parameters.lastPosition.y =  (($(selector).position().left / $(window).width()) * 100).toFixed(4);
-		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(window).width()) * 100).toFixed(4);
+		$(selector)[0].parameters.lastPosition.x =   ((($(selector).offset().top )  / $(window).height()) * 100 +1.761).toFixed(4);
+		$(selector)[0].parameters.lastPosition.y =  (($(selector).offset().left / $(window).width()) * 100).toFixed(4);
+		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).offset().left / $(window).width()) * 100).toFixed(4);
 
 		$(selector).animate(
 			{
