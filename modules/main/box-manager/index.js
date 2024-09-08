@@ -164,6 +164,7 @@ export default class BoxManager extends HTMLObject  {
                             $(this)[0].parameters.minimize()
                         }
                     })
+                    _this.keys = ""
                     return false;
                 }
 
