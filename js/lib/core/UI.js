@@ -186,7 +186,6 @@ export default class UI {
 			function () {
 				$(selector).css({
 					transform:'none',
-					/*left:`${($(selector).position().left * 100)}px`,*/
 				})
 				$(selector).hide()
 				$(selector).removeClass(`top`)
@@ -203,7 +202,7 @@ export default class UI {
 		$(selector).animate(
 			{
 				zoom: '100%',
-				left: `${$(selector)[0].parameters.lastPosition.y}px`,
+				left: `${$(selector)[0].parameters.lastPosition.x}px`,
 				top: `${$(selector)[0].parameters.lastPosition.y}px`
 			},
 			500,
