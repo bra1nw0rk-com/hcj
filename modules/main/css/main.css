@@ -15,7 +15,7 @@
 @media (min-width: 769px) {
 	[name="main"] #content {
 		position: relative;
-		height: calc(100vh - 3em);
+		height: calc(100vh - 63px);
 		overflow: hidden;
 		width: 100vw;
 	}
