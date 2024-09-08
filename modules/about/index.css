@@ -4,11 +4,11 @@
  * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  **/
-[name="aboutModal"] .strong{
+.aboutModal .strong{
     font-weight: bold;
     font-size: 110%;
 }
 
-[name="aboutModal"] .selected {
+.aboutModal .selected {
     color: rgb(245, 123, 53);
 }
