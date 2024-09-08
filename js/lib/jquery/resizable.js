@@ -122,6 +122,8 @@ $(function () {
                         if(obj.resize.fail>3){
                             obj.stopResize()
                         }
+                        obj.parameters.lastPosition.y =  elem.position().top
+                        obj.parameters.lastPosition.x =  elem.position().left
                     }
 
                     $(resizing).on('mousedown.boxResizing',function(e){
