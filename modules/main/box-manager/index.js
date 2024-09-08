@@ -121,6 +121,7 @@ export default class BoxManager extends HTMLObject  {
                             selObj.addClass(`active`)
                         }
                     }
+                    /*
                     if (_this.keys !== "k16") {
                         let selObj = _this.object.find(`[box-item].active`)
                         if (selObj.length !== 0) {
@@ -134,7 +135,7 @@ export default class BoxManager extends HTMLObject  {
                         }
                         console.log(selObj)
                         _this.keys = ""
-                    }
+                    }*/
                 }
                 _this.keys=_this.keys.replace(`k${e.which}`,'')
 
