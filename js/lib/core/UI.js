@@ -180,7 +180,7 @@ export default class UI {
 			{
 				zoom: '1%',
 				top: `100%`,
-				left: `${iconLeft}px`
+				left: `${iconLeft}%`
 			},
 			500,
 			function () {
