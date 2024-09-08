@@ -124,6 +124,7 @@ export default class BoxManager extends HTMLObject  {
 
                     if (_this.keys === "k16") {
                         let selObj = _this.object.find(`[box-item].active`)
+                        console.log(selObj)
                         if (selObj.length !== 0) {
                             if (selObj.css('display') === "none") {
                                 selObj[0].parameters.maximize();
@@ -133,7 +134,7 @@ export default class BoxManager extends HTMLObject  {
                                 }
                             }
                         }
-                        console.log(selObj)
+
                         _this.keys = ""
                     }
                 }
