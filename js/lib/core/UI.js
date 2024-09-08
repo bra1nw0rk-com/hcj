@@ -199,7 +199,7 @@ export default class UI {
 		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
-		console.log($(selector)[0].parameters.lastPosition)
+		console.log($(selector).position().left)
 		$(selector).animate(
 			{
 				zoom: '100%',
