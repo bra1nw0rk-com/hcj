@@ -144,11 +144,11 @@ export default class BoxManager extends HTMLObject  {
                         if (boxObj.length > 0) {
                             if (boxObj.css('display') === "none") {
                                 boxObj[0].parameters.maximize();
-                                _this.keys = ""
+                                //_this.keys = ""
                             } else {
                                 if (!boxObj[0].parameters.isOnFront()) {
                                     boxObj[0].parameters.toFront()
-                                    _this.keys = ""
+                                   // _this.keys = ""
                                 }
                             }
                         }
@@ -166,7 +166,7 @@ export default class BoxManager extends HTMLObject  {
                             $(this)[0].parameters.minimize()
                         }
                     })
-                    _this.keys = ""
+                    //_this.keys = ""
                 }
 
                 _this.keys=_this.keys.replace(`k${e.which}`,'')
