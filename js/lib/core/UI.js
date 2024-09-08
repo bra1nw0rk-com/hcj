@@ -206,7 +206,7 @@ export default class UI {
 				left: `${$(selector)[0].parameters.lastPosition.x}px`,
 
 			},
-			500,
+			1500,
 			function () {
 
 
