@@ -186,7 +186,8 @@ export default class UI {
 			function () {
 				$(selector).css({
 					transform:'none',
-					left:`${($(selector).position().left * 100)}px`
+					left:`${($(selector).position().left * 100)}px`,
+					top:``
 				})
 				$(selector).hide()
 				$(selector).removeClass(`top`)
@@ -200,13 +201,11 @@ export default class UI {
 		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
-		$(selector).css({
-			top: `${$(selector)[0].parameters.lastPosition.x}px`,
-		})
 		$(selector).animate(
 			{
 				zoom: '100%',
-				left: `${$(selector)[0].parameters.lastPosition.y}px`
+				left: `${$(selector)[0].parameters.lastPosition.y}px`,
+				top: `${$(selector)[0].parameters.lastPosition.y}px`
 			},
 			500,
 			function () {
