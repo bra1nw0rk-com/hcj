@@ -111,6 +111,11 @@ export default class BoxManager extends HTMLObject  {
                             _this.#content.html(`NOTHING TO SHOW`)
                         }
                     }
+                }else if(_this.keys === "k16k27"){
+                   e.preventDefault()
+                   e.stopPropagation()
+                    return false;
+
                 }else{
                     console.log(_this.keys)
                 }
@@ -167,7 +172,11 @@ export default class BoxManager extends HTMLObject  {
                     _this.hide()
                 }
             }).on(`keypress`,function(e){
-
+                if (_this.keys === "k16k27") {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    return false;
+                }
             })
 
     }
