@@ -40,11 +40,7 @@ export default class Box extends HTMLObject {
 		this.classes = `top`
 		this.lastPosition.y =  this.object.position().top
 		this.lastPosition.x =  this.object.position().left
-		this.object.css({
-			transform:'none',
-			top:this.object.position().top,
-			left:this.object.position().left
-		})
+		console.log(this.lastPosition.x, this.lastPosition.y)
 		this.object
 			.off(`.${this.id}`)
 			.on(`click.${this.id}`,function(e){
