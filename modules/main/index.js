@@ -57,7 +57,7 @@ export default class Main extends HTMLObject {
 					newObj.init()
 					_this.#running.append(newObj.get())
 
-					newObj.object.on(`mousedown`,function(e){
+					newObj.object.on(`mouseup`,function(e){
 						if(e.which === 1) {
 							e.stopPropagation()
 							let id = $(this).attr(`data-obj-id`)
