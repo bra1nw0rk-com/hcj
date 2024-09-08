@@ -201,7 +201,7 @@ export default class UI {
 		$(selector).addClass(`top`)
 		console.log($(selector).position().left * 100)
 		$(selector).css({
-			top:`${($(selector).position().left * 100)}px`
+			left:`${($(selector).position().left * 100)}px`
 		})
 		$(selector).animate(
 			{
