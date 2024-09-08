@@ -124,10 +124,10 @@ export default class BoxManager extends HTMLObject  {
                     }
 
                     if (_this.keys === "k16") {
-                        let selObj = _this.object.find(`[box-item].active`)
+                        let selObj = _this.object.find(`[box-item].active [miniature-id]`)
                         let boxObj = $(`#${selObj.attr("miniature-id")}`)
-                        console.log(selObj)
-                        if (selObj.length > 0) {
+                        console.log(boxObj)
+                        if (boxObj.length > 0) {
                             if (boxObj.css('display') === "none") {
                                 boxObj[0].parameters.maximize();
                             } else {
