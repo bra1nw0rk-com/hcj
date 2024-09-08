@@ -39,6 +39,8 @@ export default class Box extends HTMLObject {
 		$(`[box]`).removeClass(`top`)
 		let _this = this;
 		this.classes = `top`
+		this.lastPosition.x =  this.object.position().top
+		this.lastPosition.y =  this.object.position().left
 		this.object
 			.off(`.${this.id}`)
 			.on(`click.${this.id}`,function(e){

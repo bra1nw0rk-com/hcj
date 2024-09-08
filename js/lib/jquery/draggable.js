@@ -36,6 +36,8 @@ $(function () {
                                     });
                                     obj.movePosition.x = e.pageX;
                                     obj.movePosition.y = e.pageY;
+                                    obj.lastPosition.x =  elem.position().top
+                                    obj.lastPosition.y =  elem.position().left
                                 }                                
                             })
                         }
