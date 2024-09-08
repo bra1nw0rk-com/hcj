@@ -116,7 +116,6 @@ export default class BoxManager extends HTMLObject  {
                 }
                 return false;
             }).on(`keyup.${this.id}`,function(e){
-                e.stopPropagation()                                    
                 e.preventDefault()
                 if(_this.showed) {
                     if (_this.keys === "k16k9") {
@@ -168,7 +167,6 @@ export default class BoxManager extends HTMLObject  {
 
                 return false;
             }).on(`keypress`,function(e){
-                e.stopPropagation()                                    
                 e.preventDefault()
                 return false;
             })
