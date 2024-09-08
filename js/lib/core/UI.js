@@ -199,18 +199,14 @@ export default class UI {
 		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
+		let topP = ($(selector)[0].parameters.lastPosition.y / $(`body`).outerHeight())*100
 		$(selector).animate(
 			{
-				/*top: `${$(selector)[0].parameters.lastPosition.y}px`,*/
+				top: `${topP}%`,
 				zoom: '100%',
 				left: `${$(selector)[0].parameters.lastPosition.x}px`,
 
-			},
-			1500,
-			function () {
-
-
-			}
+			},500,function(){}
 		);
 	}
 }
