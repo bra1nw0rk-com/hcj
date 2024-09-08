@@ -41,6 +41,7 @@ export default class Box extends HTMLObject {
 		this.lastPosition.y =  this.object.position().top
 		this.lastPosition.x =  this.object.position().left
 		this.object.css({
+			transform:'none',
 			top:this.object.position().top,
 			left:this.object.position().left
 		})
