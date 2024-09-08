@@ -84,7 +84,8 @@ export default class BoxManager extends HTMLObject  {
                                 boxItem.css({
                                     top:'unset',
                                     left:'unset',
-                                    zoom:`${zoom}%`
+                                    zoom:`${zoom}%`,
+                                    display:'unset'
                                 })
                                 boxItem.on(`click`,function(e){
                                     let selObj = $(`#${$(this).attr("miniature-id")}`)
