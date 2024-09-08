@@ -201,7 +201,6 @@ export default class UI {
 		$(selector).addClass(`top`)
 
 		let topP = ((Math.ceil($(selector)[0].parameters.lastPosition.y) / $(selector).parent().height())*100)
-		console.log(topP)
 		$(selector).animate(
 			{
 				top: `${topP}%`,

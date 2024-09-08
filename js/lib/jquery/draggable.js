@@ -36,7 +36,6 @@ $(function () {
                                     });
                                     obj.movePosition.x = e.pageX;
                                     obj.movePosition.y = e.pageY;
-                                    console.log(elem.offset().top,elem.position().top)
                                     obj.parameters.lastPosition.y =  elem.position().top
                                     obj.parameters.lastPosition.x =  elem.position().left
                                 }                                
