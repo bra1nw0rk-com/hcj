@@ -44,12 +44,12 @@ export default class Box extends HTMLObject {
 			this.object.css({
 				left:this.lastPosition.x,
 				top:this.lastPosition.y,
-				height:	`${this.object.offset().height}px`,
-				width:	`${this.object.offset().width}px`,
+				height:	`${this.object.outerHeight()}px`,
+				width:	`${this.object.outerWidth()}px`,
 				transform:'none'
 			})
 		}
-		console.log(this.object.offset().height, this.object.offset().width)
+		//console.log(this.object.offset().height, this.object.offset().width)
 		this.object
 			.off(`.${this.id}`)
 			.on(`click.${this.id}`,function(e){
