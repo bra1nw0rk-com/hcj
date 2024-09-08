@@ -200,24 +200,15 @@ export default class UI {
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
 
-		let topP = (($(selector)[0].parameters.lastPosition.y / $(window).height())*100) + 10
+		let topP = ((Math.ceil($(selector)[0].parameters.lastPosition.y) / $(window).height())*100)
 		console.log(topP)
 		$(selector).animate(
 			{
 				top: `${topP}%`,
 				zoom: '100%',
-				left: `calc(${$(selector)[0].parameters.lastPosition.x}px + 10% )`,
+				left: `${$(selector)[0].parameters.lastPosition.x}px`,
 
-			},500,function(){
-				$(selector).animate(
-					{
-						top: `${$(selector)[0].parameters.lastPosition.y}px`,
-
-					},100,function(){
-
-					}
-				);
-			}
+			},500,function(){}
 		);
 	}
 }
