@@ -187,7 +187,6 @@ export default class UI {
 				$(selector).css({
 					transform:'none',
 					left:`${($(selector).position().left * 100)}px`,
-					top:``
 				})
 				$(selector).hide()
 				$(selector).removeClass(`top`)
