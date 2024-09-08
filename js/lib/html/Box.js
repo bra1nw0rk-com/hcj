@@ -40,6 +40,13 @@ export default class Box extends HTMLObject {
 		this.classes = `top`
 		this.lastPosition.y =  this.object.position().top
 		this.lastPosition.x =  this.object.position().left
+		if(this.object.closest(`body`)){
+			this.object.css({
+				left:this.lastPosition.x,
+				top:this.lastPosition.y,
+				transform:'none'
+			})
+		}
 		console.log(this.lastPosition.x, this.lastPosition.y)
 		this.object
 			.off(`.${this.id}`)
