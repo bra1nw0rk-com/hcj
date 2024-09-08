@@ -38,7 +38,7 @@ export default class Box extends HTMLObject {
 		$(`[box]`).removeClass(`top`)
 		let _this = this;
 		this.classes = `top`
-		this.lastPosition.y =  this.object.position().top
+		this.lastPosition.y =  this.object.offset().top - $(document).scrollTop()
 		this.lastPosition.x =  this.object.position().left
 		this.object
 			.off(`.${this.id}`)
