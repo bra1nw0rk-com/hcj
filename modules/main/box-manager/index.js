@@ -176,6 +176,7 @@ export default class BoxManager extends HTMLObject  {
                 if(_this.keys===""){
                     _this.hide()
                 }
+                console.log(_this.keys)
             }).on(`keypress`,function(e){
                 if (_this.keys === "k16k27") {
                     e.preventDefault()
