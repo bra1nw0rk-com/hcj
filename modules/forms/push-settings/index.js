@@ -32,6 +32,7 @@ export default class PushSettings extends Box {
 
     init(){
         super.init()
+        let _this = this
         if(WS.notification.get()){
             this.object.find(`[name="all_push"]`).prop('checked', true);
             this.object.find(`[name="browser_push"]`).prop("disabled", false);
@@ -44,13 +45,12 @@ export default class PushSettings extends Box {
         $("body")
             .off(`.${this.id}`)
             .on(`change.${this.id}`,`#${this.id} [name="all_push"]`,function(){
-                console.log($(this).prop('checked'))
                 if($(this).prop('checked')){
-                    this.object.find(`[name="browser_push"]`).prop("disabled", false);
-                    this.object.find(`[name="os_push"]`).prop("disabled", false);
+                    _this.object.find(`[name="browser_push"]`).prop("disabled", false);
+                    _this.object.find(`[name="os_push"]`).prop("disabled", false);
                 }else{
-                    this.object.find(`[name="browser_push"]`).prop("disabled", true);
-                    this.object.find(`[name="os_push"]`).prop("disabled", true);
+                    _this.object.find(`[name="browser_push"]`).prop("disabled", true);
+                    _this.object.find(`[name="os_push"]`).prop("disabled", true);
                 }
              })
 
