@@ -113,7 +113,7 @@ textarea:focus {
 	width: auto;
 }
 
-label>input[type=checkbox]:before {
+label>input[type="checkbox"]:before {
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -121,7 +121,7 @@ label>input[type=checkbox]:before {
 	display: inline-block;
 	content:"\f096";
 }
-label>input[type=checkbox]:checked:before {
+label>input[type="checkbox"]:checked:before {
 	font: normal normal normal 14px / 1 FontAwesome;
 	display: inline-block;
 	content:"\f046";
