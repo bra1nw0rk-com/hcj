@@ -172,11 +172,6 @@ a::before{
 	margin-left:2px;
 	margin-right:2px;
 	color:grey;
-	text-decoration: none;
-}
-
-a:hover{
-	text-decoration: underline;
 }
 
 
