@@ -89,7 +89,7 @@ export default class Main extends HTMLObject {
                             newObj.tooltip =$(this)[0].parameters.title
                             */
 
-							let title = $(`<div class="content-title">${$(this)[0].parameters.title}</div>`)
+							let title = $(`<div class="content-title">${$(`#${$(this).attr("data-obj-id")}`)[0].parameters.title}</div>`)
 							let boxItem = $(this).clone()
 							let boxObj = $(`<div box-item></div>`);
 							boxObj.append(title)
@@ -101,13 +101,8 @@ export default class Main extends HTMLObject {
 							boxItem.removeAttr("name")
 							boxItem.removeClass("top fadeIn")
 
-
 							boxItem.unbind();
-							boxItem.find(`*`).unbind();
-
-							if ($(`#${boxItem.attr("miniature-id")}`)[0].parameters.isOnFront()) {
-								boxObj.addClass('active')
-							}
+							boxItem.find(`*`).unbind();							
 
 							let relWZoom = 100/((boxItem.outerWidth()/225)+1)
 							let relHZoom = 100/((boxItem.outerHeight()/225)+1)
