@@ -129,10 +129,11 @@ label>input[type="checkbox"]:before {
 	font: normal normal normal 14px / 1 FontAwesome;
 	display: inline-block;
 	content: "\f096";
-	margin-right: 5px;
+	letter-spacing: 5px;
 }
 label>input[type="checkbox"]:checked:before {
-	content:"\f046";
+	content: "\f046";
+	letter-spacing: 3px;
 }
 
 :-webkit-autofill {
