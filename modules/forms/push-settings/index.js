@@ -36,7 +36,9 @@ export default class PushSettings extends Box {
         if(WS.notification.get()){
             this.object.find(`[name="all_push"]`).prop('checked', true);
             this.object.find(`[name="browser_push"]`).prop("disabled", false);
+            this.object.find(`[name="browser_push"]`).prop("checked", WS.notification.isEnabledPushBrowser());
             this.object.find(`[name="os_push"]`).prop("disabled", false);
+            this.object.find(`[name="os_push"]`).prop("checked",  WS.notification.isEnabledPushBrowser());
         }else{
             this.object.find(`[name="browser_push"]`).prop("disabled", true);
             this.object.find(`[name="os_push"]`).prop("disabled", true);
@@ -46,9 +48,11 @@ export default class PushSettings extends Box {
             .off(`.${this.id}`)
             .on(`change.${this.id}`,`#${this.id} [name="all_push"]`,function(){
                 if($(this).prop('checked')){
+                    WS.notification.enable()
                     _this.object.find(`[name="browser_push"]`).prop("disabled", false);
                     _this.object.find(`[name="os_push"]`).prop("disabled", false);
                 }else{
+                    WS.notification.disable()
                     _this.object.find(`[name="browser_push"]`).prop("disabled", true);
                     _this.object.find(`[name="os_push"]`).prop("disabled", true);
                 }

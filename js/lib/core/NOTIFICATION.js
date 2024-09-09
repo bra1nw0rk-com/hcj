@@ -17,14 +17,9 @@ export default class NOTIFICATION {
             }
         }
     }
-
-    toggle(){
+    enable(){
         if(this.isGranted()){
-            if(localStorage.getItem('notification.state')==="true"){
-                localStorage.setItem('notification.state',"false")
-            }else{
-                localStorage.setItem('notification.state',"true")
-            }
+            localStorage.setItem('notification.state',"true")
         }
     }
 
@@ -35,7 +30,7 @@ export default class NOTIFICATION {
         return localStorage.getItem('notification.state')==="true"
     }
 
-    disablePush(){
+    disable(){
         localStorage.setItem('notification.state',"false")
         this.disablePushBrowser()
         this.disablePushOS()
@@ -45,6 +40,10 @@ export default class NOTIFICATION {
         if(this.isGranted() && this.isAllowAll()){
             localStorage.setItem('notification.browser',"false")
         }
+    }
+
+    isEnabledPushBrowser(){
+        return localStorage.getItem('notification.browser')==="true"
     }
 
     disablePushBrowser(){
@@ -59,6 +58,9 @@ export default class NOTIFICATION {
 
     disablePushOS(){
         localStorage.setItem('notification.os',"false")
+    }
+    isEnabledPushOS(){
+        return localStorage.getItem('notification.os')==="true"
     }
 
     get(){
