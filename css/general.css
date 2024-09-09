@@ -173,6 +173,9 @@ a::before{
 	margin-right:2px;
 	color:grey;
 }
+a::before:hover{
+	text-decoration: none;
+}
 a:hover{
 	text-decoration: underline;
 }
