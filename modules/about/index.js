@@ -23,10 +23,10 @@ export default class AboutModal extends Box {
 			<div class="row">Frontend: JavaScript, JQuery, HTML, CSS</div>	
 			<br>
 			<div class="row">Author: Volodymyr Cherniyevskyy</div>
-			<div class="row">LinkedIn: <a href="https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b/">Volodymyr Cherniyevskyy</a></div>
-			<div class="row">GitHub: <a href="https://github.com/tarantulaaha">Volodymyr Cherniyevskyy</a></div>			
+			<div class="row">LinkedIn: <a href="https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b/" target="_blank">Volodymyr Cherniyevskyy</a></div>
+			<div class="row">GitHub: <a href="https://github.com/tarantulaaha" target="_blank">Volodymyr Cherniyevskyy</a></div>			
 			<br>
-			<div class="row">Project GitHub: <a href="https://github.com/bra1nw0rk-com/hcj">bra1nw0rk-com/hcj</a></div>			
+			<div class="row">Project GitHub: <a href="https://github.com/bra1nw0rk-com/hcj" target="_blank">bra1nw0rk-com/hcj</a></div>			
 			<br>
 			<div class="copyright">Copyright &copy; 2022 bra1nw0rk. All rights reserved worldwide.</div>		
 		`;
