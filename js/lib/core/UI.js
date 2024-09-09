@@ -1,3 +1,10 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
+
 import Module from "./Module.js";
 
 export default class UI {
@@ -44,13 +51,13 @@ export default class UI {
 		});
 	}
 	#module_service(){
-		$("body").on("mutation", function (e) {
+		$("body").on("mutation", function () {
 			$(this)
 				.find("[data-module]:not([data-plugged])")
 				.each(function () {
-					let title = $(this).attr("data-title");
-					let name = $(this).attr("data-name");
-					let src = $(this)[0].source;
+			//		let title = $(this).attr("data-title");
+			//		let name = $(this).attr("data-name");
+			//		let src = $(this)[0].source;
 					let moduleName = $(this).attr("data-module");
 					$(this).attr("data-plugged","");
 					Module.call(moduleName).then((content) => {
@@ -168,14 +175,11 @@ export default class UI {
 	}
 
     minimizeModal(selector) {
-		$(selector)[0].parameters.lastPosition.x =   ((($(selector).position().top )  / $(window).height()) * 100 +1.761).toFixed(4);
-		$(selector)[0].parameters.lastPosition.y =  (($(selector).position().left / $(window).width()) * 100).toFixed(4);
-		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(window).width()) * 100).toFixed(4);
-
+		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(`body`).width()) * 100) ;
 		$(selector).animate(
 			{
 				zoom: '1%',
-				top: '100%',
+				top: `100%`,
 				left: `${iconLeft}%`
 			},
 			500,
@@ -195,17 +199,15 @@ export default class UI {
 		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
+
+		let topP = ((Math.ceil($(selector)[0].parameters.lastPosition.y) / $(selector).parent().height())*100)
+		let leftP = ((Math.ceil($(selector)[0].parameters.lastPosition.x) / $(selector).parent().width())*100)
 		$(selector).animate(
 			{
+				top: `${topP}%`,
+				left: `${leftP}%`,
 				zoom: '100%',
-				top: `${$(selector)[0].parameters.lastPosition.x}%`,
-				left: `${$(selector)[0].parameters.lastPosition.y}%`
-			},
-			500,
-			function () {
-
-
-			}
+			},500,function(){}
 		);
 	}
 }

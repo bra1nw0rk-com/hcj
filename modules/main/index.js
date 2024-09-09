@@ -1,3 +1,9 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
 import HTMLObject from "../../js/lib/html/HTMLObject.js";
 
 export default class Main extends HTMLObject {
@@ -37,33 +43,53 @@ export default class Main extends HTMLObject {
 			.off("mutation.main")
 			.on("mutation.main", function (e) {
 				$(this).find("[box]:not([run-added])").each(function () {
-					let newObj = $($(this)[0].parameters.faIcon)
-					newObj.attr(`data-obj-id`,$(this)[0].parameters.id)
-					newObj.addClass('clickable fadeIn selected')
-					newObj.attr("data-animated","");
-					$(this).attr("run-added","");
-					$(`[data-obj-id]`).removeClass("selected")
-					_this.#running.append(newObj)
+					let icon = $(this)[0].parameters.faIcon
+					if (icon !== "") {
+						let newObj = new HTMLObject($(icon))
+						//newObj.object = $($(this)[0].parameters.faIcon)
+						newObj.object.attr(`data-obj-id`, $(this)[0].parameters.id)
+						newObj.object.addClass('clickable fadeIn selected')
+						newObj.object.attr("data-animated", "");
+						newObj.name = "running-icon"
+						//newObj.attr("data-title",$(this)[0].parameters.title)
 
-					newObj.on(`mousedown`,function(e){
-						if(e.which === 1) {
-							e.stopPropagation()
-							let id = $(this).attr(`data-obj-id`)
-							let item = $(`#${id}`)
-							if (item.css('display') === "none") {
-								item[0].parameters.maximize();
-							} else {
-								if (!item[0].parameters.isOnFront()) {
-									item[0].parameters.toFront()
+						$(this).attr("run-added", "");
+						$(`[data-obj-id]`).removeClass("selected")
+						newObj.init()
+						_this.#running.append(newObj.get())
+
+						newObj.object.on(`mouseup`, function (e) {
+							if (e.which === 1) {
+								e.stopPropagation()
+								let id = $(this).attr(`data-obj-id`)
+								let item = $(`#${id}`)
+								if (item.css('display') === "none") {
+									item[0].parameters.maximize();
 								} else {
-									item[0].parameters.minimize();
+									if (!item[0].parameters.isOnFront()) {
+										item[0].parameters.toFront()
+									} else {
+										item[0].parameters.minimize();
+									}
 								}
 							}
-						}
 
-					}).on(`click`,function(e){
-						e.stopPropagation()
-					})
+						}).on(`click`, function (e) {
+							e.stopPropagation()
+						}).on(`mouseover`, function () {
+							/*
+                            let boxObj = $(this).clone();
+                            boxObj.attr("miniature-id",$(this).attr("id"))
+                            boxObj.removeAttr("id")
+                            //boxObj.removeAttr("style")
+                            boxObj.removeClass(`fadeIn`)
+                            boxObj.unbind();
+                            boxObj.find(`*`).unbind();
+
+                            newObj.tooltip =$(this)[0].parameters.title
+                            */
+						})
+					}
 				});
 			})
 			.on("click.main",`[name="close-btn"]`,function(){
@@ -75,7 +101,6 @@ export default class Main extends HTMLObject {
 					$(`[data-obj-id="${this.id}"]`).addClass("selected")
 				}
 			}).on(`removeClass.main`,`[box]`,function(e,data){
-				console.log(e,data)
 				if(data.class === `top`){
 					$(`[data-obj-id="${this.id}"]`).removeClass("selected")
 				}

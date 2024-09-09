@@ -1,7 +1,15 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
 [name="box-manager"]{
     position: absolute;
-    height: 50%;
-    width: 50%;
+    min-height: 15%;
+    max-height: 80%;
+    min-width: 25%;
+    max-width: 80%;
     top: 50vh;
     left: 50vw;
     z-index: 5;
@@ -10,3 +18,72 @@
     border-radius: 10px;
     background-color: var(--bg1);
 }
+[name="box-manager"]::before{
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    content:"";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: -1;
+}
+[name="box-manager"] > h2 {
+    font-size: 12px;
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    text-transform: uppercase;
+}
+[name="box-manager"] > .content{
+    margin-top: 30px;
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+}
+[name="box-manager"] > .content [box-item]{
+    display: block;
+    margin: 20px 5px 5px 5px;
+    position: relative;
+}
+[name="box-manager"] > .content [box-item] > .content-title{
+    font-size: 10px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    text-transform: uppercase;
+    z-index: 0;
+    background-color: var(--bg2);
+    width: 100%;
+    padding: 6px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+[name="box-manager"] > .content [box-item]:hover::after, [name="box-manager"] > .content [box-item].active::after{
+    position: absolute;
+    top: -23px;
+    left: -3px;
+    content: "";
+    height: calc(100% + 22px);
+    width: calc(100% + 2px);
+    z-index: -1;
+    padding: 1px;
+    border: 1px solid #ff880038;
+    border-radius: 8px;
+}
+[name="box-manager"] > .content [miniature-id]{
+    position: relative;
+    display: block;
+    top: unset;
+    left: unset;
+    transform: none;
+}
+

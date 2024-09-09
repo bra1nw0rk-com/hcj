@@ -1,3 +1,9 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
 import CustomEvents from "../core/CustomEvents.js";
 
 export default class HTMLObject extends CustomEvents {
@@ -5,16 +11,22 @@ export default class HTMLObject extends CustomEvents {
 	#css = "";
 	#animated = false;
 	#unique= false;
+	#tooltip =""
 	#id = "";
 	object = $("<div></div>");
 	lastPosition={
 		x:0,y:0
 	}
-	constructor(type) {
+	constructor(val) {
 		super();
-		this.object =  $(`<${type}></${type}>`);
+		if(typeof val === 'object'){
+			this.object = val.clone()
+		}else{
+			this.object =  $(`<${val}></${val}>`);
+		}
+
 		this.object[0].parameters = this
-		//this.object.attr("type", type);
+
 	}
 	get id(){
 		return this.#id;
@@ -24,6 +36,7 @@ export default class HTMLObject extends CustomEvents {
 		this.#id = id + $(`[name^="${id}"]`).length
 		this.object.attr("id", this.#id);
 		this.object.attr("name", this.#eventNamespace);
+		this.object.addClass(id)
 	}
 	set classes(classes) {
 		this.object.addClass(classes);
@@ -70,6 +83,25 @@ export default class HTMLObject extends CustomEvents {
 		WS.ui.effects.show(this.object);
 	}
 	init(){
+		let _this = this
 		$("body").off(`.${this.id}`)
+
+	}
+
+	set tooltip(value){
+		this.#tooltip = value;
+		this.object.tooltip({html:value})
+
+	}
+	get tooltip(){
+		return this.#tooltip
+	}
+
+	set html(val){
+		this.object.html(val)
+	}
+
+	get html(){
+		return this.object.html()
 	}
 }

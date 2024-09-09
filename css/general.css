@@ -1,3 +1,9 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
 @font-face {
 	font-family: "f1";
 	src: url("/fonts/f1.woff") format("woff");
@@ -191,7 +197,7 @@ table {
 	z-index: 1;
 	overflow: hidden;
 }
-.modal::before{
+.modal::before, [name="tooltip-box"]::before{
 	-webkit-backdrop-filter: blur(7px);
 	backdrop-filter: blur(7px);
 	content:"";
@@ -344,4 +350,26 @@ table {
 }
 .clickable:hover{
 	background-color: var(--top-menu-main-menu-item-background);
+}
+[name="tooltip-box"]{
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	background-color: var(--bg1);
+	padding: 7px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	max-width: 150px;
+	min-height: 10px;
+	position: absolute;
+	z-index: 100;
+}
+[name="tooltip-box"] > [miniature-id]{
+	transform: scale(50%) translateY(0%) translateX(-53%);
+	position: relative;
+	display: block;
+	zoom: unset;
+	top: 0;
+	left: 0;
+	height: 10%;
+	width: 10%;
+	flex: 0 1 200px;
 }

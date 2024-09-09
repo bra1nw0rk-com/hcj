@@ -1,3 +1,9 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
 import HTMLObject from "./HTMLObject.js";
 import CloseButton from "./button/CloseButton.js";
 import MinimizeButton from "./button/MinimizeButton.js";
@@ -24,14 +30,26 @@ export default class Box extends HTMLObject {
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
 		this.object.attr("data-animated", "")
-		this.eventListener()
 
 
 	}
 	init(){
 		super.init()
+		$(`[box]`).removeClass(`top`)
 		let _this = this;
 		this.classes = `top`
+		this.lastPosition.y =  this.object.position().top
+		this.lastPosition.x =  this.object.position().left
+		if(this.object.closest(`body`).length > 0){
+			this.object.css({
+				left:this.lastPosition.x,
+				top:this.lastPosition.y,
+				height:	`${this.object.outerHeight()}px`,
+				width:	`${this.object.outerWidth()}px`,
+				transform:'none'
+			})
+		}
+		//console.log(this.object.offset().height, this.object.offset().width)
 		this.object
 			.off(`.${this.id}`)
 			.on(`click.${this.id}`,function(e){
@@ -45,17 +63,18 @@ export default class Box extends HTMLObject {
 			_this.deactivate()
 		})
 
+
 	}
 
 	deactivate(){
 		$(`[box]`).removeClass(`top`)
 	}
 
-	eventListener(){
-		let _this=this;
-	}
 	set title(text) {
 		this.#title.html(text);
+	}
+	get title(){
+		return this.#title.html();
 	}
 	set content(text) {
 		this.#content.html(text);
@@ -113,6 +132,9 @@ export default class Box extends HTMLObject {
 		$(`#${this.id}`).addClass(`top`)
 	}
 	isOnFront(){
+		if($(`[box].top`).length > 1) {
+			return false;
+		}
 		return($(`#${this.id}`).hasClass(`top`))
 	}
 

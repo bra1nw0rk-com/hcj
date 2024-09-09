@@ -1,3 +1,9 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
 
 $(function () {
     $.fn.extend({
@@ -116,6 +122,8 @@ $(function () {
                         if(obj.resize.fail>3){
                             obj.stopResize()
                         }
+                        obj.parameters.lastPosition.y =  elem.position().top
+                        obj.parameters.lastPosition.x =  elem.position().left
                     }
 
                     $(resizing).on('mousedown.boxResizing',function(e){

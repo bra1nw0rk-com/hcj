@@ -1,8 +1,8 @@
 /* dark-theme */
 .dark-theme ,.dark-theme::backdrop{
-	--border-color: #3232324d;
-	--bg1: #080808a6;
-	--bg-head: #1e1e1e59;
+	--border-color: #3232327d;
+	--bg1: #121212c2;
+	--bg-head: #252525a3;
 	--bg2: #181818;
 	--active-text-color: #fff;
 	--inactive-text-color: #4b4b4b;
@@ -11,8 +11,8 @@
 	--input-background: #1e1e1e;
 	--input-background-focus: #141414;
 	--button-ok-bg-color: #005488;
-	--content-bg-logo: url("/img/logo-dark.png");
-	--menu-logo: url("/img/favicon-32x32-dark.png");
+	--content-bg-logo: url(/img/logo-dark.png);
+	--menu-logo: url(/img/favicon-32x32-dark.png);
 	background-color: #000008;
 	--color: #dbdbdb;
 }

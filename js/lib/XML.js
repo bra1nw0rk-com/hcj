@@ -1,4 +1,9 @@
-
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
 //import "./core/index.mjs"; //"../../../lib/core/index.mjs";
 
 export default class XML extends EventTarget {

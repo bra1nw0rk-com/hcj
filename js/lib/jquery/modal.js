@@ -1,3 +1,10 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
+
 import Module from "../core/Module.js";
 import Box from "../html/Box.js";
 
@@ -20,6 +27,7 @@ $(function () {
                         Module.call(options.module).then(function (obj) {
                             if(obj!== null) {
                                 $(_this).append(obj.get());
+                                obj.prepare()
                             }
                         })
                     }else{
