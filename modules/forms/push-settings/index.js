@@ -19,7 +19,7 @@ export default class PushSettings extends Box {
         this.name ="pushSettings"
         this.content = `
 			<label><input type="checkbox" name="browser_push"> browser</label>
-			<label><input type="checkbox" name="os_push"> OS</label>label>
+			<label><input type="checkbox" name="os_push"> OS</label>
 		`;
         this.button.minimize();
         this.button.close();
