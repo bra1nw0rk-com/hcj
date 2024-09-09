@@ -18,15 +18,15 @@ export default class AboutModal extends Box {
 		this.content = `
 			<div class="strong">Libre<span class="selected">IS</span> - Libre Information System.</div>
 			<br>
-			<div>OS: Linux</div>
-			<div>Backend: Java</div>
-			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>	
+			<div class="row">OS: Linux</div>
+			<div class="row">Backend: Java</div>
+			<div class="row">Frontend: JavaScript, JQuery, HTML, CSS</div>	
 			<br>
-			<div>Author: Volodymyr Cherniyevskyy</div>
-			<div>LinkedIn: <a href="https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b/">Volodymyr Cherniyevskyy</a></div>
-			<div>GitHub: <a href="https://github.com/tarantulaaha">Volodymyr Cherniyevskyy</a></div>			
+			<div class="row">Author: Volodymyr Cherniyevskyy</div>
+			<div class="row">LinkedIn: <a href="https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b/">Volodymyr Cherniyevskyy</a></div>
+			<div class="row">GitHub: <a href="https://github.com/tarantulaaha">Volodymyr Cherniyevskyy</a></div>			
 			<br>
-			<div>Project GitHub: <a href="https://github.com/bra1nw0rk-com/hcj">bra1nw0rk-com/hcj</a></div>			
+			<div class="row">Project GitHub: <a href="https://github.com/bra1nw0rk-com/hcj">bra1nw0rk-com/hcj</a></div>			
 			<br>
 			<div class="copyright">Copyright &copy; 2022 bra1nw0rk All rights reserved worldwide.</div>		
 		`;

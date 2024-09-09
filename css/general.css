@@ -238,6 +238,9 @@ a{
 	scrollbar-width: none;  /* Firefox */
 	font-size: 14px;
 }
+.modal .content .row{
+	margin-top: 2px;
+}
 .modal label {
 	display: block;
 	margin-bottom: 8px;
