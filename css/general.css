@@ -111,6 +111,7 @@ textarea:focus {
 [type="checkbox"]{
 	height: auto;
 	width: auto;
+	position: relative;
 }
 
 label>input[type="checkbox"]:before {
