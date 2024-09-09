@@ -163,13 +163,14 @@ a{
 	color: #1e61ff;
 	text-decoration: none;
 }
-a::after{
+a::before{
 	font: normal normal normal 14px / 1 FontAwesome;
 	font-size: inherit;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
-	content:'\f08e';
+	content:'\f0c1';
 	margin-left:2px;
+	margin-right:2px;
 	color:grey;
 }
 a:hover{
