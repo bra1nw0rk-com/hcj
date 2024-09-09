@@ -280,6 +280,7 @@ a::before{
 .modal label {
 	display: block;
 	margin-bottom: 4px;
+	position: relative;
 }
 .hidden{
 	display: none;
