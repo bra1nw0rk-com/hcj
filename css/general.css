@@ -118,7 +118,7 @@ textarea:focus {
 	background: none;
 }
 [type="checkbox"]:focus,[type="radio"]:focus{
-	background-color: var(--input-background-focus);
+	background: none;
 }
 
 
