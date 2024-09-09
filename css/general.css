@@ -276,7 +276,7 @@ a::before{
 }
 .modal label {
 	display: block;
-	margin-bottom: 8px;
+	margin-bottom: 4px;
 }
 .hidden{
 	display: none;
