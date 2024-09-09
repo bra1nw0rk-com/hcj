@@ -16,7 +16,13 @@ export default class AboutModal extends Box {
 			<div>Backend: Java</div>
 			<div>Frontend: JavaScript, JQuery, HTML, CSS</div>	
 			<br>
-			<div class="copyright">&copy; 2022-∞ bra1nw0rk </div>		
+			<div>Author: Volodymyr Cherniyevskyy</div>
+			<div>LinkedIn: <a href="https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b/">Volodymyr Cherniyevskyy</a></div>
+			<div>GitHub: <a href="https://github.com/tarantulaaha">Volodymyr Cherniyevskyy</a></div>			
+			<br>
+			<div>Project GitHub: <a href="https://github.com/bra1nw0rk-com/hcj">bra1nw0rk-com/hcj</a></div>			
+			<br>
+			<div class="copyright">Copyright &copy; 2022 bra1nw0rk All rights reserved worldwide.</div>		
 		`;
 		this.draggable = true;
 		this.resizable = true;
