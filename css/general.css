@@ -168,7 +168,7 @@ a::after{
 	font-size: inherit;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
-	content:'/f08e'
+	content:'\f08e'
 }
 a:hover{
 	text-decoration: underline;
