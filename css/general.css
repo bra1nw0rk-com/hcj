@@ -161,7 +161,19 @@ table {
 }
 a{
 	color: #1e61ff;
+	text-decoration: none;
 }
+a::after{
+	font: normal normal normal 14px / 1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	content:'/f08e'
+}
+a:hover{
+	text-decoration: underline;
+}
+
 
 .widget {
 	width: fit-content;
