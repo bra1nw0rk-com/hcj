@@ -104,4 +104,5 @@ export default class HTMLObject extends CustomEvents {
 	get html(){
 		return this.object.html()
 	}
+	
 }

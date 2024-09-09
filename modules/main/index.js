@@ -88,6 +88,41 @@ export default class Main extends HTMLObject {
 
                             newObj.tooltip =$(this)[0].parameters.title
                             */
+
+							let title = $(`<div class="content-title">${$(this)[0].parameters.title}</div>`)
+							let boxItem = $(this).clone()
+							let boxObj = $(`<div box-item></div>`);
+							boxObj.append(title)
+							boxObj.append(boxItem)
+							_this.#content.append(boxObj)
+
+							boxItem.attr("miniature-id",$(this).attr("id"))
+							boxItem.removeAttr("id")
+							boxItem.removeAttr("name")
+							boxItem.removeClass("top fadeIn")
+
+
+							boxItem.unbind();
+							boxItem.find(`*`).unbind();
+
+							if ($(`#${boxItem.attr("miniature-id")}`)[0].parameters.isOnFront()) {
+								boxObj.addClass('active')
+							}
+
+							let relWZoom = 100/((boxItem.outerWidth()/225)+1)
+							let relHZoom = 100/((boxItem.outerHeight()/225)+1)
+							let max =Math.min(relWZoom, relHZoom)
+							console.log(max)
+							boxItem.find(`.top-left-side, .top-side, .top-right-side, .right-side, .bottom-right-side, .bottom-side, .bottom-left-side, .left-side`).remove()
+
+							boxItem.css({
+								top:'unset',
+								left:'unset',
+								zoom:`${max}%`,
+								display:'block'
+							})
+
+							newObj.tooltip = boxObj
 						})
 					}
 				});
