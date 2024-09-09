@@ -20,15 +20,6 @@ export default class NotificationIcon extends HTMLObject  {
         this.init()
     }
     init() {
-        $("body")
-            .off(`.${this.name}`)
-            .on(`click.${this.name}`,`${this.id}`,function(){
-                $(`#content`).modal({module:"about"});
-                /*Module.call("about").then((content) => {
 
-                });
-                */
-
-            })
     }
 }

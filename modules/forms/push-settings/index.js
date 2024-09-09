@@ -41,6 +41,12 @@ export default class PushSettings extends Box {
             this.object.find(`[name="browser_push"]`).prop("disabled", true);
             this.object.find(`[name="os_push"]`).prop("disabled", true);
         }
+        $("body")
+            .off(`.${this.id}`)
+            .on(`click.${this.id}`,`#${this.id}`,function(){
+                $(`#content`).modal({module:"about"});
+             })
+
     }
 
 
