@@ -34,6 +34,21 @@ export default class NOTIFICATION {
         localStorage.setItem('notification.state',"false")
         this.disablePushBrowser()
         this.disablePushOS()
+        this.disableEmail()
+    }
+
+    enableEmail(){
+        if(this.isGranted() && this.isAllowAll()){
+            localStorage.setItem('notification.email',"false")
+        }
+    }
+
+    isEnabledEmail(){
+        return localStorage.getItem('notification.email')==="true"
+    }
+
+    disableEmail(){
+        localStorage.setItem('notification.email',"false")
     }
 
     enablePushBrowser(){
@@ -68,7 +83,7 @@ export default class NOTIFICATION {
     }
 
     send(title, text){
-        if(Notification.permission === "granted" && localStorage.getItem('notification.state')==="true"){
+        if(this.isGranted() && this.get()){
             const img = "/img/maskable-icon.png";
             const notification = new Notification(title, { body: text, icon: img });
         }
