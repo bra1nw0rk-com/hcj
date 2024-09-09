@@ -15,11 +15,7 @@ export default class NotificationIcon extends HTMLObject  {
         this.classes = "clickable"
         this.template = `
             <i class="fa fa-bell-o" aria-hidden="true"></i>
-        
         `
-        this.init()
-    }
-    init() {
 
     }
 }
