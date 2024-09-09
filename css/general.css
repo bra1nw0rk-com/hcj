@@ -132,10 +132,7 @@ label>input[type="checkbox"]:before {
 	margin-right: 5px;
 }
 label>input[type="checkbox"]:checked:before {
-	font: normal normal normal 14px / 1 FontAwesome;
-	display: inline-block;
 	content:"\f046";
-	letter-spacing: 5px;
 }
 
 :-webkit-autofill {
