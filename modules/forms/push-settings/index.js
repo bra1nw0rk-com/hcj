@@ -18,8 +18,8 @@ export default class PushSettings extends Box {
         this.resizable = true;
         this.name ="pushSettings"
         this.content = `
-			<div class = "row"><input type="checkbox" name="browser_push" value="Bike"> browser</div>
-			<div class = "row"><input type="checkbox" name="browser_push" value="Bike"> OS<div>
+			<label><input type="checkbox" name="browser_push"> browser</label>
+			<label><input type="checkbox" name="os_push"> OS</label>label>
 		`;
         this.button.minimize();
         this.button.close();

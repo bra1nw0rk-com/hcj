@@ -108,6 +108,25 @@ textarea:focus {
 	font-family: var(--font-family);
 }
 
+[type="checkbox"]{
+
+}
+
+label>input[type=checkbox]:before {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	font: normal normal normal 14px / 1 FontAwesome;
+	display: inline-block;
+	content:"\f096";
+}
+label>input[type=checkbox]:checked:before {
+	font: normal normal normal 14px / 1 FontAwesome;
+	display: inline-block;
+	content:"\f046";
+	letter-spacing: 5px;
+}
+
 :-webkit-autofill {
 	color: var(--color);
 	opacity: 1;
