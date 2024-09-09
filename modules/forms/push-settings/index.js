@@ -17,14 +17,13 @@ export default class PushSettings extends Box {
         this.draggable = true;
         this.resizable = true;
         this.name ="pushSettings"
-        this.content = `
+        this.content = $(`
             <label><input type="checkbox" name="all_push"> Allow</label>
             <div class="sub-block">
                 <label><input type="checkbox" name="browser_push"> in browser</label>
                 <label><input type="checkbox" name="os_push"> in OS</label>
-            </div>  
-			
-		`;
+            </div>  			
+		`);
         this.button.minimize();
         this.button.close();
         this.icon.settings();
@@ -41,7 +40,7 @@ export default class PushSettings extends Box {
             this.object.find(`[name="browser_push"]`).prop("disabled", true);
             this.object.find(`[name="os_push"]`).prop("disabled", true);
         }
-        console.log(`#${this.id} [name="all_push"]`)
+        console.log($(`#${this.id} [name="all_push"]`))
         $("body")
             .off(`.${this.id}`)
             .on(`click.${this.id}`,`#${this.id} [name="all_push"]`,function(){
