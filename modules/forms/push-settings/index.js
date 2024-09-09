@@ -22,7 +22,7 @@ export default class PushSettings extends Box {
             <div class="sub-block">
                 <label><input type="checkbox" name="browser_push"> in browser</label>
                 <label><input type="checkbox" name="os_push"> in OS</label>
-                <label><input type="checkbox" name="email"> in OS</label>
+                <label><input type="checkbox" name="email"> by Email</label>
             </div>  			
 		`);
         this.button.minimize();
