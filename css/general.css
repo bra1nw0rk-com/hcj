@@ -168,7 +168,9 @@ a::after{
 	font-size: inherit;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
-	content:'\f08e'
+	content:'\f08e';
+	margin-left:2px;
+	color:grey;
 }
 a:hover{
 	text-decoration: underline;
