@@ -44,6 +44,7 @@ export default class PushSettings extends Box {
         $("body")
             .off(`.${this.id}`)
             .on(`click.${this.id}`,`#${this.id} [name="all_push"]`,function(){
+                console.log($(this).prop('checked'))
                 if($(this).prop('checked')){
                     this.object.find(`[name="browser_push"]`).prop("disabled", false);
                     this.object.find(`[name="os_push"]`).prop("disabled", false);
