@@ -118,7 +118,7 @@ textarea:focus {
 	background: none;
 }
 [type="checkbox"][disabled],[type="radio"][disabled]{
-	opacity: 50%;
+	opacity: 10%;
 }
 [type="checkbox"]:focus,[type="radio"]:focus{
 	background: none;
@@ -133,6 +133,9 @@ label>input[type="checkbox"]:before {
 	display: inline-block;
 	content: "\f096";
 	letter-spacing: 5px;
+}
+label:has([disabled]){
+	opacity: 10%;
 }
 label>input[type="checkbox"]:checked:before {
 	content: "\f046";
