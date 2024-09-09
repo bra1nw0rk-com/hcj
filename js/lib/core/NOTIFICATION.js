@@ -19,13 +19,46 @@ export default class NOTIFICATION {
     }
 
     toggle(){
-        if(Notification.permission === "granted"){
+        if(this.isGranted()){
             if(localStorage.getItem('notification.state')==="true"){
                 localStorage.setItem('notification.state',"false")
             }else{
                 localStorage.setItem('notification.state',"true")
             }
         }
+    }
+
+    isGranted(){
+        return Notification.permission === "granted"
+    }
+    isAllowAll(){
+        return localStorage.getItem('notification.state')==="true"
+    }
+
+    disablePush(){
+        localStorage.setItem('notification.state',"false")
+        this.disablePushBrowser()
+        this.disablePushOS()
+    }
+
+    enablePushBrowser(){
+        if(this.isGranted() && this.isAllowAll()){
+            localStorage.setItem('notification.browser',"false")
+        }
+    }
+
+    disablePushBrowser(){
+        localStorage.setItem('notification.browser',"false")
+    }
+
+    enablePushOS(){
+        if(this.isGranted() && this.isAllowAll()){
+            localStorage.setItem('notification.os',"false")
+        }
+    }
+
+    disablePushOS(){
+        localStorage.setItem('notification.os',"false")
     }
 
     get(){
