@@ -117,9 +117,7 @@ textarea:focus {
 	box-shadow: none;
 	background: none;
 }
-[type="checkbox"][disabled],[type="radio"][disabled]{
-	opacity: 10%;
-}
+
 [type="checkbox"]:focus,[type="radio"]:focus{
 	background: none;
 }
