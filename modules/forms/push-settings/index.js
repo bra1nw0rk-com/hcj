@@ -45,7 +45,8 @@ export default class PushSettings extends Box {
             this.object.find(`[name="browser_push"]`).prop("disabled", true);
             this.object.find(`[name="os_push"]`).prop("disabled", true);
             this.object.find(`[name="email"]`).prop("disabled", true);
-        }        
+        }
+           
         $("body")
             .off(`.${this.id}`)
             .on(`change.${this.id} click.${this.id}`,`#${this.id} [name="all_push"]`,function(){  
@@ -62,9 +63,6 @@ export default class PushSettings extends Box {
                     _this.object.find(`[name="email"]`).prop("disabled", true);
                 }
              })
-             
-        this.object
-            .off(`.${this.id}`)
             .on(`change.${this.id} click.${this.id}`,`[name="os_push"]`,function(e){
                 if(WS.notification.get()){
                     if($(this).is(":checked")){
