@@ -34,41 +34,33 @@ export default class PushSettings extends Box {
     init(){
         super.init()
         let _this = this
-        
-/*
+
         if(WS.notification.get()){
-            this.object.find(`[name="all_push"]`).prop('checked', true);
-            this.object.find(`[name="browser_push"]`).prop("disabled", false);
-            this.object.find(`[name="browser_push"]`).prop("checked", WS.notification.isEnabledPushBrowser());
-            this.object.find(`[name="os_push"]`).prop("disabled", false);
-            this.object.find(`[name="os_push"]`).prop("checked",  WS.notification.isEnabledPushBrowser());
-            this.object.find(`[name="email"]`).prop("disabled", false);
+            this.object.find(`[name="all_push"]`).prop('checked', true);            
+            this.object.find(`[name="browser_push"]`).prop("checked", WS.notification.isEnabledPushBrowser());            
+            this.object.find(`[name="os_push"]`).prop("checked",  WS.notification.isEnabledPushBrowser());            
             this.object.find(`[name="email"]`).prop("checked",  WS.notification.isEnabledEmail());
         }else{
             this.object.find(`[name="all_push"]`).prop('checked', false);
             this.object.find(`[name="browser_push"]`).prop("disabled", true);
             this.object.find(`[name="os_push"]`).prop("disabled", true);
             this.object.find(`[name="email"]`).prop("disabled", true);
-        }
-        console.log(this.object.find(`[name="all_push"]`).prop('checked'))
+        }        
         $("body")
             .off(`.${this.id}`)
             .on(`change.${this.id} click.${this.id}`,`#${this.id} [name="all_push"]`,function(){  
                 console.log($(this).is(":checked"))              
                 if($(this).is(":checked")){
                     WS.notification.enable()
-                    _this.object.find(`[name="browser_push"]`).prop("disabled", false);
-                    _this.object.find(`[name="os_push"]`).prop("disabled", false);
-                    _this.object.find(`[name="email"]`).prop("disabled", false);
+                    _this.object.find(`[name="browser_push"]`).removeProp("disabled");
+                    _this.object.find(`[name="os_push"]`).removeProp("disabled");
+                    _this.object.find(`[name="email"]`).removeProp("disabled");
                 }else{
                     WS.notification.disable()
                     _this.object.find(`[name="browser_push"]`).prop("disabled", true);
                     _this.object.find(`[name="os_push"]`).prop("disabled", true);
                     _this.object.find(`[name="email"]`).prop("disabled", true);
                 }
-                console.log(_this.object.find(`[name="all_push"]`).prop('checked'))
-                console.log(_this.object.find(`[name="all_push"]`).is(':checked'))
-                console.log(_this.object.find(`[name="all_push"]`).is('checked'))
              })
              
         this.object
@@ -83,7 +75,6 @@ export default class PushSettings extends Box {
                     }
                 }
             })
-                */
     }
 
 
