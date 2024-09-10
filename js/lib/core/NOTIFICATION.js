@@ -82,10 +82,22 @@ export default class NOTIFICATION {
         return Boolean(localStorage.getItem('notification.state'))
     }
 
-    send(title, text){
-        if(this.isGranted() && this.get()){
+    sendOS(title, text){
+        if(this.isGranted() && this.get() && this.isEnabledPushOS()){
             const img = "/img/maskable-icon.png";
             const notification = new Notification(title, { body: text, icon: img });
+        }
+    }
+    sendBrowser(title, text){
+        if(this.isGranted() && this.get() && this.isEnabledPushBrowser()){
+            const img = "/img/maskable-icon.png";
+            //const notification = new Notification(title, { body: text, icon: img });
+        }
+    }
+    sendEmail(title, text){
+        if(this.isGranted() && this.get() && this.isEnabledEmail()){
+            const img = "/img/maskable-icon.png";
+            //const notification = new Notification(title, { body: text, icon: img });
         }
     }
 }
