@@ -17,7 +17,8 @@ export default class MenuLogo extends HTMLObject  {
         $("body")
             .off(`.${this.name}`)
             .on(`click.${this.name}`,`${this.selector}`,function(){
-                $(`#content`).modal({module:"about"});
+                //$(`#content`).modal({module:"about"});
+                WS.ui.modal({module:"about"})
                 /*Module.call("about").then((content) => {
 
                 });
