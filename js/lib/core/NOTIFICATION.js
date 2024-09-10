@@ -97,8 +97,11 @@ export default class NOTIFICATION {
         return localStorage.getItem('notification.os')==="true"
     }
 
-    get(){        
-        return Boolean(localStorage.getItem('notification.state'))        
+    get(){
+        if(this.isGranted()){        
+            return Boolean(localStorage.getItem('notification.state'))        
+        }
+        return false;
     }
 
     sendOS(title, text){
