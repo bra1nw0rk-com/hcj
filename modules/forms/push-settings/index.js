@@ -64,6 +64,7 @@ export default class PushSettings extends Box {
                     _this.object.find(`[name="os_push"]`).prop("disabled", true);
                     _this.object.find(`[name="email"]`).prop("disabled", true);
                 }
+                console.log(WS.notification.get())
              })
              /*
             .on(`change.${this.id} click.${this.id}`,`[name="browser_push"]`,function(e){
