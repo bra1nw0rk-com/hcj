@@ -6,14 +6,11 @@
  **/
 export default class NOTIFICATION {
     init(){
-        if(localStorage.getItem('notification.state')===null){
-            if (("Notification" in window)) {
-                if (Notification.permission === "default") {
+        if ("Notification" in window) {
+            if (Notification.permission === "default") {
                     Notification.requestPermission().then(r => {
                         localStorage.setItem('notification.state',"true")
                     });
-                }
-
             }
         }
     }
