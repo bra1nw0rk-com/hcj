@@ -41,7 +41,8 @@ $(function () {
                         obj.button.minimize();
                         obj.draggable = true;
                         obj.resizable = true;
-                        obj.toFront()
+                        //obj.toFront()
+
                         if(options.type==="info"){
                             obj.icon.info();
                         }else if(options.type==="error"){
@@ -53,7 +54,6 @@ $(function () {
                             }
                         }
                         if(create) {
-                            $(`[box]`).removeClass(`top`)
                             $(_this).append(obj.get());
                             obj.prepare();
                         }
