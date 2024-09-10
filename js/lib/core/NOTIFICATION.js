@@ -15,7 +15,10 @@ export default class NOTIFICATION {
         }
     }
     getSystemStatus(){
-        return Notification.permission
+        if ("Notification" in window) {        
+            return Notification.permission
+        }
+        return null
     }
     enable(){
         if(this.isGranted()){
@@ -24,7 +27,10 @@ export default class NOTIFICATION {
     }
 
     isGranted(){
-        return Notification.permission === "granted"
+        if ("Notification" in window) {
+            return Notification.permission === "granted"
+        }
+        return false
     }
     isAllowAll(){
         return localStorage.getItem('notification.state')==="true"
@@ -69,10 +75,18 @@ export default class NOTIFICATION {
         if(this.getSystemStatus() === 'denied'){
             WS.ui.modal('You have denied notifications in browser settings. Please allow first.',"error")
         }else{
-            if(this.isGranted() && this.isAllowAll()){
-                localStorage.setItem('notification.os',"true")
-                this.sendOS('Notification settings','Notifications now is ON')
-            }
+            if ("Notification" in window) {
+                if (Notification.permission === "default") {
+                        Notification.requestPermission().then(r => {
+                            localStorage.setItem('notification.state',"true")
+                            localStorage.setItem('notification.os',"true")
+                            this.sendOS('Notification settings','Notifications now is ON')
+                        });
+                }else{
+                    localStorage.setItem('notification.os',"true")
+                    this.sendOS('Notification settings','Notifications now is ON')
+                }
+            }           
         }
     }
 
