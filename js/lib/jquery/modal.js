@@ -23,8 +23,8 @@ $(function () {
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
                     let _this = this;
+                    console.log(options.module)
                     if(options.module !== "") {
-                        console.log(options.module)
                         Module.call(options.module).then(function (obj) {
                             if(obj!== null) {
                                 $(_this).append(obj.get());
