@@ -42,16 +42,16 @@ export default class NOTIFICATION {
     }
 
     enableEmail(){
-        if(this.isGranted() && this.isAllowAll()){
+        if(this.isAllowAll()){
             localStorage.setItem('notification.email',"true")
         }
     }
 
-    isEnabledEmail(){
+    isEnabledEmail(){        
         return localStorage.getItem('notification.email')==="true"
     }
 
-    disableEmail(){
+    disableEmail(){        
         localStorage.setItem('notification.email',"false")
     }
 
