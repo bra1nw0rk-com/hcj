@@ -40,6 +40,7 @@ export default class Box extends HTMLObject {
 		this.classes = `top`
 		this.lastPosition.y =  this.object.position().top
 		this.lastPosition.x =  this.object.position().left
+		/*
 		if(this.object.closest(`body`).length > 0){
 			this.object.css({
 				left:this.lastPosition.x,
@@ -49,6 +50,8 @@ export default class Box extends HTMLObject {
 				transform:'none'
 			})
 		}
+
+		 */
 		//console.log(this.object.offset().height, this.object.offset().width)
 		this.object
 			.off(`.${this.id}`)
