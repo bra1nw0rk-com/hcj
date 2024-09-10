@@ -38,6 +38,9 @@ $(function () {
                         obj.name = "consoleModal"
                         obj.content = options.content;
                         obj.button.close();
+                        obj.button.minimize();
+                        obj.draggable()
+                        obj.resizable()
                         obj.toFront()
                         if(options.type==="info"){
                             obj.icon.info();
