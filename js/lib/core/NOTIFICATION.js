@@ -72,6 +72,7 @@ export default class NOTIFICATION {
     }
 
     enablePushOS(){
+        console.log(this.getSystemStatus())
         if(this.getSystemStatus() === 'denied'){
             WS.ui.modal('You have denied notifications in browser settings. Please allow first.',"error")
         }else{
