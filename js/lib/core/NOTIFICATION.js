@@ -31,7 +31,7 @@ export default class NOTIFICATION {
         return false
     }
     isAllowAll(){
-        return !!localStorage.getItem('notification.state')
+        return localStorage.getItem('notification.state').toLowerCase() === "true"
     }
 
     disable(){
@@ -62,7 +62,7 @@ export default class NOTIFICATION {
     }
 
     isEnabledPushBrowser(){
-        return !!localStorage.getItem('notification.browser')
+        return localStorage.getItem('notification.browser').toLowerCase() === "true"
     }
 
     disablePushBrowser(){
@@ -94,11 +94,11 @@ export default class NOTIFICATION {
         localStorage.setItem('notification.os',"false")
     }
     isEnabledPushOS(){
-        return !!localStorage.getItem('notification.os')
+        return localStorage.getItem('notification.os').toLowerCase() === "true"
     }
 
     get(){
-        return !!localStorage.getItem('notification.state')
+        return localStorage.getItem('notification.state').toLowerCase() === "true"
     }
 
     sendOS(title, text){
