@@ -39,7 +39,7 @@ export default class NOTIFICATION {
 
     enableEmail(){
         if(this.isGranted() && this.isAllowAll()){
-            localStorage.setItem('notification.email',"false")
+            localStorage.setItem('notification.email',"true")
         }
     }
 
@@ -53,7 +53,7 @@ export default class NOTIFICATION {
 
     enablePushBrowser(){
         if(this.isGranted() && this.isAllowAll()){
-            localStorage.setItem('notification.browser',"false")
+            localStorage.setItem('notification.browser',"true")
         }
     }
 
@@ -67,7 +67,7 @@ export default class NOTIFICATION {
 
     enablePushOS(){
         if(this.isGranted() && this.isAllowAll()){
-            localStorage.setItem('notification.os',"false")
+            localStorage.setItem('notification.os',"true")
         }
     }
 
