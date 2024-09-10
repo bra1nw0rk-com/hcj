@@ -20,7 +20,8 @@ globalThis.html = String.raw;
 globalThis.WS = {
 	ui: ui,
 	user: new USER(),
-	notification: new NOTIFICATION()
+	notification: new NOTIFICATION(),
+	storage :new LocalStorage("ws") 
 };
 
 $(function () {
