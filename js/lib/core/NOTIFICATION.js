@@ -20,10 +20,8 @@ export default class NOTIFICATION {
         }
         return null
     }
-    enable(){
-        if(this.isGranted()){
-            localStorage.setItem('notification.state',"true")
-        }
+    enable(){        
+        localStorage.setItem('notification.state',"true")        
     }
 
     isGranted(){
@@ -99,10 +97,7 @@ export default class NOTIFICATION {
     }
 
     get(){
-        if(this.isGranted()){        
-            return Boolean(localStorage.getItem('notification.state'))        
-        }
-        return false;
+        return Boolean(localStorage.getItem('notification.state'))        
     }
 
     sendOS(title, text){
