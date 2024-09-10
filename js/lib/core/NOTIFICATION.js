@@ -56,7 +56,7 @@ export default class NOTIFICATION {
     }
 
     enablePushBrowser(){
-        if(this.isGranted() && this.isAllowAll()){
+        if(this.isAllowAll()){
             localStorage.setItem('notification.browser',"true")
         }
     }

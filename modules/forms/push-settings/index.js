@@ -61,12 +61,12 @@ export default class PushSettings extends Box {
                     _this.object.find(`[name="email"]`).prop("disabled", true);
                 }
              })
-            .on(`change.${this.id} click.${this.id}`,`[name="os_push"]`,function(e){
+            .on(`change.${this.id} click.${this.id}`,`[name="browser_push"]`,function(e){
                 if(WS.notification.get()){
                     if($(this).is(":checked")){
-                        WS.notification.enablePushOS()                       
+                        WS.notification.enablePushBrowser()                       
                     }else{
-                        WS.notification.disablePushOS()
+                        WS.notification.disablePushBrowser()
                     }
                 }
             })
