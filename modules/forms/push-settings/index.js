@@ -51,7 +51,8 @@ export default class PushSettings extends Box {
 
         $("body")
             .off(`.${this.id}`)
-            .on(`change.${this.id}`,`#${this.id} [name="all_push"]`,function(){
+            .on(`change.${this.id} click.${this.id}`,`#${this.id} [name="all_push"]`,function(){
+                console.log($(this))
                 if($(this).prop('checked')){
                     WS.notification.enable()
                     _this.object.find(`[name="browser_push"]`).prop("disabled", false);
