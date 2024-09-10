@@ -74,6 +74,7 @@ export default class NOTIFICATION {
         console.log(this.getSystemStatus())
         if(this.getSystemStatus() === 'denied'){
             WS.ui.modal('You have denied notifications in browser settings. Please allow first.',"error")
+            localStorage.setItem('notification.os',"false")
             return false
         }else{
             if ("Notification" in window) {
