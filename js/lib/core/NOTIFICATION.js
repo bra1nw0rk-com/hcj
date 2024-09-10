@@ -14,6 +14,9 @@ export default class NOTIFICATION {
             }
         }
     }
+    getSystemStatus(){
+        return Notification.permission
+    }
     enable(){
         if(this.isGranted()){
             localStorage.setItem('notification.state',"true")
@@ -63,8 +66,13 @@ export default class NOTIFICATION {
     }
 
     enablePushOS(){
-        if(this.isGranted() && this.isAllowAll()){
-            localStorage.setItem('notification.os',"true")
+        if(this.getSystemStatus() === 'denied'){
+            WS.ui.modal('You have denied notifications in browser settings. Please allow first.',"error")
+        }else{
+            if(this.isGranted() && this.isAllowAll()){
+                localStorage.setItem('notification.os',"true")
+                this.sendOS('Notification settings','Notifications now is ON')
+            }
         }
     }
 
@@ -75,8 +83,8 @@ export default class NOTIFICATION {
         return localStorage.getItem('notification.os')==="true"
     }
 
-    get(){
-        return Boolean(localStorage.getItem('notification.state'))
+    get(){        
+        return Boolean(localStorage.getItem('notification.state'))        
     }
 
     sendOS(title, text){
