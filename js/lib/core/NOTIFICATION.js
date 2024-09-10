@@ -74,20 +74,25 @@ export default class NOTIFICATION {
         console.log(this.getSystemStatus())
         if(this.getSystemStatus() === 'denied'){
             WS.ui.modal('You have denied notifications in browser settings. Please allow first.',"error")
+            return false
         }else{
             if ("Notification" in window) {
                 if (Notification.permission === "default") {
                         Notification.requestPermission().then(r => {
-                            localStorage.setItem('notification.state',"true")
-                            localStorage.setItem('notification.os',"true")
-                            this.sendOS('Notification settings','Notifications now is ON')
+                            if(this.isGranted()){                            
+                                localStorage.setItem('notification.os',"true")
+                                this.sendOS('Notification settings','Notifications now is ON')
+                                return true
+                            }
                         });
                 }else{
                     localStorage.setItem('notification.os',"true")
                     this.sendOS('Notification settings','Notifications now is ON')
+                    return true
                 }
             }           
         }
+        return false
     }
 
     disablePushOS(){

@@ -79,7 +79,9 @@ export default class PushSettings extends Box {
             .on(`change.${this.id} click.${this.id}`,`[name="os_push"]`,function(e){
                 if(WS.notification.get()){
                     if($(this).is(":checked")){
-                        WS.notification.enablePushOS()                       
+                        if(!WS.notification.enablePushOS()){
+                            $(this).prop('checked', false);
+                        }
                     }else{
                         WS.notification.disablePushOS()
                     }
