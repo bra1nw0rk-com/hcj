@@ -9,7 +9,7 @@ export default class NOTIFICATION {
         if ("Notification" in window) {
             if (Notification.permission === "default") {
                     Notification.requestPermission().then(r => {
-                        WS.storage.setItem('notification.state',"true")
+                        localStorage.setItem('notification.state',"true")
                     });
             }
         }
@@ -21,7 +21,7 @@ export default class NOTIFICATION {
         return null
     }
     enable(){        
-        WS.storage.setItem('notification.state',"true")        
+        localStorage.setItem('notification.state',"true")        
     }
 
     isGranted(){
@@ -31,11 +31,11 @@ export default class NOTIFICATION {
         return false
     }
     isAllowAll(){
-        return WS.storage.getItem('notification.state')==="true"
+        return localStorage.getItem('notification.state')==="true"
     }
 
     disable(){
-        WS.storage.setItem('notification.state',"false")
+        localStorage.setItem('notification.state',"false")
         this.disablePushBrowser()
         this.disablePushOS()
         this.disableEmail()
@@ -43,31 +43,31 @@ export default class NOTIFICATION {
 
     enableEmail(){
         if(this.isAllowAll()){
-            WS.storage.setItem('notification.email',"true")
+            localStorage.setItem('notification.email',"true")
         }
     }
 
     isEnabledEmail(){        
-        return WS.storage.getItem('notification.email')==="true"
+        return localStorage.getItem('notification.email')==="true"
     }
 
     disableEmail(){        
-        WS.storage.setItem('notification.email',"false")
+        localStorage.setItem('notification.email',"false")
     }
 
     enablePushBrowser(){
         if(this.isAllowAll()){
-            WS.storage.setItem('notification.browser',"true")
+            localStorage.setItem('notification.browser',"true")
         }
     }
 
     isEnabledPushBrowser(){
-        return WS.storage.getItem('notification.browser')==="true"
+        return localStorage.getItem('notification.browser')==="true"
     }
 
     disablePushBrowser(){
         console.log(storage.getItem('notification.browser'))
-        WS.storage.setItem('notification.browser',"false")
+        localStorage.setItem('notification.browser',"false")
     }
 
     enablePushOS(){
@@ -78,12 +78,12 @@ export default class NOTIFICATION {
             if ("Notification" in window) {
                 if (Notification.permission === "default") {
                         Notification.requestPermission().then(r => {
-                            WS.storage.setItem('notification.state',"true")
-                            WS.storage.setItem('notification.os',"true")
+                            localStorage.setItem('notification.state',"true")
+                            localStorage.setItem('notification.os',"true")
                             this.sendOS('Notification settings','Notifications now is ON')
                         });
                 }else{
-                    WS.storage.setItem('notification.os',"true")
+                    localStorage.setItem('notification.os',"true")
                     this.sendOS('Notification settings','Notifications now is ON')
                 }
             }           
@@ -91,14 +91,14 @@ export default class NOTIFICATION {
     }
 
     disablePushOS(){
-        WS.storage.setItem('notification.os',"false")
+        localStorage.setItem('notification.os',"false")
     }
     isEnabledPushOS(){
-        return WS.storage.getItem('notification.os')==="true"
+        return localStorage.getItem('notification.os')==="true"
     }
 
     get(){
-        return Boolean(WS.storage.getItem('notification.state'))        
+        return Boolean(localStorage.getItem('notification.state'))        
     }
 
     sendOS(title, text){
