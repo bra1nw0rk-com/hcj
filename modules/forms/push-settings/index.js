@@ -34,6 +34,7 @@ export default class PushSettings extends Box {
     init(){
         super.init()
         let _this = this
+        console.log(WS.notification.get())
         if(WS.notification.get()){
             this.object.find(`[name="all_push"]`).prop('checked', true);
             this.object.find(`[name="browser_push"]`).prop("disabled", false);
@@ -66,7 +67,7 @@ export default class PushSettings extends Box {
                 }
              })
              
-        _this.object
+        this.object
             .off(`.${this.id}`)
             .on(`change.${this.id} click.${this.id}`,`[name="os_push"]`,function(e){
                 if(WS.notification.get()){
