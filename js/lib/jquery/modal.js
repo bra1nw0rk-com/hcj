@@ -48,7 +48,7 @@ $(function () {
                             obj.icon.error();
                         }
                         if(options.unique){
-                            if($(this).find(`${obj.selector}`).length !== 0){
+                            if($(this).find(`${obj.selector}`).length > 0){
                                 create = false;
                             }
                         }
