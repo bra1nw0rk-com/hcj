@@ -31,7 +31,7 @@ export default class NOTIFICATION {
         return false
     }
     isAllowAll(){
-        return localStorage.getItem('notification.state')==="true"
+        return !!localStorage.getItem('notification.state')
     }
 
     disable(){
@@ -48,7 +48,7 @@ export default class NOTIFICATION {
     }
 
     isEnabledEmail(){        
-        return localStorage.getItem('notification.email')==="true"
+        return !!localStorage.getItem('notification.email')
     }
 
     disableEmail(){        
@@ -62,7 +62,7 @@ export default class NOTIFICATION {
     }
 
     isEnabledPushBrowser(){
-        return localStorage.getItem('notification.browser')==="true"
+        return !!localStorage.getItem('notification.browser')
     }
 
     disablePushBrowser(){
@@ -94,11 +94,11 @@ export default class NOTIFICATION {
         localStorage.setItem('notification.os',"false")
     }
     isEnabledPushOS(){
-        return localStorage.getItem('notification.os')==="true"
+        return !!localStorage.getItem('notification.os')
     }
 
     get(){
-        return localStorage.getItem('notification.state')
+        return !!localStorage.getItem('notification.state')
     }
 
     sendOS(title, text){
