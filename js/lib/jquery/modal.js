@@ -39,8 +39,8 @@ $(function () {
                         obj.content = options.content;
                         obj.button.close();
                         obj.button.minimize();
-                        obj.draggable()
-                        obj.resizable()
+                        obj.draggable = true;
+                        obj.resizable = true;
                         obj.toFront()
                         if(options.type==="info"){
                             obj.icon.info();
