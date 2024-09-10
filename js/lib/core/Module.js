@@ -33,7 +33,7 @@ export default class Module {
 								}
 							}
 						} else {
-							console.log(`module ${name} hasnt default export`);
+							console.log(`module ${name} hasn't default export`);
 							resolve(null);
 						}
 					})
