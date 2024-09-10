@@ -66,7 +66,7 @@ export default class NOTIFICATION {
     }
 
     disablePushBrowser(){
-        console.log(storage.getItem('notification.browser'))
+        console.log(localStorage.getItem('notification.browser'))
         localStorage.setItem('notification.browser',"false")
     }
 
