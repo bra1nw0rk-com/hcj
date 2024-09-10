@@ -63,7 +63,19 @@ export default class PushSettings extends Box {
                     _this.object.find(`[name="email"]`).prop("disabled", true);
                 }
              })
-
+             
+        _this.object
+            .off(`.${this.id}`)
+            .on('change',`[name="os_push"]`,function(e){
+                if(WS.notification.get()){
+                    if($(this).prop('checked')){
+                        WS.notification.enablePushOS()
+                        WS.notification.sendOS('Notification settings','Notifications now is ON')
+                    }else{
+                        WS.notification.disablePushOS()
+                    }
+                }
+            })
     }
 
 
