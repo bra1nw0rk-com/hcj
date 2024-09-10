@@ -98,7 +98,7 @@ export default class NOTIFICATION {
     }
 
     get(){
-        return Boolean(localStorage.getItem('notification.state'))        
+        return localStorage.getItem('notification.state')
     }
 
     sendOS(title, text){
