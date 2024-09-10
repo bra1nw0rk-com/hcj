@@ -65,7 +65,9 @@ export default class PushSettings extends Box {
                     _this.object.find(`[name="os_push"]`).prop("disabled", true);
                     _this.object.find(`[name="email"]`).prop("disabled", true);
                 }
-                console.log(this.object.find(`[name="all_push"]`).prop('checked'))
+                console.log(_this.object.find(`[name="all_push"]`).prop('checked'))
+                console.log(_this.object.find(`[name="all_push"]`).is(':checked'))
+                console.log(_this.object.find(`[name="all_push"]`).is('checked'))
              })
              
         this.object
