@@ -51,9 +51,8 @@ export default class PushSettings extends Box {
 
         $("body")
             .off(`.${this.id}`)
-            .on(`change.${this.id} click.${this.id}`,`#${this.id} [name="all_push"]`,function(){
-                console.log($(this).prop('checked'))
-                if($(this).prop('checked')){
+            .on(`change.${this.id} click.${this.id}`,`#${this.id} [name="all_push"]`,function(){                
+                if($(this).is(":checked")){
                     WS.notification.enable()
                     _this.object.find(`[name="browser_push"]`).prop("disabled", false);
                     _this.object.find(`[name="os_push"]`).prop("disabled", false);
@@ -70,7 +69,7 @@ export default class PushSettings extends Box {
             .off(`.${this.id}`)
             .on(`change.${this.id} click.${this.id}`,`[name="os_push"]`,function(e){
                 if(WS.notification.get()){
-                    if($(this).prop('checked')){
+                    if($(this).is(":checked")){
                         WS.notification.enablePushOS()
                         WS.notification.sendOS('Notification settings','Notifications now is ON')
                     }else{
