@@ -48,7 +48,7 @@ export default class NOTIFICATION {
     }
 
     isEnabledEmail(){        
-        return !!localStorage.getItem('notification.email')
+        return localStorage.getItem('notification.email').toLowerCase() === "true"
     }
 
     disableEmail(){        

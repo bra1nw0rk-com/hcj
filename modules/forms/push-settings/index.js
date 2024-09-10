@@ -66,7 +66,7 @@ export default class PushSettings extends Box {
                 }
                 console.log(WS.notification.get())
              })
-             /*
+             
             .on(`change.${this.id} click.${this.id}`,`[name="browser_push"]`,function(e){
                 if(WS.notification.get()){
                     if($(this).is(":checked")){
@@ -76,7 +76,25 @@ export default class PushSettings extends Box {
                     }
                 }
             })
-                */
+            .on(`change.${this.id} click.${this.id}`,`[name="os_push"]`,function(e){
+                if(WS.notification.get()){
+                    if($(this).is(":checked")){
+                        WS.notification.enablePushOS()                       
+                    }else{
+                        WS.notification.disablePushOS()
+                    }
+                }
+            })
+            .on(`change.${this.id} click.${this.id}`,`[name="email"]`,function(e){
+                if(WS.notification.get()){
+                    if($(this).is(":checked")){
+                        WS.notification.enableEmail()                       
+                    }else{
+                        WS.notification.disableEmail()
+                    }
+                }
+            })
+            
     }
 
 
