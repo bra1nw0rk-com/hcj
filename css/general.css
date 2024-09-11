@@ -370,14 +370,14 @@ a::before{
 	z-index: 10;
 }
 
-[box] .head .fa-info{
+[box] > .head .fa-info{
 	position: relative;
 	left: 9px;
 	font-size: 18px;
 	top: 4px;
 	opacity: 0.2;
 }
-[box] .head .fa-times-circle{
+[box] > .head .fa-times-circle{
 	position: relative;
 	left: 3px;
 	font-size: 22px;
@@ -385,7 +385,15 @@ a::before{
 	top: 0;
 	opacity: 0.2;
 }
-[box] .head .fa-cogs{
+[box] > .head .fa-cogs{
+	position: relative;
+	left: 4px;
+	font-size: 16px;
+	color: #ff8f00;
+	top: 3px;
+	opacity: 0.2;
+}
+[box] > .head .fa.other{
 	position: relative;
 	left: 4px;
 	font-size: 16px;
