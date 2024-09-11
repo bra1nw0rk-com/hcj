@@ -23,13 +23,13 @@ export default class LoginForm extends Box {
 		super.init()
 		let _this = this;
 		this.object.off(`.${this.id}`)
-			.on(`click.${this.id}`, `#${this.id} .submit`, function (e) {
+			.on(`click.${this.id}`, `.submit`, function (e) {
 				console.log("sss")
 				e.preventDefault();
 				//storage.set("environment", $(`${_this.selector}  #environment`).val());
 				_this.call("submit");
 				return true;
-		}).on(`keypress.${this.id}`, `#${this.id}`, function (e) {
+		}).on(`keypress.${this.id}`,  function (e) {
 			if(e.which === 13) {
 				_this.call("submit");
 			}
