@@ -135,19 +135,6 @@ export default class Main extends HTMLObject {
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
 			})
-			/*
-			.on(`addClass.${this.id}`,`[box]`,function(e,data){
-				if(data.class === `top`){
-					$(`[data-obj-id]`).removeClass("selected")
-					$(`[data-obj-id="${this.id}"]`).addClass("selected")
-				}
-			}).on(`removeClass.${this.id}`,`[box]`,function(e,data){
-				if(data.class === `top`){
-					$(`[data-obj-id="${this.id}"]`).removeClass("selected")
-				}
-			})
-
-			 */
 
 	}
 
