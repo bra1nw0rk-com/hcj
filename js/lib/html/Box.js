@@ -137,7 +137,7 @@ export default class Box extends HTMLObject {
 			let parent = this.object.parent()
 			//this.deactivate()
 			this.object.remove()
-			parent.prepend(clone)
+			parent.append(clone)
 			//$(`#${this.id}`).addClass(`top`)
 		}
 	}
@@ -149,8 +149,8 @@ export default class Box extends HTMLObject {
 		return($(`#${this.id}`).hasClass(`top`))
 
 		 */
-		console.log($(`[box]`).index(this.object))
-		return $(`[box]`).index(this.object) === 0
+
+		return $(`[box]`).index(this.object) === ($(`[box]`).length - 1)
 	}
 
 	clear() {
