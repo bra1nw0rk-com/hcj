@@ -51,7 +51,8 @@ export default class BoxManager extends HTMLObject  {
                     e.stopPropagation()
                     if(!_this.showed){
                         _this.showed = true;
-                        _this.object.removeClass('hidden').addClass("fadeIn")
+                        WS.ui.effects.fadeIn(_this.object)
+                        //_this.object.removeClass('hidden').addClass("fadeIn")
                         if($(`[box]`).length > 0){
                             _this.#content.html("")
                             $(`[box]`).each(function(){
@@ -65,8 +66,6 @@ export default class BoxManager extends HTMLObject  {
                                 boxItem.attr("miniature-id",$(this).attr("id"))
                                 boxItem.removeAttr("id")
                                 boxItem.removeAttr("name")
-                                boxItem.removeClass("top fadeIn")
-
 
                                 boxItem.unbind();
                                 boxItem.find(`*`).unbind();
