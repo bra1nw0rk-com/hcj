@@ -395,11 +395,9 @@ a::before{
 }
 [box] > .head .fa.other{
 	position: relative;
-	left: 4px;
 	font-size: 16px;
-	color: #ff8f00;
-	top: 3px;
 	opacity: 0.2;
+	padding: 4px;
 }
 .cursor-move{
 	cursor: move;
