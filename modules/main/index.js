@@ -42,6 +42,7 @@ export default class Main extends HTMLObject {
 		$("body")
 			.off("mutation.main")
 			.on("mutation.main", function (e) {
+				console.log($(this),e)
 				$(this).find("[box]:not([run-added])").each(function () {
 					let icon = $(this)[0].parameters.faIcon
 					if (icon !== "") {
@@ -99,7 +100,7 @@ export default class Main extends HTMLObject {
 							boxItem.attr("miniature-id",$(this).attr("id"))
 							boxItem.removeAttr("id")
 							boxItem.removeAttr("name")
-							boxItem.removeClass("top fadeIn")
+							boxItem.removeClass("fadeIn")
 
 							boxItem.unbind();
 							boxItem.find(`*`).unbind();							
