@@ -41,13 +41,7 @@ $(function () {
                         obj.button.minimize();
                         obj.draggable = true;
                         obj.resizable = true;
-                        //obj.toFront()
 
-                        // if(options.type==="info"){
-                        //     obj.icon.info();
-                        // }else if(options.type==="error"){
-                        //     obj.icon.error();
-                        // }
                         obj.icon[options.type]()
 
                         if(options.unique){
