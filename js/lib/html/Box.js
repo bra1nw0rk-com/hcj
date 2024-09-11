@@ -35,11 +35,8 @@ export default class Box extends HTMLObject {
 	}
 	init(){
 		super.init()
-		//$(`[box]`).removeClass(`top`)
 		let _this = this;
-		//this.classes = `top`
 		this.saveState()
-
 		if(this.object.closest(`body`).length > 0){
 			this.object.css({
 				left:this.lastPosition.x,
@@ -49,6 +46,7 @@ export default class Box extends HTMLObject {
 				transform:'none'
 			})
 		}
+		WS.ui.effects.fadeIn(this.object)
 
 		this.object
 			.off(`.${this.id}`)
@@ -58,16 +56,8 @@ export default class Box extends HTMLObject {
 				e.stopPropagation()
 				_this.toFront()
 			});
-		// $(`body`).on(`click.${this.id}`,function(){
-		// 	_this.deactivate()
-		// })
-
 
 	}
-
-	// deactivate(){
-	// 	$(`[box]`).removeClass(`top`)
-	// }
 
 	set title(text) {
 		this.#title.html(text);

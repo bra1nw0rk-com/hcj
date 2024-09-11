@@ -39,6 +39,7 @@ export default class Main extends HTMLObject {
 	}
 	init(){
 		let _this = this;
+		WS.ui.effects.fadeIn(this.object)
 		$("body")
 			.off(`mutation.${this.id}`)
 			.on(`mutation.${this.id}`, `#${this.id} > #content`,function (e) {

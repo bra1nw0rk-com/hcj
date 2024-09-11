@@ -31,5 +31,9 @@ export default class Groups extends Box {
 
     }
 
+    init() {
+        super.init();
+    }
+
 
 }

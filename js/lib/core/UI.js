@@ -32,6 +32,18 @@ export default class UI {
 				}
 			})
 		},
+		fadeIn(selector){
+			$(selector).each(function(){
+				$(this).css({
+					opacity:"0%"
+				}).removeClass('hidden')
+				$(this).animate({
+					opacity:"100%"
+				},500,function(){
+
+				})
+			})
+		}
 	};
 	constructor() {
 

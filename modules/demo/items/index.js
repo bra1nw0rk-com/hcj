@@ -87,7 +87,6 @@ export default class ItemsDemo extends Box {
 
     init(){
         super.init()
-       
     }
 
 
