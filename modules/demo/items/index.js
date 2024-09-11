@@ -16,6 +16,7 @@ export default class ItemsDemo extends Box {
         this.draggable = true;
         this.resizable = true;
         this.name ="itemsDemo"
+        this.icon.set("fa-object-ungroup")
         this.content = $(`
             <div class="input-items">
                 <h2>Input items</h2>
@@ -80,7 +81,7 @@ export default class ItemsDemo extends Box {
 		`);
         this.button.minimize();
         this.button.close();
-        this.icon.settings();
+
 
     }
 
