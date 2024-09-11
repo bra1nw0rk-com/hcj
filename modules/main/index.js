@@ -43,7 +43,7 @@ export default class Main extends HTMLObject {
 			.off(`mutation.${this.id}`)
 			.on(`mutation.${this.id}`, `#${this.id} > #content`,function (e) {
 				let muttObj = $(e.target)
-				console.log(typeof muttObj[0].parameters.isOnFront())
+				console.log(typeof muttObj[0].parameters.isOnFront)
 				if(muttObj[0].parameters.isOnFront()){
 					$(`[data-obj-id]`).removeClass("selected")
 					$(`[data-obj-id="${muttObj.attr('id')}"]`).addClass("selected")
