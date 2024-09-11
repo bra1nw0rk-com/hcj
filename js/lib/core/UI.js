@@ -15,23 +15,6 @@ export default class UI {
 		localStorage.setItem("theme", newTheme);
 	}
 	effects = {
-		shake(selector) {
-			$(selector).attr("data-animated","")
-			$(selector).removeClass("fadeIn").removeClass("modal-shake").addClass("modal-shake");
-			setTimeout(function () {
-				$(selector).removeClass("modal-shake");
-			}, 800);
-		},
-		show(selector) {
-			//console.log(selector)
-			$(selector).each(function(){
-				if($(this).attr("data-animated")!== undefined) {
-					if(!$(this).hasClass("fadeIn")) {
-						$(this).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
-					}
-				}
-			})
-		},
 		fadeIn(selector){
 			$(selector).each(function(){
 				$(this).css({

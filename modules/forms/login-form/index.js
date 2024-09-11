@@ -21,22 +21,24 @@ export default class LoginForm extends Box {
 
 	}
 	init() {
+		super.init()
 		let _this = this;
 
-		$("body").off(`.${this.name}`).on(`click.${this.name}`, `${this.selector} .submit`, function (e) {
-			e.preventDefault();
-			storage.set("environment", $(`${_this.selector}  #environment`).val());
-			_this.call("submit");
-			return true;
-		}).on(`keypress.${this.name}`, `${this.selector}`, function (e) {
+		$("body").off(`.${this.id}`)
+			.on(`click.${this.id}`, `#${this.id} .submit`, function (e) {
+				e.preventDefault();
+				//storage.set("environment", $(`${_this.selector}  #environment`).val());
+				_this.call("submit");
+				return true;
+		}).on(`keypress.${this.id}`, `#${this.id}`, function (e) {
 			if(e.which === 13) {
 				_this.call("submit");
 			}
 			return true;
 		});
 		this.on(`submit`,function(){
-			let login = $(`${_this.selector}  #username`).val()
-			let pass = $(`${_this.selector}  #password`).val()
+			let login = $(`#${_this.id}  #username`).val()
+			let pass = $(`#${_this.id}  #password`).val()
 			WS.user.login(login,pass,function(data){
 				if(data){
 					//WS.ui.closeModal(`${_this.selector}`, function () {});
@@ -47,7 +49,8 @@ export default class LoginForm extends Box {
 				}else{
 					//WS.ui.clearForm(`${_this.selector}`);
 					_this.clear()
-					WS.ui.effects.shake(`${_this.selector}`);
+					_this.object.effect("shake",{times:4},500)
+					WS.ui.effects.shake(`#${_this.id}`);
 				}
 			})
 
