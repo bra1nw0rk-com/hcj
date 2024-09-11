@@ -23,7 +23,6 @@ $(function () {
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
                     let _this = this;
-                    console.log(options.module)
                     if(options.module !== "") {
                         Module.call(options.module).then(function (obj) {
                             if(obj!== null) {
@@ -44,11 +43,13 @@ $(function () {
                         obj.resizable = true;
                         //obj.toFront()
 
-                        if(options.type==="info"){
-                            obj.icon.info();
-                        }else if(options.type==="error"){
-                            obj.icon.error();
-                        }
+                        // if(options.type==="info"){
+                        //     obj.icon.info();
+                        // }else if(options.type==="error"){
+                        //     obj.icon.error();
+                        // }
+                        obj.icon[options.type]()
+
                         if(options.unique){
                             if($(this).find(`${obj.selector}`).length > 0){
                                 create = false;
