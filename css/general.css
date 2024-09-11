@@ -278,6 +278,7 @@ a::before{
 	/*margin-top:30px;*/
 	/*height: calc(100% - 20px);*/
     overflow: auto;
+	padding: 10px;
 	/* Hide scrollbar for IE, Edge and Firefox */
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
