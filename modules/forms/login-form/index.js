@@ -25,6 +25,7 @@ export default class LoginForm extends Box {
 
 		$("body").off(`.${this.id}`)
 			.on(`click.${this.id}`, `#${this.id} .submit`, function (e) {
+				console.log("sss")
 				e.preventDefault();
 				//storage.set("environment", $(`${_this.selector}  #environment`).val());
 				_this.call("submit");
