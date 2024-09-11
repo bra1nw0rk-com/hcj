@@ -27,7 +27,7 @@ export default class HTMLObject extends CustomEvents {
 		}else{
 			this.object =  $(`<${val}></${val}>`);
 		}
-		this.classes = "modal hidden";
+
 		this.object[0].parameters = this
 
 	}

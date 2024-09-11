@@ -26,6 +26,7 @@ export default class Box extends HTMLObject {
 	constructor(unique) {
 		super("div box");
 		this.unique = unique;
+		this.classes = "modal hidden";
 		this.object.append(this.#head);
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
