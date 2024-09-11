@@ -37,8 +37,8 @@ export default class LoginForm extends Box {
 			return true;
 		});
 		this.on(`submit`,function(){
-			let login = $(`#${_this.id}  #username`).val()
-			let pass = $(`#${_this.id}  #password`).val()
+			let login = $(`#${_this.id} #username`).val()
+			let pass = $(`#${_this.id} #password`).val()
 			WS.user.login(login,pass,function(data){
 				if(data){
 					//WS.ui.closeModal(`${_this.selector}`, function () {});
