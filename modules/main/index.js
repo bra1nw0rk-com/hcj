@@ -42,9 +42,12 @@ export default class Main extends HTMLObject {
 		$("body")
 			.off(`mutation.${this.id}`)
 			.on(`mutation.${this.id}`, `#${this.id} > #content`,function (e) {
-				console.log($(this),e)
 				let muttObj = $(e.target)
-				console.log(muttObj)
+				if(muttObj[0].parameters.isOnFront()){
+					$(`[data-obj-id]`).removeClass("selected")
+					$(`[data-obj-id="${muttObj.attr('id')}"]`).addClass("selected")
+				}
+
 				$(this).find("[box]:not([run-added])").each(function () {
 					let icon = $(this)[0].parameters.faIcon
 					if (icon !== "") {
