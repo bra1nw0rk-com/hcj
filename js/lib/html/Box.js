@@ -133,24 +133,11 @@ export default class Box extends HTMLObject {
 
 	toFront(){
 		if(!this.isOnFront()) {
-			//let clone = this.object.clone(true,true)
 			let last = this.object.parent().children(`[box]`).last()
 			last.after(this.object)
-			//this.deactivate()
-			//this.object.remove()
-			//parent.append(clone)
-			//$(`#${this.id}`).addClass(`top`)
 		}
 	}
 	isOnFront(){
-		/*
-		if($(`[box].top`).length > 1) {
-			return false;
-		}
-		return($(`#${this.id}`).hasClass(`top`))
-
-		 */
-		console.log($(`[box]`).index(this.object) === ($(`[box]`).length - 1))
 		return $(`[box]`).index(this.object) === ($(`[box]`).length - 1)
 	}
 
