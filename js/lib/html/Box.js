@@ -115,7 +115,12 @@ export default class Box extends HTMLObject {
 			settings(){
 				_this.#icon = `<i class="fa fa-cogs" aria-hidden="true"></i>`;
 				_this.#head.prepend($(_this.#icon));
+			},
+			set(icon){
+				_this.#icon = `<i class="fa ${icon}" aria-hidden="true"></i>`;
+				_this.#head.prepend($(_this.#icon));
 			}
+
 		}
 	}
 
