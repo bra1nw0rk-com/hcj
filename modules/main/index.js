@@ -123,15 +123,15 @@ export default class Main extends HTMLObject {
 					}
 				});
 			})
-			.on("click.main",`[name="close-btn"]`,function(){
+			.on(`click.${this.id}`,`[name="close-btn"]`,function(){
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
-			}).on(`addClass.main`,`[box]`,function(e,data){
+			}).on(`addClass.${this.id}`,`[box]`,function(e,data){
 				if(data.class === `top`){
 					$(`[data-obj-id]`).removeClass("selected")
 					$(`[data-obj-id="${this.id}"]`).addClass("selected")
 				}
-			}).on(`removeClass.main`,`[box]`,function(e,data){
+			}).on(`removeClass.${this.id}`,`[box]`,function(e,data){
 				if(data.class === `top`){
 					$(`[data-obj-id="${this.id}"]`).removeClass("selected")
 				}
