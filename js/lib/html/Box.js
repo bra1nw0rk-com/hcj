@@ -35,9 +35,9 @@ export default class Box extends HTMLObject {
 	}
 	init(){
 		super.init()
-		$(`[box]`).removeClass(`top`)
+		//$(`[box]`).removeClass(`top`)
 		let _this = this;
-		this.classes = `top`
+		//this.classes = `top`
 		this.saveState()
 
 		if(this.object.closest(`body`).length > 0){
