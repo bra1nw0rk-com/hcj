@@ -58,16 +58,16 @@ export default class Box extends HTMLObject {
 				e.stopPropagation()
 				_this.toFront()
 			});
-		$(`body`).on(`click.${this.id}`,function(){
-			_this.deactivate()
-		})
+		// $(`body`).on(`click.${this.id}`,function(){
+		// 	_this.deactivate()
+		// })
 
 
 	}
 
-	deactivate(){
-		$(`[box]`).removeClass(`top`)
-	}
+	// deactivate(){
+	// 	$(`[box]`).removeClass(`top`)
+	// }
 
 	set title(text) {
 		this.#title.html(text);
