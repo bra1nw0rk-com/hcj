@@ -90,11 +90,11 @@ export default class HTMLObject extends CustomEvents {
 
 	prepare(){
 		this.init()
-		WS.ui.effects.show(this.object);
+		//WS.ui.effects.show(this.object);
 	}
 	init(){
 		let _this = this
-		//$("body").off(`.${this.id}`)
+		$("body").off(`.${this.id}`)
 
 	}
 
