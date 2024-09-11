@@ -31,6 +31,13 @@ export default class HTMLObject extends CustomEvents {
 		this.object[0].parameters = this
 
 	}
+
+	saveState(){
+		this.size.width = this.object.width()
+		this.size.height = this.object.height()
+		this.lastPosition.y =  this.object.position().top
+		this.lastPosition.x =  this.object.position().left
+	}
 	get id(){
 		return this.#id;
 	}

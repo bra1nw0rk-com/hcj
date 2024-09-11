@@ -38,9 +38,8 @@ export default class Box extends HTMLObject {
 		$(`[box]`).removeClass(`top`)
 		let _this = this;
 		this.classes = `top`
-		this.lastPosition.y =  this.object.position().top
-		this.lastPosition.x =  this.object.position().left
-		/*
+		this.saveState()
+
 		if(this.object.closest(`body`).length > 0){
 			this.object.css({
 				left:this.lastPosition.x,
@@ -51,13 +50,10 @@ export default class Box extends HTMLObject {
 			})
 		}
 
-		 */
-		//console.log(this.object.offset().height, this.object.offset().width)
 		this.object
 			.off(`.${this.id}`)
 			.on(`click.${this.id}`,function(e){
 				e.stopPropagation()
-				//_this.toFront()
 			}).on(`mousedown.${this.id}`,function(e){
 				e.stopPropagation()
 				_this.toFront()
