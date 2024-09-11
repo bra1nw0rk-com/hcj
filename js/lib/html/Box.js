@@ -66,9 +66,9 @@ export default class Box extends HTMLObject {
 	get title(){
 		return this.#title.html();
 	}
-	set content(text) {
+	set content(val) {
 		this.#content.find('*').delete()
-		this.#content.append($(text));
+		this.#content.append($(val));
 	}
 	get button(){
 		let _this = this;
