@@ -176,10 +176,11 @@ export default class UI {
 
     minimizeModal(selector) {
 		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(`body`).width()) * 100);
-		selector[0].parameters.size.width = selector.offset().width
-		selector[0].parameters.size.height = selector.offset().height
-		console.log(selector[0].parameters.size)
-		$(selector).animate(
+		let obj = $(selector)
+		obj[0].parameters.size.width = obj.offset().width
+		obj[0].parameters.size.height = obj.offset().height
+		console.log(obj[0].parameters.size)
+		$(obj).animate(
 			{
 				zoom: '1%',
 				top: `100%`,
@@ -187,11 +188,11 @@ export default class UI {
 			},
 			500,
 			function () {
-				$(selector).css({
+				$(obj).css({
 					transform:'none',
 				})
-				$(selector).hide()
-				$(selector).removeClass(`top`)
+				$(obj).hide()
+				$(obj).removeClass(`top`)
 			}
 		);
     }
