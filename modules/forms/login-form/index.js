@@ -47,7 +47,7 @@ export default class LoginForm extends Box {
 				}else{
 					//WS.ui.clearForm(`${_this.selector}`);
 					_this.clear()
-					_this.object.shake({times:2})
+					_this.object.shake({times:2,distance:10})
 					//WS.ui.effects.shake(`#${_this.id}`);
 				}
 			})
