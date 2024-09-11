@@ -22,7 +22,6 @@ export default class LoginForm extends Box {
 	init() {
 		super.init()
 		let _this = this;
-console.log("init")
 		$("body").off(`.${this.id}`)
 			.on(`click.${this.id}`, `#${this.id} .submit`, function (e) {
 				console.log("sss")
