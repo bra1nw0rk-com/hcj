@@ -43,6 +43,8 @@ export default class Main extends HTMLObject {
 			.off(`mutation.${this.id}`)
 			.on(`mutation.${this.id}`, `#${this.id} > #content`,function (e) {
 				console.log($(this),e)
+				let muttObj = $(e.target())
+				console.log(muttObj)
 				$(this).find("[box]:not([run-added])").each(function () {
 					let icon = $(this)[0].parameters.faIcon
 					if (icon !== "") {
@@ -126,7 +128,9 @@ export default class Main extends HTMLObject {
 			.on(`click.${this.id}`,`[name="close-btn"]`,function(){
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
-			}).on(`addClass.${this.id}`,`[box]`,function(e,data){
+			})
+			/*
+			.on(`addClass.${this.id}`,`[box]`,function(e,data){
 				if(data.class === `top`){
 					$(`[data-obj-id]`).removeClass("selected")
 					$(`[data-obj-id="${this.id}"]`).addClass("selected")
@@ -136,6 +140,8 @@ export default class Main extends HTMLObject {
 					$(`[data-obj-id="${this.id}"]`).removeClass("selected")
 				}
 			})
+
+			 */
 
 	}
 
