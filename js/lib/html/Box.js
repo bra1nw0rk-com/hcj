@@ -130,6 +130,7 @@ export default class Box extends HTMLObject {
 		}
 	}
 	isOnFront(){
+		console.log($(`[box]`).index(this.object) === ($(`[box]`).length - 1))
 		return $(`[box]`).index(this.object) === ($(`[box]`).length - 1)
 	}
 
