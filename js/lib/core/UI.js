@@ -210,6 +210,8 @@ export default class UI {
 			{
 				top: `${topP}%`,
 				left: `${leftP}%`,
+				width:`${$(selector)[0].parameters.size.width}`,
+				height:`${$(selector)[0].parameters.size.height}`,
 				zoom: '100%',
 			},500,function(){}
 		);
