@@ -11,7 +11,6 @@ export default class LoginForm extends Box {
 		super(true);
 		this.css = `/modules/forms/login-form/index.css`;
 		this.title = "Login";
-		this.classes = "modal hidden";
 		this.name ="userLoginForm"
 		this.template = $(html`
 			<input type="text" id="username" name="username" placeholder="User" autocomplete="username" required />
