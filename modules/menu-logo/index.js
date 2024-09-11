@@ -18,10 +18,6 @@ export default class MenuLogo extends HTMLObject  {
             .off(`.${this.name}`)
             .on(`click.${this.name}`,`${this.selector}`,function(){
                 $(`#content`).modal({module:"about"});
-                /*Module.call("about").then((content) => {
-
-                });
-                */
 
             })
     }

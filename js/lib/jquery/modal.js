@@ -23,6 +23,7 @@ $(function () {
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
                     let _this = this;
+                    console.log(options.module)
                     if(options.module !== "") {
                         Module.call(options.module).then(function (obj) {
                             if(obj!== null) {
@@ -41,7 +42,8 @@ $(function () {
                         obj.button.minimize();
                         obj.draggable = true;
                         obj.resizable = true;
-                        obj.toFront()
+                        //obj.toFront()
+
                         if(options.type==="info"){
                             obj.icon.info();
                         }else if(options.type==="error"){
@@ -53,7 +55,6 @@ $(function () {
                             }
                         }
                         if(create) {
-                            $(`[box]`).removeClass(`top`)
                             $(_this).append(obj.get());
                             obj.prepare();
                         }

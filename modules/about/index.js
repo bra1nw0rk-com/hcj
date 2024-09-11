@@ -39,5 +39,8 @@ export default class AboutModal extends Box {
 		this.icon.info();
 
 	}
+	init() {
+		super.init();
+	}
 
 }

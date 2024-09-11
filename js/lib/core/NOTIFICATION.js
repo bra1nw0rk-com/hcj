@@ -31,7 +31,10 @@ export default class NOTIFICATION {
         return false
     }
     isAllowAll(){
-        return localStorage.getItem('notification.state').toLowerCase() === "true"
+        if(localStorage.getItem('notification.state') !== null) {
+            return localStorage.getItem('notification.state').toLowerCase() === "true"
+        }
+        return false;
     }
 
     disable(){
@@ -47,8 +50,11 @@ export default class NOTIFICATION {
         }
     }
 
-    isEnabledEmail(){        
-        return localStorage.getItem('notification.email').toLowerCase() === "true"
+    isEnabledEmail(){
+        if(localStorage.getItem('notification.email') !== null){
+            return localStorage.getItem('notification.email').toLowerCase() === "true"
+        }
+        return false;
     }
 
     disableEmail(){        
@@ -62,11 +68,13 @@ export default class NOTIFICATION {
     }
 
     isEnabledPushBrowser(){
-        return localStorage.getItem('notification.browser').toLowerCase() === "true"
+        if(localStorage.getItem('notification.browser') !== null) {
+            return localStorage.getItem('notification.browser').toLowerCase() === "true"
+        }
+        return false;
     }
 
     disablePushBrowser(){
-        console.log(localStorage.getItem('notification.browser'))
         localStorage.setItem('notification.browser',"false")
     }
 
@@ -100,11 +108,17 @@ export default class NOTIFICATION {
         localStorage.setItem('notification.os',"false")
     }
     isEnabledPushOS(){
-        return localStorage.getItem('notification.os').toLowerCase() === "true"
+        if(localStorage.getItem('notification.os') !== null) {
+            return localStorage.getItem('notification.os').toLowerCase() === "true"
+        }
+        return false
     }
 
     get(){
-        return localStorage.getItem('notification.state').toLowerCase() === "true"
+        if(localStorage.getItem('notification.state') !== null) {
+            return localStorage.getItem('notification.state').toLowerCase() === "true"
+        }
+        return false;
     }
 
     sendOS(title, text){
