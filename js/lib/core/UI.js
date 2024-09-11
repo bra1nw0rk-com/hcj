@@ -175,7 +175,10 @@ export default class UI {
 	}
 
     minimizeModal(selector) {
-		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(`body`).width()) * 100) ;
+		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(`body`).width()) * 100);
+		selector[0].parameters.size.width = selector.offset().width
+		selector[0].parameters.size.height = selector.offset().height
+		console.log(selector[0].parameters.size)
 		$(selector).animate(
 			{
 				zoom: '1%',

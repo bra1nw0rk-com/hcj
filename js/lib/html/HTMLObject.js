@@ -17,6 +17,9 @@ export default class HTMLObject extends CustomEvents {
 	lastPosition={
 		x:0,y:0
 	}
+	size= {
+		width:0, height:0
+	}
 	constructor(val) {
 		super();
 		if(typeof val === 'object'){
