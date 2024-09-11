@@ -41,7 +41,7 @@ export default class Main extends HTMLObject {
 		let _this = this;
 		$("body")
 			.off("mutation.main")
-			.on("mutation.main", `main > #content`,function (e) {
+			.on("mutation.main", `[name="main"] > #content`,function (e) {
 				console.log($(this),e)
 				$(this).find("[box]:not([run-added])").each(function () {
 					let icon = $(this)[0].parameters.faIcon
