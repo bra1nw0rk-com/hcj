@@ -33,8 +33,8 @@ export default class HTMLObject extends CustomEvents {
 	}
 
 	saveState(){
-		this.size.width = this.object.width()
-		this.size.height = this.object.height()
+		this.size.width = this.object.outerWidth()
+		this.size.height = this.object.outerHeight()
 		this.lastPosition.y =  this.object.position().top
 		this.lastPosition.x =  this.object.position().left
 	}
