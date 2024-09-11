@@ -12,7 +12,7 @@ export default class LoginForm extends Box {
 		this.css = `/modules/forms/login-form/index.css`;
 		this.title = "Login";
 		this.name ="userLoginForm"
-		this.template = $(html`
+		this.content = $(html`
 			<input type="text" id="username" name="username" placeholder="User" autocomplete="username" required />
 			<input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required />
 			<button class="submit">OK</button>
