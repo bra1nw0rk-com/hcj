@@ -237,6 +237,8 @@ a::before{
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	min-width: 285px;
 	min-height: 100px;
+	height: fit-content;
+	max-height: 90%;
 	position: absolute;
 	top: 50vh;
 	left: 50vw;
