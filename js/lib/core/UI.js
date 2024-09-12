@@ -18,10 +18,10 @@ export default class UI {
 		fadeIn(selector){
 			$(selector).each(function(){
 				$(this).css({
-					opacity:"0%"
+					opacity:"0"
 				}).removeClass('hidden')
 				$(this).animate({
-					opacity:"100%"
+					opacity:"1"
 				},500,function(){
 					/*
 					$(this).css({
