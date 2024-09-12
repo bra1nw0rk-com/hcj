@@ -61,6 +61,7 @@ export default class UI {
 					$(this).attr("data-plugged","");
 					Module.call(moduleName).then((content) => {
 						$(this).replaceWith(content.get());
+						content.init()
 					});
 
 				});
