@@ -26,7 +26,6 @@ export default class Module {
 								}
 								//WS.ui.effects.show(`${module.selector}`);
 								if(create){
-									module.prepare()
 									resolve(module);
 								}else{
 									resolve(null)

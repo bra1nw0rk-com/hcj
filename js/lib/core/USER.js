@@ -113,6 +113,7 @@ export default class USER {
         WS.ui.clearWindow();
         Module.call("pages/login").then(r => {
             $(`body`).append(r.get())
+            r.init()
         });
     }
 
