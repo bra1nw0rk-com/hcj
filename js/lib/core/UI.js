@@ -202,7 +202,9 @@ export default class UI {
 				width:`${$(selector)[0].parameters.size.width}`,
 				height:`${$(selector)[0].parameters.size.height}`,
 				zoom: '100%',
-			},500,function(){}
+			},500,function(){
+				$(selector)[0].parameters.toFront()
+			}
 		);
 	}
 }
