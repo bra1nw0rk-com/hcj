@@ -1,7 +1,7 @@
 /* dark-theme */
 .dark-theme ,.dark-theme::backdrop{
 	--border-color: #3232327d;
-	--border-color-mot-active: #181818;
+	--border-color-not-active: #181818;
 	--bg1: #121212c2;
 	--bg-head: #252525a3;
 	--bg-head-not-active: #181818;

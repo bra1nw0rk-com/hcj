@@ -1,7 +1,7 @@
 /* light-theme */
 .light-theme, .light-theme::backdrop {
 	--border-color: #3232321f;
-	--border-color-mot-active:#c1c1c1;
+	--border-color-not-active:#c1c1c1;
 	--active-text-color: #000;
 	--inactive-text-color: #b7b7b7;
 	--bg1: rgba(255, 255, 255, 0.59);

@@ -247,6 +247,7 @@ a::before{
 }
 .modal:not(:last-child) {
 	filter: grayscale(1);
+	border-color: var(--border-color-not-active);
 }
 
 .modal:last-child {
