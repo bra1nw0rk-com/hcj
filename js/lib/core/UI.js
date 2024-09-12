@@ -21,7 +21,7 @@ export default class UI {
 					opacity:"0"
 				}).removeClass('hidden')
 				$(this).animate({
-					opacity:"1"
+					opacity:"1.1"
 				},500,function(){
 
 					$(this).css({
