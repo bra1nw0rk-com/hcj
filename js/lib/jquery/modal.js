@@ -28,6 +28,7 @@ $(function () {
                             if(obj!== null) {
                                 $(_this).append(obj.get());
                                 obj.init()
+                                console.log("i2")
                             }
                         })
                     }else{
@@ -50,7 +51,7 @@ $(function () {
                         }
                         if(create) {
                             $(_this).append(obj.get());
-                            obj.prepare();
+                            obj.init();
                         }
                     }
                     return this;
