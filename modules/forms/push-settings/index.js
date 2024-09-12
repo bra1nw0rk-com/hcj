@@ -45,8 +45,6 @@ export default class PushSettings extends Box {
             this.object.find(`[name="os_push"]`).prop("disabled", true);
             this.object.find(`[name="email"]`).prop("disabled", true);
         }
-
-        
            
         $("body")
             .off(`.${this.id}`)

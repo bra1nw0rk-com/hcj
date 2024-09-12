@@ -17,5 +17,8 @@ export default class PageLogin extends HTMLObject  {
           <div data-module="forms/login-form"></div>               
 		`);
         $("body").append(this.get());
-    }    
+    }
+    init() {
+        super.init();
+    }
 }

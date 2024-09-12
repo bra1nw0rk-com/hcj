@@ -4,18 +4,7 @@
  * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  **/
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
 
-	20% {
-		opacity: 0;
-	}
-
-	100% {
-	}
-}
 
 @keyframes fadeOut {
 	0% {
@@ -48,23 +37,7 @@
 	}
 }
 
-@keyframes modal-shaking {
-	0% {
-		transform: translateY(-50%) translateX(-50%);
-	}
-	25% {
-		transform: translateY(-50%) translateX(calc(-50% + 10px));
-	}
-	50% {
-		transform: translateY(-50%) translateX(calc(-50% - 10px));
-	}
-	75% {
-		transform: translateY(-50%) translateX(calc(-50% + 10px));
-	}
-	100% {
-		transform: translateY(-50%) translateX(-50%);
-	}
-}
+
 @keyframes glow {
 	0% {
 		opacity: 0;
@@ -142,17 +115,13 @@
 	animation: horizontal-shaking 0.5s linear alternate !important;
 }
 
-[data-animated].modal-shake {
-	animation: modal-shaking 0.5s linear alternate !important;
-}
+
 
 [data-animated].hide {
 	animation: fadeOut 0.5s cubic-bezier(0.55, 0.09, 0.68, 0.53) alternate;
 }
 
-.fadeIn {
-	animation: fadeIn 0.5s cubic-bezier(0.4, 0, 1, 1) alternate;
-}
+
 [data-animated].spin {
 	-webkit-animation: spin 4s linear infinite;
 	-moz-animation: spin 4s linear infinite;

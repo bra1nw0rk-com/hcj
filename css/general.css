@@ -233,10 +233,11 @@ a::before{
 	border: 1px solid var(--border-color);
 	border-radius: 10px;
 	background-color: var(--bg1);
-	padding: 0.5em 1.25em 1.25em 1.25em;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	min-width: 285px;
 	min-height: 100px;
+	height: fit-content;
+	max-height: 90%;
 	position: absolute;
 	top: 50vh;
 	left: 50vw;
@@ -256,16 +257,16 @@ a::before{
 	border-radius: 10px;
 	z-index: -1;
 }
-.modal .head{
+.modal > .head{
 	background-color: var(--bg-head);;
     width: 100%;
     height: 25px;
-    position: absolute;
+   /* position: absolute;*/
     left: 0;
     top: 0;
     border-radius: 10px 10px 0 0;
 }
-.modal h2 {
+.modal > .head h2 {
 	font-size: 12px;
 	position: absolute;
 	top: 11px;
@@ -273,10 +274,11 @@ a::before{
 	transform: translateY(-50%) translateX(-50%);
 	text-transform: uppercase;
 }
-.modal .content{
-	margin-top:30px;
-	height: calc(100% - 20px);
+.modal > .content{
+	/*margin-top:30px;*/
+	height: calc(100% - 25px);
     overflow: auto;
+	padding: 15px;
 	/* Hide scrollbar for IE, Edge and Firefox */
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
@@ -370,14 +372,14 @@ a::before{
 	z-index: 10;
 }
 
-[box] .head .fa-info{
+[box] > .head .fa-info{
 	position: relative;
 	left: 9px;
 	font-size: 18px;
 	top: 4px;
 	opacity: 0.2;
 }
-[box] .head .fa-times-circle{
+[box] > .head .fa-times-circle{
 	position: relative;
 	left: 3px;
 	font-size: 22px;
@@ -385,13 +387,19 @@ a::before{
 	top: 0;
 	opacity: 0.2;
 }
-[box] .head .fa-cogs{
+[box] > .head .fa-cogs{
 	position: relative;
 	left: 4px;
 	font-size: 16px;
 	color: #ff8f00;
 	top: 3px;
 	opacity: 0.2;
+}
+[box] > .head .fa.other{
+	position: relative;
+	font-size: 16px;
+	opacity: 0.2;
+	padding: 4px;
 }
 .cursor-move{
 	cursor: move;

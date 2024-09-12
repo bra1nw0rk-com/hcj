@@ -15,23 +15,20 @@ export default class UI {
 		localStorage.setItem("theme", newTheme);
 	}
 	effects = {
-		shake(selector) {
-			$(selector).attr("data-animated","")
-			$(selector).removeClass("fadeIn").removeClass("modal-shake").addClass("modal-shake");
-			setTimeout(function () {
-				$(selector).removeClass("modal-shake");
-			}, 800);
-		},
-		show(selector) {
-			//console.log(selector)
+		fadeIn(selector){
 			$(selector).each(function(){
-				if($(this).attr("data-animated")!== undefined) {
-					if(!$(this).hasClass("fadeIn")) {
-						$(this).removeClass("fadeIn").removeClass("modal-shake").removeClass("hidden").addClass("fadeIn");
-					}
-				}
+				$(this).css({
+					opacity:"0%"
+				}).removeClass('hidden')
+				$(this).animate({
+					opacity:"100%"
+				},500,function(){
+					$(this).css({
+						opacity:""
+					})
+				})
 			})
-		},
+		}
 	};
 	constructor() {
 
@@ -175,8 +172,10 @@ export default class UI {
 	}
 
     minimizeModal(selector) {
-		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(`body`).width()) * 100) ;
-		$(selector).animate(
+		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(`body`).width()) * 100);
+		let obj = $(selector)
+		obj[0].parameters.saveState()
+		$(obj).animate(
 			{
 				zoom: '1%',
 				top: `100%`,
@@ -184,19 +183,17 @@ export default class UI {
 			},
 			500,
 			function () {
-				$(selector).css({
+				$(obj).css({
 					transform:'none',
 				})
-				$(selector).hide()
-				$(selector).removeClass(`top`)
+				$(obj).hide()
+				$(obj).removeClass(`top`)
 			}
 		);
     }
 
 	maximizeModal(selector) {
 		$(selector).show()
-		// $(`[data-obj-id]`).removeClass("selected")
-		// $(`[data-obj-id="${$(selector).attr('id')}"]`).addClass("selected")
 		$(`[box]`).removeClass(`top`)
 		$(selector).addClass(`top`)
 
@@ -206,6 +203,8 @@ export default class UI {
 			{
 				top: `${topP}%`,
 				left: `${leftP}%`,
+				width:`${$(selector)[0].parameters.size.width}`,
+				height:`${$(selector)[0].parameters.size.height}`,
 				zoom: '100%',
 			},500,function(){}
 		);

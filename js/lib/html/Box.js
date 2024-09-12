@@ -26,6 +26,7 @@ export default class Box extends HTMLObject {
 	constructor(unique) {
 		super("div box");
 		this.unique = unique;
+		this.classes = "modal hidden";
 		this.object.append(this.#head);
 		this.object.append(this.#content);
 		this.#head.append(this.#title);
@@ -35,12 +36,8 @@ export default class Box extends HTMLObject {
 	}
 	init(){
 		super.init()
-		$(`[box]`).removeClass(`top`)
 		let _this = this;
-		this.classes = `top`
-		this.lastPosition.y =  this.object.position().top
-		this.lastPosition.x =  this.object.position().left
-		/*
+		this.saveState()
 		if(this.object.closest(`body`).length > 0){
 			this.object.css({
 				left:this.lastPosition.x,
@@ -50,27 +47,17 @@ export default class Box extends HTMLObject {
 				transform:'none'
 			})
 		}
+		WS.ui.effects.fadeIn(this.object)
 
-		 */
-		//console.log(this.object.offset().height, this.object.offset().width)
 		this.object
 			.off(`.${this.id}`)
 			.on(`click.${this.id}`,function(e){
 				e.stopPropagation()
-				//_this.toFront()
 			}).on(`mousedown.${this.id}`,function(e){
 				e.stopPropagation()
 				_this.toFront()
 			});
-		$(`body`).on(`click.${this.id}`,function(){
-			_this.deactivate()
-		})
 
-
-	}
-
-	deactivate(){
-		$(`[box]`).removeClass(`top`)
 	}
 
 	set title(text) {
@@ -79,8 +66,9 @@ export default class Box extends HTMLObject {
 	get title(){
 		return this.#title.html();
 	}
-	set content(text) {
-		this.#content.html(text);
+	set content(val) {
+		this.#content.find('*').delete()
+		this.#content.append($(val));
 	}
 	get button(){
 		let _this = this;
@@ -115,7 +103,12 @@ export default class Box extends HTMLObject {
 			settings(){
 				_this.#icon = `<i class="fa fa-cogs" aria-hidden="true"></i>`;
 				_this.#head.prepend($(_this.#icon));
+			},
+			set(icon){
+				_this.#icon = `<i class="fa ${icon} other" aria-hidden="true"></i>`;
+				_this.#head.prepend($(_this.#icon));
 			}
+
 		}
 	}
 
@@ -131,14 +124,14 @@ export default class Box extends HTMLObject {
 	}
 
 	toFront(){
-		this.deactivate()
-		$(`#${this.id}`).addClass(`top`)
+		if(!this.isOnFront()) {
+			let last = this.object.parent().children(`[box]`).last()
+			last.after(this.object)
+		}
 	}
 	isOnFront(){
-		if($(`[box].top`).length > 1) {
-			return false;
-		}
-		return($(`#${this.id}`).hasClass(`top`))
+		console.log($(`[box]`).index(this.object) === ($(`[box]`).length - 1))
+		return $(`[box]`).index(this.object) === ($(`[box]`).length - 1)
 	}
 
 	clear() {

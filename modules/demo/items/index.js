@@ -16,10 +16,11 @@ export default class ItemsDemo extends Box {
         this.draggable = true;
         this.resizable = true;
         this.name ="itemsDemo"
+        this.icon.set("fa-object-ungroup")
         this.content = $(`
             <div class="input-items">
                 <h2>Input items</h2>
-                <label><input type="text" name="item_input_text"> Text input</label>
+                <label>Text input <input type="text" name="item_input_text"></label>
                 <label><input type="checkbox" name="item_checkbox"> Checkbox</label>
                 <label><input type="radio" name="item_radio"> Radio</label>
                 <label>Select: 
@@ -80,13 +81,12 @@ export default class ItemsDemo extends Box {
 		`);
         this.button.minimize();
         this.button.close();
-        this.icon.settings();
+
 
     }
 
     init(){
         super.init()
-       
     }
 
 

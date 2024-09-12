@@ -11,9 +11,8 @@ export default class LoginForm extends Box {
 		super(true);
 		this.css = `/modules/forms/login-form/index.css`;
 		this.title = "Login";
-		this.classes = "modal hidden";
 		this.name ="userLoginForm"
-		this.template = $(html`
+		this.content = $(html`
 			<input type="text" id="username" name="username" placeholder="User" autocomplete="username" required />
 			<input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required />
 			<button class="submit">OK</button>
@@ -21,22 +20,23 @@ export default class LoginForm extends Box {
 
 	}
 	init() {
+		super.init()
 		let _this = this;
-
-		$("body").off(`.${this.name}`).on(`click.${this.name}`, `${this.selector} .submit`, function (e) {
-			e.preventDefault();
-			storage.set("environment", $(`${_this.selector}  #environment`).val());
-			_this.call("submit");
-			return true;
-		}).on(`keypress.${this.name}`, `${this.selector}`, function (e) {
+		this.object.off(`.${this.id}`)
+			.on(`click.${this.id}`, `.submit`, function (e) {
+				e.preventDefault();
+				//storage.set("environment", $(`${_this.selector}  #environment`).val());
+				_this.call("submit");
+				return true;
+		}).on(`keypress.${this.id}`,  function (e) {
 			if(e.which === 13) {
 				_this.call("submit");
 			}
 			return true;
 		});
 		this.on(`submit`,function(){
-			let login = $(`${_this.selector}  #username`).val()
-			let pass = $(`${_this.selector}  #password`).val()
+			let login = $(`#${_this.id} #username`).val()
+			let pass = $(`#${_this.id} #password`).val()
 			WS.user.login(login,pass,function(data){
 				if(data){
 					//WS.ui.closeModal(`${_this.selector}`, function () {});
@@ -45,9 +45,9 @@ export default class LoginForm extends Box {
 
 					})
 				}else{
-					//WS.ui.clearForm(`${_this.selector}`);
 					_this.clear()
-					WS.ui.effects.shake(`${_this.selector}`);
+					_this.object.shake({times:2,distance:10})
+
 				}
 			})
 

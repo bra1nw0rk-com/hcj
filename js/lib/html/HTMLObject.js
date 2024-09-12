@@ -17,6 +17,9 @@ export default class HTMLObject extends CustomEvents {
 	lastPosition={
 		x:0,y:0
 	}
+	size= {
+		width:0, height:0
+	}
 	constructor(val) {
 		super();
 		if(typeof val === 'object'){
@@ -27,6 +30,13 @@ export default class HTMLObject extends CustomEvents {
 
 		this.object[0].parameters = this
 
+	}
+
+	saveState(){
+		this.size.width = this.object.outerWidth()
+		this.size.height = this.object.outerHeight()
+		this.lastPosition.y =  this.object.position().top
+		this.lastPosition.x =  this.object.position().left
 	}
 	get id(){
 		return this.#id;
@@ -80,7 +90,7 @@ export default class HTMLObject extends CustomEvents {
 
 	prepare(){
 		this.init()
-		WS.ui.effects.show(this.object);
+		//WS.ui.effects.show(this.object);
 	}
 	init(){
 		let _this = this
