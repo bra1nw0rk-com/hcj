@@ -237,13 +237,17 @@ a::before{
 	min-width: 285px;
 	min-height: 100px;
 	height: fit-content;
-	max-height: 90%;
+	max-height: 90vh;
 	position: absolute;
 	top: 50vh;
 	left: 50vw;
 	transform: translateY(-50%) translateX(-50%);
 	z-index: 1;
 	overflow: hidden;
+	filter: grayscale(1);
+}
+.modal:last-child {
+	filter: grayscale(0);
 }
 .modal::before, [name="tooltip-box"]::before{
 	-webkit-backdrop-filter: blur(7px);
