@@ -246,13 +246,13 @@ a::before{
 	overflow: hidden;
 }
 .modal:not(:last-child) {
-	filter: /*grayscale(1)*/ brightness(95%);
+	/*filter: grayscale(1) brightness(95%);*/
 	border-color: var(--border-color-not-active);
 
 }
 
 .modal:last-child {
-	filter: /*grayscale(0)*/ brightness(100%);
+	/*filter: grayscale(0) brightness(100%);*/
 }
 .modal::before, [name="tooltip-box"]::before{
 	-webkit-backdrop-filter: blur(7px);
