@@ -28,7 +28,7 @@ $(function () {
                             if(obj!== null) {
                                 $(_this).append(obj.get());
                                 obj.init()
-                                console.log("i2")
+                                console.log(obj)
                             }
                         })
                     }else{
