@@ -37,8 +37,6 @@ export default class HTMLObject extends CustomEvents {
 		this.size.height = this.object.outerHeight()
 		this.lastPosition.y =  this.object.position().top
 		this.lastPosition.x =  this.object.position().left
-		console.log(this.object.position().left,this.object.offset().left)
-		console.log(this.object.position().top,this.object.offset().top)
 	}
 	get id(){
 		return this.#id;
