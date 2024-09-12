@@ -246,7 +246,7 @@ a::before{
 	overflow: hidden;
 }
 .modal:not(:last-child) {
-	filter: /*grayscale(1)*/ brightness(90%);
+	filter: /*grayscale(1)*/ brightness(95%);
 	border-color: var(--border-color-not-active);
 
 }
