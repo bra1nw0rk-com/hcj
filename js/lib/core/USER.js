@@ -111,7 +111,9 @@ export default class USER {
         this.sessionId = null;
         this.lastUpdate = 0;
         WS.ui.clearWindow();
-        Module.call("pages/login");
+        Module.call("pages/login").then(r => {
+            $(`body`).find(`*`).remove().append(r)
+        });
     }
 
 }

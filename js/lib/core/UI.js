@@ -63,6 +63,7 @@ export default class UI {
 					Module.call(moduleName).then((content) => {
 						$(this).replaceWith(content.get());
 					});
+
 				});
 		});
 	}
