@@ -12,7 +12,6 @@ export default class ItemsDemo extends Box {
         let _this = this;
         this.css = "/modules/demo/items/index.css";
         this.title = "Items list";
-        this.classes = "modal hidden";
         this.draggable = true;
         this.resizable = true;
         this.name ="itemsDemo"
