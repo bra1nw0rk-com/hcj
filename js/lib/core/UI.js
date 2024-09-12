@@ -54,9 +54,6 @@ export default class UI {
 			$(this)
 				.find("[data-module]:not([data-plugged])")
 				.each(function () {
-			//		let title = $(this).attr("data-title");
-			//		let name = $(this).attr("data-name");
-			//		let src = $(this)[0].source;
 					let moduleName = $(this).attr("data-module");
 					$(this).attr("data-plugged","");
 					Module.call(moduleName).then((content) => {
