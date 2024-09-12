@@ -10,9 +10,12 @@
 [name="userLoginForm"] > .content{
     width: 280px;
 }
+/*
 [name="userLoginForm"].error {
     animation: horizontal-shaking 0.5s linear alternate;
 }
+
+ */
 [name="userLoginForm"] input {
     width: 100%;
     margin-bottom: 0.5em;
