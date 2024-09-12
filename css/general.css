@@ -247,9 +247,11 @@ a::before{
 }
 .modal:not(:last-child) {
 	filter: grayscale(1);
+	opacity: 0.5;
 }
 .modal:last-child {
 	filter: grayscale(0);
+	opacity: 1;
 }
 .modal::before, [name="tooltip-box"]::before{
 	-webkit-backdrop-filter: blur(7px);
