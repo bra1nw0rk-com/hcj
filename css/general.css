@@ -242,7 +242,7 @@ a::before{
 	top: 50%;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
-	z-index: 1;
+	/*z-index: 1;*/
 	overflow: hidden;
 }
 .modal:not(:last-child) {
