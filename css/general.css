@@ -229,7 +229,7 @@ a::before{
 	padding: 1px 5px;
 }
 
-.modal {
+.modal:not(:last-child) {
 	border: 1px solid var(--border-color);
 	border-radius: 10px;
 	background-color: var(--bg1);
