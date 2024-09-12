@@ -23,13 +23,12 @@ export default class UI {
 				$(this).animate({
 					opacity:"1"
 				},500,function(){
-					/*
+
 					$(this).css({
 						opacity:"",
 						display:""
 					})
-
-					 */
+					$(selector)[0].parameters.redraw()
 				})
 			})
 		}
