@@ -290,8 +290,8 @@ a::before{
 	text-transform: uppercase;
 }
 .modal > .content{
-	/*margin-top:30px;*/
 	height: max-content;
+
     overflow: auto;
 	padding: 15px;
 	/* Hide scrollbar for IE, Edge and Firefox */
