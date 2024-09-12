@@ -274,7 +274,7 @@ a::before{
     border-radius: 10px 10px 0 0;
 }
 .modal:not(:last-child) > head {
-	background-color: var(--bg-head);
+	background-color: var(--bg-head-not-active);
 }
 .modal > .head h2 {
 	font-size: 12px;
