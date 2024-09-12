@@ -248,6 +248,7 @@ a::before{
 .modal:not(:last-child) {
 	filter: grayscale(1);
 }
+
 .modal:last-child {
 	filter: grayscale(0);
 }
@@ -264,13 +265,16 @@ a::before{
 	z-index: -1;
 }
 .modal > .head{
-	background-color: var(--bg-head);;
+	background-color: var(--bg-head);
     width: 100%;
     height: 25px;
    /* position: absolute;*/
     left: 0;
     top: 0;
     border-radius: 10px 10px 0 0;
+}
+.modal:not(:last-child) > head {
+	background-color: var(--bg-head);
 }
 .modal > .head h2 {
 	font-size: 12px;
