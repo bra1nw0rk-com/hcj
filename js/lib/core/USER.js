@@ -112,8 +112,7 @@ export default class USER {
         this.lastUpdate = 0;
         WS.ui.clearWindow();
         Module.call("pages/login").then(r => {
-            console.log(r)
-            $(`body`).find(`*`).remove().append(r)
+            $(`body`).find(`*`).remove().append(r.get())
         });
     }
 
