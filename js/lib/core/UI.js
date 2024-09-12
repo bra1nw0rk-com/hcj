@@ -187,16 +187,12 @@ export default class UI {
 					transform:'none',
 				})
 				$(obj).hide()
-				$(obj).removeClass(`top`)
 			}
 		);
     }
 
 	maximizeModal(selector) {
 		$(selector).show()
-		$(`[box]`).removeClass(`top`)
-		$(selector).addClass(`top`)
-
 		let topP = ((Math.ceil($(selector)[0].parameters.lastPosition.y) / $(selector).parent().height())*100)
 		let leftP = ((Math.ceil($(selector)[0].parameters.lastPosition.x) / $(selector).parent().width())*100)
 		$(selector).animate(
