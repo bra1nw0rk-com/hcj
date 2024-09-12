@@ -195,6 +195,7 @@ export default class UI {
 		$(selector).show()
 		let topP = ((Math.ceil($(selector)[0].parameters.lastPosition.y) / $(selector).parent().height())*100)
 		let leftP = ((Math.ceil($(selector)[0].parameters.lastPosition.x) / $(selector).parent().width())*100)
+		$(selector)[0].parameters.toFront()
 		$(selector).animate(
 			{
 				top: `${topP}%`,
@@ -203,7 +204,7 @@ export default class UI {
 				height:`${$(selector)[0].parameters.size.height}`,
 				zoom: '100%',
 			},500,function(){
-				$(selector)[0].parameters.toFront()
+				
 			}
 		);
 	}
