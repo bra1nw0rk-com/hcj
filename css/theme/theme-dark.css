@@ -2,7 +2,7 @@
 .dark-theme ,.dark-theme::backdrop{
 	--border-color: #3232327d;
 	--border-color-not-active: var(--bg1);
-	--bg1: #121212c2;
+	--bg1: #121212d9;
 	--bg-head: #252525a3;
 	--bg-head-not-active: var(--bg1);
 	--bg2: #181818;
