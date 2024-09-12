@@ -63,7 +63,7 @@ export default class Main extends HTMLObject {
 								e.stopPropagation()
 								let id = $(this).attr(`data-obj-id`)
 								let item = $(`#${id}`)
-								if (item.css('display') === "none") {
+								if (!item[0].parameters.isOnFront()) {
 									item[0].parameters.maximize();
 								} else {
 									if (!item[0].parameters.isOnFront()) {
