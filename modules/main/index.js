@@ -39,18 +39,9 @@ export default class Main extends HTMLObject {
 	}
 	init(){
 		let _this = this;
-		WS.ui.effects.fadeIn(this.object)
 		$("body")
-			.off(`mutation.${this.id}`)
-			.on(`mutation.${this.id}`, `#${this.id} > #content`,function (e) {
-				let muttObj = $(e.target)
-				if(typeof muttObj[0].parameters.isOnFront !== "undefined"){
-					if (muttObj[0].parameters.isOnFront()) {
-						$(`[data-obj-id]`).removeClass("selected")
-						$(`[data-obj-id="${muttObj.attr('id')}"]`).addClass("selected")
-					}
-				}
-
+			.off("mutation.main")
+			.on("mutation.main", function (e) {
 				$(this).find("[box]:not([run-added])").each(function () {
 					let icon = $(this)[0].parameters.faIcon
 					if (icon !== "") {
@@ -72,7 +63,7 @@ export default class Main extends HTMLObject {
 								e.stopPropagation()
 								let id = $(this).attr(`data-obj-id`)
 								let item = $(`#${id}`)
-								if (!item[0].parameters.isOnFront()) {
+								if (item.css('display') === "none") {
 									item[0].parameters.maximize();
 								} else {
 									if (!item[0].parameters.isOnFront()) {
@@ -108,7 +99,7 @@ export default class Main extends HTMLObject {
 							boxItem.attr("miniature-id",$(this).attr("id"))
 							boxItem.removeAttr("id")
 							boxItem.removeAttr("name")
-							boxItem.removeClass("fadeIn")
+							boxItem.removeClass("top fadeIn")
 
 							boxItem.unbind();
 							boxItem.find(`*`).unbind();							
@@ -131,9 +122,18 @@ export default class Main extends HTMLObject {
 					}
 				});
 			})
-			.on(`click.${this.id}`,`[name="close-btn"]`,function(){
+			.on("click.main",`[name="close-btn"]`,function(){
 				let id = $(this).closest(`[box]`).attr("id");
 				$(_this.#running).find(`[data-obj-id="${id}"]`).delete();
+			}).on(`addClass.main`,`[box]`,function(e,data){
+				if(data.class === `top`){
+					$(`[data-obj-id]`).removeClass("selected")
+					$(`[data-obj-id="${this.id}"]`).addClass("selected")
+				}
+			}).on(`removeClass.main`,`[box]`,function(e,data){
+				if(data.class === `top`){
+					$(`[data-obj-id="${this.id}"]`).removeClass("selected")
+				}
 			})
 
 	}
