@@ -1,10 +1,10 @@
 /* dark-theme */
 .dark-theme ,.dark-theme::backdrop{
 	--border-color: #3232327d;
-	--border-color-not-active: #181818;
+	--border-color-not-active: var(--bg1);
 	--bg1: #121212c2;
 	--bg-head: #252525a3;
-	--bg-head-not-active: #181818;
+	--bg-head-not-active: var(--bg1);
 	--bg2: #181818;
 	--active-text-color: #fff;
 	--inactive-text-color: #4b4b4b;

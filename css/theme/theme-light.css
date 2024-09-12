@@ -1,12 +1,12 @@
 /* light-theme */
 .light-theme, .light-theme::backdrop {
 	--border-color: #3232321f;
-	--border-color-not-active:#c1c1c1;
+	--border-color-not-active:var(--bg1);
 	--active-text-color: #000;
 	--inactive-text-color: #b7b7b7;
 	--bg1: rgba(255, 255, 255, 0.59);
 	--bg-head: #b9b9b92e;
-	--bg-head-not-active:  #c1c1c1;
+	--bg-head-not-active:  var(--bg1);
 	--bg2: #c1c1c1;
 
 	--top-menu-main-menu-item-background: #00000014;
