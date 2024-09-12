@@ -34,7 +34,7 @@ $(function () {
                         let create= true;
                         let obj = new Box(options.unique);
                         obj.title = options.title;
-                        obj.name = "consoleModal"
+                        obj.name = "modal"
                         obj.content = options.content;
                         obj.button.close();
                         obj.button.minimize();
