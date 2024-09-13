@@ -19,6 +19,10 @@ export default class PageLogin extends HTMLObject  {
     }
     init() {
         super.init();
-        this.object.modal({module:'forms/login-form'})
+        let _this = this
+        $(document).ready(function(){
+            _this.object.modal({module:'forms/login-form'})
+        })
+        
     }
 }
