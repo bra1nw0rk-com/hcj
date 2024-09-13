@@ -105,7 +105,8 @@ export default class HTMLObject extends CustomEvents {
 	init(){
 		let _this = this
 		$("body").off(`.${this.id}`)
-		this.object.on(`cssLoaded`,function(){
+		this.object.off(`.${this.id}`)
+		this.object.on(`cssLoaded.${this.id}`,function(){
 			console.log('cssLoaded',this.id)			
 			_this.saveState()
 			if(_this.object.css('display')!=="none") {
