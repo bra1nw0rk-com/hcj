@@ -26,8 +26,9 @@ export default class UI {
 					$(this).css({
 						opacity:""
 					})
-					callback()
-					console.log(callback)
+					if(typeof callback === "function"){
+						callback()					
+					}
 					//$(selector)[0].parameters.redraw()
 				})
 			})
