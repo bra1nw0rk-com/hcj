@@ -22,14 +22,13 @@ export default class UI {
 				}).removeClass('hidden')
 				$(this).animate({
 					opacity:"1"
-				},500,function(){
+				},400,function(){
 					$(this).css({
 						opacity:""
 					})
 					if(typeof callback === "function"){
 						callback()					
 					}
-					//$(selector)[0].parameters.redraw()
 				})
 			})
 		}
