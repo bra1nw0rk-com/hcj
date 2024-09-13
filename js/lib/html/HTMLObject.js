@@ -57,8 +57,9 @@ export default class HTMLObject extends CustomEvents {
 	}
 	set css(name) {
 		this.#css.name = name;
+		this.#css.loaded = ($(`head link[href="${this.#css.name}"]`).length > 0)
 		let _this = this		
-		if ($(`head link[href="${this.#css.name}"]`).length === 0) {
+		if (!this.#css.loaded) {
 			let cssObj = $(`<link rel="stylesheet" href="${this.#css.name}">`)
 			cssObj.on(`load`,function(){
 				_this.#css.loaded = true
@@ -116,7 +117,6 @@ export default class HTMLObject extends CustomEvents {
 	set tooltip(value){
 		this.#tooltip = value;
 		this.object.tooltip({html:value})
-
 	}
 	get tooltip(){
 		return this.#tooltip
