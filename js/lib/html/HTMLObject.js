@@ -57,6 +57,9 @@ export default class HTMLObject extends CustomEvents {
 			$(`head`).append($(`<link rel="stylesheet" href="${this.#css}">`));
 		}
 	}
+	get css(){
+		return this.#css
+	}
 	set animated(val) {
 		this.#animated = val;
 		this.object.attr("data-animated", "");
