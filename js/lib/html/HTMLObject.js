@@ -105,6 +105,9 @@ export default class HTMLObject extends CustomEvents {
 	init(){
 		let _this = this
 		$("body").off(`.${this.id}`)
+		if(this.css === ""){
+			this.object.trigger('cssLoaded')
+		}
 
 	}
 

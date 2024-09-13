@@ -38,22 +38,21 @@ export default class Box extends HTMLObject {
 		super.init()
 		let _this = this;
 		this.object.on(`cssLoaded`,function(){
-			console.log('cccccccc')
+			WS.ui.effects.fadeIn(this.object)
+			this.saveState()
+			if(this.object.css('display')!=="none") {
+				if (this.object.closest(`body`).length > 0) {
+					this.object.css({
+						left: `${this.lastPosition.x}px`,
+						top: `${this.lastPosition.y}px`,
+						height: `${this.size.height}px`,
+						width: `${this.size.width}px`,
+						transform: 'none'
+					})
+				}
+			}			
 		})
-		WS.ui.effects.fadeIn(this.object)
-		this.saveState()
-		if(this.object.css('display')!=="none") {
-			if (this.object.closest(`body`).length > 0) {
-				this.object.css({
-					left: `${this.lastPosition.x}px`,
-					top: `${this.lastPosition.y}px`,
-					height: `${this.size.height}px`,
-					width: `${this.size.width}px`,
-					transform: 'none'
-				})
-			}
-		}
-		this.redraw()
+		
 
 		this.object
 			.off(`.${this.id}`)
