@@ -27,7 +27,7 @@ export default class UI {
 					$(this).css({
 						opacity:""
 					})
-					$(selector)[0].parameters.redraw()
+					//$(selector)[0].parameters.redraw()
 				})
 			})
 		}
