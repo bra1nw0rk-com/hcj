@@ -55,6 +55,7 @@
     margin: 20px 5px 5px 5px;
     position: relative;
     vertical-align: top;
+    text-align: initial;
 }
 [name="box-manager"] > .content [box-item] > .content-title{
     font-size: 10px;

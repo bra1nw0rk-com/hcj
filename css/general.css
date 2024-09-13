@@ -448,3 +448,7 @@ a::before{
 	width: 10%;
 	flex: 0 1 200px;
 }
+
+.sub-block{
+	padding-left: 19px;
+}
