@@ -100,10 +100,46 @@ export default class UI {
 				{
 					opacity: 0,
 				},
-				500,
+				300,
 				function () {
 					$(this).remove();
 					callback();
+				}
+			);
+		},
+		minimize(selector) {
+			let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(`body`).width()) * 100);
+			let obj = $(selector)
+			obj[0].parameters.saveState()
+			$(obj).animate(
+				{
+					zoom: '1%',
+					top: `100%`,
+					left: `${iconLeft}%`
+				},
+				300,
+				function () {
+					$(obj).css({
+						transform:'none',
+					})
+					$(obj).hide()
+				}
+			);
+		},
+		maximize(selector) {
+			$(selector).show()
+			let topP = ((Math.ceil($(selector)[0].parameters.lastPosition.y) / $(selector).parent().height())*100)
+			let leftP = ((Math.ceil($(selector)[0].parameters.lastPosition.x) / $(selector).parent().width())*100)
+			$(selector)[0].parameters.toFront()
+			$(selector).animate(
+				{
+					top: `${topP}%`,
+					left: `${leftP}%`,
+					width:`${$(selector)[0].parameters.size.width}`,
+					height:`${$(selector)[0].parameters.size.height}`,
+					zoom: '100%',
+				},300,function(){
+
 				}
 			);
 		}
@@ -176,41 +212,7 @@ export default class UI {
 		}
 	}
 
-    minimizeModal(selector) {
-		let iconLeft = (($(`[data-obj-id="${$(selector).attr('id')}"]`).position().left / $(`body`).width()) * 100);
-		let obj = $(selector)
-		obj[0].parameters.saveState()
-		$(obj).animate(
-			{
-				zoom: '1%',
-				top: `100%`,
-				left: `${iconLeft}%`
-			},
-			500,
-			function () {
-				$(obj).css({
-					transform:'none',
-				})
-				$(obj).hide()
-			}
-		);
-    }
 
-	maximizeModal(selector) {
-		$(selector).show()
-		let topP = ((Math.ceil($(selector)[0].parameters.lastPosition.y) / $(selector).parent().height())*100)
-		let leftP = ((Math.ceil($(selector)[0].parameters.lastPosition.x) / $(selector).parent().width())*100)
-		$(selector)[0].parameters.toFront()
-		$(selector).animate(
-			{
-				top: `${topP}%`,
-				left: `${leftP}%`,
-				width:`${$(selector)[0].parameters.size.width}`,
-				height:`${$(selector)[0].parameters.size.height}`,
-				zoom: '100%',
-			},500,function(){
-				
-			}
-		);
-	}
+
+
 }

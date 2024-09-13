@@ -121,10 +121,10 @@ export default class Box extends HTMLObject {
 		$(`[data-obj-id="${this.id}"]`).delete();
 	}
 	minimize(){
-		WS.ui.minimizeModal(`#${this.id}`);
+		WS.ui.modal.minimize(`#${this.id}`);
 	}
 	maximize(){
-		WS.ui.maximizeModal(`#${this.id}`);
+		WS.ui.modal.maximize(`#${this.id}`);
 	}
 
 	toFront(){
