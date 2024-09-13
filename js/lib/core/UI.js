@@ -15,7 +15,7 @@ export default class UI {
 		localStorage.setItem("theme", newTheme);
 	}
 	effects = {
-		fadeIn(selector){
+		fadeIn(selector, callback){
 			$(selector).each(function(){
 				$(this).css({
 					opacity:"0"
@@ -27,6 +27,7 @@ export default class UI {
 					$(this).css({
 						opacity:""
 					})
+					callback()
 					//$(selector)[0].parameters.redraw()
 				})
 			})
