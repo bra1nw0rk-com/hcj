@@ -103,8 +103,8 @@ export default class HTMLObject extends CustomEvents {
 		//WS.ui.effects.show(this.object);
 	}
 	init(){		
-		console.log(`css: ${this.css}`, this.id)
-		if(this.css === "" || cssObj[0].loaded == true){
+		console.log(`css: ${this.css}`, this.id,this.object[0].loaded)
+		if(this.css === "" || this.object[0].loaded === true){
 			this.object.trigger('cssLoaded')			
 		}
 
