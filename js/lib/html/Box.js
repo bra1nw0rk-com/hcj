@@ -34,11 +34,10 @@ export default class Box extends HTMLObject {
 
 
 	}
-	init(){
-		
+	init(){		
 		let _this = this;
 		this.object.on(`cssLoaded`,function(){
-			WS.ui.effects.fadeIn(this.object,function(){
+			WS.ui.effects.fadeIn(_this.object,function(){
 				_this.saveState()
 				if(_this.object.css('display')!=="none") {
 					if (_this.object.closest(`body`).length > 0) {
@@ -53,8 +52,6 @@ export default class Box extends HTMLObject {
 				}			
 			})
 		})
-		
-
 		this.object
 			.off(`.${this.id}`)
 			.on(`click.${this.id}`,function(e){
@@ -63,7 +60,7 @@ export default class Box extends HTMLObject {
 				e.stopPropagation()
 				_this.toFront()
 			});
-			super.init()
+		super.init()
 	}
 
 	set title(text) {
