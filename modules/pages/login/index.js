@@ -15,14 +15,9 @@ export default class PageLogin extends HTMLObject  {
           <div data-module="animations/logo"></div>
           <div name="title">Libre<span class="selected">IS</span></div>
 		`);
-        //$("body").append(this.get());
+        this.object.modal({module:'forms/login-form'})        
     }
     init() {
         super.init();
-        let _this = this
-        $(document).ready(function(){
-            _this.object.modal({module:'forms/login-form'})
-        })
-        
     }
 }
