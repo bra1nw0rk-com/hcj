@@ -107,6 +107,7 @@ export default class HTMLObject extends CustomEvents {
 		$("body").off(`.${this.id}`)
 		if(this.css === ""){
 			this.object.trigger('cssLoaded')
+			console.log('noCss')
 		}
 
 	}
