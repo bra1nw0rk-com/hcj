@@ -104,7 +104,7 @@ export default class HTMLObject extends CustomEvents {
 	}
 	init(){		
 		console.log(`css: ${this.css}`, this.id)
-		if(this.css === ""){
+		if(this.css === "" || cssObj[0].loaded == true){
 			this.object.trigger('cssLoaded')			
 		}
 
