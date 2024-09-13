@@ -13,12 +13,13 @@ export default class PageLogin extends HTMLObject  {
         this.name = "page-login";        
         this.template = $(html`            
           <div data-module="animations/logo"></div>
-          <div name="title">Libre<span class="selected">IS</span></div>
-          <div data-module="forms/login-form"></div>               
+          <div name="title">Libre<span class="selected">IS</span></div>                         
+          
 		`);
         //$("body").append(this.get());
     }
     init() {
         super.init();
+        this.object.modal({module:'forms/login-form'})
     }
 }
