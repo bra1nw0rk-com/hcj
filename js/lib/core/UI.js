@@ -22,7 +22,7 @@ export default class UI {
 				}).removeClass('hidden')
 				$(this).animate({
 					opacity:"1"
-				},400,function(){
+				},300,function(){
 					$(this).css({
 						opacity:""
 					})
