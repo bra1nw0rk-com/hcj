@@ -79,20 +79,34 @@ export default class UI {
 		this.savedTheme = newTheme;
 	}
 
-	modal(msg,type){
-		let title="";
-		if(type==="info"){
-			title = "Info"
-		}else if(type==="error"){
-			title = "Error"
-		}
-		$(`#content`).modal({
-			type:type,
-			title:title,
-			content:`
+	modal={
+		create(msg,type){
+			let title="";
+			if(type==="info"){
+				title = "Info"
+			}else if(type==="error"){
+				title = "Error"
+			}
+			$(`#content`).modal({
+				type:type,
+				title:title,
+				content:`
 			<div>${msg}</div>					
 			`
-		})
+			})
+		},
+		close(selector, callback) {
+			$(selector).animate(
+				{
+					opacity: 0,
+				},
+				500,
+				function () {
+					$(this).remove();
+					callback();
+				}
+			);
+		}
 	}
 
 	clearPage() {
@@ -122,18 +136,7 @@ export default class UI {
 		});
 	}
 
-	closeModal(selector, callback) {
-		$(selector).animate(
-			{
-				opacity: 0,
-			},
-			500,
-			function () {
-				$(this).remove();
-				callback();
-			}
-		);
-	}
+
 	fullScreen(){
 		let element = $('body').get(0);
 		if (!document.fullscreenElement && !document.webkitFullscreenElement &&

@@ -77,7 +77,7 @@ export default class User {
 	}
 	login(login, password) {
 		if (login == "admin" && password == "admin") {
-			WS.ui.closeModal("#userLoginForm", function () {
+			WS.ui.modal.close("#userLoginForm", function () {
 				WS.user.update("dslfafhkldhjakelrhalweh54sdaf54d");
 				WS.user.testLogin();
 			});

@@ -117,7 +117,7 @@ export default class Box extends HTMLObject {
 	}
 
 	close(callback){
-		WS.ui.closeModal(`#${this.id}`, callback);
+		WS.ui.modal.close(`#${this.id}`, callback);
 		$(`[data-obj-id="${this.id}"]`).delete();
 	}
 	minimize(){
