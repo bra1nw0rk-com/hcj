@@ -37,9 +37,9 @@ export default class Box extends HTMLObject {
 	init(){
 		super.init()
 		let _this = this;
-		if(this.css!==""){
-			console.log($(`head link[href="${this.css}"]`)[0].loaded)
-		}
+		this.object.on(`cssLoaded`,function(){
+			console.log('cccccccc')
+		})
 		WS.ui.effects.fadeIn(this.object)
 		this.saveState()
 		if(this.object.css('display')!=="none") {
