@@ -54,7 +54,11 @@ export default class HTMLObject extends CustomEvents {
 	set css(name) {
 		this.#css = name;		
 		if ($(`head link[href="${this.#css}"]`).length === 0) {
-			$(`head`).append($(`<link rel="stylesheet" href="${this.#css}">`));
+			let cssObj = $(`<link rel="stylesheet" href="${this.#css}">`)
+			cssObj.on(`load`,function(){
+				console.log('bbb')
+			})
+			$(`head`).append(cssObj);
 		}
 	}
 	get css(){
