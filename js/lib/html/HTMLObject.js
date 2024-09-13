@@ -8,11 +8,15 @@ import CustomEvents from "../core/CustomEvents.js";
 
 export default class HTMLObject extends CustomEvents {
 	#eventNamespace = "";
-	#css = "";
+	#css = {
+		name:"",
+		loaded:false
+	};
 	#animated = false;
 	#unique= false;
 	#tooltip =""
 	#id = "";
+
 	object = $("<div></div>");
 	lastPosition={
 		x:0,y:0
@@ -52,13 +56,12 @@ export default class HTMLObject extends CustomEvents {
 		this.object.addClass(classes);
 	}
 	set css(name) {
-		this.#css = name;
+		this.#css.name = name;
 		let _this = this		
-		if ($(`head link[href="${this.#css}"]`).length === 0) {
-			let cssObj = $(`<link rel="stylesheet" href="${this.#css}">`)
-			cssObj[0].loaded = false
+		if ($(`head link[href="${this.#css.name}"]`).length === 0) {
+			let cssObj = $(`<link rel="stylesheet" href="${this.#css.name}">`)
 			cssObj.on(`load`,function(){
-				cssObj[0].loaded = true
+				_this.#css.loaded = true
 				_this.object.trigger('cssLoaded')
 			})
 			$(`head`).append(cssObj);
@@ -104,7 +107,7 @@ export default class HTMLObject extends CustomEvents {
 	}
 	init(){		
 		console.log(`css: ${this.css}`, this.id,this.object[0].loaded)
-		if(this.css === "" || this.object[0].loaded === true){
+		if(this.css.name === "" || this.css.loaded === true){
 			this.object.trigger('cssLoaded')			
 		}
 
