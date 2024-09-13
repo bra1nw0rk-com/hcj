@@ -6,10 +6,11 @@
  **/
 [name="box-manager"]{
     position: absolute;
-    min-height: 15%;
-    max-height: 80%;
-    min-width: 25%;
-    max-width: 80%;
+    /*min-height: 15%;*/
+    max-height: 100%;
+    /*min-width: 25%;*/
+    max-width: 100%;
+    width: max-content;
     top: 50vh;
     left: 50vw;
     z-index: 5;
@@ -17,6 +18,7 @@
     border: 1px solid var(--border-color);
     border-radius: 10px;
     background-color: var(--bg1);
+    overflow: hidden;
 }
 [name="box-manager"]::before{
     -webkit-backdrop-filter: blur(7px);
@@ -39,19 +41,17 @@
     text-transform: uppercase;
 }
 [name="box-manager"] > .content{
-    margin-top: 30px;
-    display: flex;
+    margin-top: 25px;
+    display: block;
+    max-width: 100%;
     padding: 5px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: flex-start;
-    justify-content: center;
-    align-items: flex-start;
+    text-align: center;
 }
 [name="box-manager"] > .content [box-item]{
-    display: block;
+    display: inline-block;
     margin: 20px 5px 5px 5px;
     position: relative;
+    vertical-align: top;
 }
 [name="box-manager"] > .content [box-item] > .content-title{
     font-size: 10px;

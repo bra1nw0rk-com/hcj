@@ -60,6 +60,8 @@
 		font-size: 21px;
 		position: absolute;
 		padding-left: 3px;
+		overflow: hidden;
+		max-width: calc(100% - 95px);
 	}
 	[name="main"] footer #running .fa{
 		width: 34px;
