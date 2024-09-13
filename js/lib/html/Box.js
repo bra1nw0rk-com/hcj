@@ -35,7 +35,7 @@ export default class Box extends HTMLObject {
 
 	}
 	init(){
-		super.init()
+		
 		let _this = this;
 		this.object.on(`cssLoaded`,function(){
 			WS.ui.effects.fadeIn(this.object,function(){
@@ -63,7 +63,7 @@ export default class Box extends HTMLObject {
 				e.stopPropagation()
 				_this.toFront()
 			});
-
+			super.init()
 	}
 
 	set title(text) {

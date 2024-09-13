@@ -23,7 +23,6 @@ export default class UI {
 				$(this).animate({
 					opacity:"1"
 				},500,function(){
-
 					$(this).css({
 						opacity:""
 					})
