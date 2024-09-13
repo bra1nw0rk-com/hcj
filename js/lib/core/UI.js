@@ -28,6 +28,7 @@ export default class UI {
 						opacity:""
 					})
 					callback()
+					console.log(callback)
 					//$(selector)[0].parameters.redraw()
 				})
 			})
