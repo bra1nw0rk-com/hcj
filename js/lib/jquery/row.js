@@ -16,7 +16,7 @@ $(function () {
                     let obj = new HTMLObject('div');
                     obj.classes = "row"
                     obj.name = "row"
-                     console.log(typeof $(this))
+                     console.log($(this).constructor.name)
                     $(this).append(obj.get());
                     result.append(obj.get())
                     obj.init();
