@@ -93,17 +93,19 @@ select:focus {
 	outline: none;
 }
 
-
-button,.button {
+.button {
+	cursor: pointer;
+}
+button {
 	cursor: pointer;
 	text-transform: uppercase;
 	border-radius: 10px;
 	border: 1px solid var(--border-color);
 	background-color: var(--input-background);
 	box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
-	padding: 5px 15px;
+	padding: 5px 13px;
 	color: var(--color);
-	font-size: 10px;
+	font-size: 11px;
 	font-weight: bold;
 	min-width: 70px;
 }
@@ -115,7 +117,7 @@ button.ok{
 	background-color: var(--button-ok-bg-color);
 }
 button.cancel{
-	background-color: red;
+	background-color: #ff000069;;
 }
 
 input:focus,
