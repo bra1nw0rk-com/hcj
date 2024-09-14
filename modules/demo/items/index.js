@@ -26,7 +26,7 @@ export default class ItemsDemo extends Box {
                             <th>name</th>
                             <th>date</th>
                             <th>role</th>
-                            <th>e</th>
+                            <th>age</th>
                             <th>f</th>
                             <th>g</th>
                             <th>h</th>
@@ -40,7 +40,7 @@ export default class ItemsDemo extends Box {
                             <td>John</td>
                             <td>01.02.2023</td>
                             <td>admin</td>
-                            <td>5</td>
+                            <td>35</td>
                             <td>6</td>
                             <td>7</td>
                             <td>8</td>
@@ -52,7 +52,7 @@ export default class ItemsDemo extends Box {
                             <td>Bob</td>
                             <td>02.03.2024</td>
                             <td>moderator</td>
-                            <td>5</td>
+                            <td>25</td>
                             <td>6</td>
                             <td>7</td>
                             <td>8</td>
