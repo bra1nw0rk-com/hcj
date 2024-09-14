@@ -18,7 +18,6 @@ $(function () {
 
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
-                    console.log($(this))
                     let obj = new HTMLObject('div');
                     obj.object.attr('data-before',options.title)
                     obj.title = options.title;
