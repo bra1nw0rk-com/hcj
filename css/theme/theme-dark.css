@@ -17,4 +17,7 @@
 	--menu-logo: url(/img/favicon-32x32-dark.png);
 	background-color: #000008;
 	--color: #dbdbdb;
+	--table-head-bg:#f3f3f305;
+	--table-1-bg:#f3f3f305;
+	--table-2-bg:#f3f3f305;
 }

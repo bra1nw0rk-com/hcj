@@ -197,8 +197,12 @@ table {
 	margin: 5px 0 0 5px;
 }
 table thead tr {
-	background-color: var(--bg2);
+	background-color: var(--table-head-bg);
 	text-align: left;
+}
+table tbody tr {
+	background-color: var(--table-1-bg);
+
 }
 table th,
 table td {
@@ -207,7 +211,7 @@ table td {
 
 
 table tbody tr:nth-of-type(even) {
-	background-color: #f3f3f3;
+	background-color: var(--table-2-bg);
 }
 
 
