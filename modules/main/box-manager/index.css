@@ -92,3 +92,8 @@
     transform: none;
 }
 
+.light-theme [name="box-manager"] > .content [box-item]:hover::after, [name="box-manager"] > .content [box-item].active::after,
+.light-theme::backdrop [name="box-manager"] > .content [box-item]:hover::after, [name="box-manager"] > .content [box-item].active::after {
+    border: 1px solid #ff880038;
+}
+
