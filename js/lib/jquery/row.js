@@ -27,8 +27,7 @@ $(function () {
                     result.append(obj.get())
                     obj.init();
                 });
-                console.log(result.find(`> *`))
-                return result
+                return result.find(`> *`)
             }
         },
     });
