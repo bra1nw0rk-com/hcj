@@ -39,9 +39,9 @@ export default class Box extends HTMLObject {
 		console.log('init',this.id)
 		this.object.on(`cssLoaded`,function(){
 			WS.ui.effects.fadeIn(_this.object,function(){
-				_this.saveState()
 				if(_this.object.css('display')!=="none") {
 					if (_this.object.closest(`body`).length > 0) {
+						_this.saveState()
 						_this.object.css({
 							left: `${_this.lastPosition.x}px`,
 							top: `${_this.lastPosition.y}px`,
