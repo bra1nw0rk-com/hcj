@@ -484,6 +484,7 @@ a::before{
 	border-radius: 8px;
 	padding: 8px;
 	position: relative;
+	margin: 5px 0 0 0;
 }
 .group:before {
 	content: attr(data-before);
