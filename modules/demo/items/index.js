@@ -17,7 +17,7 @@ export default class ItemsDemo extends Box {
         this.name ="itemsDemo"
         this.icon.set("fa-object-ungroup")
 
-        this.content.row({content:$().group({
+        this.content.row().group({
             title: "Table",
             content: $(`
                 <table>
@@ -63,7 +63,7 @@ export default class ItemsDemo extends Box {
                     </tbody>
                 </table> 
             `)
-        })})
+        })
         this.content.row().group({
             title: "Buttons",
             content: $(`

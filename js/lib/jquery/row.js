@@ -11,21 +11,23 @@ $(function () {
     $.fn.extend({
         row: function (options) {
             let defaults = {
-                title:"Test",
-                content:"This is test text"
+
             };
             options = $.extend(defaults, options);
 
             if ($(this).length > 0) {
-                return $(this).each(function (e, i) {
+                let result = $('')
+                 $(this).each(function (e, i) {
                     let _this = this;
                     let obj = new HTMLObject('div');
                     obj.classes = "row"
                     obj.content = options.content
                     obj.name = "row"
                     $(_this).append(obj.get());
+                    result.append(obj.get())
                     obj.init();
                 });
+                return result
             }
         },
     });
