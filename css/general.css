@@ -63,15 +63,14 @@ body, body::backdrop {
 	touch-action: none;
 }
 
-input,
-button {
+input
+ {
 	border-radius: 10px;
 	border: 1px solid var(--border-color);
 	background-color: var(--input-background);
 	box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
 	padding: 8px;
 	color: var(--color);
-	height: 29px;
 }
 select {
 	-webkit-appearance: none;
@@ -93,9 +92,17 @@ option {
 select:focus {
 	outline: none;
 }
+
+
 button,.button {
 	cursor: pointer;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 1px solid var(--border-color);
+	background-color: var(--input-background);
+	box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
+	padding: 8px;
+	color: var(--color);
 }
 button:hover {
 	--o: 15%;
