@@ -19,4 +19,7 @@
 	--color: #080808;
 	--menu-logo: url("/img/favicon-32x32.png");
 	background-color: #ffea0008;
+	--table-head-bg: #1f5fbf42;
+	--table-1-bg: #f3f3f305;
+	--table-2-bg: #f3f3f30d;
 }
