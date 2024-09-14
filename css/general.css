@@ -354,6 +354,7 @@ vertical-align: top;
 }
 .modal .content .row{
 	margin-top: 2px;
+	width: max-content;
 }
 .modal label {
 	display: block;
