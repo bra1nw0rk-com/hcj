@@ -208,6 +208,9 @@ table th,
 table td {
 	padding: 7px;
 }
+table th{
+	text-transform: uppercase;
+}
 
 
 table tbody tr:nth-of-type(even) {
