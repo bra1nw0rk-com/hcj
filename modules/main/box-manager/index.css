@@ -43,6 +43,7 @@
 [name="box-manager"] > .content{
     margin-top: 25px;
     display: block;
+    position: relative;
     max-width: 100%;
     padding: 9px;
     text-align: center;
