@@ -89,6 +89,7 @@ export default class ItemsDemo extends Box {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </textarea>
                 </label>
+                <!--
                 <input type="color">
                 <input type="date">
                 <input type="datetime-local">
@@ -104,7 +105,8 @@ export default class ItemsDemo extends Box {
                 <input type="tel">                
                 <input type="time">
                 <input type="url">
-                <input type="week">  
+                <input type="week">
+                -->  
             `)
         })
         this.button.minimize();
