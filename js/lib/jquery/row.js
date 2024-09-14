@@ -17,7 +17,6 @@ $(function () {
 
             if ($(this).length > 0) {
                 let result = $('<div></div>')
-
                  $(this).each(function (e, i) {
                     let _this = this;
                     let obj = new HTMLObject('div');
