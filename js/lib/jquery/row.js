@@ -17,6 +17,7 @@ $(function () {
 
             if ($(this).length > 0) {
                 let result = $('')
+
                  $(this).each(function (e, i) {
                     let _this = this;
                     let obj = new HTMLObject('div');
@@ -27,6 +28,7 @@ $(function () {
                     result.append(obj.get())
                     obj.init();
                 });
+                console.log(result)
                 return result
             }
         },
