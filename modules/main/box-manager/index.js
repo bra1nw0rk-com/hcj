@@ -27,13 +27,29 @@ export default class BoxManager extends HTMLObject  {
     hide(){
         this.object.addClass('hidden').removeClass("fadeIn")
         this.keys=""
-        this.#content.html(``)
+        this.#content.find(`*`).remove()
         this.showed = false
         this.canChange = false
     }
 
     init(){
         let _this = this;
+        this.object.on(`cssLoaded`,function(){
+            WS.ui.effects.fadeIn(_this.object,function(){
+                if(_this.object.css('display')!=="none") {
+
+                    _this.saveState()
+                    _this.object.css({
+                        left: `${_this.lastPosition.x}px`,
+                        top: `${_this.lastPosition.y}px`,
+                        height: `${_this.size.height}px`,
+                        width: `${_this.size.width}px`,
+                        transform: 'none'
+                    })
+
+                }
+            })
+        })
         super.init()
         $(window).on('blur focus', function () {
             // Append this text to the `body` element.
@@ -51,22 +67,19 @@ export default class BoxManager extends HTMLObject  {
                     e.stopPropagation()
                     if(!_this.showed){
                         _this.showed = true;
-                        _this.object.on(`cssLoaded`,function(){
-                            WS.ui.effects.fadeIn(_this.object,function(){
-                                if(_this.object.css('display')!=="none") {
-
-                                    _this.saveState()
-                                    _this.object.css({
-                                        left: `${_this.lastPosition.x}px`,
-                                        top: `${_this.lastPosition.y}px`,
-                                        height: `${_this.size.height}px`,
-                                        width: `${_this.size.width}px`,
-                                        transform: 'none'
-                                    })
-
-                                }
-                            })
+                        WS.ui.effects.fadeIn(_this.object,function(){
+                            if(_this.object.css('display')!=="none") {
+                                _this.saveState()
+                                _this.object.css({
+                                    left: `${_this.lastPosition.x}px`,
+                                    top: `${_this.lastPosition.y}px`,
+                                    height: `${_this.size.height}px`,
+                                    width: `${_this.size.width}px`,
+                                    transform: 'none'
+                                })
+                            }
                         })
+
                         //WS.ui.effects.fadeIn(_this.object)
                         //_this.object.removeClass('hidden').addClass("fadeIn")
                         if($(`[box]`).length > 0){
