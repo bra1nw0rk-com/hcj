@@ -321,13 +321,12 @@ a::before{
 }
 .modal > .content{
 	height: max-content;
-
-    overflow: auto;
-	padding: 15px;
-	/* Hide scrollbar for IE, Edge and Firefox */
-	-ms-overflow-style: none;  /* IE and Edge */
-	scrollbar-width: none;  /* Firefox */
+	overflow: auto;
+	padding: 15px 0 15px 15px;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	font-size: 13px;
+	max-width: calc(100% - 15px);
 }
 .modal .content .row{
 	margin-top: 2px;
