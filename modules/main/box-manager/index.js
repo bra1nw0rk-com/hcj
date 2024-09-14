@@ -51,9 +51,14 @@ export default class BoxManager extends HTMLObject  {
                     e.stopPropagation()
                     if(!_this.showed){
                         _this.showed = true;
+                        _this.object.css({
+                            height:``
+                        })
                         WS.ui.effects.fadeIn(_this.object,function(){
                             if(_this.object.css('display')!=="none") {
-                                _this.redraw()
+                                _this.object.css({
+                                    height:`${_this.object.outerHeight()}`
+                                })
                             }
                         })
 
