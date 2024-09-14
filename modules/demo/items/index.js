@@ -47,7 +47,7 @@ export default class ItemsDemo extends Box {
             </div>
             
 		`);
-        this.object.group({
+        this.object.content.group({
             title:"Input items",
             content:$(`
                 <label>Text input <input type="text" name="item_input_text"></label>
