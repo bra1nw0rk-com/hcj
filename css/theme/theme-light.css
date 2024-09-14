@@ -4,21 +4,21 @@
 	--border-color-not-active:var(--bg1);
 	--active-text-color: #000;
 	--inactive-text-color: #b7b7b7;
-	--bg1: rgba(255, 255, 255, 0.59);
+	--bg1: #feffe53d;
 	--bg-head: #b9b9b92e;
 	--bg-head-not-active:  var(--bg1);
-	--bg2: #c1c1c1;
+	--bg2: #efefef;
 
 	--top-menu-main-menu-item-background: #00000014;
 	--element-active-background: #ffca009c;
-	--input-background: #d5d5d5;
-	--input-background-focus: #f0f0f0;
+	--input-background: #ffedc424;
+	--input-background-focus: #ffffff75;
 	--button-ok-bg-color: #539ac5;
 	--button-ok-bg-color-hover: #539ac5;
 	--content-bg-logo: url("/img/logo.png");
 	--color: #080808;
 	--menu-logo: url("/img/favicon-32x32.png");
-	background-color: #ffea0008;
+	background-color:#fff8dd36;
 	--table-head-bg: #ddebff;
 	--table-1-bg: #f6f6f65e;
 	--table-2-bg: #e2e2e261;
