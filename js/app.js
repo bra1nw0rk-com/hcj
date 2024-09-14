@@ -19,6 +19,9 @@ globalThis.WS = {
 	ui: ui,
 	user: new USER(),
 	notification: new NOTIFICATION(),
+	dom:{
+		idn:0
+	}
 };
 
 $(function () {
