@@ -64,6 +64,7 @@ export default class ItemsDemo extends Box {
                 </table> 
             `)
         })
+        /*
         this.content.row().group({
             title: "Buttons",
             content: $(`
@@ -111,6 +112,8 @@ export default class ItemsDemo extends Box {
                 -->  
             `)
         })
+
+         */
         this.button.minimize();
         this.button.close();
 
