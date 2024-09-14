@@ -348,7 +348,7 @@ a::before{
 	scrollbar-width: none;
 	font-size: 13px;
 	max-height: calc(100% - 25px);
-	width: max-content;
+	width: 100%;
 	display: inline-block;
 vertical-align: top;
 }
