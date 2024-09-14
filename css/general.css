@@ -329,6 +329,7 @@ a::before{
 	font-size: 13px;
 	max-width: calc(100% - 15px);
 	max-height: calc(100% - 15px);
+	width: max-content;
 }
 .modal .content .row{
 	margin-top: 2px;
