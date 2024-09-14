@@ -21,8 +21,8 @@
     overflow: hidden;
 }
 [name="box-manager"]::before{
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     content:"";
     position: absolute;
     height: 100%;
