@@ -97,8 +97,10 @@
     width: 150px;
 }
 
-.light-theme [name="box-manager"] > .content [box-item]:hover::after, .light-theme [name="box-manager"] > .content [box-item].active::after,
-.light-theme::backdrop [name="box-manager"] > .content [box-item]:hover::after, .light-theme [name="box-manager"] > .content [box-item].active::after {
+.light-theme [name="box-manager"] > .content [box-item]:hover::after,
+.light-theme [name="box-manager"] > .content [box-item].active::after,
+.light-theme::backdrop [name="box-manager"] > .content [box-item]:hover::after,
+.light-theme::backdrop [name="box-manager"] > .content [box-item].active::after {
     border: 1px solid #0088ffc7;
 }
 
