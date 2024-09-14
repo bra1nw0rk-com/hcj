@@ -23,7 +23,7 @@ $(function () {
                     obj.object.attr('data-before',options.title)
                     obj.title = options.title;
                     obj.name = "group"
-                    obj.content = options.content;
+                    obj.object = options.content;
 
                     $(_this).append(obj.get());
                     obj.init();

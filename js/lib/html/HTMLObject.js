@@ -129,5 +129,10 @@ export default class HTMLObject extends CustomEvents {
 	get html(){
 		return this.object.html()
 	}
+
+	set content(val){
+		this.object.find(`*`).remove()
+		this.object.append(val)
+	}
 	
 }
