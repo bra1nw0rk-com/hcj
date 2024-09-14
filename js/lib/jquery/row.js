@@ -9,11 +9,7 @@ import HTMLObject from "../html/HTMLObject.js";
 
 $(function () {
     $.fn.extend({
-        row: function (options) {
-            let defaults = {
-
-            };
-            options = $.extend(defaults, options);
+        row: function () {
             if ($(this).length > 0) {
                 let result = $('<div></div>')
                  $(this).each(function (e, i) {
