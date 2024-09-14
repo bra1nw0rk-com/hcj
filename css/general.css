@@ -328,7 +328,7 @@ a::before{
 	scrollbar-width: none;
 	font-size: 13px;
 	max-width: calc(100% - 15px);
-	max-height: calc(100% - 15px);
+	max-height: calc(100% - 25px);
 	width: max-content;
 }
 .modal .content .row{
