@@ -22,8 +22,8 @@ export default class ItemsDemo extends Box {
                 <table>
                     <thead>
                         <tr>
-                            <th>a</th>
-                            <th>b</th>
+                            <th>id</th>
+                            <th>name</th>
                             <th>c</th>
                             <th>d</th>
                             <th>e</th>
@@ -37,7 +37,7 @@ export default class ItemsDemo extends Box {
                     <tbody>                        
                         <tr>
                             <td>1</td>
-                            <td>2</td>
+                            <td>John</td>
                             <td>3</td>
                             <td>4</td>
                             <td>5</td>
@@ -48,8 +48,8 @@ export default class ItemsDemo extends Box {
                             <td>10</td>
                         </tr>
                         <tr>
-                            <td>1</td>
                             <td>2</td>
+                            <td>Bob</td>
                             <td>3</td>
                             <td>4</td>
                             <td>5</td>
