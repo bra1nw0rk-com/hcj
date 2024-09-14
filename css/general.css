@@ -95,9 +95,17 @@ select:focus {
 }
 button,.button {
 	cursor: pointer;
+	text-transform: uppercase;
 }
 button:hover {
 	--o: 15%;
+}
+
+button.ok{
+	background-color: green;
+}
+button.cancel{
+	background-color: red;
 }
 
 input:focus,
