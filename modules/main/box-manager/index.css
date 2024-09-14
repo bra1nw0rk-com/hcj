@@ -48,6 +48,7 @@
     text-align: center;
     min-height: 30px;
     font-size: 10px;
+    width: max-content;
 }
 [name="box-manager"] > .content [box-item]{
     display: inline-block;
