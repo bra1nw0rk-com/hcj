@@ -489,12 +489,13 @@ a::before{
 .group:before {
 	content: attr(data-before);
 	position: absolute;
-	top: -11px;
-	left: 20px;
-	font-size: 10px;
+	top: -10px;
+	left: 6px;
+	font-size: 0.7em;
 	padding: 5px 10px;
 	background-color: var(--bg2);
 	border-radius: 8px;
 	font-weight: bold;
 	text-transform: uppercase;
+	line-height: 1em;
 }
