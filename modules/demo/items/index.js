@@ -22,21 +22,42 @@ export default class ItemsDemo extends Box {
                 <table>
                     <thead>
                         <tr>
-                            <th>Col1</th>
-                            <th>col2</th>
-                            <th>Col3</th>
+                            <th>a</th>
+                            <th>b</th>
+                            <th>c</th>
+                            <th>d</th>
+                            <th>e</th>
+                            <th>f</th>
+                            <th>g</th>
+                            <th>h</th>
+                            <th>i</th>
+                            <th>j</th>
                         </tr>
                     </thead>
                     <tbody>                        
                         <tr>
-                            <td>Col1_Val1</td>
-                            <td>Col2_Val1</td>
-                            <td>Col3_Val1</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
                         </tr>
                         <tr>
-                            <td>Col1_Val2</td>
-                            <td>Col2_Val2</td>
-                            <td>Col3_Val2</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
                         </tr>
                     </tbody>
                 </table> 
