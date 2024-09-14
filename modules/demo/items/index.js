@@ -70,7 +70,7 @@ export default class ItemsDemo extends Box {
                 <button class="cancel">cancel</button>
             `)
         })
-        this.content.group({
+        this.content.row().group({
             title:"Input items",
             content:$(`
                 <label>Text input <input type="text" name="item_input_text"></label>
