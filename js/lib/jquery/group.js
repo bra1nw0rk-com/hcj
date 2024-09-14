@@ -5,9 +5,7 @@
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  **/
 
-import Module from "../core/Module.js";
-import Box from "../html/Box.js";
-import HTMLObject from "../html/HTMLObject";
+import HTMLObject from "../html/HTMLObject.js";
 
 $(function () {
     $.fn.extend({
