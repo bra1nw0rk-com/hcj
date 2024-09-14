@@ -16,6 +16,7 @@ export default class ItemsDemo extends Box {
         this.resizable = true;
         this.name ="itemsDemo"
         this.icon.set("fa-object-ungroup")
+        console.log(this.content.row())
         this.content.row().group({
             title: "Table",
             content: $(`
