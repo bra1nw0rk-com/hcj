@@ -102,7 +102,7 @@ button:hover {
 }
 
 button.ok{
-	background-color: green;
+	background-color: var(--button-ok-bg-color);
 }
 button.cancel{
 	background-color: red;
