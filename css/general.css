@@ -483,6 +483,7 @@ a::before{
 	border: 1px solid var(--bg2);
 	border-radius: 8px;
 	padding: 8px;
+	position: relative;
 }
 .group:before {
 	content: attr(data-before);
