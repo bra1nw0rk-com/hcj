@@ -489,7 +489,7 @@ a::before{
 .group:before {
 	content: attr(data-before);
 	position: absolute;
-	top: -9px;
+	top: -11px;
 	left: 20px;
 	font-size: 10px;
 	padding: 5px 10px;
