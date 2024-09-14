@@ -66,9 +66,8 @@ export default class ItemsDemo extends Box {
         this.content.group({
             title: "Buttons",
             content: $(`
-                <button>Button1</button>
-                <input type="button">
-                <input type="submit">
+                <button class="ok">ok</button>
+                <button class="cancel">cancel</button>
             `)
         })
         this.content.group({
