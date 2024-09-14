@@ -21,8 +21,7 @@ $(function () {
                      $(this).append(obj.get());
                     obj.init();
                 });
-                result.a
-                return result.find(`> *`)
+                return result.children()
             }
         },
     });
