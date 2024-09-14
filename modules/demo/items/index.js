@@ -16,9 +16,40 @@ export default class ItemsDemo extends Box {
         this.resizable = true;
         this.name ="itemsDemo"
         this.icon.set("fa-object-ungroup")
-        this.content = $(`
-            <div class="input-items">
-                <h2>Input items</h2>
+        this.content = $(`           
+            <div class="button-items">
+                <button>Button1</button>
+                <input type="button">
+                <input type="submit">
+            </div>
+            <div class="table-item">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th>Col1</th>
+                            <th>col2</th>
+                            <th>Col3</th>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                        <tr>
+                            <td>Col1_Val1</td>
+                            <td>Col2_Val1</td>
+                            <td>Col3_Val1</td>
+                        </tr>
+                        <tr>
+                            <td>Col1_Val2</td>
+                            <td>Col2_Val2</td>
+                            <td>Col3_Val2</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            
+		`);
+        this.object.group({
+            title:"Input items",
+            content:$(`
                 <label>Text input <input type="text" name="item_input_text"></label>
                 <label><input type="checkbox" name="item_checkbox"> Checkbox</label>
                 <label><input type="radio" name="item_radio"> Radio</label>
@@ -50,40 +81,12 @@ export default class ItemsDemo extends Box {
                 <input type="tel">                
                 <input type="time">
                 <input type="url">
-                <input type="week">               
-            </div>
-            <div class="button-items">
-                <button>Button1</button>
-                <input type="button">
-                <input type="submit">
-            </div>
-            <div class="table-item">
-                 <table>
-                    <thead>
-                        <tr>
-                            <th>Col1</th>
-                            <th>col2</th>
-                            <th>Col3</th>
-                        </tr>
-                    </thead>
-                    <tbody>                        
-                        <tr>
-                            <td>Col1_Val1</td>
-                            <td>Col2_Val1</td>
-                            <td>Col3_Val1</td>
-                        </tr>
-                        <tr>
-                            <td>Col1_Val2</td>
-                            <td>Col2_Val2</td>
-                            <td>Col3_Val2</td>
-                        </tr>
-                    </tbody>
-                </table> 
-            </div>
-            
-		`);
+                <input type="week">  
+            `)
+        })
         this.button.minimize();
         this.button.close();
+
 
 
     }
