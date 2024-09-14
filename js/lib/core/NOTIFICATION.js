@@ -6,13 +6,13 @@
  **/
 export default class NOTIFICATION {
     init(){
-        if ("Notification" in window) {
-            if (Notification.permission === "default") {
-                    Notification.requestPermission().then(r => {
-                        localStorage.setItem('notification.state',"true")
-                    });
-            }
-        }
+        // if ("Notification" in window) {
+        //     if (Notification.permission === "default") {
+        //             Notification.requestPermission().then(r => {
+        //                 localStorage.setItem('notification.state',"true")
+        //             });
+        //     }
+        // }
     }
     getSystemStatus(){
         if ("Notification" in window) {        
