@@ -16,7 +16,7 @@ $(function () {
             options = $.extend(defaults, options);
 
             if ($(this).length > 0) {
-                let result = $('')
+                let result = $('<div></div>')
 
                  $(this).each(function (e, i) {
                     let _this = this;
@@ -27,7 +27,7 @@ $(function () {
                     result.append(obj.get())
                     obj.init();
                 });
-                console.log(result)
+                console.log(result.find(`> *`))
                 return result
             }
         },
