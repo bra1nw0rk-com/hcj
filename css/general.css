@@ -322,11 +322,12 @@ a::before{
 .modal > .content{
 	height: max-content;
 	overflow: auto;
-	padding: 15px 0 15px 15px;
+	padding: 15px 0 0 15px;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	font-size: 13px;
 	max-width: calc(100% - 15px);
+	max-height: calc(100% - 15px);
 }
 .modal .content .row{
 	margin-top: 2px;
