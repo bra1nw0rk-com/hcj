@@ -14,15 +14,13 @@ $(function () {
 
             };
             options = $.extend(defaults, options);
-
             if ($(this).length > 0) {
                 let result = $('<div></div>')
                  $(this).each(function (e, i) {
-                    let _this = this;
                     let obj = new HTMLObject('div');
                     obj.classes = "row"
                     obj.name = "row"
-                    $(_this).append(obj.get());
+                    $(this).append(obj.get());
                     result.append(obj.get())
                     obj.init();
                 });
