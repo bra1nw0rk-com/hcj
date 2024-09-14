@@ -138,9 +138,7 @@ export default class Box extends HTMLObject {
 	isOnFront(){
 		return $(`[box]`).index(this.object) === ($(`[box]`).length - 1)
 	}
-	redraw(){
-		this.object.after(this.object)
-	}
+
 
 	clear() {
 		$(`#${this.id}` + " input").each(function () {

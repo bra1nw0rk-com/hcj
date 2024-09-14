@@ -134,5 +134,7 @@ export default class HTMLObject extends CustomEvents {
 		this.object.find(`*`).remove()
 		this.object.append(val)
 	}
-	
+	redraw(){
+		this.object.after(this.object)
+	}
 }

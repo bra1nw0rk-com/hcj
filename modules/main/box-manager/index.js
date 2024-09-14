@@ -53,9 +53,7 @@ export default class BoxManager extends HTMLObject  {
                         _this.showed = true;
                         WS.ui.effects.fadeIn(_this.object,function(){
                             if(_this.object.css('display')!=="none") {
-                                _this.object.css({
-                                    cursor:"inherit"
-                                })
+                                _this.redraw()
                             }
                         })
 
