@@ -295,6 +295,7 @@ a::before{
 	z-index: 1;
 	overflow: hidden;
 	padding-bottom: 15px;
+	padding-right: 15px;
 }
 .modal:not(:last-child) {
 	/*filter: grayscale(1) brightness(95%);*/
