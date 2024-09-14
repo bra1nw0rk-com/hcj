@@ -35,20 +35,16 @@ export default class BoxManager extends HTMLObject  {
     init(){
         let _this = this;
         this.object.on(`cssLoaded`,function(){
-            WS.ui.effects.fadeIn(_this.object,function(){
-                if(_this.object.css('display')!=="none") {
-
-                    _this.saveState()
-                    _this.object.css({
-                        left: `${_this.lastPosition.x}px`,
-                        top: `${_this.lastPosition.y}px`,
-                        height: `${_this.size.height}px`,
-                        width: `${_this.size.width}px`,
-                        transform: 'none'
-                    })
-
-                }
-            })
+            if(_this.object.css('display')!=="none") {
+                _this.saveState()
+                _this.object.css({
+                    left: `${_this.lastPosition.x}px`,
+                    top: `${_this.lastPosition.y}px`,
+                    height: `${_this.size.height}px`,
+                    width: `${_this.size.width}px`,
+                    transform: 'none'
+                })
+            }
         })
         super.init()
         $(window).on('blur focus', function () {
