@@ -478,3 +478,15 @@ a::before{
 .sub-block{
 	padding-left: 19px;
 }
+
+.group{
+	border: 1px solid var(--bg2);
+	border-radius: 8px;
+	padding: 8px;
+}
+.group:before {
+	content: attr(data-before);
+	position:absolute;
+	top: 0;
+	left: 0;
+}
