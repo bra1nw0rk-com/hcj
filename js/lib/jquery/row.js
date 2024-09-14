@@ -11,16 +11,17 @@ $(function () {
     $.fn.extend({
         row: function () {
             if ($(this).length > 0) {
-                let result = new $()
+                let result = $(`div`)
                  $(this).each(function (e, i) {
                     let obj = new HTMLObject('div');
                     obj.classes = "row"
                     obj.name = "row"
                      console.log($(this).constructor.name)
-                    $(this).append(obj.get());
-                    result.append(obj.get())
+                     result.append(obj.get())
+                     $(this).append(obj.get());
                     obj.init();
                 });
+                result.a
                 return result.find(`> *`)
             }
         },
