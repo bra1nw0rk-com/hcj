@@ -21,10 +21,10 @@ $(function () {
                     let _this = this;
                     let obj = new HTMLObject('div');
                     obj.classes = "row"
+                    obj.content = options.content
                     obj.name = "row"
                     $(_this).append(obj.get());
                     obj.init();
-                    return obj.get();
                 });
             }
         },
