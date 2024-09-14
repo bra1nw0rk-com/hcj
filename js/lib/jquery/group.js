@@ -19,14 +19,12 @@ $(function () {
             if ($(this).length > 0) {
                 return $(this).each(function (e, i) {
                     console.log($(this))
-                    let _this = this;
                     let obj = new HTMLObject('div');
                     obj.object.attr('data-before',options.title)
                     obj.title = options.title;
                     obj.name = "group"
                     obj.content = options.content;
-
-                    $(_this).append(obj.get());
+                    $(this).append(obj.get());
                     obj.init();
 
                     return this;
