@@ -59,21 +59,25 @@ export default class ItemsDemo extends Box {
             </div>
             <div class="table-item">
                  <table>
-                    <tr>
-                        <th>Col1</th>
-                        <th>col2</th>
-                        <th>Col3</th>
-                    </tr>
-                    <tr>
-                        <td>Col1_Val1</td>
-                        <td>Col2_Val1</td>
-                        <td>Col3_Val1</td>
-                    </tr>
-                    <tr>
-                        <td>Col1_Val2</td>
-                        <td>Col2_Val2</td>
-                        <td>Col3_Val2</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Col1</th>
+                            <th>col2</th>
+                            <th>Col3</th>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                        <tr>
+                            <td>Col1_Val1</td>
+                            <td>Col2_Val1</td>
+                            <td>Col3_Val1</td>
+                        </tr>
+                        <tr>
+                            <td>Col1_Val2</td>
+                            <td>Col2_Val2</td>
+                            <td>Col3_Val2</td>
+                        </tr>
+                    </tbody>
                 </table> 
             </div>
             
