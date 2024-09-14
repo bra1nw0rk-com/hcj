@@ -193,8 +193,7 @@ table {
 	border-spacing: 0;
 }
 table thead tr {
-	background-color: #009879;
-	color: #ffffff;
+	background-color: var(--bg2);
 	text-align: left;
 }
 table th,
