@@ -16,13 +16,6 @@ export default class ItemsDemo extends Box {
         this.resizable = true;
         this.name ="itemsDemo"
         this.icon.set("fa-object-ungroup")
-        this.content = $(`           
-            <div class="button-items">
-                <button>Button1</button>
-                <input type="button">
-                <input type="submit">
-            </div>            
-		`);
         this.content.group({
             title: "Table",
             content: $(`
@@ -47,6 +40,14 @@ export default class ItemsDemo extends Box {
                         </tr>
                     </tbody>
                 </table> 
+            `)
+        })
+        this.content.group({
+            title: "Buttons",
+            content: $(`
+                <button>Button1</button>
+                <input type="button">
+                <input type="submit">
             `)
         })
         this.content.group({
