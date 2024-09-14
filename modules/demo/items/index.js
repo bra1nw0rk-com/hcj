@@ -21,9 +21,12 @@ export default class ItemsDemo extends Box {
                 <button>Button1</button>
                 <input type="button">
                 <input type="submit">
-            </div>
-            <div class="table-item">
-                 <table>
+            </div>            
+		`);
+        this.content.group({
+            title: "Table",
+            content: $(`
+                <table>
                     <thead>
                         <tr>
                             <th>Col1</th>
@@ -44,9 +47,8 @@ export default class ItemsDemo extends Box {
                         </tr>
                     </tbody>
                 </table> 
-            </div>
-            
-		`);
+            `)
+        })
         this.content.group({
             title:"Input items",
             content:$(`
