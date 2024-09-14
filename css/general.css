@@ -274,6 +274,7 @@ a::before{
 	transform: translateY(-50%) translateX(-50%);
 	z-index: 1;
 	overflow: hidden;
+	padding-bottom: 25px;
 }
 .modal:not(:last-child) {
 	/*filter: grayscale(1) brightness(95%);*/
