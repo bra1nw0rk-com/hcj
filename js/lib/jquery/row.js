@@ -11,7 +11,7 @@ $(function () {
     $.fn.extend({
         row: function () {
             if ($(this).length > 0) {
-                let result = $('<div></div>')
+                let result = new $()
                  $(this).each(function (e, i) {
                     let obj = new HTMLObject('div');
                     obj.classes = "row"
