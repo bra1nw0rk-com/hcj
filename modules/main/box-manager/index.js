@@ -118,7 +118,8 @@ export default class BoxManager extends HTMLObject  {
                             })
 
                         }else{
-                            _this.#content.html(`NOTHING TO SHOW`)
+                            _this.#content.find(`*`).remove()
+                            _this.#content.append(`<div class="no-content">NOTHING TO SHOW</div>`)
                         }
                     }
                 }else if(_this.keys === "k16k27"){

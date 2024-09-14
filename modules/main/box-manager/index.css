@@ -91,6 +91,11 @@
     left: unset;
     transform: none;
 }
+[name="box-manager"] > .content .no-content{
+    position: relative;
+    display: block;
+    width: 150px;
+}
 
 .light-theme [name="box-manager"] > .content [box-item]:hover::after, [name="box-manager"] > .content [box-item].active::after,
 .light-theme::backdrop [name="box-manager"] > .content [box-item]:hover::after, [name="box-manager"] > .content [box-item].active::after {
