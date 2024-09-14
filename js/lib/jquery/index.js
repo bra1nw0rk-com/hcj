@@ -13,5 +13,6 @@ import "/js/lib/jquery/shake.js";
 import "/js/lib/jquery/delete.js";
 import "/js/lib/jquery/tooltip.js";
 import "/js/lib/jquery/modal.js";
+import "/js/lib/jquery/group.js";
 import "/js/lib/jquery/sheets.js";
 import "/js/lib/jquery/table.js";
