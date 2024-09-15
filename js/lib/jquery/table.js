@@ -17,7 +17,7 @@ $(function () {
 			options = $.extend(defaults, options);
 			if ($(this).length > 0) {
 				return $(this).each(function (e, i) {
-					this.obj = new Table("domains", options.url);
+					this.obj = new Table("groups", options.url);
 					let _this = this;
 					$(this).append(this.obj.object);
 					this.refresh = () => {

@@ -12,19 +12,21 @@ import TableBody from "./TableBody.js";
 import Paginator from "./Paginator.js";
 
 export default class Table extends HTMLObject{
+    options={}
+    defaults = {
+        url: "",
+        cmd:"",
+    };
     head = new TableHead();
-    #url = "";
     body = new TableBody();
     paginator = new Paginator();
     count = 0;
-    sessionId = "XR0G4obkJZ+0FG5q+CUpgA+=";
 
     loading = $(`<i class="fa fa-spinner fa-pulse fa-fw big centered"></i>`);
 
-    constructor(id, url) {
+    constructor(id, options) {
         super('div')
-        let _this = this;
-        this.#url = url;
+        this.options = $.extend(this.defaults, options);
         this.classes = 'table-block'
         this.paginator.rowPerPage = 30;
         this.object.attr("data-id", `table-block-${id}`);
@@ -80,14 +82,15 @@ export default class Table extends HTMLObject{
         }
     }
     addRow(item) {
+        let _this = this;
         new Promise((resolve, reject) => {
             for (let key in item) {
-                this.head.add(key, key);
+                _this.head.add(key, key);
             }
-            this.body.addRow(item);
-            this.object.find("table").children().remove();
-            this.object.find("table").append(this.head.html());
-            this.object.find("table").append(this.body.html());
+            _this.body.addRow(item);
+            _this.object.find("table").children().remove();
+            _this.object.find("table").append(_this.head.html());
+            _this.object.find("table").append(_this.body.html());
         });
     }
     finish() {
@@ -101,7 +104,7 @@ export default class Table extends HTMLObject{
         let _this = this;
         this.refresh();
         WEBFS.api(
-            this.#url,
+            this.options.url,
             {
                 request: [
                     {
@@ -124,7 +127,7 @@ export default class Table extends HTMLObject{
     loadCount() {
         let _this = this;
         WEBFS.api(
-            this.#url,
+            this.options.url,
             {
                 request: [
                     {
