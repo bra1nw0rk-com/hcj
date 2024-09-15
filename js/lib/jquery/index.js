@@ -16,4 +16,4 @@ import "/js/lib/jquery/modal.js";
 import "/js/lib/jquery/row.js";
 import "/js/lib/jquery/group.js";
 import "/js/lib/jquery/sheets.js";
-import "/js/lib/jquery/table.js";
+//import "/js/lib/jquery/table.js";
