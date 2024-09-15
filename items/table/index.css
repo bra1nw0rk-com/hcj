@@ -6,17 +6,18 @@
  */
 @import "/items/table/index-768.css";
 [name="table-block"] {
-	 height: fit-content;
+	height: fit-content;
+	position: relative;
 }
 [name="table-block"] .marginLeft {
-	 margin-left: 5px;
+	margin-left: 5px;
 }
 [name="table-block"] .active {
-	 filter: brightness(3);
-	 text-decoration: underline;
+	filter: brightness(3);
+	text-decoration: underline;
 }
 [name="table-block"] [data-name="table-top"] [data-name="count"] {
-	 margin-left: 5px;
+	margin-left: 5px;
 }
 [name="table-block"] [data-name="table-top"] [data-name="rowsPerPage"] {
 	 margin-left: 5px;
