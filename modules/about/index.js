@@ -19,7 +19,7 @@ export default class AboutModal extends Box {
 			<div class="strong">Libre<span class="selected">IS</span> - Libre Information System.</div>
 			<br>
 			<div class="row">OS: Linux</div>
-			<div class="row">Backend: Java</div>
+			<div class="row">Backend: Java, Python</div>
 			<div class="row">Frontend: JavaScript, JQuery, HTML, CSS</div>	
 			<br>
 			<div class="row">Author: Volodymyr Cherniyevskyy</div>
