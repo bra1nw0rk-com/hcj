@@ -1,0 +1,97 @@
+/*
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ */
+@import "/items/table/index-768.css";
+[name="table-block"] {
+	 height: fit-content;
+}
+[name="table-block"] .marginLeft {
+	 margin-left: 5px;
+}
+[name="table-block"] .active {
+	 filter: brightness(3);
+	 text-decoration: underline;
+}
+[name="table-block"] [data-name="table-top"] [data-name="count"] {
+	 margin-left: 5px;
+}
+[name="table-block"] [data-name="table-top"] [data-name="rowsPerPage"] {
+	 margin-left: 5px;
+}
+[name="table-block"] [data-name="table-top"] [data-name="rowsPerPage"] select {
+	 min-width: 35px;
+	 text-align: center;
+}
+[name="table-block"] [data-name="table-top"] [data-name="refresh-icon"] {
+	 cursor: pointer;
+	 margin-left: 5px;
+}
+[name="table-block"] [data-name="table-top"] [data-name="refresh-icon"]:hover {
+	 filter: brightness(3);
+}
+[name="table-block"] .centered {
+	 position: fixed;
+	 top: 47vh;
+	 left: 50vw;
+}
+[name="table-block"] .big {
+	 font-size: 5em;
+}
+[name="table-block"] table {
+	 display: block;
+	 height: calc(100% - 51px);
+	 overflow-y: scroll;
+}
+[name="table-block"] table td {
+	 border: 1px solid var(--border-color);
+	 padding: 5px;
+}
+[name="table-block"] table thead tr {
+	 background-color: var(--bg2);
+}
+[name="table-block"] table thead tr td {
+	 white-space: nowrap;
+}
+[name="table-block"] table thead tr td [data-name] {
+	 margin-left: 5px;
+}
+[name="table-block"] table thead tr td [data-name="sort"] {
+	 cursor: pointer;
+}
+[name="table-block"] table thead tr td [data-name="filter"] {
+	 cursor: pointer;
+}
+[name="table-block"] table tbody tr:hover {
+	 background-color: var(--border-color);
+}
+[name="table-block"] table tbody tr td {
+	 white-space: nowrap;
+}
+[name="table-block"] [data-name="paging"] {
+	 margin: 5px auto;
+	 display: flex;
+	 justify-content: center;
+	 position: fixed;
+	 z-index: 1;
+}
+[name="table-block"] [data-name="paging"] [data-name="pager"] {
+	 margin-left: 5px;
+}
+[name="table-block"] [data-name="paging"] [data-name="pager"] [data-name="pager-input"] {
+	 text-align: center;
+	 width: 100px;
+	 margin: 0 5px;
+}
+ @media (min-width: 769px) {
+	[name="table-block"] [data-name="table-top"] {
+		 position: fixed;
+		 top: 64px;
+	}
+	[name="table-block"] [data-name="paging"] {
+		 width: 88vw;
+	}
+}
+ 

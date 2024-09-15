@@ -28,6 +28,7 @@ export default class Table extends HTMLObject{
         super('div')
         this.options = $.extend(this.defaults, options);
         this.name = 'table-block'
+        this.css = "/items/table/index.css";
         this.paginator.rowPerPage = 30;
         //this.object.attr("data-id", `table-block-${id}`);
         this.object.find(`[data-name="paging"]`).append(this.paginator.html());
