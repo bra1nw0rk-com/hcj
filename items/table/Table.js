@@ -69,6 +69,7 @@ export default class Table extends HTMLObject{
             _this.refresh();
             _this.load(1);
         });
+        this.update()
     }
     setCount(data) {
         if (typeof data[0] !== "undefined") {
