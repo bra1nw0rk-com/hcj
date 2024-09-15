@@ -107,6 +107,7 @@ export default class Table extends HTMLObject{
             {
                 request: [
                     {
+                        module:"groups",
                         cmd: "getRecords",
                         SessionId: this.sessionId,
                         rowId: start,
