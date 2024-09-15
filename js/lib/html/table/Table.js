@@ -24,12 +24,12 @@ export default class Table extends HTMLObject{
 
     loading = $(`<i class="fa fa-spinner fa-pulse fa-fw big centered"></i>`);
 
-    constructor(id, options) {
+    constructor(options) {
         super('div')
         this.options = $.extend(this.defaults, options);
-        this.classes = 'table-block'
+        this.name = 'table-block'
         this.paginator.rowPerPage = 30;
-        this.object.attr("data-id", `table-block-${id}`);
+        //this.object.attr("data-id", `table-block-${id}`);
         this.object.find(`[data-name="paging"]`).append(this.paginator.html());
         this.template = $(`            
             <div data-name="table-top">

@@ -6,9 +6,13 @@
  **/
 
 import Box from "../../js/lib/html/Box.js";
+import Table from "../../js/lib/html/table/Table.js";
 
 export default class Groups extends Box {
-    #table;
+    table = new Table({
+        url:"/",
+        cmd:"getGroups",
+    });
     constructor() {
         super(true);
         let _this = this;
