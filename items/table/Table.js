@@ -5,8 +5,8 @@
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  */
 
-import WEBFS from "../../core/WEBFS.js";
-import HTMLObject from "../HTMLObject.js";
+import WEBFS from "../../js/lib/core/WEBFS.js";
+import HTMLObject from "../../js/lib/html/HTMLObject.js";
 import TableHead from "./TableHead.js";
 import TableBody from "./TableBody.js";
 import Paginator from "./Paginator.js";

@@ -1,11 +1,11 @@
-/**
+/*
  * @author Volodymyr Cherniyevskyy
  * @copyright bra1nw0rk.
  * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
- **/
+ */
 
-import HTMLObject from "../HTMLObject.js";
+import HTMLObject from "../../js/lib/html/HTMLObject.js";
 import TableCell from "./TableCell.js"
 
 export default class TableRow extends HTMLObject{

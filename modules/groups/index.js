@@ -6,7 +6,7 @@
  **/
 
 import Box from "../../js/lib/html/Box.js";
-import Table from "../../js/lib/html/table/Table.js";
+import Table from "../../items/table/Table.js";
 
 export default class Groups extends Box {
     table = new Table({
