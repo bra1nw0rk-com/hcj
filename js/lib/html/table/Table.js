@@ -111,8 +111,7 @@ export default class Table extends HTMLObject{
                         cmd: "getRecords",
                         SessionId: this.sessionId,
                         rowId: start,
-                        count: this.paginator.rowPerPage,
-                        domain: "elt",
+                        count: this.paginator.rowPerPage
                     },
                 ],
             },
@@ -168,4 +167,15 @@ export default class Table extends HTMLObject{
         this.body = new TableBody();
         this.object.find("table").children().remove();
     }
+/*
+    refresh () {
+        this.load(1);
+    }
+
+ */
+    update (){
+        this.start();
+        this.refresh();
+        this.loadCount();
+    };
 }
