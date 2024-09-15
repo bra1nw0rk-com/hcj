@@ -23,7 +23,6 @@ export default class Groups extends Box {
         this.resizable = true;
         this.name ="groupsSettings"
         this.object.append(this.table)
-
         this.button.minimize();
         this.button.close();
         this.icon.settings();
@@ -32,6 +31,7 @@ export default class Groups extends Box {
 
     init() {
         super.init();
+        this.table.init()
     }
 
 
