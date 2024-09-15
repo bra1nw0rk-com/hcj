@@ -88,8 +88,8 @@
 }
  @media (min-width: 769px) {
 	[name="table-block"] [data-name="table-top"] {
-		 position: fixed;
-		 top: 64px;
+		 /*position: fixed;*/
+		 /*top: 64px;*/
 	}
 	[name="table-block"] [data-name="paging"] {
 		 width: 88vw;
