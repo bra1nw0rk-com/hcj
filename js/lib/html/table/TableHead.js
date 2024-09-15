@@ -6,7 +6,7 @@
  */
 
 
-import HTMLObject from "../HTMLObject";
+import HTMLObject from "../HTMLObject.js";
 import TableRow from "./TableRow.js";
 
 export default class TableHead extends HTMLObject{

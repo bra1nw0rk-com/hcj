@@ -5,7 +5,7 @@
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  */
 
-import HTMLObject from "../HTMLObject";
+import HTMLObject from "../HTMLObject.js";
 import TableRow from "./TableRow.js";
 
 export default class TableBody extends HTMLObject{
