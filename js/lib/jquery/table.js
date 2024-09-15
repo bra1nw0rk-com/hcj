@@ -4,6 +4,8 @@
  * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  **/
+import Table from "../html/table/Table.js";
+
 $(function () {
 	$.fn.extend({
 		table: function (options) {
