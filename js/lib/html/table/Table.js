@@ -47,9 +47,6 @@ export default class Table extends HTMLObject{
             <table></table>
             <div data-name="paging"></div>            
         `);
-
-
-
     }
 
     init(){
