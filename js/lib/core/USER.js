@@ -93,8 +93,7 @@ export default class USER {
                 password:password
             }
         },function(data){
-            data = JSON.parse(data)
-            if(data.length > 0) {
+            if(typeof data.result !== 'undefined') {
                 if (data.result === true) {
                     WS.user.update(data[0].accessKey);
                     callback(true);
