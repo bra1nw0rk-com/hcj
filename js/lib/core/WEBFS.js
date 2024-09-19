@@ -6,6 +6,8 @@
  **/
 export default class WEBFS {
 	static async api(url, json, callback) {
+		let result={};
+		console.log(typeof callback)
 		return new Promise((resolve) => {
 			fetch(url, {
 				method: "POST",
@@ -16,25 +18,30 @@ export default class WEBFS {
 				mode: "cors",
 				body: JSON.stringify(json),
 			}).then((data) => {
-				let result={}
-					if (!data.ok) {
-						result.error="Network response was not ok";
-					}else {
-						result = data;
+				if (!data.ok) {
+					result.error="Network response was not ok";
+				}else {
+					result = data;
+				}
+				try {
+					if (typeof callback === 'function') {
+						callback(result);
 					}
-					try {
-						if (typeof callback === 'function') {
-							callback(result);
-						}
-						resolve(result)
-					} catch (e) {
-						throw e;
+					resolve(result)
+				} catch (e) {
+					throw e;
+				}
+			}).catch((error) => {
+				result.error="There was a problem with the fetch operation: " + error.message;
+				try {
+					if (typeof callback === 'function') {
+						callback(result);
 					}
-
-				})
-				.catch((error) => {
-					console.error("There was a problem with the fetch operation:", error);
-				});
+					resolve(result)
+				} catch (e) {
+					throw e;
+				}
+			});
 		})
 	}
 
