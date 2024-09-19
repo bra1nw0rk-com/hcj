@@ -10,7 +10,7 @@ export default class USER {
     loginTimer= 0
     constructor() {}
     get loginTimeout() {
-        console.log(WEBFS.sync_api('/',{
+        console.log(WEBFS.api('/',{
             cmd:'getLoginTimeout'
         }))
         return (1000 * 60 * 20);
