@@ -24,9 +24,9 @@ export default class WEBFS {
 					}
 					try {
 						if (typeof callback === 'function') {
-							callback(data);
+							callback(result);
 						}
-						resolve(data)
+						resolve(result)
 					} catch (e) {
 						throw e;
 					}
