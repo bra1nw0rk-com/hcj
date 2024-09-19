@@ -9,9 +9,9 @@ import WEBFS from "./WEBFS.js";
 export default class USER {
     loginTimer= 0
     constructor() {}
-    get loginTimeout() {
-        console.log(WEBFS.api('/',{
-            cmd:'getLoginTimeout'
+    async get loginTimeout() {
+        console.log(await WEBFS.api('/', {
+            cmd: 'getLoginTimeout'
         }))
         return (1000 * 60 * 20);
     }
@@ -42,9 +42,9 @@ export default class USER {
     }
 
 
-    needLogin() {
+    async needLogin() {
         if (this.sessionId !== "null" && this.sessionId !== null) {
-            if (this.lastUpdate + this.loginTimeout < new Date().getTime()) {
+            if (this.lastUpdate + await this.loginTimeout < new Date().getTime()) {
                 //here test session in server
                 return true;
             } else {
@@ -59,22 +59,22 @@ export default class USER {
         if (this.loginTimer !== null) {
             clearInterval(this.loginTimer);
         }
-        this.loginTimer = setInterval(() => {
-            if (_this.needLogin()) {
+        this.loginTimer = setInterval(async () => {
+            if (await _this.needLogin()) {
                 _this.logout();
-            }else{
-                WEBFS.api('/',{
-                    cmd:'user.refresh',
+            } else {
+                WEBFS.api('/', {
+                    cmd: 'user.refresh',
                     params: [_this.sessionId]
-                },function(data){
+                }, function (data) {
 
 
                 })
             }
         }, 1000);
     }
-    testLogin() {
-        if (this.needLogin()) {
+    async testLogin() {
+        if (await this.needLogin()) {
             this.logout();
         } else {
             Module.call("main");

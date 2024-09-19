@@ -35,8 +35,8 @@ export default class User {
 		if (this.loginTimer !== null) {
 			clearInterval(this.loginTimer);
 		}
-		this.loginTimer = setInterval(() => {
-			if (WS.user.needLogin()) {
+		this.loginTimer = setInterval(async () => {
+			if (await WS.user.needLogin()) {
 				WS.user.logout();
 			}
 		}, 1000);

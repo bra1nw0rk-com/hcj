@@ -5,7 +5,7 @@
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  **/
 export default class WEBFS {
-	static async api(url, json, callback) {
+	static api(url, json, callback) {
 		let result={};
 		console.log(typeof callback)
 		return new Promise((resolve) => {
