@@ -5,34 +5,41 @@
  * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
  **/
 export default class WEBFS {
-	static api(url, json, callback) {
-		fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Accept": "application/json",
-			},
-			mode: "cors",
-			body: JSON.stringify(json),
+	static async api(url, json, callback) {
+		return new Promise((resolve) => {
+			fetch(url, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					"Accept": "application/json",
+				},
+				mode: "cors",
+				body: JSON.stringify(json),
+			})
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error("Network response was not ok");
+					}
+					//return response.json();
+				})
+				.then((data) => {
+					let json = {};
+					try {
+						callback(data);
+						resolve(data)
+					} catch (e) {
+						throw e;
+					}
+				})
+				.catch((error) => {
+					console.error("There was a problem with the fetch operation:", error);
+				});
 		})
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error("Network response was not ok");
-				}
-				return response.json();
-			})
-			.then((data) => {
-				let json = {};
-				try {
-					callback(data);
-				} catch (e) {
-					console.log(e);
-				}
-			})
-			.catch((error) => {
-				console.error("There was a problem with the fetch operation:", error);
-			});
 	}
+
+
+
+
 	static extTypes = {
 		"3gp": "video/3gpp",
 		a: "application/octet-stream",
@@ -269,6 +276,8 @@ export default class WEBFS {
 			return "";
 		}
 	}
+
+
 
 	static post(url, params = {}, callback) {
 		const xhr = new XMLHttpRequest();

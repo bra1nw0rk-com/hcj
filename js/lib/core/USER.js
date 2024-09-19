@@ -10,6 +10,9 @@ export default class USER {
     loginTimer= 0
     constructor() {}
     get loginTimeout() {
+        console.log(WEBFS.sync_api('/',{
+            cmd:'getLoginTimeout'
+        }))
         return (1000 * 60 * 20);
     }
     get sessionId() {
@@ -117,13 +120,6 @@ export default class USER {
         this.lastUpdate = 0;
         WS.ui.clearWindow();
         $(`body`).modal({module:"pages/login"});
-        /*
-        Module.call("pages/login").then(r => {
-            $(`body`).append(r.get())
-            r.init()
-        });
-        */
-
     }
 
 }
