@@ -25,7 +25,9 @@ export default class WEBFS {
 				.then((data) => {
 					let json = {};
 					try {
-						callback(data);
+						if(typeof callback === 'function') {
+							callback(data);
+						}
 						resolve(data)
 					} catch (e) {
 						throw e;
