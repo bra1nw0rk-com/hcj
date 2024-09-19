@@ -15,22 +15,22 @@ export default class WEBFS {
 				},
 				mode: "cors",
 				body: JSON.stringify(json),
-			})
-				.then((response) => {
-					if (!response.ok) {
-						throw new Error("Network response was not ok");
+			}).then((data) => {
+				let result={}
+					if (!data.ok) {
+						result.error="Network response was not ok";
+					}else {
+						result = data;
 					}
-					//return response.json();
-				})
-				.then((data) => {
 					try {
-						if(typeof callback === 'function') {
+						if (typeof callback === 'function') {
 							callback(data);
 						}
 						resolve(data)
 					} catch (e) {
 						throw e;
 					}
+
 				})
 				.catch((error) => {
 					console.error("There was a problem with the fetch operation:", error);
