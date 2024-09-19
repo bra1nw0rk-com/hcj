@@ -95,8 +95,10 @@ export default class USER {
         },function(data){
             if(typeof data.result !== 'undefined') {
                 if (data.result === true) {
-                    WS.user.update(data.accessKey);
-                    callback(true);
+                    if (typeof data.accessKey !== 'undefined') {
+                        WS.user.update(data.accessKey);
+                        callback(true);
+                    }
                 }else{
                     WS.user.update(null);
                     callback(false);
