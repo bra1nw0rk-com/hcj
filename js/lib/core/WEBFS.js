@@ -23,7 +23,6 @@ export default class WEBFS {
 					//return response.json();
 				})
 				.then((data) => {
-					let json = {};
 					try {
 						if(typeof callback === 'function') {
 							callback(data);
