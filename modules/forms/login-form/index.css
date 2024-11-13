@@ -1,0 +1,32 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
+[name="userLoginForm"] {
+    font-size: 1.3em;
+}
+[name="userLoginForm"] > .content{
+    width: 280px;
+}
+/*
+[name="userLoginForm"].error {
+    animation: horizontal-shaking 0.5s linear alternate;
+}
+
+ */
+[name="userLoginForm"] input {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+[name="userLoginForm"] button {
+    background-color: var(--button-ok-bg-color);
+    padding: 7px;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #4080a6;
+}
+[name="userLoginForm"] button:hover {
+    background-color: #013366;
+}

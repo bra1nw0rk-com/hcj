@@ -1,0 +1,26 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
+[name="page-login"] [name="animated-logo"]{
+    position: absolute;
+	top: 28vh;
+	left: 50vw;
+	transform: translateY(-50%) translateX(-50%);
+}
+
+[name="page-login"] [name="title"]{    
+    position: absolute;
+    font-size: 25px;
+    width: max-content;
+	top: 37vh;
+	left: 50vw;
+	transform: translateY(-50%) translateX(-50%);
+    opacity: 0.8;
+}
+
+[name="page-login"] [name="title"] .selected{    
+    color:rgb(245, 123, 53);
+}

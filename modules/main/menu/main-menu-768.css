@@ -1,0 +1,131 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
+@media only screen and (max-width: 768px) {
+	:root {
+		--menu-width: 768;
+	}
+
+	[name="main-menu"] {
+		--media-width: 768;
+		display: block;
+		position: fixed;
+		left: 0;
+		font-size: 2em;
+		background: none;
+		height: 0;
+		width: 0;
+		border-bottom: none;
+	}
+
+	[name="main-menu"] .menu-icon {
+		display: block;
+	}
+
+	[name="main-menu"] .menu-content {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 75vw;
+		height: 100vh;
+		background-color: var(--bg1);
+		overflow-y: auto;
+		overflow-x: hidden;
+		border-right: 1px solid var(--border-color);
+	}
+	[name="main-menu"] .menu-content::before {
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+		content:"";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	[name="main-menu"] .menu-content.show,
+	.show {
+		display: block;
+		animation: fadeIn 0.5s linear alternate;
+	}
+
+
+
+	[name="main-menu"] .menu-content .menu-item {
+		padding: 0.2em;
+		display: block;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	[name="main-menu"] .menu-content .menu-item:has(> .dropdown-content)::after {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		padding: 5px;
+		font-family: "FontAwesome", serif;
+		content: "\f105";
+	}
+
+	[name="main-menu"] .menu-content .menu-item:has(> .dropdown-content):has(> .show)::after {
+		content: "\f107";
+	}
+
+	[name="main-menu"] .menu-content .menu-item:hover {
+		background-color: inherit;
+	}
+
+	[name="main-menu"] .menu-content .menu-item.dropdown:hover {
+		background-color: #ffffff00;
+	}
+
+	[name="main-menu"] .menu-content .menu-item.dropdown:hover > .dropdown-content {
+		display: none;
+	}
+
+	[name="main-menu"] .menu-content .menu-item.dropdown .dropdown-content {
+		width: 100%;
+		border-radius: 0;
+		box-shadow: none;
+		border: none;
+		position: inherit;
+		left: 0;
+		top: 0;
+		padding-top: 5px;
+		padding-left: 20px;
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	[name="main-menu"] .menu-content .menu-item.dropdown .dropdown-content.show,
+	.show {
+		display: block;
+		animation: fadeIn 0.5s linear alternate;
+	}
+
+	[name="main-menu"] .menu-content .menu-item.dropdown .menu-item:hover {
+		background-color: inherit;
+	}
+
+	[name="main-menu"] .menu-content .menu-separator {
+		display: none;
+	}
+
+	[name="main-menu"] .menu-content .submenu:hover .dropdown-content {
+		display: none;
+	}
+
+	[name="main-menu"] .menu-content .submenu::after {
+		font-family: "FontAwesome", serif;
+		content: "\f105";
+		position: absolute;
+		right: 5px;
+		font-size: inherit;
+	}
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "A.4",
+    "name": "Ekonomika"
+  },
+  {
+    "id": "A.4.25",
+    "name": "Hlavní kniha"
+  },
+  {
+    "id": "A.4.25.15",
+    "name": "HK - pohledy a přehledy - menu"
+  },
+  {
+    "id": "A.4.25.15.2",
+    "name": "Transakce HK - pohledy"
+  },
+  {
+    "id": "A.4.25.15.2.20",
+    "name": "Transakce zásob - účtování"
+  },
+  {
+    "id": "A.6",
+    "name": "Správa systému"
+  },
+  {
+    "id": "A.6.36",
+    "name": "Správa systému"
+  },
+  {
+    "id": "A.6.36.1",
+    "name": "Podniková struktura - nastavení - menu"
+  },
+  {
+    "id": "A.6.36.1.1",
+    "name": "Struktura - nastavení - menu"
+  },
+  {
+    "id": "A.6.36.1.1.1",
+    "name": "Domény - údržba"
+  },
+  {
+    "id": "A.6.36.1.1.1.3",
+    "name": "Domény - pohled"
+  }
+]

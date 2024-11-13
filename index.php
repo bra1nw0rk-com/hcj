@@ -1,0 +1,57 @@
+<?php
+$contentType = $_SERVER['CONTENT_TYPE'] ?? '';
+
+if (str_contains($contentType, 'application/json')) {
+    require "php/api.php";
+
+} else {?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Volodymyr Cherniyevskyy">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/animation.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/noscript.css">
+    <link rel="stylesheet" href="/css/theme/theme-dark.css">
+    <link rel="stylesheet" href="/css/theme/theme-light.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_orange_32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <title>LibreIS</title>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "/js/lib/three/three.module.js",
+                "three/addons/": "/js/lib/three/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="/js/lib/core/jquery-3.7.1.js"></script>
+    <script type="module" src="/js/app.js"></script>
+
+</head>
+
+<body>
+
+<div id="nojavascript">
+    <div class="sorry_img_block">
+        <img src="/img/warning.png">
+    </div>
+    <div class="sorry_msg1">Sorry</div>
+    <div class="sorry_msg2">you need <a href="#">JavaScript</a>
+        for use this system
+    </div>
+</div>
+
+</body>
+
+</html>
+<?php }

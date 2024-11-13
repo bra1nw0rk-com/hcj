@@ -1,0 +1,16 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
+[name="notification-icon"]{
+    padding: 5px;
+    border-radius: 8px;
+    width: fit-content;
+    display: inline-block;
+    font-size: 16px;
+}
+[name="notification-icon"] .fa-bell-o,[name="notification-icon"] .fa-bell{
+    padding-top: 3px;
+}

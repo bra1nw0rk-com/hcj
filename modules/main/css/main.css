@@ -1,0 +1,87 @@
+/**
+ * @author Volodymyr Cherniyevskyy
+ * @copyright bra1nw0rk.
+ * {@link https://github.com/bra1nw0rk-com/hcj GitHub}.
+ * {@link https://www.linkedin.com/in/volodymyr-cherniyevskyy-24962b22b LinkedIn}
+ **/
+@import "/modules/main/css/main-768.css";
+
+[name="main"] {
+	 animation: fadeIn 0.5s linear alternate;
+	 height: 100%;
+	 width: 100%;
+}
+@media (min-width: 769px) {
+	[name="main"] #content {
+		position: relative;
+		height: calc(100vh - 63px);
+		overflow: hidden;
+		width: 100vw;
+	}
+
+	[name="main"] #content::after {
+		display: block;
+		position: absolute;
+		top: 50vh;
+		left: 50vw;
+		transform: translateY(-80%) translateX(-50%);
+		background-repeat: no-repeat;
+		background-size: 220px;
+		height: 70px;
+		width: 220px;
+		opacity: 0.1;
+		content: "";
+		background-image: var(--content-bg-logo);
+	}
+
+	[name="main"] footer {
+		display: flex;
+		background-color: var(--bg1);
+		font-size: 0.75em;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		width: 100vw;
+		height: 40px;
+		border-top: 1px solid var(--border-color);
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	[name="main"] footer #running {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-content: center;
+		justify-content: flex-start;
+		font-size: 21px;
+		position: absolute;
+		padding-left: 3px;
+		overflow: hidden;
+		max-width: calc(100% - 95px);
+	}
+	[name="main"] footer #running .fa{
+		width: 34px;
+	}
+
+	[name="main"] footer #running i {
+		padding: 5px;
+		border-radius: 8px;
+	}
+
+
+	[name="main"] footer #running i:hover, [name="main"] footer #running i.selected {
+		background-color: var(--top-menu-main-menu-item-background);
+	}
+
+	[name="main"] footer .right-side{
+		position: absolute;
+		right: 0;
+		margin-right: 4px;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+}
+ 
